@@ -1,0 +1,12 @@
+@charset "UTF-8";
+/* Página Sobre */
+
+p {
+  text-align: justify;
+}
+
+img#logos {
+  max-height:70px;
+  width: auto;
+  height: auto;
+}

@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+/* Cabeçalho */
+
+div#apresentacao {
+  background-color: #232323;
+  color: #ffffff;
+  padding: 60px 60px 60px 60px;
+  text-align: center;
+}
+
+div#textoApresentacao {
+  margin: 8% 0 8% 0;
+}
+
+div#apresentacao a {
+  color: #b71b1e;
+  text-decoration: none;
+}
+
+div#apresentacao a:hover {
+  color: #b71b1e;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
+
+img#fotoPerfil {
+  max-height: 280px;
+  width: auto;
+  border-radius: 50%;
+}
+
+/* Corpo */
+h2#habilidades {
+  display: inline;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #b71b1e;
+}
