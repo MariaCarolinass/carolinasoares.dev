@@ -29,10 +29,3 @@ img#fotoPerfil {
   width: auto;
   border-radius: 50%;
 }
-
-/* Corpo */
-h2#habilidades {
-  display: inline;
-  padding-bottom: 5px;
-  border-bottom: 2px solid #b71b1e;
-}
