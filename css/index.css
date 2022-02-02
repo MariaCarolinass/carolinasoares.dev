@@ -3,7 +3,7 @@
 /* Cabeçalho */
 
 div#apresentacao {
-  background-color: #232323;
+  background-color: #212529;
   color: #ffffff;
   padding: 60px 60px 60px 60px;
   text-align: center;
@@ -14,18 +14,42 @@ div#textoApresentacao {
 }
 
 div#apresentacao a {
-  color: #b71b1e;
+  color: #dc9c2e;
   text-decoration: none;
 }
 
 div#apresentacao a:hover {
-  color: #b71b1e;
+  color: #dc9c2e;
   text-decoration: underline;
   text-decoration-style: dotted;
 }
 
 img#fotoPerfil {
   max-height: 280px;
-  width: auto;
   border-radius: 50%;
+}
+
+/* Conteúdo abaixo do cabeçalho */
+
+div#competencias {
+  padding: 60px 5px 50px 5px;
+  color: #ffffff;
+  background-color: #343a40;
+}
+
+div#postagens {
+  padding: 60px 5px 1px 5px;
+  color: #ffffff;
+  background-color: #495057;
+}
+
+div#postagens a {
+  color: #dc9c2e;
+  text-decoration: none;
+}
+
+div#postagens a:hover {
+  color: #dc9c2e;
+  text-decoration: underline;
+  text-decoration-style: dotted;
 }
