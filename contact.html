@@ -37,38 +37,41 @@
     </header>
 
     <div class="container-fluid" id="conteudo">
-    <!--  <h4>Me mande uma mensagem via
-        <a href="https://t.me/carols0" target="_blank">Telegram</a> ou
-        preencha o formulário abaixo:</h4><br> -->
-      <form action="index.html" method="post">
-        <h1 class="text-center">Contate-me</h1><br><br>
+      <form action="https://formspree.io/f/xvolkbvb" method="POST">
+        <h1 class="text-center">Contate-me</h1><br>
+        <p class="text-center">Me envie uma mensagem pelo formulário abaixo ou
+          no <a href="https://t.me/carols0" target="_blank">Telegram</a>.</p><br>
         <div class="form-group">
           <div class="col-md-6 offset-md-3">
             <label class="form-label">Nome:</label>
-            <input type="text" size="30" class="form-control" placeholder="digite seu nome">
+            <input name="Nome" type="text" size="30" class="form-control"
+              placeholder="Digite o seu nome">
           </div>
         </div><br>
         <div class="form-group">
           <div class="col-md-6 offset-md-3">
             <label class="form-label">E-mail:</label>
-            <input type="email" class="form-control" placeholder="digite seu e-mail">
+            <input name="E-mail" type="email" class="form-control"
+              placeholder="Digite o seu endereço de e-mail">
           </div>
         </div><br>
         <div class="form-group">
           <div class="col-md-6 offset-md-3">
             <label class="form-label">Assunto:</label>
-            <input type="text" size="30" class="form-control" placeholder="digite o assunto do e-mail">
+            <input name="Assunto" type="text" size="30" class="form-control"
+              placeholder="Digite o assunto do e-mail">
           </div>
         </div><br>
         <div class="form-group">
           <div class="col-md-6 offset-md-3">
             <label class="form-label">Mensagem:</label>
-            <textarea name="name" rows="8" cols="40" class="form-control"></textarea>
+            <textarea name="Mensagem" rows="8" cols="40"
+              class="form-control"></textarea>
           </div>
         </div><br>
         <div class="form-group">
           <div class="col-md-6 offset-md-3">
-            <button type="button" name="button" class="btn btn-dark">Enviar</button>
+            <button type="submit" class="btn btn-dark">Enviar</button>
           </div>
         </div>
       </form><br><br>
