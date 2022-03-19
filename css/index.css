@@ -38,7 +38,8 @@ div#competencias {
 }
 
 .card {
-  height: 380px;
+  width: auto;
+  height: 94%;
   border-radius: 15px;
 }
 
