@@ -4,3 +4,12 @@
 p {
   text-align: justify;
 }
+
+img#fotoPerfil {
+  max-width: 90%;
+  max-height: 400px;
+}
+
+div#textoSobre {
+  float: right;
+}
