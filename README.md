@@ -1,3 +1,0 @@
-# Carolina Soares
-
-Meu portfolio
