@@ -1,4 +1,4 @@
-baseURL = "http://carolinasoares.dev/"
+baseURL = "https://carolinasoares.dev/"
 defaultContentLanguage = "pt"
 enableRobotsTXT = true
 languageCode = "pt"
