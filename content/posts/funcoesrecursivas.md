@@ -4,7 +4,7 @@ date: 2024-10-22
 # image: ""
 lastmod: 2024-10-22
 showTableOfContents: false
-# tags: ["",]
+tags: ["Python", "Funções"]
 title: "Funções Recursivas"
 type: "post"
 ---
