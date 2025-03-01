@@ -79,7 +79,7 @@ title = "Carolina Soares"
 
   socialIcons = [
     {name = "linkedin", url = "https://www.linkedin.com/in/carolinasoaresm/"},
-    {name = "youtube", url = "https://www.youtube.com/@backendnapratica"},
+    {name = "youtube", url = "https://www.youtube.com/@carolinasoaresdev"},
     {name = "github", url = "https://github.com/mariacarolinass"},
     {name = "email", url = "mailto:mcarolinasoares0@gmail.com"}
   ]
