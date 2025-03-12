@@ -3,7 +3,7 @@ defaultContentLanguage = "pt"
 enableRobotsTXT = true
 languageCode = "pt"
 theme = "gokarna"
-title = "Carolina Soares"
+title = "Carolina"
 
 [menu]
   [[menu.main]]
@@ -41,12 +41,18 @@ title = "Carolina Soares"
     pre = "<span data-feather='gitlab'></span>"
     url = "https://gitlab.com/mariacarolinass"
     weight = 6
+  
+  [[menu.main]]
+    identifier = "buymeacoffee"
+    pre = "<span data-feather='coffee'></span>"
+    url = "https://www.buymeacoffee.com/mcarolinasz"
+    weight = 7
 
   [[menu.main]]
     identifier = "rss"
     pre = "<span data-feather='rss'></span>"
     url = "/index.xml"
-    weight = 7
+    weight = 8
 
 [params]
   accentColor = "#FF4D4D"
@@ -78,15 +84,18 @@ title = "Carolina Soares"
   """
 
   socialIcons = [
+    {name = "github", url = "https://github.com/mariacarolinass"},
     {name = "linkedin", url = "https://www.linkedin.com/in/carolinasoaresm/"},
     {name = "youtube", url = "https://www.youtube.com/@carolinasoaresdev"},
-    {name = "github", url = "https://github.com/mariacarolinass"},
+    {name = "flickr", url = "https://flic.kr/ps/45PSit"},
+    {name = "instagram", url = "https://www.instagram.com/carolsoares.m"},
+    {name = "mastodon", url = "https://mastodon.social/@carolinasoares"},
     {name = "email", url = "mailto:mcarolinasoares0@gmail.com"}
   ]
 
   dateFormat = "January 2, 2006"
   
-  description = "Desenvolvedora de Software - Envolvida em iniciativas de conhecimento aberto e software livre - Mantenedora do dadoslivres.org - Embaixadora de Inovação Cívica na Open Knowledge Brasil - Cursando Bacharelado em Ciências e Tecnologia com ênfase em Computação Aplicada"
+  description = "Dev - Ativista do conhecimento aberto e software livre - Mantenedora do dadoslivres.org - Embaixadora de Inovação Cívica (OKBR) - Graduando Ciências e Tecnologia com ênfase em Computação Aplicada (UFRN)"
 
   footer = "Carolina Soares"
 
