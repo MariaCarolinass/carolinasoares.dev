@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+            --font-size: 17.5px;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Funções Recursivas</title>
+    <meta name="description" content="O que é recursividade e qual a sua vantagenm? A recursividade é um conceito na programação para quando chamamos uma função e dentro dela chamamos ela novamente, …">
+    <meta name="keywords" content='blog, portfólio, Carolina Soares, dev, Python, Funções'>
+
+    <meta property="og:url" content="https://carolinasoares.dev/posts/funcoesrecursivas/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Funções Recursivas">
+    <meta property="og:description" content="O que é recursividade e qual a sua vantagenm? A recursividade é um conceito na programação para quando chamamos uma função e dentro dela chamamos ela novamente, …">
+    <meta property="og:image" content="https://carolinasoares.dev/images/avatar.jpg">
+    <meta property="og:image:secure_url" content="https://carolinasoares.dev/images/avatar.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Funções Recursivas">
+    <meta name="twitter:description" content="O que é recursividade e qual a sua vantagenm? A recursividade é um conceito na programação para quando chamamos uma função e dentro dela chamamos ela novamente, …">
+    <meta property="twitter:domain" content="https://carolinasoares.dev/posts/funcoesrecursivas/">
+    <meta property="twitter:url" content="https://carolinasoares.dev/posts/funcoesrecursivas/">
+    <meta name="twitter:image" content="https://carolinasoares.dev/images/avatar.jpg">
+
+    
+    <link rel="canonical" href="https://carolinasoares.dev/posts/funcoesrecursivas/">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.4f367e44ab115d2b84f3d30faa6feb212e335f8de1869a0e24bda71e457113ea.js" integrity="sha256-TzZ&#43;RKsRXSuE89MPqm/rIS4zX43hhpoOJL2nHkVxE&#43;o="></script>
+
+    
+    
+        <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js" integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+          ],
+          // • rendering keys, e.g.:
+          throwOnError : false
+        });
+      });
+    </script>
+  
+    
+</head>
+<body>
+        <script>
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+        <div class="avatar">
+            <a href="https://carolinasoares.dev/">
+                <img src='/images/avatar.jpg' alt="avatar">
+            </a>
+        </div>
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="https://carolinasoares.dev/">Carolina Soares</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="https://carolinasoares.dev/" aria-label="" ><span data-feather='home'></span> Início </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://carolinasoares.dev/posts/" aria-label="" ><span data-feather='book'></span> Postagens </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://carolinasoares.dev/projects/" aria-label="" ><span data-feather='code'></span> Projetos </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://carolinasoares.dev/tags/" aria-label="" ><span data-feather='tag'></span> Tags </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://github.com/mariacarolinass" aria-label="github" ><span data-feather='github'></span>  </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://gitlab.com/mariacarolinass" aria-label="gitlab" ><span data-feather='gitlab'></span>  </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://carolinasoares.dev/index.xml" aria-label="rss" ><span data-feather='rss'></span>  </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span class="sr-only dark-theme-toggle-screen-reader-target">theme</span>
+                <a aria-hidden="true" role="switch">
+                    <span class="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span class="sr-only hamburger-menu-toggle-screen-reader-target">menu</span>
+                <a aria-checked="false" aria-labelledby="hamburger-menu-toggle" id="hamburger-menu-toggle-target" role="switch">
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="https://carolinasoares.dev/" ><span data-feather='home'></span> Início </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://carolinasoares.dev/posts/" ><span data-feather='book'></span> Postagens </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://carolinasoares.dev/projects/" ><span data-feather='code'></span> Projetos </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://carolinasoares.dev/tags/" ><span data-feather='tag'></span> Tags </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://github.com/mariacarolinass" ><span data-feather='github'></span>  </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://gitlab.com/mariacarolinass" ><span data-feather='gitlab'></span>  </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://carolinasoares.dev/index.xml" ><span data-feather='rss'></span>  </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span class="sr-only dark-theme-toggle-screen-reader-target">theme</span>
+                    <a role="switch">
+                        <span class="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Funções Recursivas</h1>
+
+        
+
+        
+	
+	
+	
+	
+        
+
+	
+
+	
+
+	
+          <small role="doc-subtitle"></small>
+	
+
+	
+          <p class="post-date">
+              
+
+              outubro 22, 2024
+
+              
+          </p>
+	
+
+        <ul class="post-tags">
+          
+           
+             <li class="post-tag"><a href="https://carolinasoares.dev/tags/python">Python</a></li>
+           
+         
+           
+             <li class="post-tag"><a href="https://carolinasoares.dev/tags/fun%C3%A7%C3%B5es">Funções</a></li>
+           
+         
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <h2 id="o-que-é-recursividade-e-qual-a-sua-vantagenm">O que é recursividade e qual a sua vantagenm?</h2>
+<p>A recursividade é um conceito na programação para quando chamamos uma função e dentro dela chamamos ela novamente, isso significa uma função recursiva.</p>
+<p>Vamos entender as funções recursivas como caixas, a primeira função representa a caixa maior, dentro dessa caixa temos várias outras caixas menores, uma dentro da outra, que são as próximas funções a serem chamadas. As caixas mostram o princípio de recursividade que, ao abrir a caixa maior, vermos outras menores até chegarmos na menor caixa possível. Dessa forma, é isso que as funções recursivas mostram, elas entram nelas mesmas a cada execução, fazendo com que elas se reduzam até o momento que atenda uma determinada condição da função com o menor resultado possível.</p>
+<p><img src="https://github.com/user-attachments/assets/2d01e536-e560-4167-8837-6ec8bb7cefa7" alt="caixas"></p>
+<p>Uma função recursiva é uma maneira de criar um loop que ficará entrando na própria função diversas vezes até que uma condição seja satisfeita ao retornar algo. Essa abordagem facilita e simplifica a resolução de alguns exercícios, pois as funções
+recursivas resolvem problemas que seriam mais complicados de solucionar com estruturas de repetição, dependendo da complexidade do problema, além de serem escritas com menos linhas.</p>
+<h2 id="exemplo-básico-de-recursividade">Exemplo básico de recursividade</h2>
+<p>O cálculo de um número fatorial é um exemplo comum para estudar as funções recursivas. Um número fatorial é representado por um número seguido do ponto de exclamação <code>n!</code> para esse número ser calculado, vamos multiplicá-lo pelos seus antecessores até chegar em 1. Por exemplo: 5! = 5 x 4 x 3 x 2 x 1. O resultado é igual a 120. Note que para calcular um número fatorial vamos diminuindo ele e efetuando a multiplicação entre os números, isso lembra o conceito de recursividade.</p>
+<p>Agora, vamos entender como escrever um algorítimo que calcule um número fatorial, utilizando as funções recursivas. No exemplo abaixo, a função fatorial é chamada dentro dela mesmo até que o n (número fatorial) seja igual a 1, essa condição é chamada de caso base. Enquanto a condição base não é satisfeita, retorne à função fatorial de n vezes o n-1. Em algum momento, o n será igual a 1, pois estamos decrementando ele quando chamamos na função novamente e passamos n-1. Então, quando a condição for atendida, teremos o resultado do fatorial.</p>
+<pre><code>função fatorial(n)
+início 
+    se n &lt;= 1 então retorne 1
+    senão retorne n * fatorial(n-1)
+fim.
+</code></pre>
+<h2 id="como-o-algoritmo-da-função-recursiva-funciona">Como o algoritmo da função recursiva funciona?</h2>
+<ol>
+<li>Pilha de chamadas de função</li>
+</ol>
+<p>Vamos resolver o fatorial de 5, tendo como base o algoritmo visto acima. Primeiro, as funções são chamadas e empilhadas até que o caso base seja atendido.</p>
+<pre><code>fatorial(5 - 1) retorne fatorial(4)
+    fatorial(4 - 1) retorne fatorial(3)
+        fatorial(3 - 1) retorne fatorial(2)               
+            fatorial(2 - 1) retorne fatorial(1) 
+                fatorial(1) = 1 (caso base) --&gt; Fim da pilha
+</code></pre>
+<ol start="2">
+<li>Retorno das chamadas</li>
+</ol>
+<p>Depois, as funções são desempilhadas e resolvidas na ordem inversa, começando do caso base e voltando para a primeira chamada, isso porque as funções voltam a ser executadas de onde a pilha parou.</p>
+<pre><code>fatorial(1) = 1
+    fatorial(2) = 2 * fatorial(1) = 2 * 1 = 2          
+        fatorial(3) = 3 * fatorial(2) = 3 * 2 = 6
+            fatorial(4) = 4 * fatorial(3) = 4 * 6 = 24 
+                fatorial(5) = 5 * fatorial(4) = 5 * 24 = 120 --&gt; Fim do desempilhamento
+</code></pre>
+<p>Ao concluir o desempilhamento, temos como resultado que 5! é igual a 120.</p>
+<p>De forma visual, podemos lembrar da analogia das caixas com a recursividade e aplicar aos fatoriais.</p>
+<p><img src="https://github.com/user-attachments/assets/d510c224-b798-434c-9d0f-6e828d586160" alt="caixas_fatorial"></p>
+<h2 id="exemplo-da-função-fatorial-criada-em-java">Exemplo da função fatorial criada em Java</h2>
+<pre><code>public int calcularFatorial(int num) {
+    if (num &lt;= 1) {
+        return 1;
+    } return num * calcularFatorial(num - 1); 
+}
+</code></pre>
+<h2 id="desvantagens-da-recursividade">Desvantagens da recursividade</h2>
+<p>As funções recursivas devem ser utilizadas quando necessário, embora muito úteis, precisamos nos atendar a questões do desempenho do nosso software. É muito comum criar funções recursivas que estouram a pilha de execução, isso é, funções chamadas tantas vezes que estouram o limite de tempo que deveriam ter sido resolvidas. Quando criamos um loop que irá chamar a função dentro da função, estamos criando uma pilha de execução que ficará armazenando na memória as variáveis locais. Essa abordagem pode exigir muita memória do programa, afetando o seu desempenho e otimização. Além disso, as funções recursivas podem demorar mais tempo para serem finalizadas do que as funções interativas com estruturas de repetição.</p>
+<p>As pilhas de execução possuem um limite de tempo que podem ocasionar erros, pois a pilha não pode ser executada infinitamente, por isso, precisamos pensar bem na implementação das funções recursivas e definir o seu caso base da função. Toda função recursiva pode ser escrita utilizando estruturas de repetição, podemos escrever o passo a passo que a pilha de execução faz, só que utilizando um for ou while. Com isso, avalie qual a melhor forma de resolver o problema.</p>
+
+        
+    </div>
+
+    <div class="prev-next">
+        
+    </div>
+
+    
+    
+        <svg id="btt-button" class="arrow-logo" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512" onclick="scrollToTop()" title="Go to top">
+    
+    <path d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"/>
+</svg>
+<script>
+    let backToTopButton = document.getElementById("btt-button");
+
+    window.onscroll = function() {
+        scrollFunction()
+    };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            backToTopButton.style.display = "block";
+        } else {
+            backToTopButton.style.display = "none";
+        }
+    }
+
+    function scrollToTop() {
+        window.scrollTo(0, 0);
+    }
+</script>
+
+    
+    
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+
+    
+
+        
+            
+        
+
+        
+
+        
+        
+
+        
+
+    
+
+    
+        <span>&copy; 2024 Carolina Soares</span>
+    
+
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/gokarna-theme/gokarna-hugo">Gokarna</a>
+    </span>
+</footer>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Carolina Soares</title>
+    <link>https://carolinasoares.dev/tags/</link>
+    <description>Recent content in Tags on Carolina Soares</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt</language>
+    <lastBuildDate>Tue, 22 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://carolinasoares.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Funções</title>
+      <link>https://carolinasoares.dev/tags/fun%C3%A7%C3%B5es/</link>
+      <pubDate>Tue, 22 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://carolinasoares.dev/tags/fun%C3%A7%C3%B5es/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://carolinasoares.dev/tags/python/</link>
+      <pubDate>Tue, 22 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://carolinasoares.dev/tags/python/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
