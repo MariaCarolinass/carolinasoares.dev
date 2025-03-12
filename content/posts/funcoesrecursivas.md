@@ -3,13 +3,13 @@ date: 2024-10-22
 # description: ""
 # image: ""
 lastmod: 2024-10-22
-showTableOfContents: false
-tags: ["Python", "Funções"]
+showTableOfContents: true
+tags: ["Funções", "Pilhas", "Recursão"]
 title: "Funções Recursivas"
 type: "post"
 ---
 
-## O que é recursividade e qual a sua vantagenm?
+## O que é recursividade e qual a sua vantagem?
 
 A recursividade é um conceito na programação para quando chamamos uma função e dentro dela chamamos ela novamente, isso significa uma função recursiva.
 
