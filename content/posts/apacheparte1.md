@@ -1,8 +1,8 @@
 ---
-date: 2025-03-12T00:30:17-03:00
+date: 2021-04-16T00:30:17-03:00
 # description: ""
 # image: ""
-lastmod: 2025-03-12
+lastmod: 2021-04-16
 showTableOfContents: true
 tags: ["apache", "servidores", "máquina virtual", "sistema operacional", "debian"]
 title: "Configurando um servidor Apache2 em uma máquina virtual"

@@ -1,8 +1,8 @@
 ---
-date: 2025-03-12T00:04:19-03:00
+date: 2024-08-26T00:04:19-03:00
 # description: ""
 # image: ""
-lastmod: 2025-03-12
+lastmod: 2024-08-26
 showTableOfContents: true
 tags: ["Python", "Expressões Regulares", "RegEx"]
 title: "Expressões Regulares no Python (RegEx)"

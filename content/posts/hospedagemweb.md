@@ -1,8 +1,8 @@
 ---
-date: 2025-03-12T00:15:06-03:00
+date: 2024-07-11T00:15:06-03:00
 # description: ""
 # image: ""
-lastmod: 2025-03-12
+lastmod: 2024-07-11
 showTableOfContents: true
 tags: ["web", "servidores", "hospedagem"]
 title: "Hospedagem de aplicações web"

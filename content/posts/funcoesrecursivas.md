@@ -1,8 +1,8 @@
 ---
-date: 2024-10-22
+date: 2024-07-26
 # description: ""
 # image: ""
-lastmod: 2024-10-22
+lastmod: 2024-07-26
 showTableOfContents: true
 tags: ["Funções", "Pilhas", "Recursão"]
 title: "Funções Recursivas"

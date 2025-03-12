@@ -1,8 +1,8 @@
 ---
-date: 2025-03-12T00:22:39-03:00
+date: 2024-07-20T00:22:39-03:00
 # description: ""
 # image: ""
-lastmod: 2025-03-12
+lastmod: 2024-07-20
 showTableOfContents: true
 tags: ["docker", "container", "servidores", "sistemas operacionais"]
 title: "Pequeno tutorial de Docker"

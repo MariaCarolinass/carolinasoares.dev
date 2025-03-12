@@ -1,8 +1,8 @@
 ---
-date: 2025-03-12T00:53:15-03:00
+date: 2022-03-10T00:53:15-03:00
 # description: ""
 # image: ""
-lastmod: 2025-03-12
+lastmod: 2022-03-10
 showTableOfContents: false
 tags: ["mini tópico", "acessibilidade", "internet"]
 title: "Desenvolvimento de uma Internet mais acessível"

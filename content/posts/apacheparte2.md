@@ -1,9 +1,9 @@
 ---
-date: 2025-03-12T00:30:19-03:00
+date: 2021-04-16T00:30:19-03:00
 # description: ""
 # image: ""
-lastmod: 2025-03-12
-showTableOfContents: false
+lastmod: 2021-04-16
+showTableOfContents: true
 tags: ["apache", "servidores", "máquina virtual", "sistema operacional", "debian"]
 title: "Praticando configurações de sistema na distribuição Linux Debian"
 type: "post"
