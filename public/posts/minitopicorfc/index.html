@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+            --font-size: 17.5px;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>A importância das RFCs na Internet</title>
+    <meta name="description" content="As RFCs ou Request for Comments são documentos técnicos que descrevem e organizam todo o processo de desenvolvimento da Internet. Inicialmente as RFCs foram …">
+    <meta name="keywords" content='blog, portfólio, Carolina Soares, dev, mini tópico, documentação rfc, internet'>
+
+    <meta property="og:url" content="https://carolinasoares.dev/posts/minitopicorfc/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="A importância das RFCs na Internet">
+    <meta property="og:description" content="As RFCs ou Request for Comments são documentos técnicos que descrevem e organizam todo o processo de desenvolvimento da Internet. Inicialmente as RFCs foram …">
+    <meta property="og:image" content="https://carolinasoares.dev/images/avatar.jpg">
+    <meta property="og:image:secure_url" content="https://carolinasoares.dev/images/avatar.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="A importância das RFCs na Internet">
+    <meta name="twitter:description" content="As RFCs ou Request for Comments são documentos técnicos que descrevem e organizam todo o processo de desenvolvimento da Internet. Inicialmente as RFCs foram …">
+    <meta property="twitter:domain" content="https://carolinasoares.dev/posts/minitopicorfc/">
+    <meta property="twitter:url" content="https://carolinasoares.dev/posts/minitopicorfc/">
+    <meta name="twitter:image" content="https://carolinasoares.dev/images/avatar.jpg">
+
+    
+    <link rel="canonical" href="https://carolinasoares.dev/posts/minitopicorfc/">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.4f367e44ab115d2b84f3d30faa6feb212e335f8de1869a0e24bda71e457113ea.js" integrity="sha256-TzZ&#43;RKsRXSuE89MPqm/rIS4zX43hhpoOJL2nHkVxE&#43;o="></script>
+
+    
+    
+        <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js" integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+          ],
+          // • rendering keys, e.g.:
+          throwOnError : false
+        });
+      });
+    </script>
+  
+    
+</head>
+<body>
+        <script>
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+        <div class="avatar">
+            <a href="https://carolinasoares.dev/">
+                <img src='/images/avatar.jpg' alt="avatar">
+            </a>
+        </div>
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="https://carolinasoares.dev/">Carolina Soares</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="https://carolinasoares.dev/" aria-label="" ><span data-feather='home'></span> Início </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://carolinasoares.dev/posts/" aria-label="" ><span data-feather='book'></span> Postagens </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://carolinasoares.dev/projects/" aria-label="" ><span data-feather='code'></span> Projetos </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://carolinasoares.dev/talks/" aria-label="" ><span data-feather='mic'></span> Palestras </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://carolinasoares.dev/tutorials/" aria-label="" ><span data-feather='book-open'></span> Tutoriais </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://carolinasoares.dev/tags/" aria-label="" ><span data-feather='tag'></span> Marcadores </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://www.canva.com/design/DAGeGLv54jE/7Qcd8GnokhEMtCSflFZG8A/view?utm_content=DAGeGLv54jE&amp;utm_campaign=designshare&amp;utm_medium=link2&amp;utm_source=uniquelinks&amp;utlId=h031ce24a37" aria-label="" ><span data-feather='briefcase'></span> CV </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://www.linkedin.com/in/carolinasoaresm/" aria-label="linkedin" ><span data-feather='linkedin'></span>  </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://github.com/mariacarolinass" aria-label="github" ><span data-feather='github'></span>  </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://gitlab.com/mariacarolinass" aria-label="gitlab" ><span data-feather='gitlab'></span>  </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://www.buymeacoffee.com/mcarolinasz" aria-label="buymeacoffee" ><span data-feather='coffee'></span>  </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="mailto:mcarolinasoares0@gmail.com" aria-label="email" ><span data-feather='mail'></span>  </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://carolinasoares.dev/index.xml" aria-label="rss" ><span data-feather='rss'></span>  </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span class="sr-only dark-theme-toggle-screen-reader-target">theme</span>
+                <a aria-hidden="true" role="switch">
+                    <span class="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span class="sr-only hamburger-menu-toggle-screen-reader-target">menu</span>
+                <a aria-checked="false" aria-labelledby="hamburger-menu-toggle" id="hamburger-menu-toggle-target" role="switch">
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="https://carolinasoares.dev/" ><span data-feather='home'></span> Início </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://carolinasoares.dev/posts/" ><span data-feather='book'></span> Postagens </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://carolinasoares.dev/projects/" ><span data-feather='code'></span> Projetos </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://carolinasoares.dev/talks/" ><span data-feather='mic'></span> Palestras </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://carolinasoares.dev/tutorials/" ><span data-feather='book-open'></span> Tutoriais </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://carolinasoares.dev/tags/" ><span data-feather='tag'></span> Marcadores </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://www.canva.com/design/DAGeGLv54jE/7Qcd8GnokhEMtCSflFZG8A/view?utm_content=DAGeGLv54jE&amp;utm_campaign=designshare&amp;utm_medium=link2&amp;utm_source=uniquelinks&amp;utlId=h031ce24a37" ><span data-feather='briefcase'></span> CV </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://www.linkedin.com/in/carolinasoaresm/" ><span data-feather='linkedin'></span>  </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://github.com/mariacarolinass" ><span data-feather='github'></span>  </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://gitlab.com/mariacarolinass" ><span data-feather='gitlab'></span>  </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://www.buymeacoffee.com/mcarolinasz" ><span data-feather='coffee'></span>  </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="mailto:mcarolinasoares0@gmail.com" ><span data-feather='mail'></span>  </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://carolinasoares.dev/index.xml" ><span data-feather='rss'></span>  </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span class="sr-only dark-theme-toggle-screen-reader-target">theme</span>
+                    <a role="switch">
+                        <span class="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>A importância das RFCs na Internet</h1>
+
+        
+
+        
+	
+	
+	
+	
+        
+
+	
+
+	
+
+	
+          <small role="doc-subtitle"></small>
+	
+
+	
+          <p class="post-date">
+              
+
+              março 10, 2022
+
+              
+          </p>
+	
+
+        <ul class="post-tags">
+          
+           
+             <li class="post-tag"><a href="https://carolinasoares.dev/tags/mini-t%C3%B3pico">mini tópico</a></li>
+           
+         
+           
+             <li class="post-tag"><a href="https://carolinasoares.dev/tags/documenta%C3%A7%C3%A3o-rfc">documentação rfc</a></li>
+           
+         
+           
+             <li class="post-tag"><a href="https://carolinasoares.dev/tags/internet">internet</a></li>
+           
+         
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>As RFCs ou Request for Comments são documentos técnicos que descrevem e organizam todo o processo de desenvolvimento da Internet. Inicialmente as RFCs foram criadas visando documentar o projeto ARPANET, logo, com a rede de computadores em crescente evolução tornou-se imprescindível padronizar em um local todos os avanços da web. Atualmente existem 7423 RFCs, entre estes documentos estão especificados protocolos importantes como o HTTP, IP, TCP/IP e serviços de E-mails.</p>
+<p>Os documentos técnicos são comentados pelo Internet Engineering Task Force (IETF), onde é um grupo internacional aberto, composto por técnicos, agências, fabricantes, fornecedores e pesquisadores. O IETF tem a missão de aperfeiçoar o funcionamento da Internet, a partir de discussões, soluções e padronização dos seus conceitos. Dessa forma, as RFCs buscam garantir melhor qualidade e visualização de algo complexo que é a Internet.</p>
+<p>Esses textos técnicos têm um grande valor, pois contribuem para o setor acadêmico, técnico e social. O acesso a esses documentos tornam a Internet mais democratizada, transparente e estimulam a cultura de colaboração da comunidade. Além disso, ajudam na tomada de melhores decisões garantindo bons resultados para o futuro da Internet.</p>
+<h3 id="links">Links</h3>
+<ul>
+<li><a href="https://pt.wikipedia.org/wiki/Internet_Engineering_Task_Force">O que é Internet Engineering Task Force (IETF)</a></li>
+<li><a href="https://blog.ccna.com.br/2015/09/07/voce-sabe-o-que-e-rfc-e-para-que-serve-uma-rfc/">Você sabe o que é RFC? E para que serve uma RFC?</a></li>
+</ul>
+
+        
+    </div>
+
+    <div class="prev-next">
+        
+    </div>
+
+    
+    
+        <svg id="btt-button" class="arrow-logo" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512" onclick="scrollToTop()" title="Go to top">
+    
+    <path d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"/>
+</svg>
+<script>
+    let backToTopButton = document.getElementById("btt-button");
+
+    window.onscroll = function() {
+        scrollFunction()
+    };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            backToTopButton.style.display = "block";
+        } else {
+            backToTopButton.style.display = "none";
+        }
+    }
+
+    function scrollToTop() {
+        window.scrollTo(0, 0);
+    }
+</script>
+
+    
+    
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+
+    
+
+        
+            
+        
+
+        
+
+        
+        
+
+        
+
+    
+
+    
+        <span>&copy; 2022 Carolina Soares</span>
+    
+
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/gokarna-theme/gokarna-hugo">Gokarna</a>
+    </span>
+</footer>
+</body>
+</html>

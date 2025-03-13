@@ -6,22 +6,220 @@
     <description>Recent content in Tags on Carolina Soares</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt</language>
-    <lastBuildDate>Tue, 22 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://carolinasoares.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 26 Aug 2024 00:04:19 -0300</lastBuildDate><atom:link href="https://carolinasoares.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Funções</title>
-      <link>https://carolinasoares.dev/tags/fun%C3%A7%C3%B5es/</link>
-      <pubDate>Tue, 22 Oct 2024 00:00:00 +0000</pubDate>
+      <title>Expressões Regulares</title>
+      <link>https://carolinasoares.dev/tags/express%C3%B5es-regulares/</link>
+      <pubDate>Mon, 26 Aug 2024 00:04:19 -0300</pubDate>
       
-      <guid>https://carolinasoares.dev/tags/fun%C3%A7%C3%B5es/</guid>
+      <guid>https://carolinasoares.dev/tags/express%C3%B5es-regulares/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Python</title>
       <link>https://carolinasoares.dev/tags/python/</link>
-      <pubDate>Tue, 22 Oct 2024 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 26 Aug 2024 00:04:19 -0300</pubDate>
       
       <guid>https://carolinasoares.dev/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RegEx</title>
+      <link>https://carolinasoares.dev/tags/regex/</link>
+      <pubDate>Mon, 26 Aug 2024 00:04:19 -0300</pubDate>
+      
+      <guid>https://carolinasoares.dev/tags/regex/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Funções</title>
+      <link>https://carolinasoares.dev/tags/fun%C3%A7%C3%B5es/</link>
+      <pubDate>Fri, 26 Jul 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://carolinasoares.dev/tags/fun%C3%A7%C3%B5es/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pilhas</title>
+      <link>https://carolinasoares.dev/tags/pilhas/</link>
+      <pubDate>Fri, 26 Jul 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://carolinasoares.dev/tags/pilhas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Recursão</title>
+      <link>https://carolinasoares.dev/tags/recurs%C3%A3o/</link>
+      <pubDate>Fri, 26 Jul 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://carolinasoares.dev/tags/recurs%C3%A3o/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>container</title>
+      <link>https://carolinasoares.dev/tags/container/</link>
+      <pubDate>Sat, 20 Jul 2024 00:22:39 -0300</pubDate>
+      
+      <guid>https://carolinasoares.dev/tags/container/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>https://carolinasoares.dev/tags/docker/</link>
+      <pubDate>Sat, 20 Jul 2024 00:22:39 -0300</pubDate>
+      
+      <guid>https://carolinasoares.dev/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>servidores</title>
+      <link>https://carolinasoares.dev/tags/servidores/</link>
+      <pubDate>Sat, 20 Jul 2024 00:22:39 -0300</pubDate>
+      
+      <guid>https://carolinasoares.dev/tags/servidores/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sistemas operacionais</title>
+      <link>https://carolinasoares.dev/tags/sistemas-operacionais/</link>
+      <pubDate>Sat, 20 Jul 2024 00:22:39 -0300</pubDate>
+      
+      <guid>https://carolinasoares.dev/tags/sistemas-operacionais/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hospedagem</title>
+      <link>https://carolinasoares.dev/tags/hospedagem/</link>
+      <pubDate>Thu, 11 Jul 2024 00:15:06 -0300</pubDate>
+      
+      <guid>https://carolinasoares.dev/tags/hospedagem/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>web</title>
+      <link>https://carolinasoares.dev/tags/web/</link>
+      <pubDate>Thu, 11 Jul 2024 00:15:06 -0300</pubDate>
+      
+      <guid>https://carolinasoares.dev/tags/web/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>inclusão digital</title>
+      <link>https://carolinasoares.dev/tags/inclus%C3%A3o-digital/</link>
+      <pubDate>Thu, 10 Mar 2022 00:53:24 -0300</pubDate>
+      
+      <guid>https://carolinasoares.dev/tags/inclus%C3%A3o-digital/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mini tópico</title>
+      <link>https://carolinasoares.dev/tags/mini-t%C3%B3pico/</link>
+      <pubDate>Thu, 10 Mar 2022 00:53:24 -0300</pubDate>
+      
+      <guid>https://carolinasoares.dev/tags/mini-t%C3%B3pico/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>software livre</title>
+      <link>https://carolinasoares.dev/tags/software-livre/</link>
+      <pubDate>Thu, 10 Mar 2022 00:53:24 -0300</pubDate>
+      
+      <guid>https://carolinasoares.dev/tags/software-livre/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>acessibilidade</title>
+      <link>https://carolinasoares.dev/tags/acessibilidade/</link>
+      <pubDate>Thu, 10 Mar 2022 00:53:15 -0300</pubDate>
+      
+      <guid>https://carolinasoares.dev/tags/acessibilidade/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>internet</title>
+      <link>https://carolinasoares.dev/tags/internet/</link>
+      <pubDate>Thu, 10 Mar 2022 00:53:15 -0300</pubDate>
+      
+      <guid>https://carolinasoares.dev/tags/internet/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>liberdade</title>
+      <link>https://carolinasoares.dev/tags/liberdade/</link>
+      <pubDate>Thu, 10 Mar 2022 00:53:15 -0300</pubDate>
+      
+      <guid>https://carolinasoares.dev/tags/liberdade/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>documentação rfc</title>
+      <link>https://carolinasoares.dev/tags/documenta%C3%A7%C3%A3o-rfc/</link>
+      <pubDate>Thu, 10 Mar 2022 00:52:54 -0300</pubDate>
+      
+      <guid>https://carolinasoares.dev/tags/documenta%C3%A7%C3%A3o-rfc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>governo aberto</title>
+      <link>https://carolinasoares.dev/tags/governo-aberto/</link>
+      <pubDate>Thu, 10 Mar 2022 00:52:54 -0300</pubDate>
+      
+      <guid>https://carolinasoares.dev/tags/governo-aberto/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>apache</title>
+      <link>https://carolinasoares.dev/tags/apache/</link>
+      <pubDate>Fri, 16 Apr 2021 00:30:19 -0300</pubDate>
+      
+      <guid>https://carolinasoares.dev/tags/apache/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>debian</title>
+      <link>https://carolinasoares.dev/tags/debian/</link>
+      <pubDate>Fri, 16 Apr 2021 00:30:19 -0300</pubDate>
+      
+      <guid>https://carolinasoares.dev/tags/debian/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>máquina virtual</title>
+      <link>https://carolinasoares.dev/tags/m%C3%A1quina-virtual/</link>
+      <pubDate>Fri, 16 Apr 2021 00:30:19 -0300</pubDate>
+      
+      <guid>https://carolinasoares.dev/tags/m%C3%A1quina-virtual/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sistema operacional</title>
+      <link>https://carolinasoares.dev/tags/sistema-operacional/</link>
+      <pubDate>Fri, 16 Apr 2021 00:30:19 -0300</pubDate>
+      
+      <guid>https://carolinasoares.dev/tags/sistema-operacional/</guid>
       <description></description>
     </item>
     

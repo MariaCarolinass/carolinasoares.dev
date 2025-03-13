@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>documentação rfc on Carolina Soares</title>
+    <link>https://carolinasoares.dev/tags/documenta%C3%A7%C3%A3o-rfc/</link>
+    <description>Recent content in documentação rfc on Carolina Soares</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt</language>
+    <lastBuildDate>Thu, 10 Mar 2022 00:52:54 -0300</lastBuildDate><atom:link href="https://carolinasoares.dev/tags/documenta%C3%A7%C3%A3o-rfc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A importância das RFCs na Internet</title>
+      <link>https://carolinasoares.dev/posts/minitopicorfc/</link>
+      <pubDate>Thu, 10 Mar 2022 00:52:54 -0300</pubDate>
+      
+      <guid>https://carolinasoares.dev/posts/minitopicorfc/</guid>
+      <description>As RFCs ou Request for Comments são documentos técnicos que descrevem e organizam todo o processo de desenvolvimento da Internet. Inicialmente as RFCs foram criadas visando documentar o projeto ARPANET, logo, com a rede de computadores em crescente evolução tornou-se imprescindível padronizar em um local todos os avanços da web. Atualmente existem 7423 RFCs, entre estes documentos estão especificados protocolos importantes como o HTTP, IP, TCP/IP e serviços de E-mails.</description>
+    </item>
+    
+  </channel>
+</rss>

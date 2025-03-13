@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+            --font-size: 17.5px;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Pequeno tutorial de Docker</title>
+    <meta name="description" content="O que é o Docker?
+É um conjunto de produtos de plataforma como serviços que usam virtualização de nível, de sistema operacional, para entregar softwares em …">
+    <meta name="keywords" content='blog, portfólio, Carolina Soares, dev, docker, container, servidores, sistemas operacionais'>
+
+    <meta property="og:url" content="https://carolinasoares.dev/posts/docker/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Pequeno tutorial de Docker">
+    <meta property="og:description" content="O que é o Docker?
+É um conjunto de produtos de plataforma como serviços que usam virtualização de nível, de sistema operacional, para entregar softwares em …">
+    <meta property="og:image" content="https://carolinasoares.dev/images/avatar.jpg">
+    <meta property="og:image:secure_url" content="https://carolinasoares.dev/images/avatar.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pequeno tutorial de Docker">
+    <meta name="twitter:description" content="O que é o Docker?
+É um conjunto de produtos de plataforma como serviços que usam virtualização de nível, de sistema operacional, para entregar softwares em …">
+    <meta property="twitter:domain" content="https://carolinasoares.dev/posts/docker/">
+    <meta property="twitter:url" content="https://carolinasoares.dev/posts/docker/">
+    <meta name="twitter:image" content="https://carolinasoares.dev/images/avatar.jpg">
+
+    
+    <link rel="canonical" href="https://carolinasoares.dev/posts/docker/">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.4f367e44ab115d2b84f3d30faa6feb212e335f8de1869a0e24bda71e457113ea.js" integrity="sha256-TzZ&#43;RKsRXSuE89MPqm/rIS4zX43hhpoOJL2nHkVxE&#43;o="></script>
+
+    
+    
+        <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js" integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+          ],
+          // • rendering keys, e.g.:
+          throwOnError : false
+        });
+      });
+    </script>
+  
+    
+</head>
+<body>
+        <script>
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+        <div class="avatar">
+            <a href="https://carolinasoares.dev/">
+                <img src='/images/avatar.jpg' alt="avatar">
+            </a>
+        </div>
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="https://carolinasoares.dev/">Carolina Soares</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="https://carolinasoares.dev/" aria-label="" ><span data-feather='home'></span> Início </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://carolinasoares.dev/posts/" aria-label="" ><span data-feather='book'></span> Postagens </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://carolinasoares.dev/projects/" aria-label="" ><span data-feather='code'></span> Projetos </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://carolinasoares.dev/talks/" aria-label="" ><span data-feather='mic'></span> Palestras </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://carolinasoares.dev/tutorials/" aria-label="" ><span data-feather='book-open'></span> Tutoriais </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://carolinasoares.dev/tags/" aria-label="" ><span data-feather='tag'></span> Marcadores </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://www.canva.com/design/DAGeGLv54jE/7Qcd8GnokhEMtCSflFZG8A/view?utm_content=DAGeGLv54jE&amp;utm_campaign=designshare&amp;utm_medium=link2&amp;utm_source=uniquelinks&amp;utlId=h031ce24a37" aria-label="" ><span data-feather='briefcase'></span> CV </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://www.linkedin.com/in/carolinasoaresm/" aria-label="linkedin" ><span data-feather='linkedin'></span>  </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://github.com/mariacarolinass" aria-label="github" ><span data-feather='github'></span>  </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://gitlab.com/mariacarolinass" aria-label="gitlab" ><span data-feather='gitlab'></span>  </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://www.buymeacoffee.com/mcarolinasz" aria-label="buymeacoffee" ><span data-feather='coffee'></span>  </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="mailto:mcarolinasoares0@gmail.com" aria-label="email" ><span data-feather='mail'></span>  </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://carolinasoares.dev/index.xml" aria-label="rss" ><span data-feather='rss'></span>  </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span class="sr-only dark-theme-toggle-screen-reader-target">theme</span>
+                <a aria-hidden="true" role="switch">
+                    <span class="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span class="sr-only hamburger-menu-toggle-screen-reader-target">menu</span>
+                <a aria-checked="false" aria-labelledby="hamburger-menu-toggle" id="hamburger-menu-toggle-target" role="switch">
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="https://carolinasoares.dev/" ><span data-feather='home'></span> Início </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://carolinasoares.dev/posts/" ><span data-feather='book'></span> Postagens </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://carolinasoares.dev/projects/" ><span data-feather='code'></span> Projetos </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://carolinasoares.dev/talks/" ><span data-feather='mic'></span> Palestras </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://carolinasoares.dev/tutorials/" ><span data-feather='book-open'></span> Tutoriais </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://carolinasoares.dev/tags/" ><span data-feather='tag'></span> Marcadores </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://www.canva.com/design/DAGeGLv54jE/7Qcd8GnokhEMtCSflFZG8A/view?utm_content=DAGeGLv54jE&amp;utm_campaign=designshare&amp;utm_medium=link2&amp;utm_source=uniquelinks&amp;utlId=h031ce24a37" ><span data-feather='briefcase'></span> CV </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://www.linkedin.com/in/carolinasoaresm/" ><span data-feather='linkedin'></span>  </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://github.com/mariacarolinass" ><span data-feather='github'></span>  </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://gitlab.com/mariacarolinass" ><span data-feather='gitlab'></span>  </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://www.buymeacoffee.com/mcarolinasz" ><span data-feather='coffee'></span>  </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="mailto:mcarolinasoares0@gmail.com" ><span data-feather='mail'></span>  </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://carolinasoares.dev/index.xml" ><span data-feather='rss'></span>  </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span class="sr-only dark-theme-toggle-screen-reader-target">theme</span>
+                    <a role="switch">
+                        <span class="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Pequeno tutorial de Docker</h1>
+
+        
+
+        
+	
+	
+	
+	
+        
+
+	
+
+	
+
+	
+          <small role="doc-subtitle"></small>
+	
+
+	
+          <p class="post-date">
+              
+
+              julho 20, 2024
+
+              
+          </p>
+	
+
+        <ul class="post-tags">
+          
+           
+             <li class="post-tag"><a href="https://carolinasoares.dev/tags/docker">docker</a></li>
+           
+         
+           
+             <li class="post-tag"><a href="https://carolinasoares.dev/tags/container">container</a></li>
+           
+         
+           
+             <li class="post-tag"><a href="https://carolinasoares.dev/tags/servidores">servidores</a></li>
+           
+         
+           
+             <li class="post-tag"><a href="https://carolinasoares.dev/tags/sistemas-operacionais">sistemas operacionais</a></li>
+           
+         
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p><strong>O que é o Docker?</strong></p>
+<p>É um conjunto de produtos de plataforma como serviços que usam virtualização de nível, de sistema operacional, para entregar softwares em pacotes chamados contêineres.</p>
+<p><strong>O que são contêineres?</strong></p>
+<p>Os contêineres são isolamentos, processos separados uns dos outros e que agrupam seus próprios softwares, bibliotecas e arquivos de configuração.</p>
+<h2 id="comandos-úteis-terminal">Comandos úteis (terminal)</h2>
+<h3 id="instalação">Instalação:</h3>
+<pre><code>$ su
+# apt-get update
+# apt-get curl
+# curl -fsSL https://get.docker.com | bash
+</code></pre>
+<p><a href="https://docs.docker.com/engine/install/">Consulte a documentação do Docker</a></p>
+<h4 id="testando-se-o-docker-foi-instalado">Testando se o Docker foi instalado:</h4>
+<pre><code># docker container run -ti hello-world
+</code></pre>
+<h4 id="conferindo-a-versão-instalada-do-docker">Conferindo a versão instalada do Docker:</h4>
+<pre><code># docker version
+</code></pre>
+<h3 id="container">Container</h3>
+<h4 id="criando-um-container-para-o-centos">Criando um container para o Centos</h4>
+<p>Executando e interagindo com o container:</p>
+<pre><code># docker container run -ti centos
+</code></pre>
+<p>Acessando o container:</p>
+<pre><code># docker container attach id-container
+</code></pre>
+<h4 id="criando-um-container-para-o-nginx">Criando um container para o Nginx</h4>
+<p>Executando e criando o container como daemon (primeiro plano):</p>
+<pre><code># docker container run -d nginx
+</code></pre>
+<p>Acessando o container:</p>
+<pre><code># docker container exec -ti  id-container ls /
+</code></pre>
+<h4 id="comandos-básicos-do-container">Comandos básicos do container</h4>
+<p>Visualizando containers em execução:</p>
+<pre><code># docker container ls
+</code></pre>
+<p>Visualizando containers criados:</p>
+<pre><code># docker container ls -a
+</code></pre>
+<p>Checando informações do container:</p>
+<pre><code># docker container inspect id-container
+</code></pre>
+<p>Removendo um container:</p>
+<pre><code># docker container rm id-container
+# docker container rm -f id-container
+</code></pre>
+<h4 id="dados-de-hardware-do-container">Dados de hardware do container:</h4>
+<p>Informações de memória:</p>
+<pre><code># docker container stats id-imagem
+</code></pre>
+<p>Processos em execução:</p>
+<pre><code># docker container top id-imagem
+</code></pre>
+<p>Criando um container e definindo tamanho da memória</p>
+<pre><code># docker container run -d -m 128M nginx
+</code></pre>
+<p>Criando um container e definindo tamanho da memória e cpu:</p>
+<pre><code># docker container run -d -m 128M --cpus 0.5 nginx
+</code></pre>
+<p>Atualizando tamanho da memória:</p>
+<pre><code># docker container update --memory 64M id-imagem
+</code></pre>
+<p>Atualizando tamanho da cpu:</p>
+<pre><code># docker container update --cpus 0.2 id-imagem
+</code></pre>
+<h3 id="start-stop-restart-pause-e-unpause-container">Start, stop, restart, pause e unpause container</h3>
+<pre><code># docker container stop  id-container
+# docker container start  id-container
+# docker container restart  id-container
+# docker container pause  id-container
+# docker container unpause  id-container
+</code></pre>
+<h3 id="volumes">Volumes</h3>
+<p>Criando um volume:</p>
+<pre><code># docker volume create nome_volume
+</code></pre>
+<p>Visualizando volumes criados:</p>
+<pre><code># docker volume ls
+</code></pre>
+<p>Checando informações do volume</p>
+<pre><code># docker volume inspect nome_volume
+</code></pre>
+<h4 id="armazenando-dados-do-container">Armazenando dados do container:</h4>
+<p>Tipo bind: (quando já tem um diretório para montar dentro do container)</p>
+<pre><code># docker container run -ti --mount type=bind,src=documentos/projeto,dst=projeto debian
+</code></pre>
+<p>Tipo volume:</p>
+<pre><code># docker container run -ti --mount type=volume,src=nome_volume,dst=projeto debian
+</code></pre>
+<h3 id="imagens">Imagens</h3>
+<h4 id="criando-uma-imagem-executável">Criando uma imagem executável</h4>
+<p>Iniciando projeto:</p>
+<pre><code># mkdir projeto-docker
+# cd projeto-docker
+# nano DockerFile
+</code></pre>
+<p>Colar no arquivo DockerFile:</p>
+<pre><code>FROM debian
+LABEL app = ‘nome_app’
+ENV Docker = ‘nome_env’
+RUN apt-get update &amp;&amp; apt-get install -y stress &amp;&amp; apt-get clean 
+CMD stress --cpu 1 --vm-bytes 64M --vm 1
+</code></pre>
+<p>Criando imagem e executando no container:</p>
+<pre><code># docker image build -t nome_imagem:1.0
+# docker image ls
+# docker container run -d nome_container:1.0
+# docker container ls
+</code></pre>
+<h4 id="comandos-básicos-da-imagem">Comandos básicos da imagem</h4>
+<p>Criando uma imagem:</p>
+<pre><code># docker image build -t nome_imagem:1.0
+</code></pre>
+<p>Visualizando imagens criadas:</p>
+<pre><code># docker image ls
+</code></pre>
+<p>Apagar uma imagem:</p>
+<pre><code># docker image rm id_image
+# docker image rm -f id_image
+</code></pre>
+<h3 id="apagar-inativos">Apagar inativos:</h3>
+<p>Apagar volumes inativos:</p>
+<pre><code># docker volume prune
+</code></pre>
+<p>Apagar containers inativos:</p>
+<pre><code># docker container prune
+</code></pre>
+<h2 id="rodando-um-container-do-postgresql-e-guardando-os-dados-no-volume">Rodando um container do PostgreSQL e guardando os dados no volume</h2>
+<pre><code># docker volume create dbdados
+# docker container run -d -p 5432:5432 -- name pgsql --mount type=volume,src=dbdados,dst=/data -e POSTGRESQL_USER=docker -e POSTGRESL_PASS=docker -e POSTGRESQL_DB=docker kamui/postgresql
+# docker container ls
+# docker volume ls
+</code></pre>
+<p>Conferindo se o volume foi criado:</p>
+<pre><code># cd /var/lib/docker/volumes/dbdados/_data/
+# ls
+</code></pre>
+<p>Para ver as informações do volume:</p>
+<pre><code># docker volume inspect dbdados
+</code></pre>
+<h3 id="fazendo-o-backup-dos-dados">Fazendo o backup dos dados</h3>
+<pre><code># mkdir /opt/backup
+# docker container run -ti --mount type=volume,src=dbdados,dst=/data --mount type=bind,src=/opt/backup/,dst=/backup debian tar -cvf /backup/bkp-banco.tar /data
+# cd /opt/backup/
+# ls
+# tar -xvf bkp-banco.tar
+</code></pre>
+<h2 id="criando-um-arquivo-dockfile-para-instalar-o-servidor-apache">Criando um arquivo Dockfile para instalar o servidor Apache</h2>
+<pre><code># mkdir dockerfiles
+# cd dockerfiles
+# mkdir versao1
+# cd versao1
+# nano Dockerfile
+</code></pre>
+<p>Colar no arquivo Dockerfile:</p>
+<pre><code>FROM debian
+
+RUN apt-get update &amp;&amp; apt-get install -y apache2 &amp;&amp; apt-get clean
+RUN chown www-data:www-data /var/lock &amp;&amp; chown www-data:www-data /var/run/ &amp;&amp; chown www-data:www-data /var/log/
+
+ENV APACHE_LOCK_DIR=”/var/lock”
+ENV APACHE_PID_FILE=”/var/run/apache2.pid”
+ENV APACHE_RUN_USER=”www-data”
+ENV APACHE_RUN_GROUP=”www-data”
+ENV APACHE_LOG_DIR=”/var/log/apache2”
+
+ADD index.html /var/www/html/
+
+LABEL description=”Webserver”
+LABEL version=”1.0.0”
+
+USER root
+
+WORKDIR /var/www/html/
+VOLUME /var/www/html/
+
+EXPOSE 80
+
+ENTRYPOINT [“/usr/sbin/apachectl”]
+CMD [“-D”, “FOREGROUND”]
+</code></pre>
+<p>Criando imagem e rodando no container:</p>
+<pre><code># docker image build -t meu_apache:1.0.0 .
+# docker image ls
+# docker container run -d -p 8080:80 meu_apache:1.0.0
+# docker container ls
+</code></pre>
+<p>Verificar se servidor Apache está funcionando:</p>
+<pre><code># curl localhost:8080
+</code></pre>
+<h3 id="subindo-a-imagem-para-o-docker-hub">Subindo a imagem para o Docker Hub</h3>
+<p>Criar conta no <a href="https://hub.docker.com/">Docker Hub</a></p>
+<p>Subindo imagem:</p>
+<pre><code># docker image tag id_image usuarioHubDocker/meu_apache:1.0.0
+# docker image ls
+# docker login
+# docker push usuarioHubDocker/meu_apache:1.0.0
+</code></pre>
+<h3 id="subindo-a-imagem-localmente-usando-registry">Subindo a imagem localmente usando registry</h3>
+<pre><code># docker container run -d -p 5000:5000 --restart=always --name registry registry:2 
+# docker image tag id_image localhost:5000/meu_apache:2.0.0 
+# docker image push localhost:5000/meu_apache:2.0.0
+# docker container rm -f id_container
+# docker image rm -f id_image
+# docker container run -d localhost:5000/meu_apache:2.0.0
+</code></pre>
+<p>Verificando se funcionou:</p>
+<pre><code># curl localhost:5000/v2/_catalog
+# curl localhost:5000/v2/meu_apache/tags/list
+</code></pre>
+<h2 id="links">Links</h2>
+<ul>
+<li><a href="https://pt.wikipedia.org/wiki/Docker_(software)">O que é o Docker?</a></li>
+<li>Tudo aprendido no <a href="https://youtube.com/playlist?list=PLf-O3X2-mxDn1VpyU2q3fuI6YYeIWp5rR">treinamento descomplicando o docker, playlist gratuita,</a> no canal do <a href="https://www.youtube.com/c/LinuxTips">LINUXtips</a></li>
+</ul>
+
+        
+    </div>
+
+    <div class="prev-next">
+        
+    </div>
+
+    
+    
+        <svg id="btt-button" class="arrow-logo" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512" onclick="scrollToTop()" title="Go to top">
+    
+    <path d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"/>
+</svg>
+<script>
+    let backToTopButton = document.getElementById("btt-button");
+
+    window.onscroll = function() {
+        scrollFunction()
+    };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            backToTopButton.style.display = "block";
+        } else {
+            backToTopButton.style.display = "none";
+        }
+    }
+
+    function scrollToTop() {
+        window.scrollTo(0, 0);
+    }
+</script>
+
+    
+    
+</div>
+
+<aside class="post-toc">
+    <nav id="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#comandos-úteis-terminal">Comandos úteis (terminal)</a>
+      <ul>
+        <li><a href="#instalação">Instalação:</a></li>
+        <li><a href="#container">Container</a></li>
+        <li><a href="#start-stop-restart-pause-e-unpause-container">Start, stop, restart, pause e unpause container</a></li>
+        <li><a href="#volumes">Volumes</a></li>
+        <li><a href="#imagens">Imagens</a></li>
+        <li><a href="#apagar-inativos">Apagar inativos:</a></li>
+      </ul>
+    </li>
+    <li><a href="#rodando-um-container-do-postgresql-e-guardando-os-dados-no-volume">Rodando um container do PostgreSQL e guardando os dados no volume</a>
+      <ul>
+        <li><a href="#fazendo-o-backup-dos-dados">Fazendo o backup dos dados</a></li>
+      </ul>
+    </li>
+    <li><a href="#criando-um-arquivo-dockfile-para-instalar-o-servidor-apache">Criando um arquivo Dockfile para instalar o servidor Apache</a>
+      <ul>
+        <li><a href="#subindo-a-imagem-para-o-docker-hub">Subindo a imagem para o Docker Hub</a></li>
+        <li><a href="#subindo-a-imagem-localmente-usando-registry">Subindo a imagem localmente usando registry</a></li>
+      </ul>
+    </li>
+    <li><a href="#links">Links</a></li>
+  </ul>
+</nav>
+    </nav>
+</aside>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+
+    
+
+        
+            
+        
+
+        
+
+        
+        
+
+        
+
+    
+
+    
+        <span>&copy; 2024 Carolina Soares</span>
+    
+
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/gokarna-theme/gokarna-hugo">Gokarna</a>
+    </span>
+</footer>
+</body>
+</html>

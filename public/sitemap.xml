@@ -3,27 +3,127 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://carolinasoares.dev/</loc>
-    <lastmod>2024-10-22T00:00:00+00:00</lastmod>
+    <lastmod>2024-08-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://carolinasoares.dev/tags/fun%C3%A7%C3%B5es/</loc>
-    <lastmod>2024-10-22T00:00:00+00:00</lastmod>
+    <loc>https://carolinasoares.dev/tags/express%C3%B5es-regulares/</loc>
+    <lastmod>2024-08-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://carolinasoares.dev/posts/funcoesrecursivas/</loc>
-    <lastmod>2024-10-22T00:00:00+00:00</lastmod>
+    <loc>https://carolinasoares.dev/posts/regex/</loc>
+    <lastmod>2024-08-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://carolinasoares.dev/posts/</loc>
-    <lastmod>2024-10-22T00:00:00+00:00</lastmod>
+    <lastmod>2024-08-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://carolinasoares.dev/tags/python/</loc>
-    <lastmod>2024-10-22T00:00:00+00:00</lastmod>
+    <lastmod>2024-08-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://carolinasoares.dev/tags/regex/</loc>
+    <lastmod>2024-08-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://carolinasoares.dev/tags/</loc>
-    <lastmod>2024-10-22T00:00:00+00:00</lastmod>
+    <lastmod>2024-08-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://carolinasoares.dev/tags/fun%C3%A7%C3%B5es/</loc>
+    <lastmod>2024-07-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://carolinasoares.dev/posts/funcoesrecursivas/</loc>
+    <lastmod>2024-07-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://carolinasoares.dev/tags/pilhas/</loc>
+    <lastmod>2024-07-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://carolinasoares.dev/tags/recurs%C3%A3o/</loc>
+    <lastmod>2024-07-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://carolinasoares.dev/tags/container/</loc>
+    <lastmod>2024-07-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://carolinasoares.dev/tags/docker/</loc>
+    <lastmod>2024-07-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://carolinasoares.dev/posts/docker/</loc>
+    <lastmod>2024-07-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://carolinasoares.dev/tags/servidores/</loc>
+    <lastmod>2024-07-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://carolinasoares.dev/tags/sistemas-operacionais/</loc>
+    <lastmod>2024-07-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://carolinasoares.dev/tags/hospedagem/</loc>
+    <lastmod>2024-07-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://carolinasoares.dev/posts/hospedagemweb/</loc>
+    <lastmod>2024-07-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://carolinasoares.dev/tags/web/</loc>
+    <lastmod>2024-07-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://carolinasoares.dev/tags/inclus%C3%A3o-digital/</loc>
+    <lastmod>2022-03-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://carolinasoares.dev/tags/mini-t%C3%B3pico/</loc>
+    <lastmod>2022-03-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://carolinasoares.dev/posts/minitopicosoftwarelivre/</loc>
+    <lastmod>2022-03-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://carolinasoares.dev/tags/software-livre/</loc>
+    <lastmod>2022-03-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://carolinasoares.dev/tags/acessibilidade/</loc>
+    <lastmod>2022-03-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://carolinasoares.dev/posts/minitopicointernetacessivel/</loc>
+    <lastmod>2022-03-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://carolinasoares.dev/tags/internet/</loc>
+    <lastmod>2022-03-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://carolinasoares.dev/tags/liberdade/</loc>
+    <lastmod>2022-03-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://carolinasoares.dev/posts/minitopicoprincipioliberdade/</loc>
+    <lastmod>2022-03-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://carolinasoares.dev/posts/minitopicorfc/</loc>
+    <lastmod>2022-03-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://carolinasoares.dev/tags/documenta%C3%A7%C3%A3o-rfc/</loc>
+    <lastmod>2022-03-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://carolinasoares.dev/tags/governo-aberto/</loc>
+    <lastmod>2022-03-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://carolinasoares.dev/posts/minitopicogovernoaberto/</loc>
+    <lastmod>2022-03-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://carolinasoares.dev/tags/apache/</loc>
+    <lastmod>2021-04-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://carolinasoares.dev/tags/debian/</loc>
+    <lastmod>2021-04-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://carolinasoares.dev/tags/m%C3%A1quina-virtual/</loc>
+    <lastmod>2021-04-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://carolinasoares.dev/posts/apacheparte2/</loc>
+    <lastmod>2021-04-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://carolinasoares.dev/tags/sistema-operacional/</loc>
+    <lastmod>2021-04-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://carolinasoares.dev/posts/apacheparte1/</loc>
+    <lastmod>2021-04-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://carolinasoares.dev/categories/</loc>
   </url><url>
     <loc>https://carolinasoares.dev/projects/dadoslivres/</loc>
   </url><url>
+    <loc>https://carolinasoares.dev/talks/</loc>
+  </url><url>
     <loc>https://carolinasoares.dev/projects/</loc>
+  </url><url>
+    <loc>https://carolinasoares.dev/tutorials/</loc>
   </url>
 </urlset>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mini tópico on Carolina Soares</title>
+    <link>https://carolinasoares.dev/tags/mini-t%C3%B3pico/</link>
+    <description>Recent content in mini tópico on Carolina Soares</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt</language>
+    <lastBuildDate>Thu, 10 Mar 2022 00:53:24 -0300</lastBuildDate><atom:link href="https://carolinasoares.dev/tags/mini-t%C3%B3pico/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>O uso do software livre na contribuição de uma internet mais inclusiva</title>
+      <link>https://carolinasoares.dev/posts/minitopicosoftwarelivre/</link>
+      <pubDate>Thu, 10 Mar 2022 00:53:24 -0300</pubDate>
+      
+      <guid>https://carolinasoares.dev/posts/minitopicosoftwarelivre/</guid>
+      <description>A inclusão digital faz parte do mundo globalizado, isto significa incluir toda a sociedade, sem restrições, no acesso e uso da rede. Esta participação do público contribui na construção de uma cidadania mais diversa e com autonomia. Além disso, é um direito à liberdade civil da sociedade o acesso livre e democrático das informações públicas na Internet.
+O que é entendido por inclusão digital se assemelha com a filosofia Software Livre, pois reconhece o papel fundamental do usuário colaborativo na rede.</description>
+    </item>
+    
+    <item>
+      <title>Desenvolvimento de uma Internet mais acessível</title>
+      <link>https://carolinasoares.dev/posts/minitopicointernetacessivel/</link>
+      <pubDate>Thu, 10 Mar 2022 00:53:15 -0300</pubDate>
+      
+      <guid>https://carolinasoares.dev/posts/minitopicointernetacessivel/</guid>
+      <description>A governança da Internet é uma construção coletiva, ou seja, todos devem participar e fazer parte sem exceções. A Internet é um mecanismo que deve estar acessível para diferentes coletivos, pois o acesso à informação é um direito universal.
+A World Wide Web (W3C) estabelece padrões para a criação e a interpretação de conteúdos para a web, essa organização possui diferentes documentos de como um site deve corresponder para ser minimamente acessível.</description>
+    </item>
+    
+    <item>
+      <title>O poder abusivo do princípio de liberdade</title>
+      <link>https://carolinasoares.dev/posts/minitopicoprincipioliberdade/</link>
+      <pubDate>Thu, 10 Mar 2022 00:53:15 -0300</pubDate>
+      
+      <guid>https://carolinasoares.dev/posts/minitopicoprincipioliberdade/</guid>
+      <description>A Declaração multissetorial do NETmundial (2014), declarou que um dos princípios de Governança da Internet se refere aos direitos humanos e valores compartilhados dos usuários. Um dos itens em questão trata da liberdade de expressão, onde toda pessoa tem o direito de opinar e se expressar na rede.
+Dessa forma, a Internet é o mecanismo mais facilitador na difusão de opiniões, notícias ou críticas, porém muitos problemas podem surgir a partir do tema.</description>
+    </item>
+    
+    <item>
+      <title>A importância das RFCs na Internet</title>
+      <link>https://carolinasoares.dev/posts/minitopicorfc/</link>
+      <pubDate>Thu, 10 Mar 2022 00:52:54 -0300</pubDate>
+      
+      <guid>https://carolinasoares.dev/posts/minitopicorfc/</guid>
+      <description>As RFCs ou Request for Comments são documentos técnicos que descrevem e organizam todo o processo de desenvolvimento da Internet. Inicialmente as RFCs foram criadas visando documentar o projeto ARPANET, logo, com a rede de computadores em crescente evolução tornou-se imprescindível padronizar em um local todos os avanços da web. Atualmente existem 7423 RFCs, entre estes documentos estão especificados protocolos importantes como o HTTP, IP, TCP/IP e serviços de E-mails.</description>
+    </item>
+    
+    <item>
+      <title>Implementação dos princípios de governo aberto</title>
+      <link>https://carolinasoares.dev/posts/minitopicogovernoaberto/</link>
+      <pubDate>Thu, 10 Mar 2022 00:52:54 -0300</pubDate>
+      
+      <guid>https://carolinasoares.dev/posts/minitopicogovernoaberto/</guid>
+      <description>O governo aberto é o conjunto de práticas que incentivam a participação social, o aumento da transparência pública e a inovação cívica na administração pública. Os princípios do governo aberto tem como base disponibilizar informações governamentais transparentes, apoiar a participação da sociedade nas decisões públicas, comprometimento com os valores éticos e morais, ampliar o uso e desenvolvimento de tecnologias auxiliares na gestão pública.
+Em 2019, o governo aberto no Brasil foi considerado um exemplo para a América Latina e Caribe, ressalta o ministro da CGU.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,14 +6,14 @@
     <description>Recent content in Funções on Carolina Soares</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt</language>
-    <lastBuildDate>Tue, 22 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://carolinasoares.dev/tags/fun%C3%A7%C3%B5es/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 26 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://carolinasoares.dev/tags/fun%C3%A7%C3%B5es/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Funções Recursivas</title>
       <link>https://carolinasoares.dev/posts/funcoesrecursivas/</link>
-      <pubDate>Tue, 22 Oct 2024 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 26 Jul 2024 00:00:00 +0000</pubDate>
       
       <guid>https://carolinasoares.dev/posts/funcoesrecursivas/</guid>
-      <description>O que é recursividade e qual a sua vantagenm? A recursividade é um conceito na programação para quando chamamos uma função e dentro dela chamamos ela novamente, isso significa uma função recursiva.
+      <description>O que é recursividade e qual a sua vantagem? A recursividade é um conceito na programação para quando chamamos uma função e dentro dela chamamos ela novamente, isso significa uma função recursiva.
 Vamos entender as funções recursivas como caixas, a primeira função representa a caixa maior, dentro dessa caixa temos várias outras caixas menores, uma dentro da outra, que são as próximas funções a serem chamadas. As caixas mostram o princípio de recursividade que, ao abrir a caixa maior, vermos outras menores até chegarmos na menor caixa possível.</description>
     </item>
     
