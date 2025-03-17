@@ -18,7 +18,7 @@ O **Dados Livres** é uma plataforma **software livre**, **sem fins lucrativos**
 
 Desenvolvido pela [Carolina Soares](https://carolinasoares.dev/) e orientado pelo [Pedro Baesse](https://pbaesse.me/).
 
-**Originalizado no IFRN e desenvolvido carinhosamente no RN - Brasil &#10084;&#65039;**
+**Originalizado no IFRN e desenvolvido carinhosamente no RN - Brasil :heart:**
 
 ![ifrn](https://gitlab.com/dados-livres/dados-livres/-/raw/master/app/static/image/logo-ifrn-cm.png.png?ref_type=heads)
 
@@ -55,7 +55,7 @@ O Dados Livres usa no desenvolvido do sistema a linguagem de programação **Pyt
 
 O Dados Livres participou do MuvucaHack Festival, foi apresentado como tema da **importância dos dados abertos governamentais e seus aplicativos resultantes**.
 
-{{< youtube id=vDrrC0i0MII?t=10883 loading=lazy >}}
+{{< youtube id="vDrrC0i0MII" start="10883" loading="lazy" >}}
 
 ## Links
 
