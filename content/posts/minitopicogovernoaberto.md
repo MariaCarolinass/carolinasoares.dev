@@ -1,8 +1,8 @@
 ---
-date: 2022-03-10T00:52:54-03:00
+date: 2022-03-21T00:52:54-03:00
 # description: ""
 # image: ""
-lastmod: 2022-03-10
+lastmod: 2022-03-21
 showTableOfContents: false
 tags: ["mini tópico", "governo aberto"]
 title: "Implementação dos princípios de governo aberto"
