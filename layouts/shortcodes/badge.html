@@ -1,0 +1,4 @@
+{{ $language := .Get "language" }}
+{{ $color := .Get "color" }}
+{{ $logo := .Get "logo" }}
+<img src="https://img.shields.io/badge/{{ $language }}-{{ $color }}?style=for-the-badge&logo={{ $logo }}&logoColor=white" alt="{{ $language }}" style="display: inline-block; margin-right: 0.5em;">
