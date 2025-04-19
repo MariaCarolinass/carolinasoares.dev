@@ -91,6 +91,12 @@ Arquivos, diretórios e configurações.
     ├── themes/
     └── hugo.toml         <-- site configuration
 
+### Visitando site
+
+Servidor Hugo
+
+    $ hugo server
+
 ## Publicando postagens no site
 
 Formato Markdown para escrever os posts.
