@@ -22,7 +22,7 @@ Acesse a [página oficial do Hugo](https://gohugo.io/) para saber mais.
 
 Um site estático é um site cujo o seu conteúdo é fixo para todos os usuários, ideal para o desenvolvimento de blogs e portfolios. A grande vantagem de um site estático com Hugo, é o desenvolvimento de sites rápidos e simples, com fácil manutenção no código e no gerenciamento do conteúdo. 
 
-## Instalação do Hugo
+## Instalando o Hugo
 
 ### Mac OS
 
@@ -52,7 +52,7 @@ Para distribuições derivadas do Debian como o elementary OS, KDE neon, Linux L
 
     $ choco install hugo -confirm 
 
-### Mais maneiras de instalação
+### Outras maneiras de instalação
 
 [Consulte o guia de instalação do Hugo no site oficial](https://gohugo.io/installation/).
 
@@ -71,11 +71,13 @@ O Hugo possuí diversos temas bonitos e prontos para serem usados que foram cria
 
 Vamos usar o tema [devise](https://themes.gohugo.io/themes/devise/) como exemplo.
 
+![Tela inicial do tema](https://themes.gohugo.io/themes/devise/screenshot_hu_299244e9cdfee279.webp)
+
 Criando projeto... Use o comando a seguir para criar os arquivos básicos do projeto:
 
     $ hugo new site myblog
 
-Entre na pasta myblog pelo terminal com:
+Entre na pasta `myblog` pelo terminal com:
 
     $ cd myblog
 
@@ -131,9 +133,9 @@ A estrutura do site deve ser parecida com essa:
 
 Saiba mais sobre a [estrutura de diretórios do Hugo](https://gohugo.io/getting-started/directory-structure/).
 
-### Configurando o site
+### Configurações do site
 
-Todos os recursos de configurações do tema que podem ser adicionados ao arquivo `config.toml`: 
+Todos os recursos de configurações do tema que podem ser adicionados no arquivo `config.toml`: 
 
     baseURL = "https://example.com"
     title = "Your Website Title"
@@ -192,9 +194,9 @@ Todos os recursos de configurações do tema que podem ser adicionados ao arquiv
         fa_icon = "fas fa-at fa-1x"
         href = ""
 
-*Cada tema possuí as suas configurações específicas que são colocadas na sua documentação*
+*Cada tema possuí as suas configurações específicas que podem ser encontradas na sua documentação.*
 
-### Publicando uma postagem no site
+## Publicando uma postagem no site
 
 Uma postagem pode ser criada com o seguinte comando:
 
@@ -202,9 +204,7 @@ Uma postagem pode ser criada com o seguinte comando:
 
 Todas as postagens serão salvas dentro do diretório `content`.
 
-O arquivo criado `first_post.md` é um arquivo com formatação de texto do tipo [Markdown](https://pt.wikipedia.org/wiki/Markdown).
-
-Ele possuí a seguinte estrutura:
+O arquivo criado `first_post.md` é um arquivo com formatação de texto do tipo [Markdown](https://pt.wikipedia.org/wiki/Markdown). Ele possuí a seguinte estrutura:
 
     ---
     title: "First_post"
@@ -216,9 +216,7 @@ O que está entre os três tracinhos é o cabeçalho da página do post que poss
 
 - Título da postagem (também usado no nome da url)
 - Data da postagem (data e horário que foi criado a publicação)
-- Se a postagem é um rascunho (para a postagem ficar visível no site editamos a linha draft para false `draft: false`)
-
-Não é necessário que exista a linha `draft: false` para deixar a publicação visível, ela pode ser apagada.
+- Se a postagem é um rascunho (para a postagem ficar visível no site editamos a linha draft para false). Não é necessário que exista a linha `draft: false` para deixar a publicação visível, ela pode ser apagada.
 
 Outras variáveis que podem ser definidas no cabeçalho de `first_post.md`:
 
@@ -250,7 +248,7 @@ Exemplo de conteúdo do arquivo `first_post.md`:
 
     O tema usado no site foi o [devise](https://themes.gohugo.io/themes/devise/).
 
-#### Formato Markdown
+#### Sintaxe básica do formato Markdown
 
 **Títulos**
 
@@ -341,7 +339,11 @@ Bloco de código (basta indentar todas linhas uma vez):
 
 [Sintaxe completa para Markdown](https://www.markdownguide.org/basic-syntax/).
 
-### Criando a página sobre no site
+## Configurando páginas extras do tema
+
+Criando a página sobre no site e adicionando categorias nas postagens.
+
+### Página sobre
 
 Para criar uma página sobre no site, basta criar o arquivo `about.md` dentro da pasta `content`.
 
@@ -357,13 +359,13 @@ Exemplo do arquivo `about.md`:
 
     Written in Go, Hugo is an open source static site generator available under the [Apache Licence 2.0.](https://github.com/gohugoio/hugo/blob/master/LICENSE) Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.
 
-### Indexando as postagens por categorias
+### Postagens por categorias
 
-No cabeçalho de cada postagem basta adicionar a seguinte linha:
+Para indexar as postagens por categorias, basta adicionar a seguinte linha no cabeçalho das postagens:
 
     categories: ["postagem", "hugo", "blog"]
 
-Essa linha vai indexar as postagens por categorias, ficando salvas na página categories, por exemplo, se a postagem se tratar sobre *"como escrever no formato Markdown"*, umas das categorias a ser indexada será a palavra Markdown e assim sempre que formos escrever sobre esse tema, todas as postagens relacionadas estarão organizadas nessa categoria.
+Essa linha vai vai organizar as postagens por categorias na página `categories`, por exemplo, se a postagem se tratar sobre *"como escrever no formato Markdown"*, umas das categorias a ser indexada será a palavra `Markdown` e assim sempre que tiver uma postagem sobre esse mesmo tema, todas as postagens com essa mesma categoria relacionada estarão organizadas dentro dessa palavra.
 
 ## Hospedando o código no GitHub e fazendo o deploy com o GitHub Pages
 
