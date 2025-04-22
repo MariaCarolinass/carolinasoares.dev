@@ -73,7 +73,7 @@ Vamos usar o tema [devise](https://themes.gohugo.io/themes/devise/) como exemplo
 
 ![Tela inicial do tema](https://themes.gohugo.io/themes/devise/screenshot_hu_299244e9cdfee279.webp)
 
-Criando projeto... Use o comando a seguir para criar os arquivos básicos do projeto:
+Criando o projeto... Use o comando a seguir para criar os arquivos básicos do projeto:
 
     $ hugo new site myblog
 
@@ -85,7 +85,7 @@ Inicialize as configurações Git no projeto:
 
     $ git init
 
-Adicione o tema devise ao projeto:
+Adicione o tema **devise** ao projeto:
 
     $ git submodule add https://github.com/austingebauer/devise.git themes/devise
 
@@ -127,7 +127,7 @@ A estrutura do site deve ser parecida com essa:
 
 - **resources:** caches gerados com o comando `hugo` ou `hugo server`.
 
-- **static:** arquivos estáticos como imagem, CSS, JavaScript, favicon.ico, robots.txt.
+- **static:** arquivos estáticos como imagens, CSS, JavaScript, favicon.ico, robots.txt.
 
 - **themes:** temas que serão utilizados no site.
 
@@ -212,11 +212,11 @@ O arquivo criado `first_post.md` é um arquivo com formatação de texto do tipo
     draft: true
     ---
 
-O que está entre os três tracinhos é o cabeçalho da página do post que possuí:
+O que está entre os três tracinhos é o cabeçalho da página da postagem que possuí:
 
 - Título da postagem (também usado no nome da url)
 - Data da postagem (data e horário que foi criado a publicação)
-- Se a postagem é um rascunho (para a postagem ficar visível no site editamos a linha draft para false). Não é necessário que exista a linha `draft: false` para deixar a publicação visível, ela pode ser apagada.
+- Se a postagem é um rascunho (para a postagem ficar visível no site editamos a linha draft para false, não é necessário que exista a linha `draft: false` para deixar a publicação visível, essa linha pode ser apagada).
 
 Outras variáveis que podem ser definidas no cabeçalho de `first_post.md`:
 
@@ -228,9 +228,7 @@ Outras variáveis que podem ser definidas no cabeçalho de `first_post.md`:
     tags: ["hugo", "site", "blog", "post"]
     ---
 
-Após o cabeçalho, tudo o que estiver abaixo será o conteúdo da publicação escrito no formato **Markdown**.
-
-Exemplo de conteúdo do arquivo `first_post.md`:
+Após o cabeçalho, tudo o que estiver abaixo será o conteúdo da publicação escrito no formato **Markdown**. Exemplo de conteúdo do arquivo `first_post.md`:
 
     ---
     author: "Hugo Authors"
@@ -294,11 +292,11 @@ Não ordenada:
 
 **Código**
 
-Palavra ou frase com código:
+Palavra ou frase de código:
 
     `Linha de código`
 
-Várias palavras com código:
+Várias palavras de código:
 
     ```
     Várias 
@@ -307,7 +305,7 @@ Várias palavras com código:
     código
     ```
 
-Bloco de código (basta indentar todas linhas uma vez):
+Bloco de código (basta indentar uma vez todas as linhas):
 
     <!doctype html>
     <html lang="en">
@@ -363,9 +361,9 @@ Exemplo do arquivo `about.md`:
 
 Para indexar as postagens por categorias, basta adicionar a seguinte linha no cabeçalho das postagens:
 
-    categories: ["postagem", "hugo", "blog"]
+    categories: ["hugo", "blog", "web"]
 
-Essa linha vai vai organizar as postagens por categorias na página `categories`, por exemplo, se a postagem se tratar sobre *"como escrever no formato Markdown"*, umas das categorias a ser indexada será a palavra `Markdown` e assim sempre que tiver uma postagem sobre esse mesmo tema, todas as postagens com essa mesma categoria relacionada estarão organizadas dentro dessa palavra.
+Essa linha vai vai organizar as postagens por categorias na página `categories`, por exemplo, se a postagem se tratar sobre *"como escrever no formato Markdown"*, umas das categorias a ser indexada será a palavra `Markdown` e assim sempre que tiver uma postagem sobre esse mesmo tema, todas as postagens com essa mesma categoria relacionada, estarão organizadas dentro dessa palavra.
 
 ## Hospedando o código no GitHub e fazendo o deploy com o GitHub Pages
 
@@ -379,18 +377,18 @@ Essa linha vai vai organizar as postagens por categorias na página `categories`
 
     É importante que o nome do repositório seja como no exemplo, para fazer o deploy do site.
 
-4. Dentro do seu projeto adicione os arquivos e faça os commits necessários das suas modificações com o Git. Pode fazer executando os comandos:
+4. Dentro do seu projeto adicione os arquivos e faça os commits necessários das suas modificações com o Git. Isso pode ser feito com os comandos:
 
         $ git add .
         $ git commit -m "Subindo o site para o GitHub"
 
-5. Adicione o repositório remoto e envie todo o conteúdo:
+5. Adicione o repositório remoto e envie todo o conteúdo para o GitHub:
 
         $ git remote add origin https://github.com/username/username.github.io.git
         $ git branch -M main
         $ git push -u origin main
 
-6. Com o site hospedado no GitHub, confira se o deploy funcionou acessando:
+6. Com o projeto no GitHub, confira se o deploy funcionou acessando:
 
     [https://username.github.io](https://username.github.io)
 
