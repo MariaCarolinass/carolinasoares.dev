@@ -67,43 +67,188 @@ Crie um site com Hugo em minutos.
 
 ### Tema do site
 
-O Hugo possuí diversos temas bonitos e prontos para serem usados que foram criados previamente por outros desenvolvedores.
+O Hugo possuí diversos temas bonitos e prontos para serem usados que foram criados previamente por outros desenvolvedores. [Confira todos os temas disponíveis para o Hugo](https://themes.gohugo.io/).
 
-[Confira todos os temas disponíveis para o Hugo](https://themes.gohugo.io/)
+Vamos usar o tema [devise](https://themes.gohugo.io/themes/devise/) como exemplo.
 
-Vamos usar um tema como exemplo.
+Criando projeto... Use o comando a seguir para criar os arquivos básicos do projeto:
 
-Criando projeto...
+    $ hugo new site myblog
+
+Entre na pasta myblog pelo terminal com:
+
+    $ cd myblog
+
+Inicialize as configurações Git no projeto:
+
+    $ git init
+
+Adicione o tema devise ao projeto:
+
+    $ git submodule add https://github.com/austingebauer/devise.git themes/devise
+
+Em seguida configure o arquivo `config.toml`. Abra o arquivo de configurações e na última linha adicione o tema do projeto:
+
+    theme = 'devise'
+
+Para visualizar o site digite o seguinte comando:
+
+    hugo server
+
+E acesse o endereço [http://localhost:1313/](http://localhost:1313/).
 
 ### Estrutura do site 
 
-Arquivos, diretórios e configurações.
+A estrutura do site deve ser parecida com essa:
 
-    my-site/
+    myblog/
     ├── archetypes/
     │   └── default.md
-    ├── assets/
     ├── content/
     ├── data/
-    ├── i18n/
     ├── layouts/
+    ├── resources/
     ├── static/
     ├── themes/
-    └── hugo.toml         <-- site configuration
+    │   └── devise
+    └── config.toml         <-- configuração do site
 
-### Visitando site
+#### Diretórios
 
-Servidor Hugo
+- **archetypes:** modelos para a criação de novos conteúdos.
 
-    $ hugo server
+- **content:** conteúdos do site.
 
-## Publicando postagens no site
+- **data:** arquivos dinâmicos (JSON, TOML, YAML ou XML) para aprimorar o conteúdo, configuração, localização e navegação.
 
-Formato Markdown para escrever os posts.
+- **layouts:** modelos a parte para aprimorar o conteúdo, dados e recursos do site.
 
-[Sintaxe completa para Markdown](https://www.markdownguide.org/basic-syntax/)
+- **resources:** caches gerados com o comando `hugo` ou `hugo server`.
 
-### Títulos
+- **static:** arquivos estáticos como imagem, CSS, JavaScript, favicon.ico, robots.txt.
+
+- **themes:** temas que serão utilizados no site.
+
+Saiba mais sobre a [estrutura de diretórios do Hugo](https://gohugo.io/getting-started/directory-structure/).
+
+### Configurando o site
+
+Todos os recursos de configurações do tema que podem ser adicionados ao arquivo `config.toml`: 
+
+    baseURL = "https://example.com"
+    title = "Your Website Title"
+    languageCode = "en-us"
+    theme = "devise"
+    relativeURLs = true
+    enableEmoji = true
+    googleAnalytics = ""
+    enableRobotsTXT = true
+    copyright = "&copy; Copyright Year, Your Name"
+
+    # Main menu items
+    [menu]
+    [[menu.main]]
+        identifier = "about"
+        name = "About"
+        title = "About"
+        url = "/about/"
+        weight = -110
+    [[menu.main]]
+        identifier = "posts"
+        name = "Posts"
+        title = "Posts"
+        url = "/post/"
+        weight = -100
+    [[menu.main]]
+        identifier = "categories"
+        name = "Categories"
+        title = "Categories"
+        url = "/categories/"
+        weight = -90
+
+    # Configuration Features
+    [params]
+    description = "Your meta description"      # Your meta description of the site
+    header_title = "Your Name"                 # Your header title
+    header_subtitle = "Your Creative Subtitle" # Your header subtitle
+    home_image = "/images/avatar.png"          # Path to header image starting from the static directory (optional)
+    recent_posts = 5                           # Max amount of recent posts to show
+    mainSections = ["posts", "post", "blog"]   # Main sections to include in recent posts
+    [params.style]                             # CSS style overrides
+        backgroundColor = "#f8f9fa"
+        homeImageBorderColor = "#ffffff"
+        fontFamilyBase = "Helvetica Neue"        # First-choice font
+        fontColor = "#212529"
+    [[params.social]]
+        fa_icon = "fab fa-github fa-1x"          # Font Awesome icon class
+        href = "http://github.com/youruser"      # Link to associate with icon (http://, https://, mailto:)
+    [[params.social]]
+        fa_icon = "fab fa-linkedin-in fa-1x"
+        href = ""
+    [[params.social]]
+        fa_icon = "fab fa-twitter fa-1x"
+        href = ""
+    [[params.social]]
+        fa_icon = "fas fa-at fa-1x"
+        href = ""
+
+*Cada tema possuí as suas configurações específicas que são colocadas na sua documentação*
+
+### Publicando uma postagem no site
+
+Uma postagem pode ser criada com o seguinte comando:
+
+    $ hugo new post/first_post.md
+
+Todas as postagens serão salvas dentro do diretório `content`.
+
+O arquivo criado `first_post.md` é um arquivo com formatação de texto do tipo [Markdown](https://pt.wikipedia.org/wiki/Markdown).
+
+Ele possuí a seguinte estrutura:
+
+    ---
+    title: "First_post"
+    date: 2025-04-21T23:20:13-03:00
+    draft: true
+    ---
+
+O que está entre os três tracinhos é o cabeçalho da página do post que possuí:
+
+- Título da postagem (também usado no nome da url)
+- Data da postagem (data e horário que foi criado a publicação)
+- Se a postagem é um rascunho (para a postagem ficar visível no site editamos a linha draft para false `draft: false`)
+
+Tudo o que estiver abaixo do cabeçalho será o conteúdo da publicação que será escrito no formato **Markdown**.
+
+Exemplo do arquivo first_post.md:
+
+    ---
+    title: "First_post"
+    date: 2025-04-21T23:31:15-03:00
+    draft: false
+    ---
+
+    # Minha primeira postagem
+
+    Escrevendo **meu primeiro post** em um site criado com [Hugo](https://gohugo.io/).
+
+    ## Tema do site
+
+    O tema usado no site foi o [devise](https://themes.gohugo.io/themes/devise/).
+
+Outras variáveis que podem ser adicionadas no cabeçalho de first_post.md:
+
+    ---
+    author: "Hugo Authors"
+    title: "First_post"
+    date: 2025-04-21T23:31:15-03:00
+    description: "primeira postagem no site"
+    tags: ["hugo", "site", "blog", "post"]
+    ---
+
+#### Formato Markdown
+
+**Títulos**
 
     # H1
     ## H2
@@ -111,13 +256,13 @@ Formato Markdown para escrever os posts.
     #### H4
     ##### H5 
 
-### Paragráfos
+**Paragráfos**
 
     Um paragráfo separado do outro por uma linha.
 
     Segundo paragráfo.
 
-### Formatação de texto
+**Formatação de texto**
 
     **Negrito**
     
@@ -125,13 +270,13 @@ Formato Markdown para escrever os posts.
 
     ***Negrito e Itálico***
 
-### Citações
+**Citações**
 
     > Texto de uma citação!
     > 
     > Mais texto.
 
-### Listas
+**Listas**
 
 Ordenada:
 
@@ -145,7 +290,7 @@ Não ordenada:
     - Segundo
     - Terceiro
 
-### Código
+**Código**
 
 Palavra ou frase com código:
 
@@ -160,20 +305,20 @@ Várias palavras com código:
     código
     ```
 
-Bloco de código:
+Bloco de código (basta indentar todas linhas uma vez):
 
-        <!doctype html>
-        <html lang="en">
-        <head>
-            <meta charset="utf-8">
-            <title>Example HTML5 Document</title>
-        </head>
-        <body>
-            <p>Test</p>
-        </body>
-        </html>
+    <!doctype html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Example HTML5 Document</title>
+    </head>
+    <body>
+        <p>Test</p>
+    </body>
+    </html>
 
-### Tabela
+**Tabela**
 
     Exemplo   | Valor do exemplo
     --------- | ------
@@ -182,17 +327,43 @@ Bloco de código:
     Exemplo 3 | R$ 7
     Exemplo 4 | R$ 8
 
-### Imagens
+**Imagens**
 
     ![Alt ou título da imagem](/caminho/para/imagem)
 
-### Links
+**Links**
 
     [Título do Link](link)
 
+[Sintaxe completa para Markdown](https://www.markdownguide.org/basic-syntax/).
+
+### Criando página sobre no site
+
+Para criar uma página sobre no site, basta criar o arquivo `about.md` dentro da pasta `content`.
+
+Exemplo do arquivo `about.md`:
+
+    ---
+    author: "Hugo Authors"
+    title: "About"
+    date: 2025-04-21T23:31:15-03:00
+    description: "Hugo, the world’s fastest framework for building websites"
+    tags: ["about-us","about-hugo","contact"]
+    ---
+
+    Written in Go, Hugo is an open source static site generator available under the [Apache Licence 2.0.](https://github.com/gohugoio/hugo/blob/master/LICENSE) Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.
+
+### Indexando postagens por categorias
+
+No cabeçalho de cada postagem basta adicionar a seguinte linha:
+
+    categories: ["postagem", "hugo", "blog"]
+
+Essa linha vai indexar as postagens por categorias, ficando salvas na página categories, por exemplo, se a postagem se tratar sobre *"como escrever no formato Markdown"*, umas das categorias a ser indexada será a palavra Markdown e assim sempre que formos escrever sobre esse tema, todas as postagens relacionadas estarão organizadas nessa categoria.
+
 ## Subindo o código para o GitHub
 
-Crie uma conta no [GitHub](https://github.com/).
+Primeiro crie uma conta no [GitHub](https://github.com/).
 
 ## Deploy do site com o GitHub Pages
 
