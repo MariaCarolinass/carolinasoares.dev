@@ -218,14 +218,28 @@ O que está entre os três tracinhos é o cabeçalho da página do post que poss
 - Data da postagem (data e horário que foi criado a publicação)
 - Se a postagem é um rascunho (para a postagem ficar visível no site editamos a linha draft para false `draft: false`)
 
-Tudo o que estiver abaixo do cabeçalho será o conteúdo da publicação que será escrito no formato **Markdown**.
+Não é necessário que exista a linha `draft: false` para deixar a publicação visível, ela pode ser apagada.
 
-Exemplo do arquivo first_post.md:
+Outras variáveis que podem ser definidas no cabeçalho de `first_post.md`:
 
     ---
+    author: "Hugo Authors"
     title: "First_post"
     date: 2025-04-21T23:31:15-03:00
-    draft: false
+    description: "primeira postagem no site"
+    tags: ["hugo", "site", "blog", "post"]
+    ---
+
+Após o cabeçalho, tudo o que estiver abaixo será o conteúdo da publicação escrito no formato **Markdown**.
+
+Exemplo de conteúdo do arquivo `first_post.md`:
+
+    ---
+    author: "Hugo Authors"
+    title: "First_post"
+    date: 2025-04-21T23:31:15-03:00
+    description: "primeira postagem no site"
+    tags: ["hugo", "site", "blog", "post"]
     ---
 
     # Minha primeira postagem
@@ -235,16 +249,6 @@ Exemplo do arquivo first_post.md:
     ## Tema do site
 
     O tema usado no site foi o [devise](https://themes.gohugo.io/themes/devise/).
-
-Outras variáveis que podem ser adicionadas no cabeçalho de first_post.md:
-
-    ---
-    author: "Hugo Authors"
-    title: "First_post"
-    date: 2025-04-21T23:31:15-03:00
-    description: "primeira postagem no site"
-    tags: ["hugo", "site", "blog", "post"]
-    ---
 
 #### Formato Markdown
 
@@ -337,7 +341,7 @@ Bloco de código (basta indentar todas linhas uma vez):
 
 [Sintaxe completa para Markdown](https://www.markdownguide.org/basic-syntax/).
 
-### Criando página sobre no site
+### Criando a página sobre no site
 
 Para criar uma página sobre no site, basta criar o arquivo `about.md` dentro da pasta `content`.
 
@@ -353,7 +357,7 @@ Exemplo do arquivo `about.md`:
 
     Written in Go, Hugo is an open source static site generator available under the [Apache Licence 2.0.](https://github.com/gohugoio/hugo/blob/master/LICENSE) Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.
 
-### Indexando postagens por categorias
+### Indexando as postagens por categorias
 
 No cabeçalho de cada postagem basta adicionar a seguinte linha:
 
@@ -361,10 +365,31 @@ No cabeçalho de cada postagem basta adicionar a seguinte linha:
 
 Essa linha vai indexar as postagens por categorias, ficando salvas na página categories, por exemplo, se a postagem se tratar sobre *"como escrever no formato Markdown"*, umas das categorias a ser indexada será a palavra Markdown e assim sempre que formos escrever sobre esse tema, todas as postagens relacionadas estarão organizadas nessa categoria.
 
-## Subindo o código para o GitHub
+## Hospedando o código no GitHub e fazendo o deploy com o GitHub Pages
 
-Primeiro crie uma conta no [GitHub](https://github.com/).
+1. Primeiro crie uma conta no [GitHub](https://github.com/), caso ainda não tenha.
 
-## Deploy do site com o GitHub Pages
+2. Crie um novo repositório público clicando no ícone de **+** e em **"New repository"**.
 
-[GitHub Pages](https://pages.github.com/).
+3. O nome do repositório precisa ser: `username.github.io`, onde **username** é o seu nome de usuário no GitHub. Por exemplo:
+
+    ![Exemplo de como criar o repositório](https://pages.github.com/images/user-repo@2x.png)
+
+    É importante que o nome do repositório seja como no exemplo, para fazer o deploy do site.
+
+4. Dentro do seu projeto adicione os arquivos e faça os commits necessários das suas modificações com o Git. Pode fazer executando os comandos:
+
+        $ git add .
+        $ git commit -m "Subindo o site para o GitHub"
+
+5. Adicione o repositório remoto e envie todo o conteúdo:
+
+        $ git remote add origin https://github.com/username/username.github.io.git
+        $ git branch -M main
+        $ git push -u origin main
+
+6. Com o site hospedado no GitHub, confira se o deploy funcionou acessando:
+
+    [https://username.github.io](https://username.github.io)
+
+Saiba mais sobre o [GitHub Pages](https://pages.github.com/).
