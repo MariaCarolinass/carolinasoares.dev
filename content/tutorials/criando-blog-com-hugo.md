@@ -52,9 +52,13 @@ Para distribuições derivadas do Debian como o elementary OS, KDE neon, Linux L
 
     $ choco install hugo -confirm 
 
-### Outras maneiras de instalação
+### Outras formas de instalar na página oficial do Hugo
 
-[Consulte o guia de instalação do Hugo no site oficial](https://gohugo.io/installation/).
+[Consulte o guia de instalação do Hugo](https://gohugo.io/installation/).
+
+### Outra opção é usar o GitHub Codespaces
+
+Uma opção é criar o blog no [GitHub Codespaces](https://docs.github.com/pt/codespaces/about-codespaces/what-are-codespaces), caso não queira instalar o projeto localmente. O codespace é um ambiente de desenvolvimento na nuvem. 
 
 ## Criando o site
 
@@ -71,7 +75,7 @@ O Hugo possuí diversos temas bonitos e prontos para serem usados que foram cria
 
 Vamos usar o tema [devise](https://themes.gohugo.io/themes/devise/) como exemplo.
 
-![Tela inicial do tema](https://themes.gohugo.io/themes/devise/screenshot_hu_299244e9cdfee279.webp)
+![Tela inicial do tema](https://themes.gohugo.io/themes/devise/screenshot_hu_2202bd4739427240.webp)
 
 Criando o projeto... Use o comando a seguir para criar os arquivos básicos do projeto:
 
@@ -98,6 +102,10 @@ Para visualizar o site digite o seguinte comando:
     hugo server
 
 E acesse o endereço [http://localhost:1313/](http://localhost:1313/).
+
+### Erro na versão do Hugo ao instalar tema
+
+Caso esbarre em possíveis erros de versão do Hugo para carregar alguma tema, [confira uma possível soluação](https://github.com/MariaCarolinass/minicurso-hugo/blob/main/README.md#erro-na-vers%C3%A3o-do-hugo).
 
 ### Estrutura do site 
 
@@ -194,7 +202,11 @@ Todos os recursos de configurações do tema que podem ser adicionados no arquiv
         fa_icon = "fas fa-at fa-1x"
         href = ""
 
-*Cada tema possuí as suas configurações específicas que podem ser encontradas na sua documentação.*
+Cada tema possuí as suas configurações que podem ser encontradas na sua documentação, que normalmente pode ser encontrada ao clicar no botão de **Download** da página oficial do tema. 
+
+[Documentação do tema Device](https://github.com/austingebauer/devise/blob/main/README.md).
+
+Caso ainda tenha dúvidas de como configurar o seu site, geralmente na pasta de `themes` que foi criada para guardar os temas do site, dentro dela e dentro da pasta com o nome do tema, existe uma pasta chamada `exampleSite`, essa pasta possuí arquivos de exemplo de como o seu site deve ficar com os recursos disponíveis pelo tema escolhido.
 
 ## Publicando uma postagem no site
 
@@ -339,7 +351,7 @@ Bloco de código (basta indentar uma vez todas as linhas):
 
 ## Configurando páginas extras do tema
 
-Criando a página sobre no site e adicionando categorias nas postagens.
+Criando a **página sobre** no site e adicionando **categorias nas postagens**.
 
 ### Página sobre
 
@@ -375,21 +387,27 @@ Essa linha vai vai organizar as postagens por categorias na página `categories`
 
     ![Exemplo de como criar o repositório](https://pages.github.com/images/user-repo@2x.png)
 
-    É importante que o nome do repositório seja como no exemplo, para fazer o deploy do site.
+    É importante que o nome do repositório seja como no exemplo, para que o deploy do site funcione.
 
-4. Dentro do seu projeto adicione os arquivos e faça os commits necessários das suas modificações com o Git. Isso pode ser feito com os comandos:
+4. Crie um fluxo de trabalho (workflow) para que o Hugo seja reconhecido pelo GitHub Pages:
+
+    [Hospede seu site no GitHub Pages](https://gohugo.io/host-and-deploy/host-on-github-pages/).
+
+5. Dentro do seu projeto, não esqueça de adicionar todos os arquivos modificados e de fazer os commits necessários com o Git. Isso pode ser feito com os seguintes comandos:
 
         $ git add .
         $ git commit -m "Subindo o site para o GitHub"
 
-5. Adicione o repositório remoto e envie todo o conteúdo para o GitHub:
+6. Adicione o repositório remoto e envie todo o conteúdo para o GitHub:
 
         $ git remote add origin https://github.com/username/username.github.io.git
         $ git branch -M main
         $ git push -u origin main
 
-6. Com o projeto no GitHub, confira se o deploy funcionou acessando:
+7. Com o projeto no GitHub, confira se o deploy funcionou acessando:
 
     [https://username.github.io](https://username.github.io)
 
 Saiba mais sobre o [GitHub Pages](https://pages.github.com/).
+
+#### Repositório do [minicurso](https://github.com/MariaCarolinass/minicurso-hugo).
