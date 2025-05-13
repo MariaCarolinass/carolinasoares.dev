@@ -12,11 +12,12 @@ O objetivo do programa é facilitar o cotidiano do trabalho dos geofísicos que 
 
 ### Algumas funcionalidades
 
-- Visualizar bacias, blocos, campos, poços, linhas 2D e polígonos 3D
+- Visualizar geometrias de bacias, blocos, campos, poços, linhas 2D e polígonos 3D
 - Visualizar quilometragem de linhas 2D e tamanho da área dos polígonos 3D
 - Filtrar geometrias que estão contidas ou que passam por outra geometria
 - Converter coordenadas para o formato DMS ou DD
 - Importar e exportar geometrias no formato CSV ou ShapeFile
+- Criar e salvar desenhos no mapa
 
 ### Tecnologias
 
