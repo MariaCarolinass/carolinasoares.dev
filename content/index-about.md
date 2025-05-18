@@ -1,5 +1,7 @@
 # Olá, sou Carol
 
-Sou desenvolvedora de software envolvida em iniciativas de conhecimento aberto, impacto social e software livre. Além de ser mantenedora do [dadoslivres.org](https://dadoslivres.org/) e [Embaixadora de Inovação Cívica (OKBR)](https://embaixadoras.ok.org.br/). 
+:computer: Desenvolvedora envolvida em iniciativas de conhecimento aberto :books:, impacto social :earth_americas> e software livre :penguin:. Mantenedora do [dadoslivres.org](https://dadoslivres.org/) e [Embaixadora de Inovação Cívica na OKBR](https://embaixadoras.ok.org.br/) :speech_balloon:. 
 
-Atualmente, graduando o Bacharelado Interdisciplinar em Ciências e Tecnologia com ênfase em Computação Aplicada na UFRN. Gosto de compartilhar conhecimento e desenvolver soluções inovadoras em forma de código.
+:mortar_board: Estudante de Ciências e Tecnologia com foco em Computação Aplicada na Universidade Federal do Rio Grande do Norte - UFRN. 
+
+:sparkles: Gosto de compartilhar ideias, aprender e desenvolver soluções em código.
