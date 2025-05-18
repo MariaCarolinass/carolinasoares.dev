@@ -82,7 +82,7 @@ title = "Carolina Soares"
 [params]
   accentColor = "#FF4D4D"
   
-  avatarURL = "/images/avatar.jpg"
+  avatarURL = "/images/avatar.jpeg"
   avatarAltText = "avatar"
   avatarSize = "size-m"
 
@@ -123,7 +123,7 @@ title = "Carolina Soares"
 
   dateFormat = "January 2, 2006"
   
-  description = "Dev · Back-End · Web"
+  description = "Desenvolvedora de Software"
 
   footer = "Carolina Soares"
 
