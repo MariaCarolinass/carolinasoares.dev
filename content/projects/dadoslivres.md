@@ -1,6 +1,9 @@
 ---
+date: 2024-03-12T15:00:00-03:00
+description: "Plataforma livre de dados abertos"
 title: "Dados Livres"
-type: page
+type: post
+tags: ["projeto", "dados abertos", "python", "flask", "ifrn"]
 showTableOfContents: true
 ---
 
