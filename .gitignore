@@ -1,0 +1,24 @@
+# Arquivos e pastas do Hugo
+/public/
+/resources/
+/hugo_stats.json
+
+# Arquivos temporários e de sistema
+*.log
+*.tmp
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Arquivos de backup do editor
+*.bak
+*.old
+
+# Arquivos do VS Code
+.vscode/
+
+# Dados sensíveis ou locais
+.env
+*.env
