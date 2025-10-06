@@ -4,7 +4,7 @@ enableRobotsTXT = true
 enableEmoji = true
 languageCode = "pt"
 theme = "gokarna"
-title = "Carolina Soares"
+title = "Sou a Carolina (Carol) :D"
 
 [menu]
   [[menu.main]]
@@ -20,21 +20,21 @@ title = "Carolina Soares"
     weight = 2
   
   [[menu.main]]
+    name = "Tutoriais"
+    pre = "<span data-feather='book-open'></span>"
+    url = "/tutorials/"
+    weight = 3
+  
+  [[menu.main]]
     name = "Projetos"
     pre = "<span data-feather='code'></span>"
     url = "/projects/"
-    weight = 3
-  
+    weight = 4
+
   [[menu.main]]
     name = "Palestras"
     pre = "<span data-feather='mic'></span>"
     url = "/talks/"
-    weight = 4
-  
-  [[menu.main]]
-    name = "Tutoriais"
-    pre = "<span data-feather='book-open'></span>"
-    url = "/tutorials/"
     weight = 5
 
   [[menu.main]]
@@ -42,12 +42,6 @@ title = "Carolina Soares"
     pre = "<span data-feather='tag'></span>"
     url = "/tags/"
     weight = 6
-  
-  #[[menu.main]]
-  #  name = "CV"
-  #  pre = "<span data-feather='briefcase'></span>"
-  #  url = "https://www.canva.com/design/DAGeGLv54jE/7Qcd8GnokhEMtCSflFZG8A/view?utm_content=DAGeGLv54jE&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h031ce24a37"
-  #  weight = 7
   
   [[menu.main]]
     identifier = "github"
@@ -123,13 +117,13 @@ title = "Carolina Soares"
 
   dateFormat = "January 2, 2006"
   
-  description = "Desenvolvedora de Software"
+  description = "Desenvolvedora • Software Livre • Tecnologia Cívica • Dados Abertos"
 
   footer = "Carolina Soares"
 
-  metaKeywords = ["blog", "portfólio", "Carolina Soares", "dev", "software", "código", "programação"]
+  metaKeywords = ["blog", "tecnologia", "portfólio", "Carolina Soares", "carolinasoares.dev", "dev", "desenvolvimento", "software", "algoritmos", "computação", "código", "programação", "blog pessoal"]
 
-  numberPostsOnHomePage = 6
+  numberPostsOnHomePage = 30
 
   showBackToTopButton = true
 
