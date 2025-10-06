@@ -2,128 +2,173 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://carolinasoares.dev/</loc>
-    <lastmod>2024-08-26T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/posts/como-foi-organizar-odd/</loc>
+    <lastmod>2025-05-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://carolinasoares.dev/tags/express%C3%B5es-regulares/</loc>
-    <lastmod>2024-08-26T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/dados-abertos/</loc>
+    <lastmod>2025-05-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://carolinasoares.dev/posts/regex/</loc>
-    <lastmod>2024-08-26T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/okbr/</loc>
+    <lastmod>2025-05-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://carolinasoares.dev/posts/</loc>
-    <lastmod>2024-08-26T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/open-data-day/</loc>
+    <lastmod>2025-05-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://carolinasoares.dev/tags/python/</loc>
-    <lastmod>2024-08-26T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2025-05-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://carolinasoares.dev/tags/regex/</loc>
-    <lastmod>2024-08-26T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2025-05-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://carolinasoares.dev/tags/</loc>
-    <lastmod>2024-08-26T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-05-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://carolinasoares.dev/tags/fun%C3%A7%C3%B5es/</loc>
+    <loc>http://localhost:1313/tags/blog/</loc>
+    <lastmod>2025-04-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tutorials/criando-blog-com-hugo/</loc>
+    <lastmod>2025-04-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/hugo/</loc>
+    <lastmod>2025-04-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/markdown/</loc>
+    <lastmod>2025-04-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/portfolio/</loc>
+    <lastmod>2025-04-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tutorials/</loc>
+    <lastmod>2025-04-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/web/</loc>
+    <lastmod>2025-04-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tutorials/introducao-python/</loc>
+    <lastmod>2025-03-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/python/</loc>
+    <lastmod>2025-03-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/c/</loc>
     <lastmod>2024-07-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://carolinasoares.dev/posts/funcoesrecursivas/</loc>
+    <loc>http://localhost:1313/tags/ponteiros/</loc>
     <lastmod>2024-07-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://carolinasoares.dev/tags/pilhas/</loc>
+    <loc>http://localhost:1313/posts/ponteiros/</loc>
     <lastmod>2024-07-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://carolinasoares.dev/tags/recurs%C3%A3o/</loc>
+    <loc>http://localhost:1313/tags/express%C3%B5es-regulares/</loc>
+    <lastmod>2024-08-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/regex/</loc>
+    <lastmod>2024-08-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/regex/</loc>
+    <lastmod>2024-08-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/fun%C3%A7%C3%B5es/</loc>
     <lastmod>2024-07-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://carolinasoares.dev/tags/container/</loc>
+    <loc>http://localhost:1313/posts/funcoesrecursivas/</loc>
+    <lastmod>2024-07-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/pilhas/</loc>
+    <lastmod>2024-07-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/recurs%C3%A3o/</loc>
+    <lastmod>2024-07-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/container/</loc>
     <lastmod>2024-07-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://carolinasoares.dev/tags/docker/</loc>
+    <loc>http://localhost:1313/tags/docker/</loc>
     <lastmod>2024-07-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://carolinasoares.dev/posts/docker/</loc>
+    <loc>http://localhost:1313/tutorials/docker/</loc>
     <lastmod>2024-07-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://carolinasoares.dev/tags/servidores/</loc>
+    <loc>http://localhost:1313/tags/servidores/</loc>
     <lastmod>2024-07-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://carolinasoares.dev/tags/sistemas-operacionais/</loc>
+    <loc>http://localhost:1313/tags/sistemas-operacionais/</loc>
     <lastmod>2024-07-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://carolinasoares.dev/tags/hospedagem/</loc>
+    <loc>http://localhost:1313/tags/hospedagem/</loc>
     <lastmod>2024-07-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://carolinasoares.dev/posts/hospedagemweb/</loc>
+    <loc>http://localhost:1313/posts/hospedagemweb/</loc>
     <lastmod>2024-07-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://carolinasoares.dev/tags/web/</loc>
-    <lastmod>2024-07-11T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/inclus%C3%A3o-digital/</loc>
+    <lastmod>2022-03-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://carolinasoares.dev/tags/inclus%C3%A3o-digital/</loc>
+    <loc>http://localhost:1313/tags/mini-t%C3%B3pico/</loc>
+    <lastmod>2022-03-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/minitopicosoftwarelivre/</loc>
+    <lastmod>2022-03-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/software-livre/</loc>
+    <lastmod>2022-03-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/internet/</loc>
+    <lastmod>2022-03-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/liberdade/</loc>
+    <lastmod>2022-03-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/minitopicoprincipioliberdade/</loc>
+    <lastmod>2022-03-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/governo-aberto/</loc>
+    <lastmod>2022-03-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/minitopicogovernoaberto/</loc>
+    <lastmod>2022-03-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/acessibilidade/</loc>
+    <lastmod>2022-03-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/minitopicointernetacessivel/</loc>
+    <lastmod>2022-03-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/minitopicorfc/</loc>
     <lastmod>2022-03-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://carolinasoares.dev/tags/mini-t%C3%B3pico/</loc>
+    <loc>http://localhost:1313/tags/documenta%C3%A7%C3%A3o-rfc/</loc>
     <lastmod>2022-03-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://carolinasoares.dev/posts/minitopicosoftwarelivre/</loc>
-    <lastmod>2022-03-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://carolinasoares.dev/tags/software-livre/</loc>
-    <lastmod>2022-03-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://carolinasoares.dev/tags/acessibilidade/</loc>
-    <lastmod>2022-03-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://carolinasoares.dev/posts/minitopicointernetacessivel/</loc>
-    <lastmod>2022-03-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://carolinasoares.dev/tags/internet/</loc>
-    <lastmod>2022-03-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://carolinasoares.dev/tags/liberdade/</loc>
-    <lastmod>2022-03-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://carolinasoares.dev/posts/minitopicoprincipioliberdade/</loc>
-    <lastmod>2022-03-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://carolinasoares.dev/posts/minitopicorfc/</loc>
-    <lastmod>2022-03-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://carolinasoares.dev/tags/documenta%C3%A7%C3%A3o-rfc/</loc>
-    <lastmod>2022-03-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://carolinasoares.dev/tags/governo-aberto/</loc>
-    <lastmod>2022-03-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://carolinasoares.dev/posts/minitopicogovernoaberto/</loc>
-    <lastmod>2022-03-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://carolinasoares.dev/tags/apache/</loc>
+    <loc>http://localhost:1313/tags/apache/</loc>
     <lastmod>2021-04-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://carolinasoares.dev/tags/debian/</loc>
+    <loc>http://localhost:1313/tutorials/apache/</loc>
     <lastmod>2021-04-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://carolinasoares.dev/tags/m%C3%A1quina-virtual/</loc>
+    <loc>http://localhost:1313/tags/debian/</loc>
     <lastmod>2021-04-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://carolinasoares.dev/posts/apacheparte2/</loc>
+    <loc>http://localhost:1313/tags/m%C3%A1quina-virtual/</loc>
     <lastmod>2021-04-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://carolinasoares.dev/tags/sistema-operacional/</loc>
+    <loc>http://localhost:1313/tags/sistema-operacional/</loc>
     <lastmod>2021-04-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://carolinasoares.dev/posts/apacheparte1/</loc>
-    <lastmod>2021-04-16T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/index-about/</loc>
   </url><url>
-    <loc>https://carolinasoares.dev/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
   </url><url>
-    <loc>https://carolinasoares.dev/projects/dadoslivres/</loc>
+    <loc>http://localhost:1313/projects/cmgr/</loc>
   </url><url>
-    <loc>https://carolinasoares.dev/talks/</loc>
+    <loc>http://localhost:1313/tutorials/apacheparte1/</loc>
   </url><url>
-    <loc>https://carolinasoares.dev/projects/</loc>
+    <loc>http://localhost:1313/projects/dadoslivres/</loc>
   </url><url>
-    <loc>https://carolinasoares.dev/tutorials/</loc>
+    <loc>http://localhost:1313/talks/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tutorials/apacheparte2/</loc>
+  </url><url>
+    <loc>http://localhost:1313/projects/</loc>
   </url>
 </urlset>

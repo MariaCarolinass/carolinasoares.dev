@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+            --font-size: 17.5px;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Ponteiros em C</title>
+    <meta name="description" content="Criando ponteiros Um ponteiro é uma forma de endereçar uma variável em outra.
+Ao atribuir um valor para ser armazenado na memória de uma variável, utilizamos o …">
+    <meta name="keywords" content='blog, tecnologia, portfólio, Carolina Soares, carolinasoares.dev, dev, desenvolvimento, software, algoritmos, computação, código, programação, blog pessoal, C, Ponteiros'>
+
+    <meta property="og:url" content="http://localhost:1313/posts/ponteiros/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Ponteiros em C">
+    <meta property="og:description" content="Criando ponteiros Um ponteiro é uma forma de endereçar uma variável em outra.
+Ao atribuir um valor para ser armazenado na memória de uma variável, utilizamos o …">
+    <meta property="og:image" content="http://localhost:1313/images/avatar.jpeg">
+    <meta property="og:image:secure_url" content="http://localhost:1313/images/avatar.jpeg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ponteiros em C">
+    <meta name="twitter:description" content="Criando ponteiros Um ponteiro é uma forma de endereçar uma variável em outra.
+Ao atribuir um valor para ser armazenado na memória de uma variável, utilizamos o …">
+    <meta property="twitter:domain" content="http://localhost:1313/posts/ponteiros/">
+    <meta property="twitter:url" content="http://localhost:1313/posts/ponteiros/">
+    <meta name="twitter:image" content="http://localhost:1313/images/avatar.jpeg">
+
+    
+    <link rel="canonical" href="http://localhost:1313/posts/ponteiros/">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.275fedb6f364c8865658bae576d82b514ace973f6a13ed63503a85b20c697453.js" integrity="sha256-J1/ttvNkyIZWWLrldtgrUUrOlz9qE&#43;1jUDqFsgxpdFM="></script>
+
+    
+    
+        <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js" integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+          ],
+          // • rendering keys, e.g.:
+          throwOnError : false
+        });
+      });
+    </script>
+  
+    
+</head>
+<body>
+        <script>
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+        <div class="avatar">
+            <a href="http://localhost:1313/">
+                <img src='/images/avatar.jpeg' alt="avatar">
+            </a>
+        </div>
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="http://localhost:1313/">Sou a Carolina (Carol) :D</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="http://localhost:1313/" aria-label="" ><span data-feather='home'></span> Início </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="http://localhost:1313/posts/" aria-label="" ><span data-feather='feather'></span> Postagens </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="http://localhost:1313/tutorials/" aria-label="" ><span data-feather='book-open'></span> Tutoriais </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="http://localhost:1313/projects/" aria-label="" ><span data-feather='code'></span> Projetos </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="http://localhost:1313/talks/" aria-label="" ><span data-feather='mic'></span> Palestras </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="http://localhost:1313/tags/" aria-label="" ><span data-feather='tag'></span> Marcadores </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://github.com/mariacarolinass" aria-label="github" ><span data-feather='github'></span>  </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://www.linkedin.com/in/carolinasoaresm/" aria-label="linkedin" ><span data-feather='linkedin'></span>  </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="mailto:mcarolinasoares0@gmail.com" aria-label="email" ><span data-feather='mail'></span>  </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://www.buymeacoffee.com/mcarolinasz" aria-label="buymeacoffee" ><span data-feather='coffee'></span>  </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="http://localhost:1313/index.xml" aria-label="rss" ><span data-feather='rss'></span>  </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span class="sr-only dark-theme-toggle-screen-reader-target">theme</span>
+                <a aria-hidden="true" role="switch">
+                    <span class="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span class="sr-only hamburger-menu-toggle-screen-reader-target">menu</span>
+                <a aria-checked="false" aria-labelledby="hamburger-menu-toggle" id="hamburger-menu-toggle-target" role="switch">
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="http://localhost:1313/" ><span data-feather='home'></span> Início </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="http://localhost:1313/posts/" ><span data-feather='feather'></span> Postagens </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="http://localhost:1313/tutorials/" ><span data-feather='book-open'></span> Tutoriais </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="http://localhost:1313/projects/" ><span data-feather='code'></span> Projetos </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="http://localhost:1313/talks/" ><span data-feather='mic'></span> Palestras </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="http://localhost:1313/tags/" ><span data-feather='tag'></span> Marcadores </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://github.com/mariacarolinass" ><span data-feather='github'></span>  </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://www.linkedin.com/in/carolinasoaresm/" ><span data-feather='linkedin'></span>  </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="mailto:mcarolinasoares0@gmail.com" ><span data-feather='mail'></span>  </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://www.buymeacoffee.com/mcarolinasz" ><span data-feather='coffee'></span>  </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="http://localhost:1313/index.xml" ><span data-feather='rss'></span>  </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span class="sr-only dark-theme-toggle-screen-reader-target">theme</span>
+                    <a role="switch">
+                        <span class="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Ponteiros em C</h1>
+
+        
+
+        
+	
+	
+	
+	
+        
+
+	
+
+	
+
+	
+          <small role="doc-subtitle"></small>
+	
+
+	
+          <p class="post-date">
+              
+
+              março 16, 2025
+
+              
+          </p>
+	
+
+        <ul class="post-tags">
+          
+           
+             <li class="post-tag"><a href="http://localhost:1313/tags/c">C</a></li>
+           
+         
+           
+             <li class="post-tag"><a href="http://localhost:1313/tags/ponteiros">Ponteiros</a></li>
+           
+         
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <h2 id="criando-ponteiros">Criando ponteiros</h2>
+<p>Um ponteiro é uma forma de endereçar uma variável em outra.</p>
+<p>Ao atribuir um valor para ser armazenado na memória de uma variável, utilizamos o conceito de ponteiros para que essa variável seja referência de outra, fazendo uma associação de variáveis, assim é atribuído o endereço de uma variável ao ponteiro.</p>
+<p><strong>Exemplo 1:</strong></p>
+<pre tabindex="0"><code># include &lt;stdio.h&gt;
+
+int main(void) {
+    int x = 10; // variável x criada
+    int *y; // ponteiro y criado
+
+    y = &amp;x; // atribuído o endereço de x em y
+	
+    printf(&#34;x = %d \n&#34;, x);
+    printf(&#34;*y = %d \n&#34;, *y);
+    printf(&#34;y = %p \n&#34;, y);	
+}
+</code></pre><p><strong>Saída:</strong></p>
+<p>x continuará sendo 10.</p>
+<p>O ponteiro *y terá o valor 10, pois referencia x.</p>
+<p>y terá o endereço de x com algo do tipo 0x7fffffffda04 armazenado.</p>
+<p>Dessa forma, uma vez que a associação entre x e y foi criada, sempre que o valor de x for atualizado o valor de y também será modificado paralelamente, pois y possui o endereço de x.</p>
+<p><strong>Exemplo 2:</strong></p>
+<pre tabindex="0"><code># include &lt;stdio.h&gt;
+
+int main(void) {
+    int x = 10; // variável x criada
+    int *y; // ponteiro y criado
+	
+    y = &amp;x; // atribuído o endereço de x em y
+	
+    x = 20 // alterado o valor de x
+	
+    printf(&#34;x = %d \n&#34;, x);
+    printf(&#34;*y = %d \n&#34;, *y);
+    printf(&#34;y = %p \n&#34;, y);	
+}
+</code></pre><p>Agora, x será 20.</p>
+<p>O ponteiro *y também será 20.</p>
+<p>y guarda o mesmo endereço de x 0x7fffffffda04.</p>
+<p><a href="https://github.com/MariaCarolinass/c-cpp/tree/main/c/ponteiros/src">Exercícios de Ponteiros</a></p>
+
+        
+    </div>
+
+    <div class="prev-next">
+        
+    </div>
+
+    
+    
+        <svg id="btt-button" class="arrow-logo" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512" onclick="scrollToTop()" title="Go to top">
+    
+    <path d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"/>
+</svg>
+<script>
+    let backToTopButton = document.getElementById("btt-button");
+
+    window.onscroll = function() {
+        scrollFunction()
+    };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            backToTopButton.style.display = "block";
+        } else {
+            backToTopButton.style.display = "none";
+        }
+    }
+
+    function scrollToTop() {
+        window.scrollTo(0, 0);
+    }
+</script>
+
+    
+    
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+
+    
+
+        
+            
+        
+
+        
+
+        
+        
+
+        
+
+    
+
+    
+        <span>&copy; 2025 Carolina Soares</span>
+    
+
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/gokarna-theme/gokarna-hugo">Gokarna</a>
+    </span>
+</footer>
+</body>
+</html>

@@ -1,20 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Projetos on Carolina Soares</title>
-    <link>https://carolinasoares.dev/projects/</link>
-    <description>Recent content in Projetos on Carolina Soares</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>pt</language><atom:link href="https://carolinasoares.dev/projects/index.xml" rel="self" type="application/rss+xml" />
+    <title>Projetos on Sou a Carolina (Carol) :D</title>
+    <link>http://localhost:1313/projects/</link>
+    <description>Recent content in Projetos on Sou a Carolina (Carol) :D</description>
+    <generator>Hugo</generator>
+    <language>pt</language>
+    <lastBuildDate>Thu, 10 Oct 2024 15:00:00 -0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CMGR - CImaGeo Manager</title>
+      <link>http://localhost:1313/projects/cmgr/</link>
+      <pubDate>Thu, 10 Oct 2024 15:00:00 -0300</pubDate>
+      <guid>http://localhost:1313/projects/cmgr/</guid>
+      <description>Aplicação desktop para gerenciamento e mapeamento de dados georreferenciados da CImaGeo. O CMGR é um software gerente da CImaGeo - Central de Imageamento de Dados Geofísicos com funcionalidades para cadastro, edição, remoção e visualização do banco de dados da empresa. Além disso, o programa integra um mapa do OpenStreepMap para visualizar a geometria e coordenada dos dados que estão no banco de dados.&#xA;O objetivo do programa é facilitar o cotidiano do trabalho dos geofísicos que trabalham na CImaGeo, organizando as informações e oferecendo um norte para onde exatamente as geometrias cadastradas estão localizadas no mapa.</description>
+    </item>
     <item>
       <title>Dados Livres</title>
-      <link>https://carolinasoares.dev/projects/dadoslivres/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://carolinasoares.dev/projects/dadoslivres/</guid>
-      <description>Plataforma livre de dados abertos Plataforma livre para catalogação de fontes de dados abertos e aplicações cívicas por meio de colaboração coletiva Acesse: dadoslivres.org
-Sobre o Dados Livres O Dados Livres é uma plataforma software livre, sem fins lucrativos, que visa catalogar fontes de dados abertos e aplicações cívicas por meio de colaboração coletiva, lançado em novembro de 2019 na sua versão beta. A ideia de desenvolver o Dados Livres surgiu em 2018, pensando em criar um ambiente que facilitasse a visualização das informações e tecnologias que usam os dados abertos e que, conjuntamente, virasse um lugar colaborativo.</description>
+      <link>http://localhost:1313/projects/dadoslivres/</link>
+      <pubDate>Tue, 12 Mar 2024 15:00:00 -0300</pubDate>
+      <guid>http://localhost:1313/projects/dadoslivres/</guid>
+      <description>Plataforma livre de dados abertos Plataforma livre para catalogação de fontes de dados abertos e aplicações cívicas por meio de colaboração coletiva Acesse: dadoslivres.org&#xA;Sobre o Dados Livres O Dados Livres é uma plataforma software livre, sem fins lucrativos, que visa catalogar fontes de dados abertos e aplicações cívicas por meio de colaboração coletiva, lançado em novembro de 2019 na sua versão beta. A ideia de desenvolver o Dados Livres surgiu em 2018, pensando em criar um ambiente que facilitasse a visualização das informações e tecnologias que usam os dados abertos e que, conjuntamente, virasse um lugar colaborativo.</description>
     </item>
-    
   </channel>
 </rss>

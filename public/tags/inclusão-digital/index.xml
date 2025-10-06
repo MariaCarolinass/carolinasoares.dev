@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>inclusão digital on Carolina Soares</title>
-    <link>https://carolinasoares.dev/tags/inclus%C3%A3o-digital/</link>
-    <description>Recent content in inclusão digital on Carolina Soares</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Inclusão Digital on Sou a Carolina (Carol) :D</title>
+    <link>http://localhost:1313/tags/inclus%C3%A3o-digital/</link>
+    <description>Recent content in Inclusão Digital on Sou a Carolina (Carol) :D</description>
+    <generator>Hugo</generator>
     <language>pt</language>
-    <lastBuildDate>Thu, 10 Mar 2022 00:53:24 -0300</lastBuildDate><atom:link href="https://carolinasoares.dev/tags/inclus%C3%A3o-digital/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 30 Mar 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/inclus%C3%A3o-digital/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>O uso do software livre na contribuição de uma internet mais inclusiva</title>
-      <link>https://carolinasoares.dev/posts/minitopicosoftwarelivre/</link>
-      <pubDate>Thu, 10 Mar 2022 00:53:24 -0300</pubDate>
-      
-      <guid>https://carolinasoares.dev/posts/minitopicosoftwarelivre/</guid>
-      <description>A inclusão digital faz parte do mundo globalizado, isto significa incluir toda a sociedade, sem restrições, no acesso e uso da rede. Esta participação do público contribui na construção de uma cidadania mais diversa e com autonomia. Além disso, é um direito à liberdade civil da sociedade o acesso livre e democrático das informações públicas na Internet.
-O que é entendido por inclusão digital se assemelha com a filosofia Software Livre, pois reconhece o papel fundamental do usuário colaborativo na rede.</description>
+      <link>http://localhost:1313/posts/minitopicosoftwarelivre/</link>
+      <pubDate>Wed, 30 Mar 2022 00:53:24 -0300</pubDate>
+      <guid>http://localhost:1313/posts/minitopicosoftwarelivre/</guid>
+      <description>A inclusão digital faz parte do mundo globalizado, isto significa incluir toda a sociedade, sem restrições, no acesso e uso da rede. Esta participação do público contribui na construção de uma cidadania mais diversa e com autonomia. Além disso, é um direito à liberdade civil da sociedade o acesso livre e democrático das informações públicas na Internet.&#xA;O que é entendido por inclusão digital se assemelha com a filosofia Software Livre, pois reconhece o papel fundamental do usuário colaborativo na rede.</description>
     </item>
-    
   </channel>
 </rss>

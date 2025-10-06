@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>liberdade on Carolina Soares</title>
-    <link>https://carolinasoares.dev/tags/liberdade/</link>
-    <description>Recent content in liberdade on Carolina Soares</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Liberdade on Sou a Carolina (Carol) :D</title>
+    <link>http://localhost:1313/tags/liberdade/</link>
+    <description>Recent content in Liberdade on Sou a Carolina (Carol) :D</description>
+    <generator>Hugo</generator>
     <language>pt</language>
-    <lastBuildDate>Thu, 10 Mar 2022 00:53:15 -0300</lastBuildDate><atom:link href="https://carolinasoares.dev/tags/liberdade/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 Mar 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/liberdade/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>O poder abusivo do princípio de liberdade</title>
-      <link>https://carolinasoares.dev/posts/minitopicoprincipioliberdade/</link>
-      <pubDate>Thu, 10 Mar 2022 00:53:15 -0300</pubDate>
-      
-      <guid>https://carolinasoares.dev/posts/minitopicoprincipioliberdade/</guid>
-      <description>A Declaração multissetorial do NETmundial (2014), declarou que um dos princípios de Governança da Internet se refere aos direitos humanos e valores compartilhados dos usuários. Um dos itens em questão trata da liberdade de expressão, onde toda pessoa tem o direito de opinar e se expressar na rede.
-Dessa forma, a Internet é o mecanismo mais facilitador na difusão de opiniões, notícias ou críticas, porém muitos problemas podem surgir a partir do tema.</description>
+      <link>http://localhost:1313/posts/minitopicoprincipioliberdade/</link>
+      <pubDate>Mon, 28 Mar 2022 00:53:15 -0300</pubDate>
+      <guid>http://localhost:1313/posts/minitopicoprincipioliberdade/</guid>
+      <description>A Declaração multissetorial do NETmundial (2014), declarou que um dos princípios de Governança da Internet se refere aos direitos humanos e valores compartilhados dos usuários. Um dos itens em questão trata da liberdade de expressão, onde toda pessoa tem o direito de opinar e se expressar na rede.&#xA;Dessa forma, a Internet é o mecanismo mais facilitador na difusão de opiniões, notícias ou críticas, porém muitos problemas podem surgir a partir do tema.</description>
     </item>
-    
   </channel>
 </rss>

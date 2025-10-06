@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Palestras on Carolina Soares</title>
-    <link>https://carolinasoares.dev/talks/</link>
-    <description>Recent content in Palestras on Carolina Soares</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>pt</language><atom:link href="https://carolinasoares.dev/talks/index.xml" rel="self" type="application/rss+xml" />
+    <title>Palestras on Sou a Carolina (Carol) :D</title>
+    <link>http://localhost:1313/talks/</link>
+    <description>Recent content in Palestras on Sou a Carolina (Carol) :D</description>
+    <generator>Hugo</generator>
+    <language>pt</language>
+    <atom:link href="http://localhost:1313/talks/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

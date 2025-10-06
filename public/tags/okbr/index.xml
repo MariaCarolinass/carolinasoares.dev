@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OKBR on Sou a Carolina (Carol) :D</title>
+    <link>http://localhost:1313/tags/okbr/</link>
+    <description>Recent content in OKBR on Sou a Carolina (Carol) :D</description>
+    <generator>Hugo</generator>
+    <language>pt</language>
+    <lastBuildDate>Tue, 06 May 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/okbr/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Como foi organizar o Open Data Day em Natal - RN</title>
+      <link>http://localhost:1313/posts/como-foi-organizar-odd/</link>
+      <pubDate>Tue, 06 May 2025 00:27:18 -0300</pubDate>
+      <guid>http://localhost:1313/posts/como-foi-organizar-odd/</guid>
+      <description>O Open Data Day é um evento global que acontece todos os anos para celebrar o Dia dos Dados Abertos Dados Abertos são dados que podem ser livremente usados, reutilizados e redistribuídos por qualquer pessoa, promovendo o acesso ao conhecimento e fortalecendo a sociedade.&#xA;O Open Data Day (ODD) é uma iniciativa que visa reunir diferentes setores da sociedade para discutir a abertura e o uso de dados governamentais. Com o apoio da Open Knowledge Brasil (OKBR), o evento busca fortalecer temas como controle social, transparência pública e tecnologias cívicas, promovendo governos mais abertos, participativos e democráticos.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C on Sou a Carolina (Carol) :D</title>
+    <link>http://localhost:1313/tags/c/</link>
+    <description>Recent content in C on Sou a Carolina (Carol) :D</description>
+    <generator>Hugo</generator>
+    <language>pt</language>
+    <lastBuildDate>Fri, 26 Jul 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/c/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ponteiros em C</title>
+      <link>http://localhost:1313/posts/ponteiros/</link>
+      <pubDate>Sun, 16 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/ponteiros/</guid>
+      <description>Criando ponteiros Um ponteiro é uma forma de endereçar uma variável em outra.&#xA;Ao atribuir um valor para ser armazenado na memória de uma variável, utilizamos o conceito de ponteiros para que essa variável seja referência de outra, fazendo uma associação de variáveis, assim é atribuído o endereço de uma variável ao ponteiro.&#xA;Exemplo 1:&#xA;# include &amp;lt;stdio.h&amp;gt; int main(void) { int x = 10; // variável x criada int *y; // ponteiro y criado y = &amp;amp;x; // atribuído o endereço de x em y printf(&amp;#34;x = %d \n&amp;#34;, x); printf(&amp;#34;*y = %d \n&amp;#34;, *y); printf(&amp;#34;y = %p \n&amp;#34;, y);&#x9;} Saída:</description>
+    </item>
+  </channel>
+</rss>

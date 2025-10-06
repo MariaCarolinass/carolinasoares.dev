@@ -1,32 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>apache on Carolina Soares</title>
-    <link>https://carolinasoares.dev/tags/apache/</link>
-    <description>Recent content in apache on Carolina Soares</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Apache on Sou a Carolina (Carol) :D</title>
+    <link>http://localhost:1313/tags/apache/</link>
+    <description>Recent content in Apache on Sou a Carolina (Carol) :D</description>
+    <generator>Hugo</generator>
     <language>pt</language>
-    <lastBuildDate>Fri, 16 Apr 2021 00:30:19 -0300</lastBuildDate><atom:link href="https://carolinasoares.dev/tags/apache/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 16 Apr 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/apache/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Praticando configurações de sistema na distribuição Linux Debian</title>
-      <link>https://carolinasoares.dev/posts/apacheparte2/</link>
-      <pubDate>Fri, 16 Apr 2021 00:30:19 -0300</pubDate>
-      
-      <guid>https://carolinasoares.dev/posts/apacheparte2/</guid>
-      <description>Criação da máquina virtual As configurações no Linux - Debian serão realizadas na máquina virtual criada no VirtualBox. O sistema operacional escolhido para a máquina virtual é o Debian (versão 32 bits), que é uma distribuição derivado do kernel Linux. As especificações definidas para a máquina virtual foram:
- Memória RAM de 512 MB; Disco rígido de 16 GB; Tipo de disco VDI; Tipo de alocação Dinamicamente Alocado  Instalação da distribuição Linux Debian Durante a instalação do Debian foram definidas as configurações que o disco da máquina terá.</description>
-    </item>
-    
-    <item>
-      <title>Configurando um servidor Apache2 em uma máquina virtual</title>
-      <link>https://carolinasoares.dev/posts/apacheparte1/</link>
+      <title>Criando e configurando um servidor em uma máquina virtual</title>
+      <link>http://localhost:1313/tutorials/apache/</link>
       <pubDate>Fri, 16 Apr 2021 00:30:17 -0300</pubDate>
-      
-      <guid>https://carolinasoares.dev/posts/apacheparte1/</guid>
-      <description>Instalação da máquina virtual: VirtualBox O VirtualBox é um virtualizador completo de uso geral. É um ambiente virtual que simula a experiência de usar um sistema operacional sem precisar fazer a sua instalação na máquina física.
- Link para instalação do VirtualBox. Saiba mais sobre o VirtualBox.  Instalação da imagem do sistema operacional: Debian Para configurar o VirtualBox precisamos baixar uma imagem de algum sistema operacional.
-O Projeto Debian é uma associação de indivíduos que têm como causa comum criar um sistema operacional livre.</description>
+      <guid>http://localhost:1313/tutorials/apache/</guid>
+      <description> Parte 1: Configurando um servidor Apache2 em uma máquina virtual Parte 2: Praticando configurações de sistema na distribuição Linux Debian </description>
     </item>
-    
   </channel>
 </rss>

@@ -1,40 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>internet on Carolina Soares</title>
-    <link>https://carolinasoares.dev/tags/internet/</link>
-    <description>Recent content in internet on Carolina Soares</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Internet on Sou a Carolina (Carol) :D</title>
+    <link>http://localhost:1313/tags/internet/</link>
+    <description>Recent content in Internet on Sou a Carolina (Carol) :D</description>
+    <generator>Hugo</generator>
     <language>pt</language>
-    <lastBuildDate>Thu, 10 Mar 2022 00:53:15 -0300</lastBuildDate><atom:link href="https://carolinasoares.dev/tags/internet/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Desenvolvimento de uma Internet mais acessível</title>
-      <link>https://carolinasoares.dev/posts/minitopicointernetacessivel/</link>
-      <pubDate>Thu, 10 Mar 2022 00:53:15 -0300</pubDate>
-      
-      <guid>https://carolinasoares.dev/posts/minitopicointernetacessivel/</guid>
-      <description>A governança da Internet é uma construção coletiva, ou seja, todos devem participar e fazer parte sem exceções. A Internet é um mecanismo que deve estar acessível para diferentes coletivos, pois o acesso à informação é um direito universal.
-A World Wide Web (W3C) estabelece padrões para a criação e a interpretação de conteúdos para a web, essa organização possui diferentes documentos de como um site deve corresponder para ser minimamente acessível.</description>
-    </item>
-    
+    <lastBuildDate>Mon, 28 Mar 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/internet/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>O poder abusivo do princípio de liberdade</title>
-      <link>https://carolinasoares.dev/posts/minitopicoprincipioliberdade/</link>
-      <pubDate>Thu, 10 Mar 2022 00:53:15 -0300</pubDate>
-      
-      <guid>https://carolinasoares.dev/posts/minitopicoprincipioliberdade/</guid>
-      <description>A Declaração multissetorial do NETmundial (2014), declarou que um dos princípios de Governança da Internet se refere aos direitos humanos e valores compartilhados dos usuários. Um dos itens em questão trata da liberdade de expressão, onde toda pessoa tem o direito de opinar e se expressar na rede.
-Dessa forma, a Internet é o mecanismo mais facilitador na difusão de opiniões, notícias ou críticas, porém muitos problemas podem surgir a partir do tema.</description>
+      <link>http://localhost:1313/posts/minitopicoprincipioliberdade/</link>
+      <pubDate>Mon, 28 Mar 2022 00:53:15 -0300</pubDate>
+      <guid>http://localhost:1313/posts/minitopicoprincipioliberdade/</guid>
+      <description>A Declaração multissetorial do NETmundial (2014), declarou que um dos princípios de Governança da Internet se refere aos direitos humanos e valores compartilhados dos usuários. Um dos itens em questão trata da liberdade de expressão, onde toda pessoa tem o direito de opinar e se expressar na rede.&#xA;Dessa forma, a Internet é o mecanismo mais facilitador na difusão de opiniões, notícias ou críticas, porém muitos problemas podem surgir a partir do tema.</description>
     </item>
-    
+    <item>
+      <title>Desenvolvimento de uma Internet mais acessível</title>
+      <link>http://localhost:1313/posts/minitopicointernetacessivel/</link>
+      <pubDate>Tue, 15 Mar 2022 00:53:15 -0300</pubDate>
+      <guid>http://localhost:1313/posts/minitopicointernetacessivel/</guid>
+      <description>A governança da Internet é uma construção coletiva, ou seja, todos devem participar e fazer parte sem exceções. A Internet é um mecanismo que deve estar acessível para diferentes coletivos, pois o acesso à informação é um direito universal.&#xA;A World Wide Web (W3C) estabelece padrões para a criação e a interpretação de conteúdos para a web, essa organização possui diferentes documentos de como um site deve corresponder para ser minimamente acessível.</description>
+    </item>
     <item>
       <title>A importância das RFCs na Internet</title>
-      <link>https://carolinasoares.dev/posts/minitopicorfc/</link>
+      <link>http://localhost:1313/posts/minitopicorfc/</link>
       <pubDate>Thu, 10 Mar 2022 00:52:54 -0300</pubDate>
-      
-      <guid>https://carolinasoares.dev/posts/minitopicorfc/</guid>
+      <guid>http://localhost:1313/posts/minitopicorfc/</guid>
       <description>As RFCs ou Request for Comments são documentos técnicos que descrevem e organizam todo o processo de desenvolvimento da Internet. Inicialmente as RFCs foram criadas visando documentar o projeto ARPANET, logo, com a rede de computadores em crescente evolução tornou-se imprescindível padronizar em um local todos os avanços da web. Atualmente existem 7423 RFCs, entre estes documentos estão especificados protocolos importantes como o HTTP, IP, TCP/IP e serviços de E-mails.</description>
     </item>
-    
   </channel>
 </rss>
