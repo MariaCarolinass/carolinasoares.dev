@@ -1,15 +1,13 @@
 # Carolina Soares
 
-Site desenvolvido com framework [Hugo](https://gohugo.io/) e tema [Gokarna](https://github.com/gokarna-theme/gokarna-hugo).
+Blog desenvolvido com [Hugo](https://gohugo.io/) e com o tema [Gokarna](https://github.com/gokarna-theme/gokarna-hugo).
 
-## Instalar Projeto
+- Para executar:
 
-Para compilar:
+      hugo server
 
-    hugo
+    Acesso localhost porta 1313.
 
-Para executar:
+- Para compilar:
 
-    hugo server
-
-Acesso local pelo localhost porta 1313.
+      hugo
