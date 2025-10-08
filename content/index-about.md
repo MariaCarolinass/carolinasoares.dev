@@ -1,3 +1,5 @@
-## Desenvolvedora de software com experiência em Java, Python e Node.js, atuando em soluções para dados geoespaciais, cidades inteligentes, IoT e dados abertos.
+## Desenvolvedora de Software com experiência em Java, Python e Node.js, trabalhando em projetos que unem tecnologia, dados e impacto social 🌍
 
-Apaixonada por aprender novas tecnologias e compartilhar conhecimento. Atuo em projetos que envolvem Inteligência Artificial, gerenciamento de dados, otimização e desenvolvimento web. Engajada em unir tecnologia e impacto social.
+Oi, eu sou a Carol! 👋 Já desenvolvi sistemas para **Cidades Inteligentes**, **dados geoespaciais** e **aplicações cívicas**, e estou sempre buscando formas de tornar a tecnologia mais **inovadora e útil para as pessoas** 💡.
+
+Quando não estou codando 💻, contribuo com **projetos de software livre** e comunidades como **Dados Livres**, adoro aprender sobre **Inteligência Artifical** 🤖 e iniciativas de **dados abertos** 📊. Meu objetivo é **conectar tecnologia e impacto social** ❤️ em tudo que faço.
