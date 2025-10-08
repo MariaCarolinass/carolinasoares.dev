@@ -4,7 +4,7 @@ enableRobotsTXT = true
 enableEmoji = true
 languageCode = "pt"
 theme = "gokarna"
-title = "Sou a Carolina (Carol) :D"
+title = "Sou a Carolina (Carol)"
 
 [menu]
   [[menu.main]]
@@ -117,7 +117,7 @@ title = "Sou a Carolina (Carol) :D"
 
   dateFormat = "January 2, 2006"
   
-  description = "Desenvolvedora • Software Livre • Tecnologia Cívica • Dados Abertos"
+  description = "Desenvolvedora de software | Construindo, aprendendo e compartilhando código"
 
   footer = "Carolina Soares"
 
