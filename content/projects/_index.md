@@ -5,7 +5,7 @@ type: page
 
 Confira todos os meus repositórios no GitHub 👉 [@MariaCarolinass](https://github.com/MariaCarolinass?tab=repositories) 😃
 
-## CMGR - CImaGeo Manager
+<!--## CMGR - CImaGeo Manager
 
 Aplicação [CMGR - CImaGeo Manager](/projects/cmgr/) desktop para gerenciamento e mapeamento de dados georreferenciados da CImaGeo - Central de Imageamento de Dados Geofísicos.
 
@@ -16,3 +16,4 @@ O [Dados Livres](/projects/dadoslivres/) é uma plataforma livre que permite a c
 ## Escultor 3D
 
 O [Escultor 3D](https://github.com/MariaCarolinass/escultor3D) é um programa interativo para criação de esculturas.
+-->
