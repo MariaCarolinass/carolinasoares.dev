@@ -2,7 +2,7 @@
 date: 2024-03-10T15:00:00-03:00
 description: "Aplicação desktop para gerenciamento e mapeamento de dados georreferenciados da CImaGeo"
 title: "CMGR - CImaGeo Manager"
-type: post
+type: page
 showTableOfContents: true
 tags: ["java", "spring", "hibernate", "jpa", "postgresql", "desktop", "geoprocessamento"]
 ---
