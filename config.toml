@@ -76,7 +76,7 @@ title = "Sou a Carolina (Carol)"
 [params]
   accentColor = "#FF4D4D"
   
-  avatarURL = "/images/avatar.jpeg"
+  avatarURL = "/images/avatar.jpg"
   avatarAltText = "avatar"
   avatarSize = "size-m"
 
