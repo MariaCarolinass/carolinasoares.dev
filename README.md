@@ -1,13 +1,15 @@
-# Carolina Soares
+# carolinasoares.dev
 
 Blog desenvolvido com [Hugo](https://gohugo.io/) e com o tema [Gokarna](https://github.com/gokarna-theme/gokarna-hugo).
 
-- Para executar:
+- Baixar tema:
 
-      hugo server
+      git submodule add https://github.com/gokarna-theme/gokarna-hugo.git themes/gokarna
 
-    Acesso localhost porta 1313.
-
-- Para compilar:
+- Compilar:
 
       hugo
+
+- Executar:
+
+      hugo server
