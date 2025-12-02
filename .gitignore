@@ -2,6 +2,7 @@
 /public/
 /resources/
 /hugo_stats.json
+/themes/
 
 # Arquivos temporários e de sistema
 *.log
