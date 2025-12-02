@@ -17,7 +17,7 @@ Ao atribuir um valor para ser armazenado na memória de uma variável, utilizamo
 
 **Exemplo 1:**
 
-```
+```c
 # include <stdio.h>
 
 int main(void) {
@@ -44,7 +44,7 @@ Dessa forma, uma vez que a associação entre x e y foi criada, sempre que o val
 
 **Exemplo 2:**
 
-```
+```c
 # include <stdio.h>
 
 int main(void) {
