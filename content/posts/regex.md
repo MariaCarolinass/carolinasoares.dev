@@ -104,7 +104,6 @@ Esses símbolos possuem significados específicos e definem como o padrão será
 | `()`          | Grupo                    |             |
 | `\`           | Escape                   |             |
 | `{}`          | Quantificador            |             |
-| `             | `                        | Operador OU |
 
 ---
 
@@ -274,6 +273,12 @@ resultado = re.match(padrao, email)
 print(resultado)
 ```
 
+### Saída
+
+```python
+<re.Match object; span=(0, 17), match='usuario@email.com'>
+```
+
 ---
 
 ## Encontrando palavras
@@ -287,6 +292,12 @@ padrao = r"Python|Java"
 resultado = re.findall(padrao, texto)
 
 print(resultado)
+```
+
+### Saída
+
+```python
+['Python', 'Java']
 ```
 
 ---
