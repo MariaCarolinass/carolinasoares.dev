@@ -7,17 +7,17 @@ function mermaidThemeVariables(isDarkMode) {
       primaryColor: "#111827",
       primaryBorderColor: "rgba(248, 113, 113, 0.72)",
       primaryTextColor: "#e5e7eb",
-      secondaryColor: "#0f172a",
-      secondaryBorderColor: "#475569",
+      secondaryColor: "#475569",
+      secondaryBorderColor: "#94a3b8",
       secondaryTextColor: "#e5e7eb",
-      tertiaryColor: "#0f172a",
-      tertiaryBorderColor: "#64748b",
+      tertiaryColor: "#475569",
+      tertiaryBorderColor: "#94a3b8",
       tertiaryTextColor: "#e5e7eb",
       lineColor: "#cbd5e1",
       textColor: "#e5e7eb",
       mainBkg: "#111827",
-      secondBkg: "#0f172a",
-      tertiaryBkg: "#0f172a",
+      secondBkg: "#475569",
+      tertiaryBkg: "#475569",
       fontFamily: "Lato, sans-serif"
     };
   }
@@ -56,7 +56,73 @@ function rerenderMermaidDiagrams() {
     node.removeAttribute("data-processed");
   });
 
-  mermaid.run({ querySelector: 'div.mermaid[data-mermaid-source]' });
+  return mermaid.run({ querySelector: 'div.mermaid[data-mermaid-source]' });
+}
+
+function applyMindmapBackground() {
+  if (!isDarkMode) {
+    return;
+  }
+
+  document.querySelectorAll('div.mermaid.mermaid-mindmap').forEach(function(node) {
+    var rootLabelMatch = node.dataset.mermaidSource && node.dataset.mermaidSource.match(/^\s*mindmap[\s\S]*?root\(\((.+?)\)\)/m);
+    var rootLabel = rootLabelMatch ? rootLabelMatch[1].trim() : '';
+    var shapeSelectors = 'circle, rect, ellipse, polygon, path';
+    var childFillColor = '#334155';
+    var childStrokeColor = 'rgba(148, 163, 184, 0.5)';
+
+    Array.from(node.querySelectorAll('svg g')).forEach(function(group) {
+      if (!group.querySelector(shapeSelectors)) {
+        return;
+      }
+
+      var label = group.querySelector('text');
+      var labelText = label ? label.textContent.trim() : '';
+
+      if (rootLabel && labelText === rootLabel) {
+        return;
+      }
+
+      group.querySelectorAll(shapeSelectors).forEach(function(shape) {
+        shape.style.setProperty('fill', childFillColor, 'important');
+        shape.style.setProperty('stroke', childStrokeColor, 'important');
+      });
+    });
+  });
+}
+
+function ensureMermaidZoomControls() {
+  document.querySelectorAll('div.mermaid[data-mermaid-source]').forEach(function(node) {
+    var wrapper = node.parentElement;
+    if (!wrapper) {
+      return;
+    }
+
+    if (!wrapper.classList.contains('mermaid-frame')) {
+      wrapper.classList.add('mermaid-frame');
+    }
+
+    if (wrapper.querySelector('.mermaid-zoom-button')) {
+      return;
+    }
+
+    var button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'mermaid-zoom-button';
+    button.setAttribute('aria-label', 'Aproximar diagrama');
+    button.setAttribute('title', 'Aproximar diagrama');
+    button.setAttribute('aria-pressed', node.classList.contains('mermaid-zoomed') ? 'true' : 'false');
+    button.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"></circle><line x1="16.65" y1="16.65" x2="21" y2="21"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>';
+
+    button.addEventListener('click', function() {
+      var isZoomed = node.classList.toggle('mermaid-zoomed');
+      button.setAttribute('aria-pressed', isZoomed ? 'true' : 'false');
+      button.setAttribute('title', isZoomed ? 'Voltar ao tamanho normal' : 'Aproximar diagrama');
+      button.classList.toggle('is-zoomed', isZoomed);
+    });
+
+    wrapper.insertBefore(button, node);
+  });
 }
 
 function syncDarkBackground() {
@@ -67,19 +133,29 @@ function syncDarkBackground() {
   return isDarkMode;
 }
 
+var isDarkMode = syncDarkBackground();
+
 document.querySelectorAll('pre code.language-mermaid').forEach(function(codeBlock) {
   var parent = codeBlock.parentElement;
   var mermaidText = codeBlock.textContent;
   var mermaidDiv = document.createElement('div');
   mermaidDiv.className = 'mermaid';
+  if (/^\s*mindmap\b/.test(mermaidText)) {
+    mermaidDiv.classList.add('mermaid-mindmap');
+  }
   mermaidDiv.dataset.mermaidSource = mermaidText;
   mermaidDiv.textContent = mermaidText;
-  parent.parentNode.replaceChild(mermaidDiv, parent);
+  var mermaidFrame = document.createElement('div');
+  mermaidFrame.className = 'mermaid-frame';
+  mermaidFrame.appendChild(mermaidDiv);
+  parent.parentNode.replaceChild(mermaidFrame, parent);
 });
 
-var isDarkMode = syncDarkBackground();
 initializeMermaid(isDarkMode);
-rerenderMermaidDiagrams();
+rerenderMermaidDiagrams().then(function() {
+  ensureMermaidZoomControls();
+  applyMindmapBackground();
+});
 mermaidDarkMode = isDarkMode;
 
 var darkThemeLink = document.getElementById("dark-theme");
@@ -89,7 +165,10 @@ if (darkThemeLink) {
 
     if (nextDarkMode !== mermaidDarkMode) {
       initializeMermaid(nextDarkMode);
-      rerenderMermaidDiagrams();
+      rerenderMermaidDiagrams().then(function() {
+        ensureMermaidZoomControls();
+        applyMindmapBackground();
+      });
       mermaidDarkMode = nextDarkMode;
     }
   }).observe(darkThemeLink, {

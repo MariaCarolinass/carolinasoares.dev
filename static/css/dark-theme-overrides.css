@@ -179,7 +179,8 @@ html.carol-dark-background .mermaid {
   border-radius: 16px;
   margin: 24px 0;
   overflow-x: auto;
-  padding: 14px;
+  padding: 2.15rem 14px 14px;
+  position: relative;
 }
 
 html.carol-dark-background .mermaid svg {
@@ -230,4 +231,139 @@ html.carol-dark-background .mermaid .edgeLabel rect {
 
 html.carol-dark-background .mermaid .edgeLabel text {
   fill: #e5e7eb !important;
+}
+
+.mermaid-frame {
+  margin: 24px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.mermaid-frame .mermaid {
+  margin: 0;
+}
+
+.mermaid-zoom-button {
+  appearance: none;
+  background: rgba(15, 23, 42, 0.22);
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  border-radius: 999px;
+  color: #e5e7eb;
+  cursor: pointer;
+  line-height: 1;
+  margin: 0 0 8px auto;
+  padding: 0.45rem;
+  position: relative;
+  width: 2.15rem;
+  height: 2.15rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-end;
+  box-shadow: none;
+  z-index: 2;
+  opacity: 0.88;
+}
+
+html:not(.carol-dark-background) .mermaid-zoom-button {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(148, 163, 184, 0.36);
+  color: #475569;
+  box-shadow: 0 2px 10px rgba(148, 163, 184, 0.16);
+}
+
+.mermaid-zoom-button:hover,
+.mermaid-zoom-button:focus-visible {
+  background: rgba(31, 41, 55, 0.42);
+  border-color: rgba(203, 213, 225, 0.42);
+  outline: none;
+  opacity: 1;
+}
+
+.mermaid-zoom-button svg {
+  width: 13px;
+  height: 13px;
+}
+
+.mermaid-zoom-button svg,
+.mermaid-zoom-button svg circle,
+.mermaid-zoom-button svg line {
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.mermaid-zoom-button.is-zoomed {
+  background: rgba(127, 29, 29, 0.26);
+  border-color: rgba(248, 113, 113, 0.32);
+  color: #fecaca;
+  opacity: 1;
+}
+
+html:not(.carol-dark-background) .mermaid-zoom-button:hover,
+html:not(.carol-dark-background) .mermaid-zoom-button:focus-visible {
+  background: rgba(248, 250, 252, 1);
+  border-color: rgba(100, 116, 139, 0.46);
+}
+
+html:not(.carol-dark-background) .mermaid-zoom-button.is-zoomed {
+  background: rgba(254, 226, 226, 0.9);
+  border-color: rgba(248, 113, 113, 0.34);
+  color: #b91c1c;
+}
+
+.mermaid.mermaid-zoomed svg {
+  transform: scale(1.18);
+  transform-origin: top center;
+}
+
+html.carol-dark-background .mermaid.mermaid-zoomed svg {
+  width: 145% !important;
+  max-width: none !important;
+  transform: none;
+}
+
+html.carol-dark-background .mermaid-zoom-button {
+  background: rgba(15, 23, 42, 0.22);
+  border-color: rgba(148, 163, 184, 0.28);
+  color: #e5e7eb;
+}
+
+html.carol-dark-background .mermaid-zoom-button:hover,
+html.carol-dark-background .mermaid-zoom-button:focus-visible {
+  background: rgba(31, 41, 55, 0.42);
+  border-color: rgba(203, 213, 225, 0.42);
+}
+
+html.carol-dark-background .mermaid-zoom-button.is-zoomed {
+  background: rgba(127, 29, 29, 0.26);
+  border-color: rgba(248, 113, 113, 0.32);
+  color: #fecaca;
+}
+
+@media (max-width: 640px) {
+  html.carol-dark-background .post-content table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .mermaid-zoom-button {
+    width: 2.2rem;
+    height: 2.2rem;
+    padding: 0.5rem;
+  }
+
+  .mermaid.mermaid-zoomed svg {
+    transform: scale(1.28);
+  }
+
+  html.carol-dark-background .mermaid.mermaid-zoomed svg {
+    width: 180% !important;
+    max-width: none !important;
+    transform: none;
+  }
 }
