@@ -1,11 +1,5 @@
-Sou Desenvolvedora de Software atuando entre backend, dados e automação.
+Sou Desenvolvedora de Software com foco em **backend, dados, automação e Inteligência Artificial**.
 
-Tenho experiência no desenvolvimento de sistemas aplicados a contextos reais, como cidades inteligentes, dados geoespaciais e aplicações com impacto social.
+Construo sistemas escaláveis visando impacto real, com foco em backend, automação, geoprocessamento, cidades inteligentes, dados abertos, software livre e aplicações com IA.
 
-Meu trabalho combina:
-
-- Desenvolvimento de APIs e sistemas backend
-- Processamento de dados e automação
-- Construção de soluções com foco em impacto real  
-
-Também contribuo com iniciativas de dados abertos e software livre, e estou sempre explorando novas formas de usar tecnologia para resolver problemas relevantes.
+Por aqui você encontra **[postagens](/posts/), [tutoriais](/tutorials/), [projetos](/projects/) e [palestras](/talks/)** sobre engenharia de software e tecnologia prática.
