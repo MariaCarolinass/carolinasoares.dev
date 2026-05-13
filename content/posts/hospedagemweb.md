@@ -1,146 +1,367 @@
 ---
 date: 2024-07-11T00:15:06-03:00
-# description: ""
-# image: ""
-lastmod: 2024-07-11
+lastmod: 2026-05-12
 showTableOfContents: true
-tags: ["web", "servidores", "hospedagem"]
-title: "Hospedagem de aplicações web"
+tags: ["web", "servidores", "hospedagem", "deploy", "cloud"]
+title: "Como funciona a hospedagem de aplicações web"
 type: "post"
 ---
 
-## Infraestrutura
+Depois que uma aplicação web é desenvolvida, ela precisa ser disponibilizada na internet para que usuários possam acessá-la com segurança, desempenho e estabilidade.
 
-Aplicações robustas demandam planejamento, pois é importante saber sobre questões de segurança, desempenho e o quanto o sistema vai precisar de memória. É possível hospedar uma aplicação em um servidor físico designado a um único usuário ou utilizar máquinas virtuais (VMs) para criar o próprio servidor. As VMs são ambientes de virtualização que simulam um ou vários sistemas operacionais (SO).
+Esse processo envolve diversos conceitos importantes, como infraestrutura, servidores, máquinas virtuais, serviços em nuvem, SSH, servidores HTTP e deploy.
 
-**Máquinas virtuais:**
+Com a evolução da computação em nuvem, hospedar aplicações ficou mais acessível e escalável. Atualmente, desenvolvedores conseguem publicar sistemas completos utilizando serviços como AWS, Azure e DigitalOcean.
 
-- [VirtualBox](https://www.virtualbox.org/)
-- [VMware](https://www.vmware.com/br.html)
+Neste artigo vamos entender os principais conceitos envolvidos na hospedagem de aplicações web e como diferentes tecnologias trabalham juntas para manter um sistema online.
 
-Ao longo da criação do servidor algumas especificações de hardware, software e rede devem ser definidas:
+---
 
-    Memória
-    Processador
-    Conexão de rede
-    Disco rígido
-    Sistema Operacional (SO)
+# Infraestrutura
 
-## Serviços de hospedagem
+Toda aplicação web precisa de uma infraestrutura capaz de suportar usuários, armazenamento de dados e processamento de requisições.
 
-Existem diversas plataformas que oferecem serviços de hospedagem, muitas delas usam o conceito de computação em nuvem, são elas:
+Dependendo do tamanho do sistema, será necessário considerar fatores como:
 
-- [DigitalOcean](https://www.digitalocean.com/)
-- [IBM](https://www.ibm.com/br-pt)
-- [Microsoft Azure](https://azure.microsoft.com/pt-br/) 
-- [Amazon Web Services (AWS)](https://aws.amazon.com/pt/)
+* quantidade de memória RAM;
+* capacidade de processamento;
+* velocidade da rede;
+* armazenamento;
+* segurança;
+* disponibilidade;
+* escalabilidade.
 
-Uma alternativa gratuita:
+Essa infraestrutura pode ser construída utilizando:
 
-- [Vagrant](https://www.vagrantup.com/): serviço de hospedagem combinado ao VirtualBox
+* servidores físicos;
+* máquinas virtuais (VMs);
+* containers;
+* serviços em nuvem.
 
-### Servidores web (HTTP):
+---
 
-Os servidores abaixo são responsáveis por responderem às solicitações (HTTP) dos clientes no navegador:
+## Servidores físicos vs máquinas virtuais
 
- - [Apache](https://www.apache.org/)
- - [Gunicorn](https://gunicorn.org/)
- - [Nginx](https://nginx.org/) (servidor intermediário): responde às requisições de clientes que solicitam recursos de outros servidores (E-mail: IMAP, POP3)
+Um servidor físico é uma máquina dedicada exclusivamente para execução de aplicações.
 
-## Configuração e acesso ao servidor
+Já as máquinas virtuais (VMs) utilizam virtualização para criar múltiplos ambientes independentes dentro de um único hardware físico.
 
-O servidor não tem interface e tudo será feito através de linha de comando no terminal. As seguintes configurações básicas abaixo são necessárias para o servidor funcionar:
+### Comparação
 
-    Nome do usuário
-    Host (domínio ou endereço IP)
-    Senha (será gerado uma chave aleatória)
+| Servidor físico         | Máquina virtual           |
+| ----------------------- | ------------------------- |
+| Hardware dedicado       | Compartilha hardware      |
+| Maior controle          | Maior flexibilidade       |
+| Custo mais alto         | Menor custo               |
+| Escalabilidade limitada | Escalabilidade facilitada |
+| Configuração manual     | Provisionamento rápido    |
 
-Uma das formas de acessar o servidor é utilizando um cliente SSH, que vai entrar no servidor remotamente. 
+Ferramentas populares para virtualização:
 
-**Cliente SSH:**
+* [VirtualBox](https://www.virtualbox.org/)
+* [VMware](https://www.vmware.com/)
 
-- Linux e Mac: [OpenSSH](https://www.openssh.com/)
-- Windows: [Putty](https://www.putty.org/)
+---
 
-Comandos para acessar o servidor:
+## Fluxo básico de uma aplicação web
 
-`$ ssh ssh://usuario@dominio.com:porta` 
+```mermaid
+flowchart LR
+    Usuario[Usuário no navegador]
+    DNS[DNS / Domínio]
+    Nginx[Nginx ou Apache]
+    Backend[Aplicação Backend]
+    Banco[(Banco de Dados)]
 
-ou 
+    Usuario --> DNS
+    DNS --> Nginx
+    Nginx --> Backend
+    Backend --> Banco
+```
 
-`$ ssh usuario@<endereco-ip-servidor>`
+Nesse fluxo:
 
-Outras configurações do servidor:
+1. o usuário acessa um domínio;
+2. o DNS localiza o servidor;
+3. o servidor web recebe a requisição;
+4. a aplicação backend processa os dados;
+5. o banco de dados armazena e retorna informações.
 
-- Permissões e privilégios de usuários
-- Segurança
-- Firewall (ufw) - analisa o trafego da rede e gerência o que pode ser executado no servidor 
-- Banco de dados (MySQL, MariaDB, PostgreSQL, Oracle...)
-    
-## Aplicação web
+---
 
-**Tecnologias - frontend (parte de interação com o usuário):**
+# Computação em nuvem
 
-- HTML
-- CSS
-- JavaScript 
+Grande parte da hospedagem moderna utiliza computação em nuvem.
 
-**Tecnologias - backend (o que está por trás do sistema, parte não visível ao usuário):**
+Nesse modelo, empresas alugam recursos computacionais sob demanda sem precisar manter infraestrutura física própria.
 
-Linguagens de programação
+## Principais provedores cloud
 
-- Python
-- JavaScript
-- PHP
+* [Amazon Web Services (AWS)](https://aws.amazon.com/pt/)
+* [Microsoft Azure](https://azure.microsoft.com/pt-br/)
+* [Google Cloud Platform](https://cloud.google.com/)
+* [DigitalOcean](https://www.digitalocean.com/)
 
-Frameworks
+### Vantagens da computação em nuvem
 
-- Flask
-- Django
-- Vue
-- React
-- Angular
-- Laravel
+* escalabilidade;
+* alta disponibilidade;
+* backup;
+* segurança;
+* automação;
+* redução de custos;
+* provisionamento rápido.
 
-**Código-fonte:** 
+---
 
-- [Git](https://git-scm.com/): organização e controle de versão dos códigos
-- [GitHub](https://github.com/): plataforma para hospedagem do código-fonte
+# Containers e Docker
 
-O Git junto ao GitHub ajudam no processo de desenvolvimento do sistema, além de simplificar a instalação do projeto em qualquer ambiente.
+Uma das tecnologias mais utilizadas atualmente para deploy é o Docker.
 
-## Links
+Containers permitem empacotar aplicações junto com todas as suas dependências, garantindo que funcionem da mesma forma em qualquer ambiente.
 
-Configurando um servidor Apache 2:
+## Vantagens do Docker
 
-- https://github.com/MariaCarolinass/config-servidor-apache2
+* isolamento;
+* portabilidade;
+* facilidade de deploy;
+* padronização do ambiente;
+* escalabilidade.
 
-Aprenda sobre programação:
+## Fluxo simplificado com Docker
 
-- https://www.cursoemvideo.com/
-- https://www.w3schools.com/
-- https://developer.mozilla.org/pt-BR/
+```mermaid
+flowchart LR
+    Dev[Desenvolvedor] --> Docker[Container Docker]
+    Docker --> Registry[Docker Hub]
+    Registry --> Server[Servidor]
+```
 
-Aprenda a desenvolver uma aplicação web completa com Python e Flask:
+Em aplicações maiores, ferramentas como Kubernetes podem ser utilizadas para orquestração de containers.
 
-- https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
+---
 
-Deploy de uma aplicação Flask no Linux:
+# Servidores web
 
-- https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xvii-deployment-on-linux
-- https://youtu.be/YFBRVJPhDGY
-- https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps
+Os servidores web são responsáveis por receber requisições HTTP dos usuários e encaminhá-las para aplicações backend.
 
-O que é uma infraestrutura de TI:
+## Principais servidores HTTP
 
-- https://www.redhat.com/pt-br/topics/cloud-computing/what-is-it-infrastructure
+* [Apache](https://httpd.apache.org/)
+* [Nginx](https://nginx.org/)
+* [Gunicorn](https://gunicorn.org/)
 
-Servidores físicos vs. máquinas virtuais: principais diferenças e semelhanças:
+Aprenda a configurar um servidor Apache 2 em máquina virtual: [tutorials/apache](/tutorials/apache)
 
-- https://www.nakivo.com/blog/physical-servers-vs-virtual-machines-key-differences-similarities/
+---
 
-Distribuições Linux:
+## Nginx e proxy reverso
 
-- https://www.debian.org/
-- https://ubuntu.com/
-- https://www.linuxmint.com/
+O Nginx é amplamente utilizado como:
+
+* servidor web;
+* proxy reverso;
+* balanceador de carga.
+
+Ele recebe requisições dos usuários e encaminha para aplicações backend, como Flask, Django ou Node.js.
+
+### Fluxo utilizando proxy reverso
+
+```mermaid
+flowchart LR
+    Usuario --> Nginx
+    Nginx --> Flask
+    Flask --> Banco
+```
+
+---
+
+# Configuração e acesso ao servidor
+
+A maioria dos servidores Linux não possui interface gráfica.
+
+Por isso, toda administração costuma ser realizada através da linha de comando.
+
+## Informações básicas do servidor
+
+* usuário;
+* endereço IP;
+* domínio;
+* porta;
+* autenticação.
+
+---
+
+# SSH
+
+O SSH (Secure Shell) permite acessar servidores remotamente de forma segura.
+
+## Clientes SSH
+
+* Linux e macOS: [OpenSSH](https://www.openssh.com/)
+* Windows: [PuTTY](https://www.putty.org/)
+
+## Exemplo de acesso via SSH
+
+```bash
+ssh usuario@ip-do-servidor
+```
+
+---
+
+# Segurança do servidor
+
+Manter um servidor seguro é fundamental.
+
+Algumas práticas comuns incluem:
+
+* controle de permissões;
+* autenticação por chave SSH;
+* firewall;
+* atualizações do sistema;
+* HTTPS/SSL.
+
+## Firewall UFW
+
+O UFW (Uncomplicated Firewall) ajuda a controlar o tráfego da rede.
+
+```bash
+sudo ufw allow 80
+sudo ufw allow 443
+sudo ufw enable
+```
+
+---
+
+# Aplicações web
+
+Uma aplicação web normalmente é dividida em frontend e backend.
+
+## Frontend
+
+O frontend representa a interface visual acessada pelo usuário.
+
+### Tecnologias frontend
+
+* HTML
+* CSS
+* JavaScript
+* React
+* Vue
+* Angular
+
+---
+
+## Backend
+
+O backend é responsável pela lógica do sistema, autenticação, APIs, regras de negócio e comunicação com bancos de dados.
+
+### Linguagens backend
+
+* Python
+* JavaScript
+* PHP
+
+### Frameworks backend
+
+* Flask
+* Django
+* Laravel
+* Express
+
+---
+
+# Banco de dados
+
+Aplicações web geralmente precisam armazenar informações.
+
+## Bancos relacionais
+
+* PostgreSQL
+* MySQL
+* MariaDB
+
+---
+
+# Git e GitHub
+
+O Git é um sistema de controle de versão utilizado para organizar alterações no código-fonte.
+
+Já o GitHub é uma plataforma de hospedagem de repositórios Git.
+
+Essas ferramentas facilitam:
+
+* colaboração;
+* versionamento;
+* backup;
+* integração contínua;
+* deploy automatizado.
+
+---
+
+# Deploy da aplicação
+
+Deploy é o processo de publicar uma aplicação em um servidor para que ela fique acessível pela internet.
+
+Esse processo normalmente envolve:
+
+1. envio do código-fonte;
+2. instalação de dependências;
+3. configuração do ambiente;
+4. execução da aplicação;
+5. configuração do servidor web;
+6. monitoramento.
+
+## Fluxo simplificado de deploy
+
+```mermaid
+flowchart LR
+    GitHub[GitHub] --> CI[CI/CD]
+    CI --> Docker[Docker]
+    Docker --> VPS[Servidor VPS]
+    VPS --> Usuarios[Usuários]
+```
+
+Ferramentas modernas de CI/CD, como GitHub Actions e GitLab CI, ajudam a automatizar deploys e testes.
+
+---
+
+# CDN e escalabilidade
+
+Em aplicações maiores, serviços de CDN (Content Delivery Network) ajudam a distribuir arquivos estáticos em servidores espalhados pelo mundo.
+
+Isso melhora:
+
+* desempenho;
+* cache;
+* disponibilidade;
+* tempo de resposta.
+
+---
+
+# Conclusão
+
+Hospedar uma aplicação web envolve muito mais do que simplesmente colocar um sistema online.
+
+É necessário compreender conceitos de infraestrutura, redes, servidores, segurança, deploy e escalabilidade.
+
+Com o avanço da computação em nuvem e de ferramentas modernas como Docker e CI/CD, o processo de deploy ficou mais acessível, automatizado e eficiente.
+
+Entender esses conceitos é fundamental para qualquer desenvolvedor que deseja criar aplicações modernas e preparadas para produção.
+
+---
+
+# Links úteis
+
+* [https://nginx.org/](https://nginx.org/)
+* [https://httpd.apache.org/](https://httpd.apache.org/)
+* [https://gunicorn.org/](https://gunicorn.org/)
+* [https://docs.docker.com/](https://docs.docker.com/)
+* [https://aws.amazon.com/pt/](https://aws.amazon.com/pt/)
+* [https://azure.microsoft.com/pt-br/](https://azure.microsoft.com/pt-br/)
+* [https://cloud.google.com/](https://cloud.google.com/)
+* [https://www.digitalocean.com/](https://www.digitalocean.com/)
+* [https://www.openssh.com/](https://www.openssh.com/)
+* [https://git-scm.com/](https://git-scm.com/)
+* [https://github.com/](https://github.com/)
+* [https://developer.mozilla.org/pt-BR/](https://developer.mozilla.org/pt-BR/)
