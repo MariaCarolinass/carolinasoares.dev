@@ -90,6 +90,7 @@ title = "Oi, sou a Carol"
     <script defer src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
     <link rel="stylesheet" href="/css/dark-theme-overrides.css">
     <link rel="stylesheet" href="/css/code-blocks.css">
+    <link rel="stylesheet" href="/css/math-overrides.css">
     <script defer src="/js/code-copy.js"></script>
     <script defer src="/js/theme-enhancements.js"></script>
   """
