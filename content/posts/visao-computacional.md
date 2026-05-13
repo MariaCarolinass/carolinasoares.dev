@@ -211,7 +211,7 @@ Projetos experimentais ajudam bastante no aprendizado de:
 
 Um exemplo é o projeto experimental:
 
-* [https://github.com/MariaCarolinass/urban-disaster-monitor](https://github.com/MariaCarolinass/urban-disaster-monitor)
+* [Urban Disaster Monitor](https://github.com/MariaCarolinass/urban-disaster-monitor)
 
 que explora conceitos relacionados a monitoramento urbano, processamento de dados e integração de sistemas.
 
@@ -219,7 +219,7 @@ que explora conceitos relacionados a monitoramento urbano, processamento de dado
 
 # Exemplo visual de monitoramento
 
-A imagem abaixo faz parte do projeto Urban Disaster Monitor e representa um cenário de monitoramento urbano.
+A imagem abaixo faz parte do projeto **Urban Disaster Monitor** e representa um cenário de monitoramento urbano.
 
 ![Monitoramento urbano com visão computacional](https://github.com/MariaCarolinass/urban-disaster-monitor/raw/main/static/images/capa1.webp)
 
