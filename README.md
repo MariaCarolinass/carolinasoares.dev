@@ -1,15 +1,61 @@
 # carolinasoares.dev
 
-Blog desenvolvido com [Hugo](https://gohugo.io/) e com o tema [Gokarna](https://github.com/gokarna-theme/gokarna-hugo).
+Blog e portfólio pessoal, construído com [Hugo](https://gohugo.io/) e o tema [Gokarna](https://github.com/gokarna-theme/gokarna-hugo).
 
-- Baixar tema:
+O site reúne postagens, tutoriais, projetos e palestras, com conteúdo em português e suporte a componentes como KaTeX e Mermaid.
 
-      git submodule add https://github.com/gokarna-theme/gokarna-hugo.git themes/gokarna
+## Requisitos
 
-- Compilar:
+- [Hugo](https://gohugo.io/) instalado localmente
+- `git`
 
-      hugo
+## Estrutura
 
-- Executar:
+- `config.toml`: configuração principal do site
+- `content/`: páginas, posts, tutoriais, projetos e palestras
+- `layouts/`: layouts personalizados
+- `static/`: imagens, ícones e outros arquivos estáticos
+- `themes/gokarna`: tema usado pelo site
 
-      hugo server
+## Instalação
+
+Clone o repositório e inicialize o submódulo do tema:
+
+```bash
+git submodule update --init --recursive
+```
+
+Se o tema ainda não estiver presente, você também pode adicioná-lo com:
+
+```bash
+git submodule add https://github.com/gokarna-theme/gokarna-hugo.git themes/gokarna
+```
+
+## Desenvolvimento local
+
+Inicie o servidor de desenvolvimento:
+
+```bash
+hugo server
+```
+
+O site ficará disponível em `http://localhost:1313/`.
+
+## Build de produção
+
+Gere a versão final do site com:
+
+```bash
+hugo
+```
+
+Os arquivos compilados serão enviados para a pasta `public/`.
+
+## Conteúdo
+
+O conteúdo principal fica em `content/` e segue a organização do site:
+
+- `posts/`
+- `tutorials/`
+- `projects/`
+- `talks/`
