@@ -1,62 +1,392 @@
 ---
 date: 2024-08-26T00:04:19-03:00
-# description: ""
-# image: ""
-lastmod: 2024-08-26
+lastmod: 2026-05-12
 showTableOfContents: true
 tags: ["Python", "Expressões Regulares", "RegEx"]
 title: "Expressões Regulares no Python (RegEx)"
-description: "Um padrão criado para buscar e manipular um texto."
+description: "Como utilizar expressões regulares no Python para buscar, validar e manipular textos."
 type: "post"
+------------
+
+Expressões regulares, também conhecidas como **RegEx** (Regular Expressions), são padrões utilizados para buscar, validar e manipular textos.
+
+Elas são amplamente utilizadas em:
+
+* validação de formulários;
+* extração de informações;
+* manipulação de strings;
+* análise de logs;
+* processamento de dados;
+* filtros de texto.
+
+Apesar de parecerem complexas no início, expressões regulares são extremamente poderosas para resolver problemas relacionados a textos.
+
+Neste artigo vamos entender como utilizar RegEx no Python utilizando o módulo `re`.
+
 ---
 
-## Como usar o RegEx
+# O que é uma expressão regular?
 
-### Pré-requisito
+Uma expressão regular é um padrão criado para identificar combinações específicas de caracteres dentro de um texto.
 
-Importando a módulo re:
+Esses padrões permitem:
 
-    import re
+* localizar palavras;
+* validar formatos;
+* substituir trechos;
+* extrair informações.
 
-### Escrevendo uma expressão regular
+## Exemplos de uso
 
-Definimos um padrão regex com a letra `r`, assim deixamos explícito que estamos tratando de uma expressão regular, em seguida entre as aspas escrevemos a expressão que será encontrada em um texto:
+| Situação         | Exemplo             |
+| ---------------- | ------------------- |
+| Validar e-mail   | `usuario@email.com` |
+| Buscar números   | `12345`             |
+| Encontrar datas  | `26/08/2024`        |
+| Filtrar palavras | busca textual       |
 
-    padrao = r"expressao"
+---
 
-Não é necessário a utilização do `r`, mas é recomendado para evitar possíveis divergências do regex com o Python.
+# Importando o módulo `re`
 
-O regex é escrito como uma **combinação de caracteres** com alguns símbolos reservados chamados de **metacaracteres**: 
+No Python, expressões regulares são utilizadas através do módulo `re`.
 
-    . ? * + ^ $ | — [ ] { } ( ) \
+## Importação
 
-Esses símbolos possuem significados diferentes e mostram como a expressão será interpretada.
+```python
+import re
+```
+
+Esse módulo fornece funções para:
+
+* buscar padrões;
+* validar textos;
+* substituir conteúdos;
+* dividir strings.
+
+---
+
+# Escrevendo uma expressão regular
+
+No Python, normalmente utilizamos a letra `r` antes da string da expressão regular.
+
+## Exemplo
+
+```python
+padrao = r"expressao"
+```
+
+O prefixo `r` indica uma *raw string*.
+
+Isso evita conflitos entre caracteres especiais do Python e caracteres especiais do RegEx.
+
+Embora não seja obrigatório, o uso de `r` é altamente recomendado.
+
+---
+
+# Metacaracteres
+
+As expressões regulares utilizam símbolos especiais chamados de **metacaracteres**.
+
+Esses símbolos possuem significados específicos e definem como o padrão será interpretado.
+
+## Principais metacaracteres
+
+| Metacaractere | Significado              |             |
+| ------------- | ------------------------ | ----------- |
+| `.`           | Qualquer caractere       |             |
+| `*`           | Zero ou mais ocorrências |             |
+| `+`           | Uma ou mais ocorrências  |             |
+| `?`           | Zero ou uma ocorrência   |             |
+| `^`           | Início da string         |             |
+| `$`           | Final da string          |             |
+| `[]`          | Conjunto de caracteres   |             |
+| `()`          | Grupo                    |             |
+| `\`           | Escape                   |             |
+| `{}`          | Quantificador            |             |
+| `             | `                        | Operador OU |
+
+---
+
+# Visualizando os metacaracteres
 
 ![image](https://github.com/user-attachments/assets/c6a548b2-7cca-438e-8e58-157d663f028a)
 
-### Funções do RegEx
+---
 
-- `re.match(padrao, texto)`
+# Como o RegEx funciona
 
-  Procura pelo padrão no início do texto e retorna a posição do texto na busca.
-  
-- `re.search(padrao, texto)`
-  
-  Procura pelo padrão em todo o texto e retorna a posição do texto na busca.
-  
-- `re.findall(padrao, texto)`
+```mermaid
+flowchart LR
+    Texto[Texto]
+    Regex[Expressao Regular]
+    Busca[Busca de Padrao]
+    Resultado[Resultado]
 
-  Procura as ocorrências do texto por todo o padrão e retorna uma lista da busca. 
-  
-- `re.sub(padrao, substituir, texto)`
+    Texto --> Busca
+    Regex --> Busca
+    Busca --> Resultado
+```
 
-  Procura as ocorrências do texto por todo o padrão, substitui por outro texto e retorna a busca com as substituições. 
+A expressão regular é comparada com o texto até encontrar padrões compatíveis.
 
-### Utilizando o RegEx
+---
 
-- [Exercícios](https://github.com/MariaCarolinass/expressoes-regulares/tree/main/exercicios)
+# Principais funções do módulo `re`
 
-## Links
+O módulo `re` possui diversas funções importantes.
 
-- [Regex: o guia essencial das expressões regulares](https://blog.dp6.com.br/regex-o-guia-essencial-das-express%C3%B5es-regulares-2fc1df38a481)
-- [RegEx básico em Python](https://medium.com/pyladiesbh/regex-b%C3%A1sico-em-python-31dcb7fac046)
+---
+
+## `re.match()`
+
+A função `re.match()` procura o padrão apenas no início da string.
+
+## Exemplo
+
+```python
+import re
+
+texto = "Python é incrível"
+padrao = r"Python"
+
+resultado = re.match(padrao, texto)
+
+print(resultado)
+```
+
+### Fluxo do `match`
+
+```mermaid
+flowchart LR
+    Inicio[Inicio da string]
+    Match[Verifica padrao]
+    Resultado[Retorna resultado]
+
+    Inicio --> Match
+    Match --> Resultado
+```
+
+---
+
+## `re.search()`
+
+A função `re.search()` procura o padrão em qualquer parte do texto.
+
+## Exemplo
+
+```python
+import re
+
+texto = "Eu estudo Python"
+padrao = r"Python"
+
+resultado = re.search(padrao, texto)
+
+print(resultado)
+```
+
+---
+
+## `re.findall()`
+
+A função `re.findall()` retorna todas as ocorrências encontradas.
+
+## Exemplo
+
+```python
+import re
+
+texto = "Python Java Python JavaScript"
+padrao = r"Python"
+
+resultado = re.findall(padrao, texto)
+
+print(resultado)
+```
+
+### Saída
+
+```python
+['Python', 'Python']
+```
+
+---
+
+## `re.sub()`
+
+A função `re.sub()` substitui padrões encontrados no texto.
+
+## Exemplo
+
+```python
+import re
+
+texto = "Python é legal"
+padrao = r"legal"
+
+resultado = re.sub(padrao, "poderoso", texto)
+
+print(resultado)
+```
+
+### Saída
+
+```python
+Python é poderoso
+```
+
+---
+
+# Exemplos práticos de RegEx
+
+## Encontrando números
+
+```python
+import re
+
+texto = "Pedido 12345 realizado"
+padrao = r"\d+"
+
+resultado = re.findall(padrao, texto)
+
+print(resultado)
+```
+
+### Saída
+
+```python
+['12345']
+```
+
+---
+
+## Validando e-mail
+
+```python
+import re
+
+email = "usuario@email.com"
+padrao = r"^[\w\.-]+@[\w\.-]+\.\w+$"
+
+resultado = re.match(padrao, email)
+
+print(resultado)
+```
+
+---
+
+## Encontrando palavras
+
+```python
+import re
+
+texto = "Python Java C"
+padrao = r"Python|Java"
+
+resultado = re.findall(padrao, texto)
+
+print(resultado)
+```
+
+---
+
+# Quantificadores
+
+Os quantificadores definem quantas vezes um padrão pode aparecer.
+
+| Quantificador | Significado           |
+| ------------- | --------------------- |
+| `*`           | Zero ou mais vezes    |
+| `+`           | Uma ou mais vezes     |
+| `?`           | Zero ou uma vez       |
+| `{n}`         | Exatamente `n` vezes  |
+| `{n,m}`       | Entre `n` e `m` vezes |
+
+---
+
+# Classes especiais
+
+Algumas sequências possuem significados especiais.
+
+| Classe | Significado       |
+| ------ | ----------------- |
+| `\d`   | Dígitos           |
+| `\w`   | Letras e números  |
+| `\s`   | Espaços em branco |
+| `\D`   | Não dígitos       |
+| `\W`   | Não alfanumérico  |
+
+---
+
+# Vantagens do RegEx
+
+Expressões regulares podem simplificar bastante manipulações textuais.
+
+## Benefícios
+
+| Vantagem       | Descrição                          |
+| -------------- | ---------------------------------- |
+| Busca avançada | Encontrar padrões complexos        |
+| Validação      | Verificar formatos de entrada      |
+| Automação      | Processar grandes volumes de texto |
+| Flexibilidade  | Adaptar padrões facilmente         |
+| Reutilização   | Reaproveitar expressões            |
+
+---
+
+# Cuidados ao utilizar RegEx
+
+Apesar de poderosas, expressões regulares podem se tornar difíceis de entender se forem muito complexas.
+
+## Problemas comuns
+
+* padrões difíceis de manter;
+* expressões muito grandes;
+* baixa legibilidade;
+* desempenho ruim em textos muito extensos.
+
+Por isso, é importante escrever expressões claras e documentadas.
+
+---
+
+# Quando utilizar RegEx?
+
+RegEx é muito útil quando precisamos:
+
+* validar entradas;
+* procurar padrões;
+* manipular textos;
+* extrair informações;
+* automatizar processamento textual.
+
+Entretanto, nem todo problema textual precisa de expressão regular.
+
+Em alguns casos, métodos simples de string podem ser mais legíveis.
+
+---
+
+# Conclusão
+
+Expressões regulares são ferramentas extremamente poderosas para manipulação e análise de textos.
+
+Com o módulo `re`, o Python fornece recursos simples e eficientes para trabalhar com padrões textuais.
+
+Embora o RegEx possa parecer complicado inicialmente, compreender seus principais operadores e funções torna a manipulação de strings muito mais prática.
+
+Dominar expressões regulares é uma habilidade bastante útil para desenvolvimento web, análise de dados, automação e processamento textual.
+
+---
+
+# Exercícios
+
+* [https://github.com/MariaCarolinass/expressoes-regulares/tree/main/exercicios](https://github.com/MariaCarolinass/expressoes-regulares/tree/main/exercicios)
+
+---
+
+# Referências
+
+* [https://docs.python.org/3/library/re.html](https://docs.python.org/3/library/re.html)
+* [https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Regular_expressions](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Regular_expressions)
+* [https://regex101.com/](https://regex101.com/)
+* [https://www.regular-expressions.info/](https://www.regular-expressions.info/)
