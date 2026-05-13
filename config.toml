@@ -4,7 +4,7 @@ enableRobotsTXT = true
 enableEmoji = true
 languageCode = "pt"
 theme = "gokarna"
-title = "Sou a Carolina (Carol)"
+title = "Oi, sou a Carol"
 
 [menu]
   [[menu.main]]
@@ -88,27 +88,10 @@ title = "Sou a Carolina (Carol)"
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js" integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja" crossorigin="anonymous"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        document.querySelectorAll('pre code.language-mermaid').forEach(function(codeBlock) {
-          var parent = codeBlock.parentElement;
-          var mermaidText = codeBlock.textContent;
-          var mermaidDiv = document.createElement('div');
-          mermaidDiv.className = 'mermaid';
-          mermaidDiv.textContent = mermaidText;
-          parent.parentNode.replaceChild(mermaidDiv, parent);
-        });
-
-        mermaid.initialize({ startOnLoad: true, theme: "base" });
-        renderMathInElement(document.body, {
-          delimiters: [
-            {left: '$$', right: '$$', display: true},
-            {left: '$', right: '$', display: false},
-          ],
-          throwOnError : false
-        });
-      });
-    </script>
+    <link rel="stylesheet" href="/css/dark-theme-overrides.css">
+    <link rel="stylesheet" href="/css/code-blocks.css">
+    <script defer src="/js/code-copy.js"></script>
+    <script defer src="/js/theme-enhancements.js"></script>
   """
 
   socialIcons = [
@@ -125,16 +108,16 @@ title = "Sou a Carolina (Carol)"
 
   dateFormat = "January 2, 2006"
   
-  description = "Desenvolvo soluções escaláveis que conectam dados, automação e impacto no mundo real."
+  description = "Backend, dados, automação e IA | Desenvolvedora de Software"
 
   footer = "Carolina Soares"
 
-  metaKeywords = ["blog", "tecnologia", "portfólio", "Carolina Soares", "carolinasoares.dev", "dev", "desenvolvimento", "software", "algoritmos", "computação", "código", "programação", "blog pessoal"]
+  metaKeywords = ["blog", "tecnologia", "portfólio", "Carolina Soares", "carolinasoares.dev", "desenvolvimento de software", "backend", "dados", "automação", "ia", "inteligência artificial", "python", "java", "docker", "dados abertos", "software livre", "apis", "programação"]
 
-  numberPostsOnHomePage = 30
+  numberPostsOnHomePage = 5
 
   showBackToTopButton = true
 
   showPostsOnHomePage = "recent"
 
-  togglePreviousAndNextButtons = "false"
+  togglePreviousAndNextButtons = true
