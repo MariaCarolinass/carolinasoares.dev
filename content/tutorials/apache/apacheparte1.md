@@ -2,214 +2,708 @@
 title: "Configurando um servidor Apache2 em uma máquina virtual"
 type: page
 showTableOfContents: true
+-------------------------
+
+Neste tutorial vamos configurar um servidor web Apache2 utilizando uma máquina virtual com Debian no VirtualBox.
+
+O objetivo é entender na prática:
+
+* virtualização;
+* instalação de sistemas Linux;
+* configuração de rede;
+* instalação do Apache2;
+* hospedagem de sites;
+* configuração de múltiplos sites no mesmo servidor.
+
+Todo o processo será feito em ambiente virtual, permitindo estudar servidores sem modificar diretamente o sistema operacional principal da máquina.
+
 ---
 
-## Instalação da máquina virtual: VirtualBox
+# Instalação da máquina virtual: VirtualBox
 
-O VirtualBox é um virtualizador completo de uso geral. É um ambiente virtual que simula a experiência de usar um sistema operacional sem precisar fazer a sua instalação na máquina física. 
+O VirtualBox é um virtualizador completo de uso geral.
 
-- [Link para instalação do VirtualBox](https://www.virtualbox.org/wiki/Downloads).
-- [Saiba mais sobre o VirtualBox](https://www.virtualbox.org/wiki/VirtualBox).
+Ele permite criar máquinas virtuais capazes de executar diferentes sistemas operacionais dentro do computador físico.
 
-## Instalação da imagem do sistema operacional: Debian
+Uma máquina virtual simula um computador completo, permitindo estudar sistemas operacionais, servidores e redes sem alterar diretamente o ambiente principal.
 
-Para configurar o VirtualBox precisamos baixar uma imagem de algum sistema operacional. 
+## Links úteis
 
-O Projeto Debian é uma associação de indivíduos que têm como causa comum criar um sistema operacional livre. O sistema operacional criado é chamado Debian. Os sistemas Debian atualmente usam o kernel Linux ou o kernel FreeBSD.
+* [Download do VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+* [Documentação do VirtualBox](https://www.virtualbox.org/wiki/VirtualBox)
 
-- [Link para instalação do Debian](https://www.debian.org/distrib/).
-- [Saiba mais sobre o Debian](https://www.debian.org/).
-- [Saiba mais sobre Linux em geral: Guia Foca Linux](https://www.guiafoca.org/guiaonline/iniciante/).
+---
 
-## Criação da máquina virtual mais instalação do Debian no VirtualBox
+# Instalação da imagem do sistema operacional: Debian
 
-### Criando a máquina virtual
+Para configurar o VirtualBox precisamos baixar uma imagem ISO de um sistema operacional.
 
-1. Clicar em "Novo" para criar a máquina virtual.
+Neste tutorial utilizaremos o Debian, uma das distribuições Linux mais estáveis e utilizadas em servidores.
 
-3. Escolher o nome do sistema operacional, tipo de sistema operacional "Linux" e a versão da imagem escolhida "Debian 32-bit" ou "Debian 64-bit".
+O Projeto Debian é uma comunidade que desenvolve software livre e mantém uma distribuição Linux focada em estabilidade, segurança e desempenho.
 
-4. O tamanho da memória deve continuar na opção recomendada de 1024MB para um computador com 2GB ou mais de memória.
+## Links úteis
 
-5. Deixar marcado “Criar um novo disco rígido virtual agora”.
+* [Download do Debian](https://www.debian.org/distrib/)
+* [Site oficial do Debian](https://www.debian.org/)
+* [Guia Foca Linux](https://www.guiafoca.org/guiaonline/iniciante/)
 
-6. Escolher um arquivo do tipo "VDI (VirtualBox Disk Image)" para a criação do disco rígido.
+---
 
-7. Para otimização de processamento, o armazenamento em disco rígido físico será de tamanho fixo.
+# Fluxo da virtualização
 
-8. O disco criado terá o tamanho recomendado de 8GB.
+```mermaid
+flowchart LR
+    Host[Computador Host]
+    VirtualBox[VirtualBox]
+    VM[Máquina Virtual]
+    Debian[Debian Linux]
+    Apache[Servidor Apache2]
 
-9. Por fim, a máquina será criada e após a sua finalização devemos clicar em "Iniciar" da máquina virtual.
-
-### Instalando o Debian na máquina virtual criada
-
-1. Ao iniciar a máquina virtual pela primeira vez, clique na pasta amarela e "Acrescente" o arquivo da imagem do Deabian que foi baixada anteriomente. Depois ao escolher corretamente o arquivo, clique em "Iniciar".
-
-2. Aperte “Enter” para escolher a opção “Graphical install”.
-
-3. Selecione o idioma “Portuguese (Brazil)”.
-
-4. Logo em seguida, a localidade “Brasil”.
-
-5. Selecione o mapeamento do teclado “Português Brasileiro” e aguarde.
-
-6. Defina o nome da máquina.
-
-7. O nome de domínio fica em branco.
-
-8. Defina a senha de root. LEMBRE-SE DA SENHA.
-
-9. Digite a senha novamente, para confirmar.
-
-10. Digite o nome completo do usuário.
-
-11. Digite o nome de usuário para acessar o computador.
-
-12. Defina a senha para o usuário. LEMBRE-SE DA SENHA.
-
-13. Confirme a senha do usuário.
-
-14. Selecione a localidade para configurar o relógio.
-
-15. Selecione a opção de Particionamento do Disco “Assistido - usar o disco inteiro”.
-
-16. Selecione o disco disponível.
-
-17. Selecione a opção “Todos os arquivos em uma partição (para iniciantes)”.
-
-18. Selecione a opção “Finalizar o particionamento e escrever as mudanças no disco”.
-
-19. Confirme a ação "Sim" e aguarde a instalação do sistema básico.
-
-20. Selecione “Não” para não adicionar novos CDs ou DVDs.
-
-21. Escolha o país mais próximo para configurar o servidor "Brasil".
-
-22. Escolha um servidor "deb.debian.org".
-
-23. Não é necessário fazer configuração de proxy. Aperte “Enter” e aguarde a instalação.
-
-24. Selecione a opção “Não” para participar do concurso de instalação de pacotes.
-
-25. Utilizando as setas e a tecla “Espaço”, marque as opções "Xfce", "servidor de impressão", "utilitários de sistema padrão" e aperte “Enter”.
-
-26. Selecione “Sim” para instalar o GRUB para inicializar o Sistema Operacional.
-
-27. Indique o dispositivo na lista "/dev/sda", para instalação do carregador.
-
-28. Selecione “Continuar” para encerrar a instalação.
-
-## Configurando e instalando o servidor web Apache 2
-
-Com a máquina virtual devidamente criada no VirtualBox e funcionando com o sistema operacional Debian. Inicialize a máquina virtual e abra o terminal para começar a instalação do servidor Apache.
-
-Entre como usuário (root) administrador digitando o comando abaixo e logo após, digite sua senha:
-
-`$ su`
-
-Instale o servidor Apache:
-
-`# apt-get install apache2`
-
-Para verificar se o Apache está funcionando:
-
-`# systemctl status`
-
-Na máquina virtual, clique em "configurações" > Rede > Altere a rede para Conectado a: Host-only. Depois volte ao terminal, para atualizar as configurações de rede:
-
-`# /sbin/dhclient`
-
-Verifique qual é o endereço IP da sua máquina com o comando abaixo:
-
-`# ip addr`
-
-O seu endereço IP está na linha "inet".
-
-Acesse o seu endereço IP, digitando ele em seu navegador web de preferência e confira se irá aparecer a página inicial do Apache.
-
-### Editando a página inicial
-
-No terminal, entre para o seguinte diretório:
-
-`# cd /var/www/html`
-
-Mova o arquivo "index.html":
-
-`# mv index.html _index.html`
-
-Agora edite o arquivo "_index.html". Obs: Você precisa editá-lo como um usuário administrador, no seu editor de texto de preferência. Utilizei o editor "gedit", caso ele não esteja instalado: `# apt-get install gedit`.
-
-Apague todo o código html no arquivo _index.html e digite um novo. Por exemplo:
-
+    Host --> VirtualBox
+    VirtualBox --> VM
+    VM --> Debian
+    Debian --> Apache
 ```
+
+---
+
+# Criação da máquina virtual e instalação do Debian
+
+## Criando a máquina virtual
+
+### 1. Criar nova máquina virtual
+
+Clique em **Novo** para criar a máquina virtual.
+
+---
+
+### 2. Escolher o sistema operacional
+
+Escolha:
+
+* tipo: `Linux`;
+* versão: `Debian 32-bit` ou `Debian 64-bit`.
+
+---
+
+### 3. Configurar memória RAM
+
+Utilize a memória recomendada de:
+
+```text
+1024 MB
+```
+
+para computadores com 2GB ou mais.
+
+---
+
+### 4. Criar disco rígido virtual
+
+Deixe marcada a opção:
+
+```text
+Criar um novo disco rígido virtual agora
+```
+
+---
+
+### 5. Escolher formato do disco
+
+Selecione:
+
+```text
+VDI (VirtualBox Disk Image)
+```
+
+---
+
+### 6. Tipo de armazenamento
+
+Escolha:
+
+```text
+Tamanho fixo
+```
+
+Isso melhora o desempenho da máquina virtual.
+
+---
+
+### 7. Definir tamanho do disco
+
+Utilize o tamanho recomendado:
+
+```text
+8 GB
+```
+
+---
+
+### 8. Inicializar a máquina virtual
+
+Após finalizar a criação da máquina, clique em:
+
+```text
+Iniciar
+```
+
+---
+
+# Instalando o Debian na máquina virtual
+
+## 1. Selecionar a imagem ISO
+
+Ao iniciar a máquina virtual pela primeira vez:
+
+* clique na pasta amarela;
+* selecione a imagem ISO do Debian;
+* clique em `Iniciar`.
+
+---
+
+## 2. Escolher instalação gráfica
+
+Pressione:
+
+```text
+Enter
+```
+
+para selecionar:
+
+```text
+Graphical install
+```
+
+---
+
+## 3. Selecionar idioma
+
+Escolha:
+
+```text
+Portuguese (Brazil)
+```
+
+---
+
+## 4. Selecionar localidade
+
+Escolha:
+
+```text
+Brasil
+```
+
+---
+
+## 5. Configurar teclado
+
+Selecione:
+
+```text
+Português Brasileiro
+```
+
+---
+
+## 6. Nome da máquina
+
+Defina um nome para a máquina virtual.
+
+---
+
+## 7. Nome de domínio
+
+O nome de domínio pode permanecer em branco.
+
+---
+
+## 8. Senha do root
+
+Defina a senha do usuário administrador (`root`).
+
+⚠️ Lembre-se dessa senha.
+
+---
+
+## 9. Confirmar senha do root
+
+Digite novamente a senha.
+
+---
+
+## 10. Nome completo do usuário
+
+Digite o nome completo do usuário.
+
+---
+
+## 11. Nome de usuário
+
+Defina o usuário para acesso ao sistema.
+
+---
+
+## 12. Senha do usuário
+
+Defina a senha do usuário.
+
+⚠️ Lembre-se dessa senha.
+
+---
+
+## 13. Confirmar senha do usuário
+
+Digite novamente a senha.
+
+---
+
+## 14. Configurar relógio
+
+Escolha a localidade para configurar o horário.
+
+---
+
+# Particionamento do disco
+
+## 15. Escolher particionamento
+
+Selecione:
+
+```text
+Assistido - usar o disco inteiro
+```
+
+---
+
+## 16. Selecionar disco
+
+Escolha o disco disponível.
+
+---
+
+## 17. Estrutura de partições
+
+Selecione:
+
+```text
+Todos os arquivos em uma partição (para iniciantes)
+```
+
+---
+
+## 18. Finalizar particionamento
+
+Selecione:
+
+```text
+Finalizar o particionamento e escrever as mudanças no disco
+```
+
+---
+
+## 19. Confirmar alterações
+
+Selecione:
+
+```text
+Sim
+```
+
+Aguarde a instalação do sistema básico.
+
+---
+
+## 20. Novos CDs/DVDs
+
+Selecione:
+
+```text
+Não
+```
+
+---
+
+## 21. Configurar espelho Debian
+
+Escolha:
+
+```text
+Brasil
+```
+
+---
+
+## 22. Servidor Debian
+
+Escolha:
+
+```text
+deb.debian.org
+```
+
+---
+
+## 23. Configuração de proxy
+
+Não é necessário configurar proxy.
+
+Pressione:
+
+```text
+Enter
+```
+
+---
+
+## 24. Concurso de pacotes
+
+Selecione:
+
+```text
+Não
+```
+
+---
+
+## 25. Selecionar pacotes
+
+Marque:
+
+* Xfce;
+* servidor de impressão;
+* utilitários de sistema padrão.
+
+Utilize:
+
+```text
+Espaço
+```
+
+para marcar as opções.
+
+---
+
+## 26. Instalar GRUB
+
+Selecione:
+
+```text
+Sim
+```
+
+---
+
+## 27. Selecionar dispositivo GRUB
+
+Escolha:
+
+```text
+/dev/sda
+```
+
+---
+
+## 28. Finalizar instalação
+
+Selecione:
+
+```text
+Continuar
+```
+
+---
+
+# Configurando e instalando o Apache2
+
+Após iniciar o Debian, abra o terminal.
+
+---
+
+# Acessando como root
+
+```bash
+su
+```
+
+Digite a senha do usuário administrador.
+
+---
+
+# Instalando Apache2
+
+```bash
+apt-get install apache2
+```
+
+---
+
+# Verificando status do Apache
+
+```bash
+systemctl status
+```
+
+---
+
+# Configuração de rede da máquina virtual
+
+No VirtualBox:
+
+```text
+Configurações > Rede > Conectado a: Host-only
+```
+
+Depois atualize a configuração de rede:
+
+```bash
+/sbin/dhclient
+```
+
+---
+
+# Descobrindo o endereço IP
+
+```bash
+ip addr
+```
+
+O endereço IP estará na linha:
+
+```text
+inet
+```
+
+---
+
+# Testando o servidor Apache
+
+Digite o endereço IP da máquina virtual no navegador.
+
+Se tudo estiver correto, a página padrão do Apache será exibida.
+
+---
+
+# Fluxo do servidor web
+
+```mermaid
+flowchart LR
+    Navegador[Navegador]
+    IP[Endereco IP]
+    Apache[Apache2]
+    Site[Pagina HTML]
+
+    Navegador --> IP
+    IP --> Apache
+    Apache --> Site
+```
+
+---
+
+# Editando a página inicial
+
+## Acessar diretório web
+
+```bash
+cd /var/www/html
+```
+
+---
+
+## Renomear arquivo padrão
+
+```bash
+mv index.html _index.html
+```
+
+---
+
+# Instalando editor de texto
+
+Caso necessário:
+
+```bash
+apt-get install gedit
+```
+
+---
+
+# Editando o arquivo HTML
+
+Substitua o conteúdo do arquivo:
+
+```html
 <html>
 <header><title>Teste</title></header>
 <body><h1>Editando um site</h1></body>
 </html>
 ```
 
-Finalmente, verifique se a página foi editada digitando o endereço IP da máquina em um navegador web. Caso seja preciso, reiniciei o Apache: `systemctl restart apache2`.
+---
 
-## Configurando dois sites no mesmo servidor
+# Reiniciando Apache
 
-No terminal, você precisa acessar o diretório `/var/www/` e criar duas pastas para salvar os dois sites:
+Caso necessário:
 
-```
-# mkdir site1.site.com
-# mkdir site2.site.com
-```
-
-Então, entrar em cada uma das pastas, criar e editar um arquivo `.html` para cada:
-
-```
-# cd site1.site.com
-# nano index.html
-# cd site2.site.com
-# nano index.html
+```bash
+systemctl restart apache2
 ```
 
-OBS: Não esqueça de digitar algo nos arquivos criados.
+---
 
-Agora vamos sair do diretório que estamos com `..cd` (digitar 2x) e criar os aquivos de configurações para esses sites:
+# Configurando dois sites no mesmo servidor
 
+O Apache permite hospedar múltiplos sites utilizando Virtual Hosts.
+
+---
+
+# Criando diretórios dos sites
+
+```bash
+mkdir site1.site.com
+mkdir site2.site.com
 ```
-# cd /etc/apache2/sistes-available/
-# touch site1.site.com.conf
-# touch site2.site.com.conf
+
+---
+
+# Criando arquivos HTML
+
+```bash
+cd site1.site.com
+nano index.html
+
+cd site2.site.com
+nano index.html
 ```
 
-Você deve digitar o seguinte código abaixo e adpatá-lo para cada um dos arquivos: 
+⚠️ Não esqueça de adicionar conteúdo nos arquivos.
 
-Utilize `nano site1.site.com.conf` para abrir edição.
+---
 
+# Criando arquivos de configuração
+
+```bash
+cd /etc/apache2/sites-available/
+
+touch site1.site.com.conf
+
+touch site2.site.com.conf
 ```
+
+---
+
+# Configuração do VirtualHost
+
+Abra:
+
+```bash
+nano site1.site.com.conf
+```
+
+Adicione:
+
+```apache
 <VirtualHost *:80>
   ServerName site1.site.com
   DocumentRoot /var/www/site1.site.com
 </VirtualHost>
 ```
 
-Ao terminar de salvar os dois arquivos de configurações, atualize os arquivos do site com o comando:
+Repita para o segundo site.
 
-```
-# /sbin/a2ensite site1.site.com
-# /sbin/a2ensite site2.site.com
-```
+---
 
-Caso precise reiniciar o Apache2: `systemctl reload apach2` | `systemctl restart apach2`.
+# Ativando os sites
 
-Finalmente, entre no seu gerenciador de arquivos e encontre o aquivo Host, pesquisando pelo seguinte diretório:
-
-```
-No Linux: /etc/hosts
-Windows: c:\Windows\System32\drivers\etc\hosts
+```bash
+/sbin/a2ensite site1.site.com
+/sbin/a2ensite site2.site.com
 ```
 
-Entre no arquivo hosts como administrador e na última linha do arquivo digite:
+---
 
-```
-<Número-do-seu-endereço-IP>   site1.site.com
-<Número-do-seu-endereço-IP>   site2.site.com
+# Reiniciando Apache após configuração
+
+```bash
+systemctl reload apache2
 ```
 
-Agora, os sites podem ser acessados digitando o endereço IP em um navegador.
+ou
+
+```bash
+systemctl restart apache2
+```
+
+---
+
+# Configurando arquivo hosts
+
+## Linux
+
+```text
+/etc/hosts
+```
+
+## Windows
+
+```text
+c:\Windows\System32\drivers\etc\hosts
+```
+
+---
+
+# Adicionando domínios locais
+
+Adicione ao final do arquivo:
+
+```text
+<Numero-do-seu-IP> site1.site.com
+<Numero-do-seu-IP> site2.site.com
+```
+
+---
+
+# Fluxo dos Virtual Hosts
+
+```mermaid
+flowchart LR
+    Navegador[Navegador]
+    Hosts[Arquivo hosts]
+    Apache[Apache2]
+    Site1[site1.site.com]
+    Site2[site2.site.com]
+
+    Navegador --> Hosts
+    Hosts --> Apache
+    Apache --> Site1
+    Apache --> Site2
+```
+
+---
+
+# Conclusão
+
+Neste tutorial configuramos uma máquina virtual Linux utilizando VirtualBox e Debian, instalamos o servidor Apache2 e hospedamos múltiplos sites utilizando Virtual Hosts.
+
+Além de aprender conceitos de virtualização e servidores web, esse ambiente também serve como base para estudos de:
+
+* redes;
+* Linux;
+* hospedagem;
+* infraestrutura;
+* DevOps;
+* administração de sistemas.
+
+Esse tipo de laboratório virtual é extremamente útil para aprender infraestrutura sem necessidade de utilizar servidores físicos.
+
+---
+
+# Referências
+
+* [https://www.virtualbox.org/](https://www.virtualbox.org/)
+* [https://www.debian.org/](https://www.debian.org/)
+* [https://httpd.apache.org/](https://httpd.apache.org/)
+* [https://www.guiafoca.org/](https://www.guiafoca.org/)

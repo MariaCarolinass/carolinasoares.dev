@@ -2,200 +2,586 @@
 title: "Praticando configurações de sistema na distribuição Linux Debian"
 type: page
 showTableOfContents: true
+-------------------------
+
+Neste tutorial vamos praticar diversas configurações administrativas no Linux Debian utilizando uma máquina virtual criada no VirtualBox.
+
+Durante o processo serão abordados conceitos importantes relacionados a:
+
+* instalação de sistemas Linux;
+* particionamento de disco;
+* cotas de armazenamento;
+* gerenciamento de usuários;
+* grupos;
+* permissões;
+* diretórios compartilhados.
+
+O objetivo é construir um ambiente Linux voltado para estudos de administração de sistemas.
+
 ---
 
-## Criação da máquina virtual
+# Criação da máquina virtual
 
-As configurações no Linux - Debian serão realizadas na máquina virtual criada no VirtualBox. O sistema operacional escolhido para a máquina virtual é o Debian (versão 32 bits), que é uma distribuição derivado do kernel Linux. As especificações definidas para a máquina virtual foram: 
+As configurações serão realizadas em uma máquina virtual criada no VirtualBox.
 
-- Memória RAM de 512 MB; 
-- Disco rígido de 16 GB;
-- Tipo de disco VDI;
-- Tipo de alocação Dinamicamente Alocado
+O sistema operacional utilizado será o Debian 32 bits.
 
-## Instalação da distribuição Linux Debian
+## Especificações da máquina virtual
 
-Durante a instalação do Debian foram definidas as configurações que o disco da máquina terá. O disco será divido em três partições descritas na tabela abaixo:
+| Configuração  | Valor                 |
+| ------------- | --------------------- |
+| Memória RAM   | 512 MB                |
+| Disco rígido  | 16 GB                 |
+| Tipo de disco | VDI                   |
+| Alocação      | Dinamicamente alocado |
 
-|                     | Partição primária | Partição Lógica |      Partição Lógica     |
-|:-------------------:|:-----------------:|:---------------:|:------------------------:|
-| Sistema de arquivos |        Ext4       |       SWAP      |           Ext4           |
-|  Ponto de montagem  |         /         |       SWAP      | /home                    |
-|       Tamanho       |        8GB        |       1GB       | Espaço restante em disco |
+---
 
-Ao terminar de configurar as partições do disco deverá escolher a opções "Finalizar particionamento e escrever mudanças no disco". A imagem abaixo mostra como deve ser o resultado das mudanças:
+# Fluxo do ambiente virtual
+
+```mermaid
+flowchart LR
+    Host[Computador Host]
+    VBox[VirtualBox]
+    VM[Maquina Virtual]
+    Debian[Debian Linux]
+
+    Host --> VBox
+    VBox --> VM
+    VM --> Debian
+```
+
+---
+
+# Instalação da distribuição Linux Debian
+
+Durante a instalação do Debian será necessário configurar o particionamento do disco.
+
+O disco será dividido em três partições.
+
+## Estrutura das partições
+
+| Sistema de arquivos | Tipo de partição | Ponto de montagem | Tamanho         |
+| ------------------- | ---------------- | ----------------- | --------------- |
+| Ext4                | Primária         | `/`               | 8GB             |
+| SWAP                | Lógica           | SWAP              | 1GB             |
+| Ext4                | Lógica           | `/home`           | Espaço restante |
+
+---
+
+# Estrutura das partições
+
+```mermaid
+flowchart LR
+    Disco["Disco 16GB"]
+    Root["Partição Root 8GB"]
+    Swap["SWAP 1GB"]
+    Home["/home restante"]
+
+    Disco --> Root
+    Disco --> Swap
+    Disco --> Home
+```
+
+---
+
+# Finalizando o particionamento
+
+Após configurar as partições:
+
+```text
+Finalizar particionamento e escrever mudanças no disco
+```
+
+---
+
+# Resultado esperado do particionamento
 
 ![Mudanças no disco](https://github.com/MariaCarolinass/config-sistema-linux-debian/blob/main/imagens/particaodisco.png?raw=true)
 
-Uma **importante** configuração a se fazer é escolher o nome de usuário como "donald" que terá haver com os tópicos de usuários, grupos e permissões.
+---
 
-Finalizando a instalação do Debian, algumas opções deverão ser marcadas na etapa de seleção de software, são elas: 
+# Usuário principal do sistema
 
-- Ambiente de área de trabalho no Debian; 
-- Xfce;
-- Utilitários de sistema padrão
+⚠️ Importante:
 
-A imagem a seguir mostra as opções de software marcadas:
+Durante a instalação do Debian, o nome do usuário deve ser:
+
+```text
+donald
+```
+
+Esse usuário será utilizado posteriormente nas configurações de cotas e permissões.
+
+---
+
+# Seleção de softwares
+
+Na etapa de seleção de softwares, marque:
+
+* Ambiente de área de trabalho Debian;
+* Xfce;
+* Utilitários de sistema padrão.
+
+---
+
+# Resultado da seleção de softwares
 
 ![Opções marcadas](https://github.com/MariaCarolinass/config-sistema-linux-debian/blob/main/imagens/softwares.png?raw=true)
 
-## Definição de cotas de armazenamento para os usuários
+---
 
-Feito toda a instação da máquina e do ambiente Linux - Debian, agora serão definidas algumas configurações antes de realizar a criação dos novos usuários e grupos do sistema. Para isso é necessário definir as cotas padrões que todos os usuário terão, primeiro é preciso instalar o **quota** no terminal: 
+# Definição de cotas de armazenamento
 
-`# apt-get install quota`
+Após finalizar a instalação do Debian, vamos configurar cotas de armazenamento para os usuários.
 
-Agora, é necessário definir onde será o controle de armazenamento. Vamos editar o arquivo `/etc/fstab` e na linha que mostra o ponto de montagem `/home` será adicionado após o default a palavra `,usrquota` sem espaço. O comando a seguir abre o arquivo em questão:
+As cotas limitam o espaço em disco que cada usuário pode utilizar.
 
-`# nano /etc/fstab`
+---
 
-A imagem abaixo mostra o arquivo editado com as configurações citadas:
+# Instalando quota
+
+```bash
+apt-get install quota
+```
+
+---
+
+# Configurando `/etc/fstab`
+
+Agora será necessário configurar onde o controle de cotas será aplicado.
+
+Edite o arquivo:
+
+```bash
+nano /etc/fstab
+```
+
+Na linha referente ao ponto de montagem `/home`, adicione:
+
+```text
+,usrquota
+```
+
+logo após `defaults`.
+
+---
+
+# Resultado esperado do `/etc/fstab`
 
 ![Configuração ursquota](https://github.com/MariaCarolinass/config-sistema-linux-debian/blob/main/imagens/quota.png?raw=true)
 
-Após isso, é preciso atualizar as configurações que foram adicionadas, digitando o comando abaixo:
+---
 
-`# mount -o remount /home`
+# Atualizando configurações de montagem
 
-Para finalizar as configurações no ponto de montagem `/home` é preciso digitar os comandos abaixo:
+```bash
+mount -o remount /home
+```
 
-`# quotacheck -cum /home`
+---
 
-`# quotaon /home`
+# Inicializando cotas
 
-Cada usuário terá 1GB de restrição de cota “leve” e 1.1GB de restrição de cota “rígida” para utilizar. E sempre qualquer novo usuário criado terá essas mesmas restrições de cota. O comando a seguir define as restrições de cota através do usuário principal `donald` criado durante a instalação do Linux - Debian:
+```bash
+quotacheck -cum /home
+```
 
-`# edquota -u donald`
+```bash
+quotaon /home
+```
 
-Deverá ser editadas as linhas soft e hard com as restrições de cota citadas. A imagem abaixo mostra as restrições adicionadas:
+---
+
+# Definindo cotas do usuário modelo
+
+Cada usuário terá:
+
+| Tipo de cota | Valor |
+| ------------ | ----- |
+| Cota leve    | 1GB   |
+| Cota rígida  | 1.1GB |
+
+O usuário modelo será:
+
+```text
+donald
+```
+
+---
+
+# Editando cotas do usuário
+
+```bash
+edquota -u donald
+```
+
+---
+
+# Resultado esperado das cotas
 
 ![Restrições adicionas](https://github.com/MariaCarolinass/config-sistema-linux-debian/blob/main/imagens/restricoes.png?raw=true)
 
-Caso queira verificar se ocorreu tudo certo:
+---
 
-`# quota -s donald`
+# Verificando cotas
 
-A última configuração é no arquivo `/etc/adduser.conf`, onde será adicionado o nosso usuário modelo `donald`. A partir do comando abaixo:
+```bash
+quota -s donald
+```
 
-`# nano /etc/adduser.conf`
+---
 
-Será editado a linha `QUOTAUSER`, nela vamos adicionar o nome donald entre as aspas e sem espaço, como mostra a imagem abaixo:
+# Configurando usuário padrão para cotas
+
+Edite:
+
+```bash
+nano /etc/adduser.conf
+```
+
+Na linha:
+
+```text
+QUOTAUSER
+```
+
+adicione:
+
+```text
+donald
+```
+
+entre aspas.
+
+---
+
+# Resultado esperado da configuração
 
 ![Donald adicionado](https://github.com/MariaCarolinass/config-sistema-linux-debian/blob/main/imagens/config-usuario.png?raw=true)
 
-### Usuários e grupos
+---
 
-Serão criados 5 usuários: margarida, patinhas, huguinho, zezinho e luizinho. Todos esses usuários vão se aplicar as restrições de cota de armazenamento do usuário principal donald. Abaixo os comandos para criar cada usuário:
+# Usuários e grupos
 
-`# adduser margarida`
+Agora serão criados novos usuários.
 
-`# adduser patinhas`
- 
-`# adduser huguinho`
+## Usuários
 
-`# adduser zezinho`
+* margarida
+* patinhas
+* huguinho
+* zezinho
+* luizinho
 
-`# adduser luizinho`
+---
 
-Para verficar as cotas de todos os usuários:
+# Criando usuários
 
-`# repquota -as`
+```bash
+adduser margarida
+```
 
-A imagem abaixo mostra o resultado do comando `repquota -as`:
+```bash
+adduser patinhas
+```
+
+```bash
+adduser huguinho
+```
+
+```bash
+adduser zezinho
+```
+
+```bash
+adduser luizinho
+```
+
+---
+
+# Verificando cotas dos usuários
+
+```bash
+repquota -as
+```
+
+---
+
+# Resultado do comando `repquota`
 
 ![Resultado do comando repquota](https://github.com/MariaCarolinass/config-sistema-linux-debian/blob/main/imagens/usuarios-criados.png?raw=true)
 
-O arquivo `/etc/passwd` mostra os usuário criados:
+---
 
-`# nano /etc/passwd`
+# Arquivo `/etc/passwd`
 
-Abaixo a imagem exibir o conteúdo do arquivo `/etc/passwd`:
+O arquivo `/etc/passwd` mostra os usuários criados.
+
+## Editando arquivo
+
+```bash
+nano /etc/passwd
+```
+
+---
+
+# Resultado do `/etc/passwd`
 
 ![Arquivo /etc/passwd](https://github.com/MariaCarolinass/config-sistema-linux-debian/blob/main/imagens/usuarios.png?raw=true)
 
-Agora, os usários serão divididos nos grupos “adultos” e “criancas”. Primeiro é preciso criar os dois grupos com os comandos abaixo:
+---
 
-`# addgroup adultos`
+# Criando grupos
 
-`# addgroup criancas`
+Serão criados os grupos:
 
-Os usuários foram divididos da seguinte forma:
+* adultos;
+* criancas.
 
-- Adultos: donald; margarida; patinhas.
-- Crianças: huguinho; zezinho; luizinho. 
- 
-Para adiciona-lós aos seus respectivos grupos é digitado os comando abaixo:
+---
 
-`# usermod -aG adultos donald`
+# Criando grupos no sistema
 
-`# usermod -aG adultos margarida`
+```bash
+addgroup adultos
+```
 
-`# usermod -aG adultos patinhas`
+```bash
+addgroup criancas
+```
 
-`# usermod -aG criancas huguinho`
+---
 
-`# usermod -aG criancas zezinho`
+# Divisão dos usuários
 
-`# usermod -aG criancas luizinho`
+## Grupo adultos
 
+* donald
+* margarida
+* patinhas
 
-O arquivo `/etc/groups` mostrar os usuários e grupos que foram criados, digitando o comando a seguir:
+## Grupo criancas
 
-`# nano /etc/groups`
+* huguinho
+* zezinho
+* luizinho
 
-A imagem adiante mostra o resultado do comando digitado: 
+---
 
-![Grupos criados](src="https://github.com/MariaCarolinass/config-sistema-linux-debian/blob/main/imagens/grupos-criados.png?raw=true)
+# Adicionando usuários aos grupos
 
-Também com o comando `groups <nome-do-usuario>` é possível verificar o grupo de cada um dos usuários. Resultado do comando groups na imagem a seguir:
+```bash
+usermod -aG adultos donald
+```
+
+```bash
+usermod -aG adultos margarida
+```
+
+```bash
+usermod -aG adultos patinhas
+```
+
+```bash
+usermod -aG criancas huguinho
+```
+
+```bash
+usermod -aG criancas zezinho
+```
+
+```bash
+usermod -aG criancas luizinho
+```
+
+---
+
+# Fluxo de usuários e grupos
+
+```mermaid
+flowchart TD
+    Adultos[Grupo adultos]
+    Criancas[Grupo criancas]
+
+    Adultos --> Donald
+    Adultos --> Margarida
+    Adultos --> Patinhas
+
+    Criancas --> Huguinho
+    Criancas --> Zezinho
+    Criancas --> Luizinho
+```
+
+---
+
+# Arquivo de grupos
+
+```bash
+nano /etc/groups
+```
+
+---
+
+# Resultado dos grupos criados
+
+![Grupos criados](https://github.com/MariaCarolinass/config-sistema-linux-debian/blob/main/imagens/grupos-criados.png?raw=true)
+
+---
+
+# Verificando grupos dos usuários
+
+```bash
+groups <nome-do-usuario>
+```
+
+---
+
+# Resultado do comando groups
 
 ![Resultado do comando groups](https://github.com/MariaCarolinass/config-sistema-linux-debian/blob/main/imagens/groups.png?raw=true)
 
-## Diretórios compartilhados
+---
 
-Por fim, vamos práticar sobre permissões de arquivos. Serão criados dois diretórios de uso compartilhado, que ficarão salvos no diretório `/compartilhado` criado no ponto de montagem “/”. O comando abaixo cria o diretório:
+# Diretórios compartilhados
 
-`# mkdir compartilhado`
+Agora vamos configurar permissões de arquivos e diretórios compartilhados.
 
-E para entrar no diretório `compartilhado`: 
+---
 
-`# cd compartilhado`
+# Criando diretório compartilhado
 
-Dentro dele serão criados os diretórios adultos e criancas:
+```bash
+mkdir compartilhado
+```
 
-`# mkdir adultos`
+---
 
-`# mkdir criancas`
+# Entrando no diretório
 
-Em seguida, os comandos abaixo serão utilizados para adicionar os grupos que antes foram criados nos diretórios compartilhados que acabamos de criar:
+```bash
+cd compartilhado
+```
 
-`# chgrp adultos adultos`
+---
 
-`# chgrp criancas criancas`
+# Criando diretórios dos grupos
 
-Esses diretórios terão duas permissões diferentes para cada um, que estão descritas na tabela abaixo:
+```bash
+mkdir adultos
+```
 
-|        Diretório        |                 Permissão 1                 |                        Permissão 2                       |
-|:-----------------------:|:-------------------------------------------:|:--------------------------------------------------------:|
-|  /compartilhado/adultos | Usuários do grupo adultos podem ler e escrever dentro desse diretório | Usuários que não pertencem ao grupo “adultos” não podem ler, escrever ou executar esse diretório    |
-| /compartilhado/criancas | Usuários do grupo crianças podem ler e escrever dentro desse diretório | Usuários que não pertencem ao grupo “crianças” podem ler e executar o diretório, mas não podem escrever |
+```bash
+mkdir criancas
+```
 
-Para adicionar as permissões definidas na tabela anterior, será digitado os seguintes comandos:
+---
 
-`# chmod a-rwx adultos`
+# Associando grupos aos diretórios
 
-`# chmod a-rwx criancas`
+```bash
+chgrp adultos adultos
+```
 
-`# chmod g+rwx adultos`
+```bash
+chgrp criancas criancas
+```
 
-`# chmod g+rwx criancas`
+---
 
-`# chmod o+rx criancas`
+# Permissões dos diretórios
 
-Verificando se as permissões foram realizadas:
+| Diretório                 | Permissão                                                              |
+| ------------------------- | ---------------------------------------------------------------------- |
+| `/compartilhado/adultos`  | Apenas grupo adultos pode ler e escrever                               |
+| `/compartilhado/criancas` | Grupo criancas pode ler e escrever; outros podem apenas ler e executar |
 
-`# ls -l`
+---
 
-A imagem a seguir mostra os resultados das permissões configuradas:
+# Removendo permissões gerais
+
+```bash
+chmod a-rwx adultos
+```
+
+```bash
+chmod a-rwx criancas
+```
+
+---
+
+# Adicionando permissões para grupos
+
+```bash
+chmod g+rwx adultos
+```
+
+```bash
+chmod g+rwx criancas
+```
+
+---
+
+# Permissão extra para outros usuários
+
+```bash
+chmod o+rx criancas
+```
+
+---
+
+# Verificando permissões
+
+```bash
+ls -l
+```
+
+---
+
+# Resultado das permissões
 
 ![Resultado das perimissões](https://github.com/MariaCarolinass/config-sistema-linux-debian/blob/main/imagens/permissoes.png?raw=true)
+
+---
+
+# Fluxo de permissões
+
+```mermaid
+flowchart LR
+    Usuarios[Usuarios]
+    Grupos[Grupos]
+    Diretorios[Diretorios Compartilhados]
+    Permissoes[Permissoes Linux]
+
+    Usuarios --> Grupos
+    Grupos --> Diretorios
+    Diretorios --> Permissoes
+```
+
+---
+
+# Conclusão
+
+Neste tutorial configuramos um ambiente Linux Debian completo utilizando máquina virtual.
+
+Durante o processo foram praticados conceitos fundamentais de administração de sistemas Linux, incluindo:
+
+* particionamento;
+* gerenciamento de usuários;
+* grupos;
+* permissões;
+* cotas de armazenamento;
+* diretórios compartilhados.
+
+Esses conceitos são amplamente utilizados em servidores Linux e ambientes corporativos.
+
+Além de fortalecer conhecimentos em infraestrutura, esse tipo de laboratório também ajuda no aprendizado de segurança, administração de sistemas e ambientes multiusuário.
+
+---
+
+# Referências
+
+* [https://www.debian.org/](https://www.debian.org/)
+* [https://www.virtualbox.org/](https://www.virtualbox.org/)
+* [https://wiki.debian.org/](https://wiki.debian.org/)
+* [https://www.gnu.org/software/coreutils/](https://www.gnu.org/software/coreutils/)
