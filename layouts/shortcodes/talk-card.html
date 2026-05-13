@@ -1,0 +1,24 @@
+<article class="talk-card">
+  <h3>{{ .Get "title" }}</h3>
+
+  <div class="talk-tags">
+    {{ $tags := split (.Get "tags") "|" }}
+    {{ range $tags }}
+      <span>{{ . }}</span>
+    {{ end }}
+  </div>
+
+  <div class="talk-body">
+    {{ .Inner | markdownify }}
+  </div>
+
+  <div class="talk-actions">
+    {{ with .Get "slide_url" }}
+      <a class="talk-button" href="{{ . }}" target="_blank" rel="noopener noreferrer">Ver slides</a>
+    {{ end }}
+
+    {{ with .Get "video_url" }}
+      <a class="talk-button talk-button-secondary" href="{{ . }}" target="_blank" rel="noopener noreferrer">Assistir vídeo</a>
+    {{ end }}
+  </div>
+</article>

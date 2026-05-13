@@ -1,0 +1,15 @@
+{{ define "main" }}
+<div class="post container talks-page">
+    <div class="post-header-section">
+        <h1>{{ or (.Params.H1 | markdownify) (.Title | markdownify) }}</h1>
+    </div>
+
+    <div class="post-content talks-content">
+        {{ .Content }}
+    </div>
+
+    {{ if .Site.Params.ShowBackToTopButton }}
+        {{ partial "back-to-top.html" . }}
+    {{ end }}
+</div>
+{{ end }}
