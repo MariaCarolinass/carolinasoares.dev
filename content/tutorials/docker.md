@@ -1,287 +1,705 @@
 ---
 date: 2024-07-20T00:22:39-03:00
-# description: ""
-# image: ""
-lastmod: 2024-07-20
+lastmod: 2026-05-12
 showTableOfContents: true
-tags: ["docker", "container", "servidores", "sistemas operacionais"]
-title: "Pequeno tutorial de Docker"
+tags: ["docker", "containers", "devops", "servidores"]
+title: "Aprenda Docker na prática: containers, imagens, volumes e deploy de aplicações"
 type: "post"
+------------
+
+O Docker revolucionou a forma como aplicações são desenvolvidas, distribuídas e executadas.
+
+Com containers, tornou-se possível empacotar aplicações junto com todas as suas dependências, garantindo que funcionem da mesma maneira em diferentes ambientes.
+
+Essa abordagem simplificou:
+
+* deploy de aplicações;
+* criação de ambientes de desenvolvimento;
+* testes automatizados;
+* escalabilidade;
+* integração contínua.
+
+Neste artigo vamos explorar os principais conceitos do Docker utilizando exemplos práticos e comandos essenciais.
+
 ---
 
-**O que é o Docker?** 
+# O que é Docker?
 
-É um conjunto de produtos de plataforma como serviços que usam virtualização de nível, de sistema operacional, para entregar softwares em pacotes chamados contêineres.
+Docker é uma plataforma de virtualização baseada em containers.
 
-**O que são contêineres?** 
+Os containers permitem executar aplicações em ambientes isolados, compartilhando o kernel do sistema operacional hospedeiro.
 
-Os contêineres são isolamentos, processos separados uns dos outros e que agrupam seus próprios softwares, bibliotecas e arquivos de configuração.
+Isso torna os containers muito mais leves do que máquinas virtuais tradicionais.
 
-## Comandos úteis (terminal)
+## Docker e containers
 
-### Instalação:
+```mermaid
+flowchart LR
+    Host[Sistema Operacional]
+    Docker[Docker Engine]
+    C1[Container 1]
+    C2[Container 2]
+    C3[Container 3]
 
-    $ su
-    # apt-get update
-    # apt-get curl
-    # curl -fsSL https://get.docker.com | bash
+    Host --> Docker
+    Docker --> C1
+    Docker --> C2
+    Docker --> C3
+```
 
-[Consulte a documentação do Docker](https://docs.docker.com/engine/install/)
+---
 
-#### Testando se o Docker foi instalado:
+# Instalação do Docker
 
-    # docker container run -ti hello-world
+## Debian/Ubuntu
 
-#### Conferindo a versão instalada do Docker:
+```bash
+su
+apt-get update
+apt-get install curl
+curl -fsSL https://get.docker.com | bash
+```
 
-    # docker version
+Documentação oficial:
 
-### Container
+* [https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/)
 
-#### Criando um container para o Centos
+---
 
-Executando e interagindo com o container:
-    
-    # docker container run -ti centos
+# Testando a instalação
 
-Acessando o container:
-    
-    # docker container attach id-container
+Após instalar o Docker, podemos executar um container de teste.
 
-#### Criando um container para o Nginx
+```bash
+docker container run -ti hello-world
+```
 
-Executando e criando o container como daemon (primeiro plano):
-    
-    # docker container run -d nginx
+Se tudo estiver correto, o Docker exibirá uma mensagem confirmando que o ambiente está funcionando.
 
-Acessando o container:
-  
-    # docker container exec -ti  id-container ls /
+---
 
-#### Comandos básicos do container
+# Conferindo a versão do Docker
 
-Visualizando containers em execução:
+```bash
+docker version
+```
 
-    # docker container ls
+---
 
-Visualizando containers criados:
+# Containers
 
-    # docker container ls -a
-    
-Checando informações do container:
+Containers são ambientes isolados utilizados para execução de aplicações.
 
-    # docker container inspect id-container
+Eles agrupam:
 
-Removendo um container:
-    
-    # docker container rm id-container
-    # docker container rm -f id-container
+* bibliotecas;
+* dependências;
+* aplicações;
+* arquivos de configuração.
 
-#### Dados de hardware do container: 
+## Executando um container CentOS
 
-Informações de memória:
+```bash
+docker container run -ti centos
+```
 
-    # docker container stats id-imagem
+### Explicando os parâmetros
 
-Processos em execução:
+| Parâmetro | Função                       |
+| --------- | ---------------------------- |
+| `run`     | Cria e executa um container  |
+| `-t`      | Terminal interativo          |
+| `-i`      | Mantém entrada padrão aberta |
 
-    # docker container top id-imagem
+---
 
-Criando um container e definindo tamanho da memória
+# Acessando containers
 
-    # docker container run -d -m 128M nginx
+## Attach
 
-Criando um container e definindo tamanho da memória e cpu:
-    
-    # docker container run -d -m 128M --cpus 0.5 nginx
+```bash
+docker container attach id-container
+```
 
-Atualizando tamanho da memória:
+O comando `attach` permite acessar um container já em execução.
 
-    # docker container update --memory 64M id-imagem
-    
-Atualizando tamanho da cpu:
+---
 
-    # docker container update --cpus 0.2 id-imagem
+## Exec
 
-### Start, stop, restart, pause e unpause container
-    
-    # docker container stop  id-container
-    # docker container start  id-container
-    # docker container restart  id-container
-    # docker container pause  id-container
-    # docker container unpause  id-container
-    
-### Volumes
+```bash
+docker container exec -ti id-container ls /
+```
 
-Criando um volume:
-    
-    # docker volume create nome_volume
+O comando `exec` executa comandos dentro de um container já em execução.
 
-Visualizando volumes criados:
-    
-    # docker volume ls
+---
 
-Checando informações do volume
+# Containers em segundo plano
 
-    # docker volume inspect nome_volume
+## Executando Nginx
 
-#### Armazenando dados do container:
-    
-Tipo bind: (quando já tem um diretório para montar dentro do container)
+```bash
+docker container run -d nginx
+```
 
-    # docker container run -ti --mount type=bind,src=documentos/projeto,dst=projeto debian
+O parâmetro `-d` executa o container em modo daemon (*background*).
 
-Tipo volume:
-    
-    # docker container run -ti --mount type=volume,src=nome_volume,dst=projeto debian
-
-### Imagens
-
-#### Criando uma imagem executável
-
-Iniciando projeto:
-
-    # mkdir projeto-docker
-    # cd projeto-docker
-    # nano DockerFile
-    
-Colar no arquivo DockerFile:
-
-    FROM debian
-    LABEL app = ‘nome_app’
-    ENV Docker = ‘nome_env’
-    RUN apt-get update && apt-get install -y stress && apt-get clean 
-    CMD stress --cpu 1 --vm-bytes 64M --vm 1
-        
-Criando imagem e executando no container:
-
-    # docker image build -t nome_imagem:1.0
-    # docker image ls
-    # docker container run -d nome_container:1.0
-    # docker container ls
-
-#### Comandos básicos da imagem
-
-Criando uma imagem:
-
-    # docker image build -t nome_imagem:1.0
-
-Visualizando imagens criadas:
-
-    # docker image ls
-    
-Apagar uma imagem:
-
-    # docker image rm id_image
-    # docker image rm -f id_image
-
-### Apagar inativos:
-    
-Apagar volumes inativos:
-
-    # docker volume prune
-    
-Apagar containers inativos:
-
-    # docker container prune
-
-## Rodando um container do PostgreSQL e guardando os dados no volume
- 
-    # docker volume create dbdados
-    # docker container run -d -p 5432:5432 -- name pgsql --mount type=volume,src=dbdados,dst=/data -e POSTGRESQL_USER=docker -e POSTGRESL_PASS=docker -e POSTGRESQL_DB=docker kamui/postgresql
-    # docker container ls
-    # docker volume ls
-
-Conferindo se o volume foi criado:
-    
-    # cd /var/lib/docker/volumes/dbdados/_data/
-    # ls
-    
-Para ver as informações do volume:
-
-    # docker volume inspect dbdados
-
-### Fazendo o backup dos dados
-
-    # mkdir /opt/backup
-    # docker container run -ti --mount type=volume,src=dbdados,dst=/data --mount type=bind,src=/opt/backup/,dst=/backup debian tar -cvf /backup/bkp-banco.tar /data
-    # cd /opt/backup/
-    # ls
-    # tar -xvf bkp-banco.tar
-
-## Criando um arquivo Dockfile para instalar o servidor Apache
-
-    # mkdir dockerfiles
-    # cd dockerfiles
-    # mkdir versao1
-    # cd versao1
-    # nano Dockerfile
-
-Colar no arquivo Dockerfile:
-
-    FROM debian
-    
-    RUN apt-get update && apt-get install -y apache2 && apt-get clean
-    RUN chown www-data:www-data /var/lock && chown www-data:www-data /var/run/ && chown www-data:www-data /var/log/
-    
-    ENV APACHE_LOCK_DIR=”/var/lock”
-    ENV APACHE_PID_FILE=”/var/run/apache2.pid”
-    ENV APACHE_RUN_USER=”www-data”
-    ENV APACHE_RUN_GROUP=”www-data”
-    ENV APACHE_LOG_DIR=”/var/log/apache2”
-    
-    ADD index.html /var/www/html/
-    
-    LABEL description=”Webserver”
-    LABEL version=”1.0.0”
-    
-    USER root
-    
-    WORKDIR /var/www/html/
-    VOLUME /var/www/html/
-    
-    EXPOSE 80
-    
-    ENTRYPOINT [“/usr/sbin/apachectl”]
-    CMD [“-D”, “FOREGROUND”]
-
-Criando imagem e rodando no container:
-
-    # docker image build -t meu_apache:1.0.0 .
-    # docker image ls
-    # docker container run -d -p 8080:80 meu_apache:1.0.0
-    # docker container ls
-    
-Verificar se servidor Apache está funcionando:
-
-    # curl localhost:8080
-
-### Subindo a imagem para o Docker Hub
-
-Criar conta no [Docker Hub](https://hub.docker.com/)
-
-Subindo imagem:
-
-    # docker image tag id_image usuarioHubDocker/meu_apache:1.0.0
-    # docker image ls
-    # docker login
-    # docker push usuarioHubDocker/meu_apache:1.0.0
-
-### Subindo a imagem localmente usando registry
-
-    # docker container run -d -p 5000:5000 --restart=always --name registry registry:2 
-    # docker image tag id_image localhost:5000/meu_apache:2.0.0 
-    # docker image push localhost:5000/meu_apache:2.0.0
-    # docker container rm -f id_container
-    # docker image rm -f id_image
-    # docker container run -d localhost:5000/meu_apache:2.0.0
-
-Verificando se funcionou:
-
-    # curl localhost:5000/v2/_catalog
-    # curl localhost:5000/v2/meu_apache/tags/list
-   
-## Links
-
-- [O que é o Docker?](https://pt.wikipedia.org/wiki/Docker_(software))
-- Tudo aprendido no [treinamento descomplicando o docker, playlist gratuita,](https://youtube.com/playlist?list=PLf-O3X2-mxDn1VpyU2q3fuI6YYeIWp5rR) no canal do [LINUXtips](https://www.youtube.com/c/LinuxTips)
+---
+
+# Fluxo básico do Docker
+
+```mermaid
+flowchart LR
+    Imagem[Imagem Docker]
+    Container[Container]
+    Aplicacao[Aplicacao em execucao]
+
+    Imagem --> Container
+    Container --> Aplicacao
+```
+
+---
+
+# Listando containers
+
+## Containers ativos
+
+```bash
+docker container ls
+```
+
+---
+
+## Todos os containers
+
+```bash
+docker container ls -a
+```
+
+---
+
+# Inspecionando containers
+
+```bash
+docker container inspect id-container
+```
+
+---
+
+# Estatísticas do container
+
+```bash
+docker container stats id-container
+```
+
+---
+
+# Processos em execução
+
+```bash
+docker container top id-container
+```
+
+---
+
+# Pause e unpause
+
+## Pausando container
+
+```bash
+docker container pause id-container
+```
+
+---
+
+## Retornando execução
+
+```bash
+docker container unpause id-container
+```
+
+---
+
+# Start, stop e restart
+
+## Parando container
+
+```bash
+docker container stop id-container
+```
+
+---
+
+## Iniciando container
+
+```bash
+docker container start id-container
+```
+
+---
+
+## Reiniciando container
+
+```bash
+docker container restart id-container
+```
+
+---
+
+# Removendo containers
+
+## Remoção simples
+
+```bash
+docker container rm id-container
+```
+
+---
+
+## Remoção forçada
+
+```bash
+docker container rm -f id-container
+```
+
+---
+
+# Limitação de recursos
+
+## Memória
+
+```bash
+docker container run -d -m 128M nginx
+```
+
+---
+
+## CPU
+
+```bash
+docker container run -d -m 128M --cpus 0.5 nginx
+```
+
+---
+
+## Atualizando memória
+
+```bash
+docker container update --memory 64M id-container
+```
+
+---
+
+## Atualizando CPU
+
+```bash
+docker container update --cpus 0.2 id-container
+```
+
+---
+
+# Volumes
+
+Volumes permitem persistir dados mesmo após remoção de containers.
+
+Sem volumes, dados armazenados no container são perdidos.
+
+---
+
+# Criando volumes
+
+```bash
+docker volume create nome_volume
+```
+
+---
+
+# Listando volumes
+
+```bash
+docker volume ls
+```
+
+---
+
+# Inspecionando volumes
+
+```bash
+docker volume inspect nome_volume
+```
+
+---
+
+# Bind mount
+
+```bash
+docker container run -ti \
+--mount type=bind,src=documentos/projeto,dst=/projeto debian
+```
+
+---
+
+# Volume mount
+
+```bash
+docker container run -ti \
+--mount type=volume,src=nome_volume,dst=/projeto debian
+```
+
+---
+
+# Persistência de dados
+
+```mermaid
+flowchart LR
+    Container[Container]
+    Volume[Volume]
+    Dados[Dados persistentes]
+
+    Container --> Volume
+    Volume --> Dados
+```
+
+---
+
+# Imagens Docker
+
+Imagens funcionam como modelos para criação de containers.
+
+Uma imagem pode conter:
+
+* sistema base;
+* dependências;
+* bibliotecas;
+* aplicações.
+
+---
+
+# Criando projeto Docker
+
+```bash
+mkdir projeto-docker
+cd projeto-docker
+nano Dockerfile
+```
+
+---
+
+# Exemplo de Dockerfile
+
+```Dockerfile
+FROM debian
+
+LABEL app="nome_app"
+ENV Docker="nome_env"
+
+RUN apt-get update && \
+    apt-get install -y stress && \
+    apt-get clean
+
+CMD stress --cpu 1 --vm-bytes 64M --vm 1
+```
+
+---
+
+# Build da imagem
+
+```bash
+docker image build -t nome_imagem:1.0 .
+```
+
+---
+
+# Listando imagens
+
+```bash
+docker image ls
+```
+
+---
+
+# Inspecionando imagens
+
+```bash
+docker image inspect id_image
+```
+
+---
+
+# Removendo imagens
+
+## Remoção simples
+
+```bash
+docker image rm id_image
+```
+
+---
+
+## Remoção forçada
+
+```bash
+docker image rm -f id_image
+```
+
+---
+
+# Dockerfile Apache
+
+```Dockerfile
+FROM debian
+
+RUN apt-get update && \
+    apt-get install -y apache2 && \
+    apt-get clean
+
+EXPOSE 80
+
+CMD ["apachectl", "-D", "FOREGROUND"]
+```
+
+---
+
+# Build da imagem Apache
+
+```bash
+docker image build -t meu_apache:1.0.0 .
+```
+
+---
+
+# Executando Apache
+
+```bash
+docker container run -d -p 8080:80 meu_apache:1.0.0
+```
+
+---
+
+# Mapeamento de portas
+
+```mermaid
+flowchart LR
+    Usuario[Usuario]
+    Porta8080[Porta 8080]
+    Container[Container Apache]
+    Porta80[Porta 80 interna]
+
+    Usuario --> Porta8080
+    Porta8080 --> Container
+    Container --> Porta80
+```
+
+---
+
+# Testando Apache
+
+```bash
+curl localhost:8080
+```
+
+---
+
+# PostgreSQL com Docker
+
+## Executando PostgreSQL
+
+```bash
+docker container run -d \
+--name postgres \
+-e POSTGRES_PASSWORD=123456 \
+-p 5432:5432 \
+postgres
+```
+
+---
+
+## Acessando PostgreSQL
+
+```bash
+docker container exec -ti postgres bash
+```
+
+---
+
+## Entrando no banco
+
+```bash
+psql -U postgres
+```
+
+---
+
+# Docker Hub
+
+Docker Hub é um repositório online de imagens.
+
+---
+
+# Login Docker Hub
+
+```bash
+docker login
+```
+
+---
+
+# Tag da imagem
+
+```bash
+docker image tag id_image usuario/meu_apache:1.0.0
+```
+
+---
+
+# Enviando imagem
+
+```bash
+docker push usuario/meu_apache:1.0.0
+```
+
+---
+
+# Registry local
+
+## Executando registry
+
+```bash
+docker container run -d \
+-p 5000:5000 \
+--restart=always \
+--name registry \
+registry:2
+```
+
+---
+
+# Criando tag local
+
+```bash
+docker image tag imagem localhost:5000/minha_imagem
+```
+
+---
+
+# Enviando imagem local
+
+```bash
+docker push localhost:5000/minha_imagem
+```
+
+---
+
+# Backup de volumes
+
+## Criando diretório
+
+```bash
+mkdir /opt/backup
+```
+
+---
+
+## Criando backup
+
+```bash
+docker container run -ti \
+--mount type=volume,src=dbdados,dst=/data \
+--mount type=bind,src=/opt/backup/,dst=/backup \
+debian tar -cvf /backup/bkp-banco.tar /data
+```
+
+---
+
+# Removendo recursos não utilizados
+
+## Containers parados
+
+```bash
+docker container prune
+```
+
+---
+
+## Imagens não utilizadas
+
+```bash
+docker image prune
+```
+
+---
+
+## Volumes não utilizados
+
+```bash
+docker volume prune
+```
+
+---
+
+## Limpeza geral
+
+```bash
+docker system prune
+```
+
+---
+
+# Vantagens do Docker
+
+Docker trouxe diversas vantagens para desenvolvimento moderno.
+
+| Vantagem       | Descrição                        |
+| -------------- | -------------------------------- |
+| Portabilidade  | Funciona em diferentes ambientes |
+| Isolamento     | Containers independentes         |
+| Escalabilidade | Fácil replicação                 |
+| Deploy rápido  | Inicialização rápida             |
+| Padronização   | Ambientes consistentes           |
+| DevOps         | Integração contínua facilitada   |
+
+---
+
+# Docker vs máquinas virtuais
+
+| Docker                | Máquina Virtual              |
+| --------------------- | ---------------------------- |
+| Compartilha kernel    | Sistema operacional completo |
+| Mais leve             | Mais pesada                  |
+| Inicialização rápida  | Inicialização lenta          |
+| Menor consumo         | Maior consumo                |
+| Escalabilidade rápida | Mais isolamento              |
+
+---
+
+# Quando utilizar Docker?
+
+Docker é muito utilizado para:
+
+* desenvolvimento local;
+* microsserviços;
+* CI/CD;
+* ambientes de testes;
+* aplicações em nuvem;
+* automação de deploy.
+
+---
+
+# Conclusão
+
+Docker se tornou uma das ferramentas mais importantes da computação moderna.
+
+Através dos containers, é possível criar ambientes leves, isolados e portáveis para desenvolvimento e deploy de aplicações.
+
+Além de facilitar testes e distribuição de software, Docker também contribui para automação, escalabilidade e integração entre equipes.
+
+Compreender conceitos como containers, imagens, volumes e Dockerfiles é essencial para trabalhar com DevOps, cloud computing e infraestrutura moderna.
+
+---
+
+# Referências
+
+* [https://docs.docker.com/](https://docs.docker.com/)
+* [https://hub.docker.com/](https://hub.docker.com/)
+* [https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/)
