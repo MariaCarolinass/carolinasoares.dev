@@ -1,67 +1,40 @@
 ---
+
 date: 2024-07-11T00:15:06-03:00
 lastmod: 2026-05-12
 showTableOfContents: true
 tags: ["web", "servidores", "hospedagem", "deploy", "cloud"]
 title: "Como funciona a hospedagem de aplicações web"
 type: "post"
----
+------------
 
-Depois que uma aplicação web é desenvolvida, ela precisa ser disponibilizada na internet para que usuários possam acessá-la com segurança, desempenho e estabilidade.
+# Como funciona a hospedagem de aplicações web
 
-Esse processo envolve diversos conceitos importantes, como infraestrutura, servidores, máquinas virtuais, serviços em nuvem, SSH, servidores HTTP e deploy.
+Depois que uma aplicação web é desenvolvida, ela precisa ser disponibilizada na internet para que usuários consigam acessá-la.
 
-Com a evolução da computação em nuvem, hospedar aplicações ficou mais acessível e escalável. Atualmente, desenvolvedores conseguem publicar sistemas completos utilizando serviços como AWS, Azure e DigitalOcean.
+Esse processo envolve muito mais do que apenas “subir um site”.
 
-Neste artigo vamos entender os principais conceitos envolvidos na hospedagem de aplicações web e como diferentes tecnologias trabalham juntas para manter um sistema online.
+Por trás de aplicações modernas existem vários componentes trabalhando juntos:
 
----
-
-# Infraestrutura
-
-Toda aplicação web precisa de uma infraestrutura capaz de suportar usuários, armazenamento de dados e processamento de requisições.
-
-Dependendo do tamanho do sistema, será necessário considerar fatores como:
-
-* quantidade de memória RAM;
-* capacidade de processamento;
-* velocidade da rede;
-* armazenamento;
-* segurança;
-* disponibilidade;
-* escalabilidade.
-
-Essa infraestrutura pode ser construída utilizando:
-
-* servidores físicos;
-* máquinas virtuais (VMs);
+* servidores;
+* redes;
 * containers;
-* serviços em nuvem.
+* bancos de dados;
+* proxies;
+* serviços em nuvem;
+* pipelines de deploy.
+
+Neste artigo vamos imaginar o seguinte cenário:
+
+> Desenvolvemos uma aplicação backend utilizando Flask e agora precisamos colocá-la online de forma segura, escalável e organizada.
+
+A partir desse exemplo vamos entender como diferentes tecnologias se conectam durante o processo de hospedagem de aplicações web.
 
 ---
 
-## Servidores físicos vs máquinas virtuais
+# O que acontece quando acessamos um site?
 
-Um servidor físico é uma máquina dedicada exclusivamente para execução de aplicações.
-
-Já as máquinas virtuais (VMs) utilizam virtualização para criar múltiplos ambientes independentes dentro de um único hardware físico.
-
-### Comparação
-
-| Servidor físico         | Máquina virtual           |
-| ----------------------- | ------------------------- |
-| Hardware dedicado       | Compartilha hardware      |
-| Maior controle          | Maior flexibilidade       |
-| Custo mais alto         | Menor custo               |
-| Escalabilidade limitada | Escalabilidade facilitada |
-| Configuração manual     | Provisionamento rápido    |
-
-Ferramentas populares para virtualização:
-
-* [VirtualBox](https://www.virtualbox.org/)
-* [VMware](https://www.vmware.com/)
-
----
+Quando um usuário acessa uma aplicação no navegador, uma sequência de processos acontece até que a página seja carregada.
 
 ## Fluxo básico de uma aplicação web
 
@@ -84,124 +57,131 @@ Nesse fluxo:
 1. o usuário acessa um domínio;
 2. o DNS localiza o servidor;
 3. o servidor web recebe a requisição;
-4. a aplicação backend processa os dados;
-5. o banco de dados armazena e retorna informações.
+4. o backend processa os dados;
+5. o banco de dados retorna as informações.
+
+Esse é o funcionamento básico de grande parte das aplicações modernas.
+
+---
+
+# Infraestrutura
+
+Para que tudo isso funcione, precisamos de infraestrutura.
+
+Toda aplicação web depende de recursos computacionais para:
+
+* executar código;
+* armazenar arquivos;
+* processar requisições;
+* atender usuários.
+
+Dependendo do tamanho do sistema, fatores como desempenho e escalabilidade se tornam extremamente importantes.
+
+## Recursos importantes
+
+* memória RAM;
+* processador;
+* armazenamento;
+* velocidade da rede;
+* segurança;
+* disponibilidade.
+
+Essa infraestrutura pode ser construída utilizando:
+
+* servidores físicos;
+* máquinas virtuais;
+* containers;
+* serviços cloud.
+
+---
+
+# Servidores físicos vs máquinas virtuais
+
+Historicamente, aplicações eram hospedadas diretamente em servidores físicos.
+
+Com o avanço da virtualização, máquinas virtuais passaram a ser amplamente utilizadas.
+
+Uma máquina virtual (VM) cria ambientes independentes dentro de um mesmo hardware físico.
+
+## Comparação
+
+| Servidor físico         | Máquina virtual           |
+| ----------------------- | ------------------------- |
+| Hardware dedicado       | Compartilha hardware      |
+| Maior controle          | Maior flexibilidade       |
+| Configuração manual     | Provisionamento rápido    |
+| Custo mais alto         | Menor custo               |
+| Escalabilidade limitada | Escalabilidade facilitada |
+
+---
+
+# Virtualização
+
+Ferramentas de virtualização ajudam bastante no aprendizado de infraestrutura.
+
+## Ferramentas populares
+
+* [VirtualBox](https://www.virtualbox.org/)
+* [VMware](https://www.vmware.com/)
+
+Essas ferramentas permitem simular servidores localmente.
 
 ---
 
 # Computação em nuvem
 
-Grande parte da hospedagem moderna utiliza computação em nuvem.
+Depois da virtualização, o próximo passo da evolução da infraestrutura foi a computação em nuvem.
 
-Nesse modelo, empresas alugam recursos computacionais sob demanda sem precisar manter infraestrutura física própria.
+Em vez de comprar servidores físicos, empresas passaram a alugar recursos sob demanda.
 
-## Principais provedores cloud
+Hoje, grande parte das aplicações modernas roda em cloud.
 
-* [Amazon Web Services (AWS)](https://aws.amazon.com/pt/)
+## Principais provedores
+
+* [AWS](https://aws.amazon.com/pt/)
 * [Microsoft Azure](https://azure.microsoft.com/pt-br/)
 * [Google Cloud Platform](https://cloud.google.com/)
 * [DigitalOcean](https://www.digitalocean.com/)
 
-### Vantagens da computação em nuvem
+---
+
+# Vantagens da cloud
+
+A computação em nuvem trouxe várias vantagens:
 
 * escalabilidade;
 * alta disponibilidade;
+* automação;
 * backup;
 * segurança;
-* automação;
-* redução de custos;
 * provisionamento rápido.
 
----
-
-# Containers e Docker
-
-Uma das tecnologias mais utilizadas atualmente para deploy é o Docker.
-
-Containers permitem empacotar aplicações junto com todas as suas dependências, garantindo que funcionem da mesma forma em qualquer ambiente.
-
-## Vantagens do Docker
-
-* isolamento;
-* portabilidade;
-* facilidade de deploy;
-* padronização do ambiente;
-* escalabilidade.
-
-## Fluxo simplificado com Docker
-
-```mermaid
-flowchart LR
-    Dev[Desenvolvedor] --> Docker[Container Docker]
-    Docker --> Registry[Docker Hub]
-    Registry --> Server[Servidor]
-```
-
-Em aplicações maiores, ferramentas como Kubernetes podem ser utilizadas para orquestração de containers.
+Isso tornou a hospedagem muito mais acessível.
 
 ---
 
-# Servidores web
+# Provisionando um servidor
 
-Os servidores web são responsáveis por receber requisições HTTP dos usuários e encaminhá-las para aplicações backend.
+Agora imagine que criamos uma VPS Linux em um provedor cloud.
 
-## Principais servidores HTTP
+Depois da criação do servidor, precisamos administrá-lo remotamente.
 
-* [Apache](https://httpd.apache.org/)
-* [Nginx](https://nginx.org/)
-* [Gunicorn](https://gunicorn.org/)
-
-Aprenda a configurar um servidor Apache 2 em máquina virtual: [tutorials/apache](/tutorials/apache)
-
----
-
-## Nginx e proxy reverso
-
-O Nginx é amplamente utilizado como:
-
-* servidor web;
-* proxy reverso;
-* balanceador de carga.
-
-Ele recebe requisições dos usuários e encaminha para aplicações backend, como Flask, Django ou Node.js.
-
-### Fluxo utilizando proxy reverso
-
-```mermaid
-flowchart LR
-    Usuario --> Nginx
-    Nginx --> Flask
-    Flask --> Banco
-```
-
----
-
-# Configuração e acesso ao servidor
-
-A maioria dos servidores Linux não possui interface gráfica.
-
-Por isso, toda administração costuma ser realizada através da linha de comando.
-
-## Informações básicas do servidor
-
-* usuário;
-* endereço IP;
-* domínio;
-* porta;
-* autenticação.
+É aqui que entra o SSH.
 
 ---
 
 # SSH
 
-O SSH (Secure Shell) permite acessar servidores remotamente de forma segura.
+O SSH (*Secure Shell*) permite acessar servidores remotamente de forma segura.
+
+A maior parte da administração de servidores Linux é realizada através da linha de comando.
 
 ## Clientes SSH
 
 * Linux e macOS: [OpenSSH](https://www.openssh.com/)
 * Windows: [PuTTY](https://www.putty.org/)
 
-## Exemplo de acesso via SSH
+## Exemplo de acesso
 
 ```bash
 ssh usuario@ip-do-servidor
@@ -211,19 +191,23 @@ ssh usuario@ip-do-servidor
 
 # Segurança do servidor
 
-Manter um servidor seguro é fundamental.
+Depois de acessar o servidor, precisamos garantir que ele esteja protegido.
 
-Algumas práticas comuns incluem:
+Aplicações em produção precisam de:
 
 * controle de permissões;
-* autenticação por chave SSH;
+* autenticação segura;
 * firewall;
-* atualizações do sistema;
-* HTTPS/SSL.
+* HTTPS;
+* atualizações constantes.
 
-## Firewall UFW
+---
 
-O UFW (Uncomplicated Firewall) ajuda a controlar o tráfego da rede.
+# Firewall UFW
+
+O UFW (*Uncomplicated Firewall*) ajuda a controlar o tráfego do servidor.
+
+## Exemplo
 
 ```bash
 sudo ufw allow 80
@@ -231,88 +215,206 @@ sudo ufw allow 443
 sudo ufw enable
 ```
 
+Nesse caso:
+
+* porta 80 → HTTP;
+* porta 443 → HTTPS.
+
 ---
 
 # Aplicações web
 
+Com o servidor configurado, precisamos executar nossa aplicação.
+
 Uma aplicação web normalmente é dividida em frontend e backend.
-
-## Frontend
-
-O frontend representa a interface visual acessada pelo usuário.
-
-### Tecnologias frontend
-
-* HTML
-* CSS
-* JavaScript
-* React
-* Vue
-* Angular
 
 ---
 
-## Backend
+# Frontend
 
-O backend é responsável pela lógica do sistema, autenticação, APIs, regras de negócio e comunicação com bancos de dados.
+O frontend representa a interface visual acessada pelo usuário.
 
-### Linguagens backend
+## Tecnologias frontend
 
-* Python
-* JavaScript
-* PHP
+* HTML;
+* CSS;
+* JavaScript;
+* React;
+* Vue;
+* Angular.
 
-### Frameworks backend
+---
 
-* Flask
-* Django
-* Laravel
-* Express
+# Backend
+
+O backend é responsável por:
+
+* regras de negócio;
+* autenticação;
+* APIs;
+* processamento;
+* comunicação com banco de dados.
+
+## Linguagens backend
+
+* Python;
+* JavaScript;
+* PHP.
+
+## Frameworks backend
+
+* Flask;
+* Django;
+* Laravel;
+* Express.
+
+No nosso exemplo, vamos imaginar uma aplicação Flask.
 
 ---
 
 # Banco de dados
 
-Aplicações web geralmente precisam armazenar informações.
+Grande parte das aplicações precisa armazenar informações.
 
-## Bancos relacionais
+## Bancos relacionais populares
 
-* PostgreSQL
-* MySQL
-* MariaDB
+* PostgreSQL;
+* MySQL;
+* MariaDB.
+
+O backend é responsável por se comunicar com esses bancos.
+
+---
+
+# Servidores web
+
+Agora surge outro componente importante.
+
+O Flask sozinho não costuma ficar exposto diretamente na internet.
+
+Normalmente utilizamos um servidor web intermediário.
+
+## Servidores HTTP populares
+
+* [Apache](https://httpd.apache.org/)
+* [Nginx](https://nginx.org/)
+* [Gunicorn](https://gunicorn.org/)
+
+Aprenda a configurar um servidor Apache 2 em máquina virtual: [tutorials/apache](/tutorials/apache)
+
+---
+
+# Nginx e proxy reverso
+
+O Nginx frequentemente atua como proxy reverso.
+
+Ele recebe requisições dos usuários e encaminha para a aplicação backend.
+
+## Fluxo utilizando proxy reverso
+
+```mermaid
+flowchart LR
+    Usuario --> Nginx
+    Nginx --> Flask
+    Flask --> Banco
+```
+
+Essa abordagem melhora:
+
+* segurança;
+* desempenho;
+* gerenciamento de conexões.
+
+---
+
+# Containers e Docker
+
+Depois de configurar servidor e backend, surge outro desafio:
+
+> Como garantir que a aplicação funcione da mesma forma em qualquer ambiente?
+
+É aqui que containers entram.
+
+Docker permite empacotar aplicações junto com todas as suas dependências.
+
+---
+
+# Vantagens do Docker
+
+* isolamento;
+* portabilidade;
+* padronização;
+* facilidade de deploy;
+* escalabilidade.
+
+---
+
+# Fluxo simplificado com Docker
+
+```mermaid
+flowchart LR
+    Dev[Desenvolvedor] --> Docker[Container Docker]
+    Docker --> Registry[Docker Hub]
+    Registry --> Server[Servidor]
+```
+
+Com containers, a aplicação pode ser executada praticamente da mesma forma em:
+
+* desenvolvimento;
+* testes;
+* produção.
+
+---
+
+# Kubernetes e orquestração
+
+Em aplicações maiores, múltiplos containers precisam ser gerenciados.
+
+Ferramentas como Kubernetes ajudam na:
+
+* escalabilidade;
+* distribuição;
+* alta disponibilidade;
+* automação.
 
 ---
 
 # Git e GitHub
 
-O Git é um sistema de controle de versão utilizado para organizar alterações no código-fonte.
+Antes do deploy, o código normalmente é armazenado em repositórios Git.
 
-Já o GitHub é uma plataforma de hospedagem de repositórios Git.
+## Funções do Git
 
-Essas ferramentas facilitam:
-
-* colaboração;
 * versionamento;
-* backup;
-* integração contínua;
-* deploy automatizado.
+* colaboração;
+* histórico;
+* rollback.
+
+## Plataformas populares
+
+* GitHub;
+* GitLab.
 
 ---
 
 # Deploy da aplicação
 
-Deploy é o processo de publicar uma aplicação em um servidor para que ela fique acessível pela internet.
+Agora finalmente podemos publicar nossa aplicação.
 
-Esse processo normalmente envolve:
+Deploy é o processo de disponibilizar o sistema em produção.
 
-1. envio do código-fonte;
+Esse processo geralmente envolve:
+
+1. envio do código;
 2. instalação de dependências;
 3. configuração do ambiente;
 4. execução da aplicação;
 5. configuração do servidor web;
 6. monitoramento.
 
-## Fluxo simplificado de deploy
+---
+
+# Fluxo moderno de deploy
 
 ```mermaid
 flowchart LR
@@ -322,32 +424,86 @@ flowchart LR
     VPS --> Usuarios[Usuários]
 ```
 
-Ferramentas modernas de CI/CD, como GitHub Actions e GitLab CI, ajudam a automatizar deploys e testes.
+Nesse fluxo:
+
+* o código é enviado para o GitHub;
+* pipelines automatizados executam testes;
+* containers são gerados;
+* a aplicação é implantada automaticamente.
+
+---
+
+# CI/CD
+
+Ferramentas de CI/CD ajudam a automatizar:
+
+* testes;
+* build;
+* deploy;
+* validações.
+
+## Exemplos
+
+* GitHub Actions;
+* GitLab CI;
+* Jenkins.
 
 ---
 
 # CDN e escalabilidade
 
-Em aplicações maiores, serviços de CDN (Content Delivery Network) ajudam a distribuir arquivos estáticos em servidores espalhados pelo mundo.
+À medida que aplicações crescem, surge a necessidade de melhorar desempenho global.
 
-Isso melhora:
+É aqui que entram CDNs.
 
-* desempenho;
+CDNs (*Content Delivery Networks*) distribuem arquivos em servidores espalhados pelo mundo.
+
+---
+
+# Benefícios de CDN
+
 * cache;
-* disponibilidade;
-* tempo de resposta.
+* menor latência;
+* alta disponibilidade;
+* redução de carga no servidor.
+
+---
+
+# Escalabilidade
+
+Aplicações modernas precisam suportar crescimento.
+
+Escalabilidade significa conseguir atender mais usuários sem comprometer desempenho.
+
+## Estratégias comuns
+
+* load balancing;
+* containers;
+* múltiplos servidores;
+* cache;
+* CDN.
 
 ---
 
 # Conclusão
 
-Hospedar uma aplicação web envolve muito mais do que simplesmente colocar um sistema online.
+Hospedar uma aplicação web envolve muito mais do que apenas colocar um sistema online.
 
-É necessário compreender conceitos de infraestrutura, redes, servidores, segurança, deploy e escalabilidade.
+Infraestrutura moderna conecta várias tecnologias trabalhando juntas:
 
-Com o avanço da computação em nuvem e de ferramentas modernas como Docker e CI/CD, o processo de deploy ficou mais acessível, automatizado e eficiente.
+* cloud;
+* Linux;
+* SSH;
+* servidores web;
+* backend;
+* bancos de dados;
+* Docker;
+* CI/CD;
+* escalabilidade.
 
-Entender esses conceitos é fundamental para qualquer desenvolvedor que deseja criar aplicações modernas e preparadas para produção.
+Com o avanço da computação em nuvem e das ferramentas modernas de deploy, aplicações se tornaram mais acessíveis, automatizadas e escaláveis.
+
+Entender como essas peças se conectam é fundamental para qualquer desenvolvedor que deseja trabalhar com aplicações modernas em produção.
 
 ---
 
