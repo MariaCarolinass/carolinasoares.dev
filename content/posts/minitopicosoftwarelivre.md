@@ -106,7 +106,7 @@ flowchart TD
     Melhorias --> Comunidade
 ```
 
-Esse modelo ajudou no desenvolvimento de tecnologias amplamente utilizadas atualmente.
+Esse modelo ajudou no desenvolvimento de tecnologias amplamente utilizadas atualmente. Confira o artigo: [Como o modelo colaborativo do software livre transformou a tecnologia](/posts/modelo-software-livre).
 
 ---
 
