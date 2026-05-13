@@ -108,11 +108,11 @@ title = "Oi, sou a Carol"
 
   dateFormat = "January 2, 2006"
   
-  description = "Backend, dados, automação e IA | Desenvolvedora de Software"
+  description = "Backend, dados, automação e IA | Desenvolvedora de Software @Alura"
 
   footer = "Carolina Soares"
 
-  metaKeywords = ["blog", "tecnologia", "portfólio", "Carolina Soares", "carolinasoares.dev", "desenvolvimento de software", "backend", "dados", "automação", "ia", "inteligência artificial", "python", "java", "docker", "dados abertos", "software livre", "apis", "programação"]
+  metaKeywords = ["blog", "tecnologia", "portfólio", "Carolina Soares", "carolinasoares.dev", "desenvolvimento de software", "backend", "dados", "automação", "ia", "inteligência artificial", "python", "java", "docker", "dados abertos", "software livre", "apis", "programação", "Alura"]
 
   numberPostsOnHomePage = 5
 
