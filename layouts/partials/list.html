@@ -1,0 +1,29 @@
+<div class="container list-posts">
+
+    <h1 class="list-title">{{ i18n .Name }}</h1>
+
+    {{ if or (eq .Section "posts") (eq .Section "tutorials") }}
+        {{ $nextSectionURL := "/tutorials/" }}
+        {{ $nextSectionLabel := "Ver tutoriais →" }}
+        {{ if eq .Section "tutorials" }}
+            {{ $nextSectionURL = "/posts/" }}
+            {{ $nextSectionLabel = "Ver postagens →" }}
+        {{ end }}
+
+        <div style="margin: 0.25rem 0 1.5rem;">
+            <a href="{{ $nextSectionURL | relURL }}" style="font-size: 1rem; text-decoration: underline; text-underline-offset: 0.15em;">
+                {{ $nextSectionLabel }}
+            </a>
+        </div>
+    {{ end }}
+
+    {{ range (where .Pages "Params.type" "post" ).GroupByDate "2006" }}
+
+    <h2 class="posts-year">{{ .Key }}</h2>
+
+    {{- range .Pages -}}
+        {{- partial "list-posts.html" . -}}
+    {{ end }}
+    {{ end }}
+
+</div>
