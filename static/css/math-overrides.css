@@ -1,0 +1,15 @@
+@media (max-width: 640px) {
+  .post-content .katex-display {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.25rem;
+  }
+
+  .post-content .katex-display > .katex {
+    display: inline-block;
+    width: max-content;
+  }
+}
