@@ -1,7 +1,7 @@
 ---
 
-date: 2025-05-12
-lastmod: 2025-05-12
+date: 2024-09-30
+lastmod: 2024-09-30
 showTableOfContents: true
 tags: ["Python", "Pandas", "dados", "análise de dados", "tutorial"]
 title: "Introdução à análise de dados com Python e Pandas"
