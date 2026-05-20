@@ -17,13 +17,13 @@ Neste artigo vamos entender o que são ponteiros, como funcionam e como utilizá
 
 ---
 
-# O que são ponteiros?
+## O que são ponteiros?
 
 Um ponteiro é uma variável capaz de armazenar o endereço de memória de outra variável.
 
 Enquanto variáveis comuns armazenam valores, ponteiros armazenam referências para locais da memória.
 
-## Relação entre variável e ponteiro
+### Relação entre variável e ponteiro
 
 ```mermaid
 flowchart LR
@@ -39,7 +39,7 @@ Isso permite acessar e modificar valores indiretamente através do endereço arm
 
 ---
 
-# Endereços de memória
+## Endereços de memória
 
 Toda variável criada em um programa ocupa um espaço na memória.
 
@@ -47,7 +47,7 @@ Esse espaço possui um endereço único.
 
 Na linguagem C, utilizamos o operador `&` para obter o endereço de memória de uma variável.
 
-## Exemplo
+### Exemplo
 
 ```c
 int x = 10;
@@ -64,11 +64,11 @@ O valor exato varia dependendo da execução do programa e do sistema operaciona
 
 ---
 
-# Declarando ponteiros
+## Declarando ponteiros
 
 Para declarar um ponteiro utilizamos o operador `*`.
 
-## Estrutura básica
+### Estrutura básica
 
 ```c
 int *ponteiro;
@@ -82,7 +82,7 @@ Nesse caso:
 
 ---
 
-# Primeiro exemplo com ponteiros
+## Primeiro exemplo com ponteiros
 
 ```c
 #include <stdio.h>
@@ -103,9 +103,9 @@ int main(void) {
 
 ---
 
-## O que acontece nesse código?
+### O que acontece nesse código?
 
-### 1. Variável comum
+#### 1. Variável comum
 
 ```c
 int x = 10;
@@ -115,7 +115,7 @@ A variável `x` é criada e recebe o valor `10`.
 
 ---
 
-### 2. Criação do ponteiro
+#### 2. Criação do ponteiro
 
 ```c
 int *y;
@@ -127,7 +127,7 @@ Ele será capaz de armazenar o endereço de uma variável do tipo `int`.
 
 ---
 
-### 3. Associação do ponteiro
+#### 3. Associação do ponteiro
 
 ```c
 y = &x;
@@ -139,7 +139,7 @@ Esse endereço é armazenado em `y`.
 
 ---
 
-## Visualização da memória
+### Visualização da memória
 
 ```mermaid
 flowchart LR
@@ -155,11 +155,11 @@ O ponteiro `y` agora aponta para o mesmo endereço de memória de `x`.
 
 ---
 
-# Operador de dereferência
+## Operador de dereferência
 
 O operador `*` também é utilizado para acessar o valor armazenado no endereço apontado pelo ponteiro.
 
-## Exemplo
+### Exemplo
 
 ```c
 printf("%d", *y);
@@ -174,11 +174,11 @@ Portanto, `*y` será igual a `10`.
 
 ---
 
-# Alterando valores através do ponteiro
+## Alterando valores através do ponteiro
 
 Uma das características mais importantes dos ponteiros é permitir modificar valores indiretamente.
 
-## Exemplo
+### Exemplo
 
 ```c
 #include <stdio.h>
@@ -201,7 +201,7 @@ int main(void) {
 
 ---
 
-## Resultado esperado
+### Resultado esperado
 
 ```text
 x = 20
@@ -215,11 +215,11 @@ Como `y` aponta para `x`, qualquer alteração em `x` também será refletida em
 
 ---
 
-# Alterando a variável pelo ponteiro
+## Alterando a variável pelo ponteiro
 
 Também é possível alterar diretamente o valor da variável utilizando o ponteiro.
 
-## Exemplo
+### Exemplo
 
 ```c
 #include <stdio.h>
@@ -236,7 +236,7 @@ int main(void) {
 }
 ```
 
-## Saída
+### Saída
 
 ```text
 x = 50
@@ -252,7 +252,7 @@ modifica diretamente o valor armazenado no endereço de `x`.
 
 ---
 
-# Fluxo de funcionamento dos ponteiros
+## Fluxo de funcionamento dos ponteiros
 
 ```mermaid
 flowchart TD
@@ -269,7 +269,7 @@ flowchart TD
 
 ---
 
-# Ponteiros e memória
+## Ponteiros e memória
 
 Ponteiros são muito utilizados para:
 
@@ -286,7 +286,7 @@ Grande parte da eficiência da linguagem C está relacionada ao controle direto 
 
 ---
 
-# Cuidados importantes
+## Cuidados importantes
 
 Apesar de poderosos, ponteiros exigem atenção.
 
@@ -299,7 +299,7 @@ Problemas comuns incluem:
 | Vazamento de memória      | Memória não liberada         |
 | Segmentation fault        | Acesso inválido à memória    |
 
-## Exemplo de ponteiro nulo
+### Exemplo de ponteiro nulo
 
 ```c
 int *p = NULL;
@@ -309,13 +309,13 @@ Inicializar ponteiros corretamente ajuda a evitar erros difíceis de identificar
 
 ---
 
-# Ponteiros e arrays
+## Ponteiros e arrays
 
 Arrays possuem forte relação com ponteiros.
 
 O nome de um array representa o endereço do primeiro elemento.
 
-## Exemplo
+### Exemplo
 
 ```c
 int numeros[3] = {1, 2, 3};
@@ -331,7 +331,7 @@ Saída:
 
 ---
 
-# Conclusão
+## Conclusão
 
 Ponteiros são um dos conceitos mais importantes da linguagem C.
 
@@ -343,13 +343,13 @@ Dominar ponteiros é essencial para trabalhar com estruturas avançadas, sistema
 
 ---
 
-# Exercícios
+## Exercícios
 
 * [https://github.com/MariaCarolinass/c-cpp/tree/main/c/ponteiros/src](https://github.com/MariaCarolinass/c-cpp/tree/main/c/ponteiros/src)
 
 ---
 
-# Referências
+## Referências
 
 * [https://en.cppreference.com/w/c/language/pointer](https://en.cppreference.com/w/c/language/pointer)
 * [https://www.gnu.org/software/gnu-c-manual/](https://www.gnu.org/software/gnu-c-manual/)

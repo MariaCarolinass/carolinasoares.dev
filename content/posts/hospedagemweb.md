@@ -8,7 +8,7 @@ title: "Como funciona a hospedagem de aplicações web"
 type: "post"
 ------------
 
-# Como funciona a hospedagem de aplicações web
+## Como funciona a hospedagem de aplicações web
 
 Depois que uma aplicação web é desenvolvida, ela precisa ser disponibilizada na internet para que usuários consigam acessá-la.
 
@@ -32,11 +32,11 @@ A partir desse exemplo vamos entender como diferentes tecnologias se conectam du
 
 ---
 
-# O que acontece quando acessamos um site?
+## O que acontece quando acessamos um site?
 
 Quando um usuário acessa uma aplicação no navegador, uma sequência de processos acontece até que a página seja carregada.
 
-## Fluxo básico de uma aplicação web
+### Fluxo básico de uma aplicação web
 
 ```mermaid
 flowchart LR
@@ -64,7 +64,7 @@ Esse é o funcionamento básico de grande parte das aplicações modernas.
 
 ---
 
-# Infraestrutura
+## Infraestrutura
 
 Para que tudo isso funcione, precisamos de infraestrutura.
 
@@ -77,7 +77,7 @@ Toda aplicação web depende de recursos computacionais para:
 
 Dependendo do tamanho do sistema, fatores como desempenho e escalabilidade se tornam extremamente importantes.
 
-## Recursos importantes
+### Recursos importantes
 
 * memória RAM;
 * processador;
@@ -95,7 +95,7 @@ Essa infraestrutura pode ser construída utilizando:
 
 ---
 
-# Servidores físicos vs máquinas virtuais
+## Servidores físicos vs máquinas virtuais
 
 Historicamente, aplicações eram hospedadas diretamente em servidores físicos.
 
@@ -103,7 +103,7 @@ Com o avanço da virtualização, máquinas virtuais passaram a ser amplamente u
 
 Uma máquina virtual (VM) cria ambientes independentes dentro de um mesmo hardware físico.
 
-## Comparação
+### Comparação
 
 | Servidor físico         | Máquina virtual           |
 | ----------------------- | ------------------------- |
@@ -115,11 +115,11 @@ Uma máquina virtual (VM) cria ambientes independentes dentro de um mesmo hardwa
 
 ---
 
-# Virtualização
+## Virtualização
 
 Ferramentas de virtualização ajudam bastante no aprendizado de infraestrutura.
 
-## Ferramentas populares
+### Ferramentas populares
 
 * [VirtualBox](https://www.virtualbox.org/)
 * [VMware](https://www.vmware.com/)
@@ -128,7 +128,7 @@ Essas ferramentas permitem simular servidores localmente.
 
 ---
 
-# Computação em nuvem
+## Computação em nuvem
 
 Depois da virtualização, o próximo passo da evolução da infraestrutura foi a computação em nuvem.
 
@@ -136,7 +136,7 @@ Em vez de comprar servidores físicos, empresas passaram a alugar recursos sob d
 
 Hoje, grande parte das aplicações modernas roda em cloud.
 
-## Principais provedores
+### Principais provedores
 
 * [AWS](https://aws.amazon.com/pt/)
 * [Microsoft Azure](https://azure.microsoft.com/pt-br/)
@@ -145,7 +145,7 @@ Hoje, grande parte das aplicações modernas roda em cloud.
 
 ---
 
-# Vantagens da cloud
+## Vantagens da cloud
 
 A computação em nuvem trouxe várias vantagens:
 
@@ -160,7 +160,7 @@ Isso tornou a hospedagem muito mais acessível.
 
 ---
 
-# Provisionando um servidor
+## Provisionando um servidor
 
 Agora imagine que criamos uma VPS Linux em um provedor cloud.
 
@@ -170,18 +170,18 @@ Depois da criação do servidor, precisamos administrá-lo remotamente.
 
 ---
 
-# SSH
+## SSH
 
 O SSH (*Secure Shell*) permite acessar servidores remotamente de forma segura.
 
 A maior parte da administração de servidores Linux é realizada através da linha de comando.
 
-## Clientes SSH
+### Clientes SSH
 
 * Linux e macOS: [OpenSSH](https://www.openssh.com/)
 * Windows: [PuTTY](https://www.putty.org/)
 
-## Exemplo de acesso
+### Exemplo de acesso
 
 ```bash
 ssh usuario@ip-do-servidor
@@ -189,7 +189,7 @@ ssh usuario@ip-do-servidor
 
 ---
 
-# Segurança do servidor
+## Segurança do servidor
 
 Depois de acessar o servidor, precisamos garantir que ele esteja protegido.
 
@@ -203,11 +203,11 @@ Aplicações em produção precisam de:
 
 ---
 
-# Firewall UFW
+## Firewall UFW
 
 O UFW (*Uncomplicated Firewall*) ajuda a controlar o tráfego do servidor.
 
-## Exemplo
+### Exemplo
 
 ```bash
 sudo ufw allow 80
@@ -222,7 +222,7 @@ Nesse caso:
 
 ---
 
-# Aplicações web
+## Aplicações web
 
 Com o servidor configurado, precisamos executar nossa aplicação.
 
@@ -230,11 +230,11 @@ Uma aplicação web normalmente é dividida em frontend e backend.
 
 ---
 
-# Frontend
+## Frontend
 
 O frontend representa a interface visual acessada pelo usuário.
 
-## Tecnologias frontend
+### Tecnologias frontend
 
 * HTML;
 * CSS;
@@ -245,7 +245,7 @@ O frontend representa a interface visual acessada pelo usuário.
 
 ---
 
-# Backend
+## Backend
 
 O backend é responsável por:
 
@@ -255,13 +255,13 @@ O backend é responsável por:
 * processamento;
 * comunicação com banco de dados.
 
-## Linguagens backend
+### Linguagens backend
 
 * Python;
 * JavaScript;
 * PHP.
 
-## Frameworks backend
+### Frameworks backend
 
 * Flask;
 * Django;
@@ -272,11 +272,11 @@ No nosso exemplo, vamos imaginar uma aplicação Flask.
 
 ---
 
-# Banco de dados
+## Banco de dados
 
 Grande parte das aplicações precisa armazenar informações.
 
-## Bancos relacionais populares
+### Bancos relacionais populares
 
 * PostgreSQL;
 * MySQL;
@@ -286,7 +286,7 @@ O backend é responsável por se comunicar com esses bancos.
 
 ---
 
-# Servidores web
+## Servidores web
 
 Agora surge outro componente importante.
 
@@ -294,7 +294,7 @@ O Flask sozinho não costuma ficar exposto diretamente na internet.
 
 Normalmente utilizamos um servidor web intermediário.
 
-## Servidores HTTP populares
+### Servidores HTTP populares
 
 * [Apache](https://httpd.apache.org/)
 * [Nginx](https://nginx.org/)
@@ -304,13 +304,13 @@ Aprenda a configurar um servidor Apache 2 em máquina virtual: [tutorials/apache
 
 ---
 
-# Nginx e proxy reverso
+## Nginx e proxy reverso
 
 O Nginx frequentemente atua como proxy reverso.
 
 Ele recebe requisições dos usuários e encaminha para a aplicação backend.
 
-## Fluxo utilizando proxy reverso
+### Fluxo utilizando proxy reverso
 
 ```mermaid
 flowchart LR
@@ -327,7 +327,7 @@ Essa abordagem melhora:
 
 ---
 
-# Containers e Docker
+## Containers e Docker
 
 Depois de configurar servidor e backend, surge outro desafio:
 
@@ -339,7 +339,7 @@ Docker permite empacotar aplicações junto com todas as suas dependências.
 
 ---
 
-# Vantagens do Docker
+## Vantagens do Docker
 
 * isolamento;
 * portabilidade;
@@ -349,7 +349,7 @@ Docker permite empacotar aplicações junto com todas as suas dependências.
 
 ---
 
-# Fluxo simplificado com Docker
+## Fluxo simplificado com Docker
 
 ```mermaid
 flowchart LR
@@ -366,7 +366,7 @@ Com containers, a aplicação pode ser executada praticamente da mesma forma em:
 
 ---
 
-# Kubernetes e orquestração
+## Kubernetes e orquestração
 
 Em aplicações maiores, múltiplos containers precisam ser gerenciados.
 
@@ -379,25 +379,25 @@ Ferramentas como Kubernetes ajudam na:
 
 ---
 
-# Git e GitHub
+## Git e GitHub
 
 Antes do deploy, o código normalmente é armazenado em repositórios Git.
 
-## Funções do Git
+### Funções do Git
 
 * versionamento;
 * colaboração;
 * histórico;
 * rollback.
 
-## Plataformas populares
+### Plataformas populares
 
 * GitHub;
 * GitLab.
 
 ---
 
-# Deploy da aplicação
+## Deploy da aplicação
 
 Agora finalmente podemos publicar nossa aplicação.
 
@@ -414,7 +414,7 @@ Esse processo geralmente envolve:
 
 ---
 
-# Fluxo moderno de deploy
+## Fluxo moderno de deploy
 
 ```mermaid
 flowchart LR
@@ -433,7 +433,7 @@ Nesse fluxo:
 
 ---
 
-# CI/CD
+## CI/CD
 
 Ferramentas de CI/CD ajudam a automatizar:
 
@@ -442,7 +442,7 @@ Ferramentas de CI/CD ajudam a automatizar:
 * deploy;
 * validações.
 
-## Exemplos
+### Exemplos
 
 * GitHub Actions;
 * GitLab CI;
@@ -450,7 +450,7 @@ Ferramentas de CI/CD ajudam a automatizar:
 
 ---
 
-# CDN e escalabilidade
+## CDN e escalabilidade
 
 À medida que aplicações crescem, surge a necessidade de melhorar desempenho global.
 
@@ -460,7 +460,7 @@ CDNs (*Content Delivery Networks*) distribuem arquivos em servidores espalhados 
 
 ---
 
-# Benefícios de CDN
+## Benefícios de CDN
 
 * cache;
 * menor latência;
@@ -469,13 +469,13 @@ CDNs (*Content Delivery Networks*) distribuem arquivos em servidores espalhados 
 
 ---
 
-# Escalabilidade
+## Escalabilidade
 
 Aplicações modernas precisam suportar crescimento.
 
 Escalabilidade significa conseguir atender mais usuários sem comprometer desempenho.
 
-## Estratégias comuns
+### Estratégias comuns
 
 * load balancing;
 * containers;
@@ -485,7 +485,7 @@ Escalabilidade significa conseguir atender mais usuários sem comprometer desemp
 
 ---
 
-# Conclusão
+## Conclusão
 
 Hospedar uma aplicação web envolve muito mais do que apenas colocar um sistema online.
 
@@ -507,7 +507,7 @@ Entender como essas peças se conectam é fundamental para qualquer desenvolvedo
 
 ---
 
-# Links úteis
+## Links úteis
 
 * [https://nginx.org/](https://nginx.org/)
 * [https://httpd.apache.org/](https://httpd.apache.org/)

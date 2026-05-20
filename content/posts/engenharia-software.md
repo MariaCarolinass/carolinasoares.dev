@@ -352,7 +352,7 @@ Com a evolução constante da tecnologia, a engenharia de software continua send
 
 ---
 
-# Referências
+## Referências
 
 * Sommerville, Ian. *Engenharia de Software*. Pearson.
 * Pressman, Roger S. *Engenharia de Software: Uma Abordagem Profissional*. McGraw-Hill.

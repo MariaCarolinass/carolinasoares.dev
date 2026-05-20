@@ -17,7 +17,7 @@ Esses documentos técnicos definem protocolos, práticas e especificações que 
 
 ---
 
-# O que são RFCs?
+## O que são RFCs?
 
 As RFCs (Request for Comments) são documentos técnicos utilizados para descrever protocolos, padrões, recomendações e processos relacionados à internet e às redes de computadores.
 
@@ -25,7 +25,7 @@ Esses documentos surgiram inicialmente durante o desenvolvimento da ARPANET, red
 
 Com o crescimento da rede, tornou-se necessário centralizar e padronizar informações técnicas para garantir compatibilidade entre diferentes sistemas.
 
-## Objetivos das RFCs
+### Objetivos das RFCs
 
 As RFCs ajudam a:
 
@@ -37,7 +37,7 @@ As RFCs ajudam a:
 
 ---
 
-# Como as RFCs contribuem para a Internet
+## Como as RFCs contribuem para a Internet
 
 Grande parte das tecnologias utilizadas diariamente dependem de especificações definidas em RFCs.
 
@@ -50,7 +50,7 @@ Entre os principais protocolos documentados estão:
 * DNS;
 * FTP.
 
-## Relação entre protocolos e RFCs
+### Relação entre protocolos e RFCs
 
 ```mermaid
 flowchart LR
@@ -68,7 +68,7 @@ Esses padrões permitem que dispositivos diferentes consigam se comunicar utiliz
 
 ---
 
-# O papel da IETF
+## O papel da IETF
 
 As RFCs são desenvolvidas e discutidas dentro da IETF (Internet Engineering Task Force).
 
@@ -85,11 +85,11 @@ Seu principal objetivo é melhorar o funcionamento da internet através da colab
 
 ---
 
-# Como funciona o processo de criação de uma RFC
+## Como funciona o processo de criação de uma RFC
 
 O desenvolvimento de uma RFC ocorre através de discussões abertas entre especialistas da comunidade técnica.
 
-## Fluxo simplificado
+### Fluxo simplificado
 
 ```mermaid
 flowchart LR
@@ -114,7 +114,7 @@ Esse modelo colaborativo ajuda a garantir:
 
 ---
 
-# RFCs e colaboração aberta
+## RFCs e colaboração aberta
 
 Um dos aspectos mais importantes das RFCs é seu caráter aberto.
 
@@ -127,7 +127,7 @@ Esse modelo incentiva:
 * pesquisa acadêmica;
 * desenvolvimento de tecnologias compatíveis.
 
-## Cultura colaborativa da internet
+### Cultura colaborativa da internet
 
 ```mermaid
 mindmap
@@ -144,35 +144,35 @@ A abertura desses documentos ajudou a consolidar a internet como um ambiente glo
 
 ---
 
-# Exemplos importantes de RFCs
+## Exemplos importantes de RFCs
 
 Diversos protocolos fundamentais foram formalizados através de RFCs.
 
-## HTTP
+### HTTP
 
 O protocolo HTTP define como navegadores e servidores trocam informações na web.
 
-## TCP/IP
+### TCP/IP
 
 O conjunto TCP/IP estabelece a base da comunicação entre dispositivos conectados à internet.
 
-## SMTP
+### SMTP
 
 O SMTP é responsável pelo envio de e-mails.
 
-## DNS
+### DNS
 
 O DNS converte nomes de domínio em endereços IP.
 
 ---
 
-# A importância da padronização
+## A importância da padronização
 
 A padronização é essencial para garantir que diferentes sistemas consigam funcionar juntos.
 
 Sem RFCs, cada fabricante poderia implementar protocolos de maneira incompatível, dificultando a comunicação global.
 
-## Exemplo de interoperabilidade
+### Exemplo de interoperabilidade
 
 ```mermaid
 flowchart TD
@@ -188,7 +188,7 @@ Graças aos padrões definidos em RFCs, navegadores diferentes conseguem acessar
 
 ---
 
-# RFCs e o futuro da Internet
+## RFCs e o futuro da Internet
 
 A internet está em constante evolução.
 
@@ -207,7 +207,7 @@ Esses documentos seguem sendo fundamentais para garantir estabilidade e evoluç�
 
 ---
 
-# Conclusão
+## Conclusão
 
 As RFCs desempenham papel essencial na construção e manutenção da internet moderna.
 
@@ -219,7 +219,7 @@ Compreender a importância desses documentos também ajuda a entender como a int
 
 ---
 
-# Referências
+## Referências
 
 * [https://www.rfc-editor.org/](https://www.rfc-editor.org/)
 * [https://www.ietf.org/](https://www.ietf.org/)

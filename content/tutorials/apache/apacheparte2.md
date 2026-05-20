@@ -20,13 +20,13 @@ O objetivo é construir um ambiente Linux voltado para estudos de administraçã
 
 ---
 
-# Criação da máquina virtual
+## Criação da máquina virtual
 
 As configurações serão realizadas em uma máquina virtual criada no VirtualBox.
 
 O sistema operacional utilizado será o Debian 32 bits.
 
-## Especificações da máquina virtual
+### Especificações da máquina virtual
 
 | Configuração  | Valor                 |
 | ------------- | --------------------- |
@@ -37,7 +37,7 @@ O sistema operacional utilizado será o Debian 32 bits.
 
 ---
 
-# Fluxo do ambiente virtual
+## Fluxo do ambiente virtual
 
 ```mermaid
 flowchart LR
@@ -53,13 +53,13 @@ flowchart LR
 
 ---
 
-# Instalação da distribuição Linux Debian
+## Instalação da distribuição Linux Debian
 
 Durante a instalação do Debian será necessário configurar o particionamento do disco.
 
 O disco será dividido em três partições.
 
-## Estrutura das partições
+### Estrutura das partições
 
 | Sistema de arquivos | Tipo de partição | Ponto de montagem | Tamanho         |
 | ------------------- | ---------------- | ----------------- | --------------- |
@@ -69,7 +69,7 @@ O disco será dividido em três partições.
 
 ---
 
-# Estrutura das partições
+## Estrutura das partições
 
 ```mermaid
 flowchart LR
@@ -85,7 +85,7 @@ flowchart LR
 
 ---
 
-# Finalizando o particionamento
+## Finalizando o particionamento
 
 Após configurar as partições:
 
@@ -95,13 +95,13 @@ Finalizar particionamento e escrever mudanças no disco
 
 ---
 
-# Resultado esperado do particionamento
+## Resultado esperado do particionamento
 
 ![Mudanças no disco](https://github.com/MariaCarolinass/config-sistema-linux-debian/blob/main/imagens/particaodisco.png?raw=true)
 
 ---
 
-# Usuário principal do sistema
+## Usuário principal do sistema
 
 ⚠️ Importante:
 
@@ -115,7 +115,7 @@ Esse usuário será utilizado posteriormente nas configurações de cotas e perm
 
 ---
 
-# Seleção de softwares
+## Seleção de softwares
 
 Na etapa de seleção de softwares, marque:
 
@@ -125,13 +125,13 @@ Na etapa de seleção de softwares, marque:
 
 ---
 
-# Resultado da seleção de softwares
+## Resultado da seleção de softwares
 
 ![Opções marcadas](https://github.com/MariaCarolinass/config-sistema-linux-debian/blob/main/imagens/softwares.png?raw=true)
 
 ---
 
-# Definição de cotas de armazenamento
+## Definição de cotas de armazenamento
 
 Após finalizar a instalação do Debian, vamos configurar cotas de armazenamento para os usuários.
 
@@ -139,7 +139,7 @@ As cotas limitam o espaço em disco que cada usuário pode utilizar.
 
 ---
 
-# Instalando quota
+## Instalando quota
 
 ```bash
 apt-get install quota
@@ -147,7 +147,7 @@ apt-get install quota
 
 ---
 
-# Configurando `/etc/fstab`
+## Configurando `/etc/fstab`
 
 Agora será necessário configurar onde o controle de cotas será aplicado.
 
@@ -167,13 +167,13 @@ logo após `defaults`.
 
 ---
 
-# Resultado esperado do `/etc/fstab`
+## Resultado esperado do `/etc/fstab`
 
 ![Configuração ursquota](https://github.com/MariaCarolinass/config-sistema-linux-debian/blob/main/imagens/quota.png?raw=true)
 
 ---
 
-# Atualizando configurações de montagem
+## Atualizando configurações de montagem
 
 ```bash
 mount -o remount /home
@@ -181,7 +181,7 @@ mount -o remount /home
 
 ---
 
-# Inicializando cotas
+## Inicializando cotas
 
 ```bash
 quotacheck -cum /home
@@ -193,7 +193,7 @@ quotaon /home
 
 ---
 
-# Definindo cotas do usuário modelo
+## Definindo cotas do usuário modelo
 
 Cada usuário terá:
 
@@ -210,7 +210,7 @@ donald
 
 ---
 
-# Editando cotas do usuário
+## Editando cotas do usuário
 
 ```bash
 edquota -u donald
@@ -218,13 +218,13 @@ edquota -u donald
 
 ---
 
-# Resultado esperado das cotas
+## Resultado esperado das cotas
 
 ![Restrições adicionas](https://github.com/MariaCarolinass/config-sistema-linux-debian/blob/main/imagens/restricoes.png?raw=true)
 
 ---
 
-# Verificando cotas
+## Verificando cotas
 
 ```bash
 quota -s donald
@@ -232,7 +232,7 @@ quota -s donald
 
 ---
 
-# Configurando usuário padrão para cotas
+## Configurando usuário padrão para cotas
 
 Edite:
 
@@ -256,17 +256,17 @@ entre aspas.
 
 ---
 
-# Resultado esperado da configuração
+## Resultado esperado da configuração
 
 ![Donald adicionado](https://github.com/MariaCarolinass/config-sistema-linux-debian/blob/main/imagens/config-usuario.png?raw=true)
 
 ---
 
-# Usuários e grupos
+## Usuários e grupos
 
 Agora serão criados novos usuários.
 
-## Usuários
+### Usuários
 
 * margarida
 * patinhas
@@ -276,7 +276,7 @@ Agora serão criados novos usuários.
 
 ---
 
-# Criando usuários
+## Criando usuários
 
 ```bash
 adduser margarida
@@ -300,7 +300,7 @@ adduser luizinho
 
 ---
 
-# Verificando cotas dos usuários
+## Verificando cotas dos usuários
 
 ```bash
 repquota -as
@@ -308,17 +308,17 @@ repquota -as
 
 ---
 
-# Resultado do comando `repquota`
+## Resultado do comando `repquota`
 
 ![Resultado do comando repquota](https://github.com/MariaCarolinass/config-sistema-linux-debian/blob/main/imagens/usuarios-criados.png?raw=true)
 
 ---
 
-# Arquivo `/etc/passwd`
+## Arquivo `/etc/passwd`
 
 O arquivo `/etc/passwd` mostra os usuários criados.
 
-## Editando arquivo
+### Editando arquivo
 
 ```bash
 nano /etc/passwd
@@ -326,13 +326,13 @@ nano /etc/passwd
 
 ---
 
-# Resultado do `/etc/passwd`
+## Resultado do `/etc/passwd`
 
 ![Arquivo /etc/passwd](https://github.com/MariaCarolinass/config-sistema-linux-debian/blob/main/imagens/usuarios.png?raw=true)
 
 ---
 
-# Criando grupos
+## Criando grupos
 
 Serão criados os grupos:
 
@@ -341,7 +341,7 @@ Serão criados os grupos:
 
 ---
 
-# Criando grupos no sistema
+## Criando grupos no sistema
 
 ```bash
 addgroup adultos
@@ -353,15 +353,15 @@ addgroup criancas
 
 ---
 
-# Divisão dos usuários
+## Divisão dos usuários
 
-## Grupo adultos
+### Grupo adultos
 
 * donald
 * margarida
 * patinhas
 
-## Grupo criancas
+### Grupo criancas
 
 * huguinho
 * zezinho
@@ -369,7 +369,7 @@ addgroup criancas
 
 ---
 
-# Adicionando usuários aos grupos
+## Adicionando usuários aos grupos
 
 ```bash
 usermod -aG adultos donald
@@ -397,7 +397,7 @@ usermod -aG criancas luizinho
 
 ---
 
-# Fluxo de usuários e grupos
+## Fluxo de usuários e grupos
 
 ```mermaid
 flowchart TD
@@ -415,7 +415,7 @@ flowchart TD
 
 ---
 
-# Arquivo de grupos
+## Arquivo de grupos
 
 ```bash
 nano /etc/groups
@@ -423,13 +423,13 @@ nano /etc/groups
 
 ---
 
-# Resultado dos grupos criados
+## Resultado dos grupos criados
 
 ![Grupos criados](https://github.com/MariaCarolinass/config-sistema-linux-debian/blob/main/imagens/grupos-criados.png?raw=true)
 
 ---
 
-# Verificando grupos dos usuários
+## Verificando grupos dos usuários
 
 ```bash
 groups <nome-do-usuario>
@@ -437,19 +437,19 @@ groups <nome-do-usuario>
 
 ---
 
-# Resultado do comando groups
+## Resultado do comando groups
 
 ![Resultado do comando groups](https://github.com/MariaCarolinass/config-sistema-linux-debian/blob/main/imagens/groups.png?raw=true)
 
 ---
 
-# Diretórios compartilhados
+## Diretórios compartilhados
 
 Agora vamos configurar permissões de arquivos e diretórios compartilhados.
 
 ---
 
-# Criando diretório compartilhado
+## Criando diretório compartilhado
 
 ```bash
 mkdir compartilhado
@@ -457,7 +457,7 @@ mkdir compartilhado
 
 ---
 
-# Entrando no diretório
+## Entrando no diretório
 
 ```bash
 cd compartilhado
@@ -465,7 +465,7 @@ cd compartilhado
 
 ---
 
-# Criando diretórios dos grupos
+## Criando diretórios dos grupos
 
 ```bash
 mkdir adultos
@@ -477,7 +477,7 @@ mkdir criancas
 
 ---
 
-# Associando grupos aos diretórios
+## Associando grupos aos diretórios
 
 ```bash
 chgrp adultos adultos
@@ -489,7 +489,7 @@ chgrp criancas criancas
 
 ---
 
-# Permissões dos diretórios
+## Permissões dos diretórios
 
 | Diretório                 | Permissão                                                              |
 | ------------------------- | ---------------------------------------------------------------------- |
@@ -498,7 +498,7 @@ chgrp criancas criancas
 
 ---
 
-# Removendo permissões gerais
+## Removendo permissões gerais
 
 ```bash
 chmod a-rwx adultos
@@ -510,7 +510,7 @@ chmod a-rwx criancas
 
 ---
 
-# Adicionando permissões para grupos
+## Adicionando permissões para grupos
 
 ```bash
 chmod g+rwx adultos
@@ -522,7 +522,7 @@ chmod g+rwx criancas
 
 ---
 
-# Permissão extra para outros usuários
+## Permissão extra para outros usuários
 
 ```bash
 chmod o+rx criancas
@@ -530,7 +530,7 @@ chmod o+rx criancas
 
 ---
 
-# Verificando permissões
+## Verificando permissões
 
 ```bash
 ls -l
@@ -538,13 +538,13 @@ ls -l
 
 ---
 
-# Resultado das permissões
+## Resultado das permissões
 
 ![Resultado das perimissões](https://github.com/MariaCarolinass/config-sistema-linux-debian/blob/main/imagens/permissoes.png?raw=true)
 
 ---
 
-# Fluxo de permissões
+## Fluxo de permissões
 
 ```mermaid
 flowchart LR
@@ -560,7 +560,7 @@ flowchart LR
 
 ---
 
-# Conclusão
+## Conclusão
 
 Neste tutorial configuramos um ambiente Linux Debian completo utilizando máquina virtual.
 
@@ -579,7 +579,7 @@ Além de fortalecer conhecimentos em infraestrutura, esse tipo de laboratório t
 
 ---
 
-# Referências
+## Referências
 
 * [https://www.debian.org/](https://www.debian.org/)
 * [https://www.virtualbox.org/](https://www.virtualbox.org/)

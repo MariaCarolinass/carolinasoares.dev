@@ -19,7 +19,7 @@ Todo o processo será feito em ambiente virtual, permitindo estudar servidores s
 
 ---
 
-# Instalação da máquina virtual: VirtualBox
+## Instalação da máquina virtual: VirtualBox
 
 O VirtualBox é um virtualizador completo de uso geral.
 
@@ -27,14 +27,14 @@ Ele permite criar máquinas virtuais capazes de executar diferentes sistemas ope
 
 Uma máquina virtual simula um computador completo, permitindo estudar sistemas operacionais, servidores e redes sem alterar diretamente o ambiente principal.
 
-## Links úteis
+### Links úteis
 
 * [Download do VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 * [Documentação do VirtualBox](https://www.virtualbox.org/wiki/VirtualBox)
 
 ---
 
-# Instalação da imagem do sistema operacional: Debian
+## Instalação da imagem do sistema operacional: Debian
 
 Para configurar o VirtualBox precisamos baixar uma imagem ISO de um sistema operacional.
 
@@ -42,7 +42,7 @@ Neste tutorial utilizaremos o Debian, uma das distribuições Linux mais estáve
 
 O Projeto Debian é uma comunidade que desenvolve software livre e mantém uma distribuição Linux focada em estabilidade, segurança e desempenho.
 
-## Links úteis
+### Links úteis
 
 * [Download do Debian](https://www.debian.org/distrib/)
 * [Site oficial do Debian](https://www.debian.org/)
@@ -50,7 +50,7 @@ O Projeto Debian é uma comunidade que desenvolve software livre e mantém uma d
 
 ---
 
-# Fluxo da virtualização
+## Fluxo da virtualização
 
 ```mermaid
 flowchart LR
@@ -68,17 +68,17 @@ flowchart LR
 
 ---
 
-# Criação da máquina virtual e instalação do Debian
+## Criação da máquina virtual e instalação do Debian
 
-## Criando a máquina virtual
+### Criando a máquina virtual
 
-### 1. Criar nova máquina virtual
+#### 1. Criar nova máquina virtual
 
 Clique em **Novo** para criar a máquina virtual.
 
 ---
 
-### 2. Escolher o sistema operacional
+#### 2. Escolher o sistema operacional
 
 Escolha:
 
@@ -87,7 +87,7 @@ Escolha:
 
 ---
 
-### 3. Configurar memória RAM
+#### 3. Configurar memória RAM
 
 Utilize a memória recomendada de:
 
@@ -99,7 +99,7 @@ para computadores com 2GB ou mais.
 
 ---
 
-### 4. Criar disco rígido virtual
+#### 4. Criar disco rígido virtual
 
 Deixe marcada a opção:
 
@@ -109,7 +109,7 @@ Criar um novo disco rígido virtual agora
 
 ---
 
-### 5. Escolher formato do disco
+#### 5. Escolher formato do disco
 
 Selecione:
 
@@ -119,7 +119,7 @@ VDI (VirtualBox Disk Image)
 
 ---
 
-### 6. Tipo de armazenamento
+#### 6. Tipo de armazenamento
 
 Escolha:
 
@@ -131,7 +131,7 @@ Isso melhora o desempenho da máquina virtual.
 
 ---
 
-### 7. Definir tamanho do disco
+#### 7. Definir tamanho do disco
 
 Utilize o tamanho recomendado:
 
@@ -141,7 +141,7 @@ Utilize o tamanho recomendado:
 
 ---
 
-### 8. Inicializar a máquina virtual
+#### 8. Inicializar a máquina virtual
 
 Após finalizar a criação da máquina, clique em:
 
@@ -151,9 +151,9 @@ Iniciar
 
 ---
 
-# Instalando o Debian na máquina virtual
+## Instalando o Debian na máquina virtual
 
-## 1. Selecionar a imagem ISO
+### 1. Selecionar a imagem ISO
 
 Ao iniciar a máquina virtual pela primeira vez:
 
@@ -163,7 +163,7 @@ Ao iniciar a máquina virtual pela primeira vez:
 
 ---
 
-## 2. Escolher instalação gráfica
+### 2. Escolher instalação gráfica
 
 Pressione:
 
@@ -179,7 +179,7 @@ Graphical install
 
 ---
 
-## 3. Selecionar idioma
+### 3. Selecionar idioma
 
 Escolha:
 
@@ -189,7 +189,7 @@ Portuguese (Brazil)
 
 ---
 
-## 4. Selecionar localidade
+### 4. Selecionar localidade
 
 Escolha:
 
@@ -199,7 +199,7 @@ Brasil
 
 ---
 
-## 5. Configurar teclado
+### 5. Configurar teclado
 
 Selecione:
 
@@ -209,19 +209,19 @@ Português Brasileiro
 
 ---
 
-## 6. Nome da máquina
+### 6. Nome da máquina
 
 Defina um nome para a máquina virtual.
 
 ---
 
-## 7. Nome de domínio
+### 7. Nome de domínio
 
 O nome de domínio pode permanecer em branco.
 
 ---
 
-## 8. Senha do root
+### 8. Senha do root
 
 Defina a senha do usuário administrador (`root`).
 
@@ -229,25 +229,25 @@ Defina a senha do usuário administrador (`root`).
 
 ---
 
-## 9. Confirmar senha do root
+### 9. Confirmar senha do root
 
 Digite novamente a senha.
 
 ---
 
-## 10. Nome completo do usuário
+### 10. Nome completo do usuário
 
 Digite o nome completo do usuário.
 
 ---
 
-## 11. Nome de usuário
+### 11. Nome de usuário
 
 Defina o usuário para acesso ao sistema.
 
 ---
 
-## 12. Senha do usuário
+### 12. Senha do usuário
 
 Defina a senha do usuário.
 
@@ -255,21 +255,21 @@ Defina a senha do usuário.
 
 ---
 
-## 13. Confirmar senha do usuário
+### 13. Confirmar senha do usuário
 
 Digite novamente a senha.
 
 ---
 
-## 14. Configurar relógio
+### 14. Configurar relógio
 
 Escolha a localidade para configurar o horário.
 
 ---
 
-# Particionamento do disco
+## Particionamento do disco
 
-## 15. Escolher particionamento
+### 15. Escolher particionamento
 
 Selecione:
 
@@ -279,13 +279,13 @@ Assistido - usar o disco inteiro
 
 ---
 
-## 16. Selecionar disco
+### 16. Selecionar disco
 
 Escolha o disco disponível.
 
 ---
 
-## 17. Estrutura de partições
+### 17. Estrutura de partições
 
 Selecione:
 
@@ -295,7 +295,7 @@ Todos os arquivos em uma partição (para iniciantes)
 
 ---
 
-## 18. Finalizar particionamento
+### 18. Finalizar particionamento
 
 Selecione:
 
@@ -305,7 +305,7 @@ Finalizar o particionamento e escrever as mudanças no disco
 
 ---
 
-## 19. Confirmar alterações
+### 19. Confirmar alterações
 
 Selecione:
 
@@ -317,7 +317,7 @@ Aguarde a instalação do sistema básico.
 
 ---
 
-## 20. Novos CDs/DVDs
+### 20. Novos CDs/DVDs
 
 Selecione:
 
@@ -327,7 +327,7 @@ Não
 
 ---
 
-## 21. Configurar espelho Debian
+### 21. Configurar espelho Debian
 
 Escolha:
 
@@ -337,7 +337,7 @@ Brasil
 
 ---
 
-## 22. Servidor Debian
+### 22. Servidor Debian
 
 Escolha:
 
@@ -347,7 +347,7 @@ deb.debian.org
 
 ---
 
-## 23. Configuração de proxy
+### 23. Configuração de proxy
 
 Não é necessário configurar proxy.
 
@@ -359,7 +359,7 @@ Enter
 
 ---
 
-## 24. Concurso de pacotes
+### 24. Concurso de pacotes
 
 Selecione:
 
@@ -369,7 +369,7 @@ Não
 
 ---
 
-## 25. Selecionar pacotes
+### 25. Selecionar pacotes
 
 Marque:
 
@@ -387,7 +387,7 @@ para marcar as opções.
 
 ---
 
-## 26. Instalar GRUB
+### 26. Instalar GRUB
 
 Selecione:
 
@@ -397,7 +397,7 @@ Sim
 
 ---
 
-## 27. Selecionar dispositivo GRUB
+### 27. Selecionar dispositivo GRUB
 
 Escolha:
 
@@ -407,7 +407,7 @@ Escolha:
 
 ---
 
-## 28. Finalizar instalação
+### 28. Finalizar instalação
 
 Selecione:
 
@@ -417,13 +417,13 @@ Continuar
 
 ---
 
-# Configurando e instalando o Apache2
+## Configurando e instalando o Apache2
 
 Após iniciar o Debian, abra o terminal.
 
 ---
 
-# Acessando como root
+## Acessando como root
 
 ```bash
 su
@@ -433,7 +433,7 @@ Digite a senha do usuário administrador.
 
 ---
 
-# Instalando Apache2
+## Instalando Apache2
 
 ```bash
 apt-get install apache2
@@ -441,7 +441,7 @@ apt-get install apache2
 
 ---
 
-# Verificando status do Apache
+## Verificando status do Apache
 
 ```bash
 systemctl status
@@ -449,7 +449,7 @@ systemctl status
 
 ---
 
-# Configuração de rede da máquina virtual
+## Configuração de rede da máquina virtual
 
 No VirtualBox:
 
@@ -465,7 +465,7 @@ Depois atualize a configuração de rede:
 
 ---
 
-# Descobrindo o endereço IP
+## Descobrindo o endereço IP
 
 ```bash
 ip addr
@@ -479,7 +479,7 @@ inet
 
 ---
 
-# Testando o servidor Apache
+## Testando o servidor Apache
 
 Digite o endereço IP da máquina virtual no navegador.
 
@@ -487,7 +487,7 @@ Se tudo estiver correto, a página padrão do Apache será exibida.
 
 ---
 
-# Fluxo do servidor web
+## Fluxo do servidor web
 
 ```mermaid
 flowchart LR
@@ -503,9 +503,9 @@ flowchart LR
 
 ---
 
-# Editando a página inicial
+## Editando a página inicial
 
-## Acessar diretório web
+### Acessar diretório web
 
 ```bash
 cd /var/www/html
@@ -513,7 +513,7 @@ cd /var/www/html
 
 ---
 
-## Renomear arquivo padrão
+### Renomear arquivo padrão
 
 ```bash
 mv index.html _index.html
@@ -521,7 +521,7 @@ mv index.html _index.html
 
 ---
 
-# Instalando editor de texto
+## Instalando editor de texto
 
 Caso necessário:
 
@@ -531,7 +531,7 @@ apt-get install gedit
 
 ---
 
-# Editando o arquivo HTML
+## Editando o arquivo HTML
 
 Substitua o conteúdo do arquivo:
 
@@ -544,7 +544,7 @@ Substitua o conteúdo do arquivo:
 
 ---
 
-# Reiniciando Apache
+## Reiniciando Apache
 
 Caso necessário:
 
@@ -554,13 +554,13 @@ systemctl restart apache2
 
 ---
 
-# Configurando dois sites no mesmo servidor
+## Configurando dois sites no mesmo servidor
 
 O Apache permite hospedar múltiplos sites utilizando Virtual Hosts.
 
 ---
 
-# Criando diretórios dos sites
+## Criando diretórios dos sites
 
 ```bash
 mkdir site1.site.com
@@ -569,7 +569,7 @@ mkdir site2.site.com
 
 ---
 
-# Criando arquivos HTML
+## Criando arquivos HTML
 
 ```bash
 cd site1.site.com
@@ -583,7 +583,7 @@ nano index.html
 
 ---
 
-# Criando arquivos de configuração
+## Criando arquivos de configuração
 
 ```bash
 cd /etc/apache2/sites-available/
@@ -595,7 +595,7 @@ touch site2.site.com.conf
 
 ---
 
-# Configuração do VirtualHost
+## Configuração do VirtualHost
 
 Abra:
 
@@ -616,7 +616,7 @@ Repita para o segundo site.
 
 ---
 
-# Ativando os sites
+## Ativando os sites
 
 ```bash
 /sbin/a2ensite site1.site.com
@@ -625,7 +625,7 @@ Repita para o segundo site.
 
 ---
 
-# Reiniciando Apache após configuração
+## Reiniciando Apache após configuração
 
 ```bash
 systemctl reload apache2
@@ -639,15 +639,15 @@ systemctl restart apache2
 
 ---
 
-# Configurando arquivo hosts
+## Configurando arquivo hosts
 
-## Linux
+### Linux
 
 ```text
 /etc/hosts
 ```
 
-## Windows
+### Windows
 
 ```text
 c:\Windows\System32\drivers\etc\hosts
@@ -655,7 +655,7 @@ c:\Windows\System32\drivers\etc\hosts
 
 ---
 
-# Adicionando domínios locais
+## Adicionando domínios locais
 
 Adicione ao final do arquivo:
 
@@ -666,7 +666,7 @@ Adicione ao final do arquivo:
 
 ---
 
-# Fluxo dos Virtual Hosts
+## Fluxo dos Virtual Hosts
 
 ```mermaid
 flowchart LR
@@ -684,7 +684,7 @@ flowchart LR
 
 ---
 
-# Conclusão
+## Conclusão
 
 Neste tutorial configuramos uma máquina virtual Linux utilizando VirtualBox e Debian, instalamos o servidor Apache2 e hospedamos múltiplos sites utilizando Virtual Hosts.
 
@@ -701,7 +701,7 @@ Esse tipo de laboratório virtual é extremamente útil para aprender infraestru
 
 ---
 
-# Referências
+## Referências
 
 * [https://www.virtualbox.org/](https://www.virtualbox.org/)
 * [https://www.debian.org/](https://www.debian.org/)

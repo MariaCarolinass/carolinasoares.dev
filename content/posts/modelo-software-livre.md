@@ -21,7 +21,7 @@ Esse modelo ajudou diretamente no desenvolvimento de várias das tecnologias mai
 
 ---
 
-# O modelo colaborativo
+## O modelo colaborativo
 
 O desenvolvimento de software livre normalmente funciona a partir de uma construção coletiva.
 
@@ -41,7 +41,7 @@ flowchart LR
 
 ---
 
-# Linux
+## Linux
 
 Um dos maiores exemplos é o Linux.
 
@@ -58,7 +58,7 @@ Grandes empresas como Google, Amazon, Microsoft e Meta utilizam Linux em suas in
 
 ---
 
-# Android
+## Android
 
 O Android é baseado no kernel Linux.
 
@@ -68,11 +68,11 @@ Isso mostra como projetos abertos podem alcançar escala global.
 
 ---
 
-# Internet e servidores
+## Internet e servidores
 
 Grande parte da infraestrutura da Internet utiliza tecnologias open source.
 
-## Exemplos
+### Exemplos
 
 | Tecnologia | Objetivo             |
 | ---------- | -------------------- |
@@ -84,11 +84,11 @@ Grande parte da infraestrutura da Internet utiliza tecnologias open source.
 
 ---
 
-# Linguagens de programação
+## Linguagens de programação
 
 Diversas linguagens amplamente utilizadas possuem desenvolvimento aberto.
 
-## Exemplos
+### Exemplos
 
 * Python;
 * JavaScript;
@@ -99,13 +99,13 @@ Diversas linguagens amplamente utilizadas possuem desenvolvimento aberto.
 
 ---
 
-# Python e ciência de dados
+## Python e ciência de dados
 
 Python se tornou uma das linguagens mais importantes da computação moderna.
 
 Grande parte desse crescimento aconteceu por causa da comunidade open source.
 
-## Bibliotecas populares
+### Bibliotecas populares
 
 * NumPy;
 * Pandas;
@@ -115,11 +115,11 @@ Grande parte desse crescimento aconteceu por causa da comunidade open source.
 
 ---
 
-# Inteligência artificial
+## Inteligência artificial
 
 O avanço da IA também depende fortemente de software livre.
 
-## Frameworks importantes
+### Frameworks importantes
 
 | Framework    | Área             |
 | ------------ | ---------------- |
@@ -130,11 +130,11 @@ O avanço da IA também depende fortemente de software livre.
 
 ---
 
-# Navegadores
+## Navegadores
 
 Projetos open source também ajudaram no desenvolvimento da web moderna.
 
-## Exemplos
+### Exemplos
 
 * Chromium;
 * Firefox;
@@ -142,7 +142,7 @@ Projetos open source também ajudaram no desenvolvimento da web moderna.
 
 ---
 
-# Git e colaboração
+## Git e colaboração
 
 O Git revolucionou o desenvolvimento colaborativo.
 
@@ -152,7 +152,7 @@ Hoje, plataformas como GitHub e GitLab dependem fortemente desse modelo.
 
 ---
 
-# Fluxo colaborativo
+## Fluxo colaborativo
 
 ```mermaid
 flowchart TD
@@ -170,11 +170,11 @@ flowchart TD
 
 ---
 
-# Cloud computing
+## Cloud computing
 
 Grande parte da computação em nuvem utiliza software livre.
 
-## Tecnologias importantes
+### Tecnologias importantes
 
 * Docker;
 * Kubernetes;
@@ -183,7 +183,7 @@ Grande parte da computação em nuvem utiliza software livre.
 
 ---
 
-# Segurança e transparência
+## Segurança e transparência
 
 Projetos open source permitem auditoria pública do código.
 
@@ -196,7 +196,7 @@ Isso ajuda em:
 
 ---
 
-# Comunidade e aprendizado
+## Comunidade e aprendizado
 
 Outro ponto importante é o compartilhamento de conhecimento.
 
@@ -209,7 +209,7 @@ Projetos open source ajudam pessoas a:
 
 ---
 
-# Desenvolvimento contínuo
+## Desenvolvimento contínuo
 
 Uma das maiores forças do software livre é a evolução contínua.
 
@@ -228,7 +228,7 @@ flowchart LR
 
 ---
 
-# Impacto do software livre
+## Impacto do software livre
 
 O modelo colaborativo ajudou diretamente no avanço de:
 
@@ -242,7 +242,7 @@ O modelo colaborativo ajudou diretamente no avanço de:
 
 ---
 
-# Conclusão
+## Conclusão
 
 O software livre não representa apenas código aberto.
 
@@ -257,6 +257,6 @@ Grande parte das tecnologias modernas utilizadas diariamente só evoluiu tão ra
 
 Hoje, desde servidores até inteligência artificial, o software livre continua sendo uma das principais bases da tecnologia moderna.
 
-# Links:
+## Links:
 
 - [Como colaborar com Software Livre](/posts/colaborar-software-livre)

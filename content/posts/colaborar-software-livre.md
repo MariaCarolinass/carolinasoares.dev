@@ -13,13 +13,13 @@ Na prática, existem diversas formas de participar da comunidade open source.
 
 ---
 
-# Formas de contribuição
+## Formas de contribuição
 
-## Desenvolvimento
+### Desenvolvimento
 
 A forma mais conhecida é contribuir diretamente com código.
 
-## Exemplos
+### Exemplos
 
 * correção de bugs;
 * novas funcionalidades;
@@ -28,7 +28,7 @@ A forma mais conhecida é contribuir diretamente com código.
 
 ---
 
-## Documentação
+### Documentação
 
 Documentação é uma das áreas mais importantes e muitas vezes negligenciadas.
 
@@ -41,11 +41,11 @@ Contribuições comuns:
 
 ---
 
-## Reportando problemas
+### Reportando problemas
 
 Mesmo pessoas iniciantes podem ajudar reportando bugs.
 
-## Exemplos
+### Exemplos
 
 * comportamento inesperado;
 * erros de instalação;
@@ -54,7 +54,7 @@ Mesmo pessoas iniciantes podem ajudar reportando bugs.
 
 ---
 
-## Testando projetos
+### Testando projetos
 
 Testes ajudam bastante no desenvolvimento contínuo.
 
@@ -66,11 +66,11 @@ Usuários podem:
 
 ---
 
-# Plataformas utilizadas
+## Plataformas utilizadas
 
 Grande parte dos projetos open source utiliza plataformas colaborativas.
 
-## Exemplos
+### Exemplos
 
 * GitHub;
 * GitLab;
@@ -78,7 +78,7 @@ Grande parte dos projetos open source utiliza plataformas colaborativas.
 
 ---
 
-# Fluxo básico de contribuição
+## Fluxo básico de contribuição
 
 ```mermaid
 flowchart LR
@@ -98,7 +98,7 @@ flowchart LR
 
 ---
 
-# Conceitos importantes
+## Conceitos importantes
 
 | Conceito     | Objetivo                          |
 | ------------ | --------------------------------- |
@@ -110,7 +110,7 @@ flowchart LR
 
 ---
 
-# Como começar?
+## Como começar?
 
 Uma boa forma de começar é procurar projetos que possuam:
 
@@ -128,13 +128,13 @@ help wanted
 
 ---
 
-# Pequenas contribuições também importam
+## Pequenas contribuições também importam
 
 Nem toda contribuição precisa ser complexa.
 
 Até pequenas melhorias ajudam bastante.
 
-## Exemplos
+### Exemplos
 
 * corrigir typo;
 * melhorar README;
@@ -143,11 +143,11 @@ Até pequenas melhorias ajudam bastante.
 
 ---
 
-# Benefícios de contribuir
+## Benefícios de contribuir
 
 Contribuir com software livre ajuda bastante no desenvolvimento profissional.
 
-## Alguns benefícios
+### Alguns benefícios
 
 * aprendizado prático;
 * networking;
@@ -157,7 +157,7 @@ Contribuir com software livre ajuda bastante no desenvolvimento profissional.
 
 ---
 
-# Open source e aprendizado contínuo
+## Open source e aprendizado contínuo
 
 O modelo colaborativo incentiva:
 

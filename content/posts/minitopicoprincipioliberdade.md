@@ -19,7 +19,7 @@ O debate sobre os limites da liberdade na internet tornou-se um dos principais d
 
 ---
 
-# Governança da internet e direitos humanos
+## Governança da internet e direitos humanos
 
 A governança da internet envolve princípios, normas e processos relacionados ao funcionamento da rede e à participação de diferentes setores da sociedade.
 
@@ -27,7 +27,7 @@ Em 2014, a Declaração Multissetorial do NETmundial destacou princípios import
 
 Entre esses princípios está a liberdade de expressão.
 
-## Liberdade de expressão na rede
+### Liberdade de expressão na rede
 
 A liberdade de expressão garante que pessoas possam:
 
@@ -37,7 +37,7 @@ A liberdade de expressão garante que pessoas possam:
 * participar de debates públicos;
 * exercer participação política e social.
 
-## Relação entre internet e liberdade de expressão
+### Relação entre internet e liberdade de expressão
 
 ```mermaid
 flowchart LR
@@ -55,7 +55,7 @@ A internet ampliou a possibilidade de comunicação global e fortaleceu moviment
 
 ---
 
-# O lado problemático da liberdade irrestrita
+## O lado problemático da liberdade irrestrita
 
 Embora a liberdade de expressão seja um direito fundamental, sua utilização no ambiente digital também levanta questões importantes.
 
@@ -71,7 +71,7 @@ Entre os principais problemas estão:
 * manipulação política;
 * extremismo digital.
 
-## Fluxo de disseminação de desinformação
+### Fluxo de disseminação de desinformação
 
 ```mermaid
 flowchart LR
@@ -91,7 +91,7 @@ Em muitos casos, conteúdos falsos se espalham rapidamente antes mesmo de serem 
 
 ---
 
-# Desinformação e redes sociais
+## Desinformação e redes sociais
 
 As redes sociais transformaram profundamente a circulação de informações.
 
@@ -108,7 +108,7 @@ Além disso, conteúdos sensacionalistas costumam gerar maior alcance e comparti
 
 ---
 
-# Liberdade e privacidade digital
+## Liberdade e privacidade digital
 
 Outro ponto importante envolve coleta de dados e vigilância digital.
 
@@ -120,7 +120,7 @@ Relatórios internacionais sobre liberdade na internet apontam crescimento de pr
 * manipulação comportamental;
 * rastreamento digital.
 
-## Relação entre plataformas e dados pessoais
+### Relação entre plataformas e dados pessoais
 
 ```mermaid
 flowchart TD
@@ -140,7 +140,7 @@ Esse cenário levanta discussões importantes sobre privacidade, ética e respon
 
 ---
 
-# O contexto brasileiro
+## O contexto brasileiro
 
 No Brasil, o debate sobre desinformação ganhou destaque principalmente durante o período eleitoral de 2018.
 
@@ -157,7 +157,7 @@ Esse contexto demonstra como a liberdade de expressão pode ser utilizada tanto 
 
 ---
 
-# Os desafios da moderação de conteúdo
+## Os desafios da moderação de conteúdo
 
 Um dos maiores desafios atuais é encontrar equilíbrio entre:
 
@@ -167,7 +167,7 @@ Um dos maiores desafios atuais é encontrar equilíbrio entre:
 
 As plataformas digitais enfrentam dificuldades relacionadas à moderação de conteúdo, especialmente devido à escala global da internet.
 
-## Dilemas da moderação
+### Dilemas da moderação
 
 ```mermaid
 mindmap
@@ -184,7 +184,7 @@ A ausência de regulação pode favorecer abusos, enquanto regulações excessiv
 
 ---
 
-# Educação digital e pensamento crítico
+## Educação digital e pensamento crítico
 
 Além de políticas públicas e mecanismos de moderação, a educação digital possui papel fundamental no enfrentamento da desinformação.
 
@@ -199,7 +199,7 @@ Uma sociedade digitalmente consciente tende a ser menos vulnerável à manipula�
 
 ---
 
-# Conclusão
+## Conclusão
 
 A liberdade de expressão é um direito fundamental e um dos pilares da internet aberta.
 
@@ -211,7 +211,7 @@ Construir uma internet mais saudável exige participação coletiva, educação 
 
 ---
 
-# Referências
+## Referências
 
 * [https://netmundial.br/](https://netmundial.br/)
 * [https://freedomhouse.org/report/freedom-net](https://freedomhouse.org/report/freedom-net)

@@ -17,7 +17,7 @@ Apesar dos avanços obtidos nos últimos anos, ainda existem diversos desafios r
 
 ---
 
-# O que é governo aberto?
+## O que é governo aberto?
 
 O governo aberto é um modelo de gestão pública baseado em:
 
@@ -29,7 +29,7 @@ O governo aberto é um modelo de gestão pública baseado em:
 
 O objetivo é tornar a administração pública mais acessível, eficiente e democrática.
 
-## Principais pilares do governo aberto
+### Principais pilares do governo aberto
 
 ```mermaid
 mindmap
@@ -45,7 +45,7 @@ Esses princípios incentivam uma relação mais próxima entre governo e socieda
 
 ---
 
-# Transparência pública
+## Transparência pública
 
 A transparência é um dos pilares centrais do governo aberto.
 
@@ -64,7 +64,7 @@ No Brasil, iniciativas como o [Portal da Transparência](https://www.portaltrans
 
 ---
 
-# Participação social
+## Participação social
 
 Outro princípio fundamental do governo aberto é a participação social.
 
@@ -78,7 +78,7 @@ Isso pode acontecer através de:
 * votação participativa;
 * observatórios sociais.
 
-## Relação entre governo e sociedade
+### Relação entre governo e sociedade
 
 ```mermaid
 flowchart LR
@@ -97,7 +97,7 @@ Esse ciclo fortalece mecanismos democráticos e amplia o controle social sobre a
 
 ---
 
-# Tecnologia e inovação cívica
+## Tecnologia e inovação cívica
 
 A tecnologia possui papel fundamental na construção de governos mais transparentes.
 
@@ -115,11 +115,11 @@ Aplicações de visualização de dados, mapas interativos e plataformas de moni
 
 ---
 
-# Os desafios do governo aberto no Brasil
+## Os desafios do governo aberto no Brasil
 
 Embora o Brasil tenha avançado em iniciativas de transparência pública, muitos desafios ainda dificultam a implementação prática do governo aberto.
 
-## Falta de acessibilidade dos dados
+### Falta de acessibilidade dos dados
 
 Grande parte das bases governamentais ainda apresenta problemas como:
 
@@ -132,7 +132,7 @@ Muitas vezes, o acesso aos dados exige conhecimentos técnicos avançados, dific
 
 ---
 
-## Baixo conhecimento da população
+### Baixo conhecimento da população
 
 Mesmo existindo ferramentas públicas importantes, muitas pessoas desconhecem sua existência.
 
@@ -142,7 +142,7 @@ Sem educação digital e incentivo à participação cidadã, a transparência p
 
 ---
 
-## Distância entre teoria e prática
+### Distância entre teoria e prática
 
 Em muitos casos, os princípios de governo aberto aparecem em discursos institucionais, mas possuem baixa aplicação prática.
 
@@ -156,7 +156,7 @@ Isso acontece devido a fatores como:
 
 ---
 
-# Dados abertos e cidadania
+## Dados abertos e cidadania
 
 O conceito de dados abertos está diretamente ligado ao governo aberto.
 
@@ -168,7 +168,7 @@ Dados públicos abertos devem ser:
 * legíveis por máquinas;
 * transparentes.
 
-## Exemplo de fluxo de dados abertos
+### Exemplo de fluxo de dados abertos
 
 ```mermaid
 flowchart LR
@@ -188,7 +188,7 @@ Quando bem estruturados, os dados abertos permitem:
 
 ---
 
-# O papel da educação digital
+## O papel da educação digital
 
 Para que o governo aberto funcione de maneira efetiva, não basta apenas disponibilizar dados.
 
@@ -204,7 +204,7 @@ A educação digital e cidadã é fundamental para ampliar a participação soci
 
 ---
 
-# Conclusão
+## Conclusão
 
 O governo aberto representa um importante avanço na construção de administrações públicas mais transparentes, participativas e eficientes.
 
@@ -216,7 +216,7 @@ Fortalecer a educação digital, ampliar a transparência e incentivar a partici
 
 ---
 
-# Referências
+## Referências
 
 * [https://www.portaltransparencia.gov.br/](https://www.portaltransparencia.gov.br/)
 * [https://www.gov.br/cgu/pt-br/governo-aberto](https://www.gov.br/cgu/pt-br/governo-aberto)

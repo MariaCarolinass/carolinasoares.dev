@@ -9,7 +9,7 @@ description: "Aprenda conceitos fundamentais de programação criando um jogo da
 type: "post"
 ------------
 
-# Criando um jogo da adivinhação em Python: aprendendo lógica de programação
+## Criando um jogo da adivinhação em Python: aprendendo lógica de programação
 
 Projetos simples são uma das melhores formas de aprender programação.
 
@@ -27,7 +27,7 @@ O objetivo é desenvolver uma aplicação simples onde o jogador tenta descobrir
 
 ---
 
-# O que vamos aprender?
+## O que vamos aprender?
 
 Durante o projeto vamos explorar conceitos importantes como:
 
@@ -40,7 +40,7 @@ Durante o projeto vamos explorar conceitos importantes como:
 
 ---
 
-# Como funciona o jogo?
+## Como funciona o jogo?
 
 O sistema irá:
 
@@ -51,7 +51,7 @@ O sistema irá:
 
 ---
 
-# Fluxo do jogo
+## Fluxo do jogo
 
 ```mermaid
 flowchart TD
@@ -72,11 +72,11 @@ flowchart TD
 
 ---
 
-# Instalando o Python
+## Instalando o Python
 
 Antes de começar, é necessário ter o Python instalado.
 
-## Verificando instalação
+### Verificando instalação
 
 ```bash
 python --version
@@ -84,7 +84,7 @@ python --version
 
 ---
 
-# Criando o arquivo do jogo
+## Criando o arquivo do jogo
 
 Crie um arquivo chamado:
 
@@ -94,11 +94,11 @@ jogo.py
 
 ---
 
-# Importando bibliotecas
+## Importando bibliotecas
 
 Vamos utilizar o módulo `random` para gerar números aleatórios.
 
-## Exemplo
+### Exemplo
 
 ```python
 import random
@@ -106,11 +106,11 @@ import random
 
 ---
 
-# Gerando um número aleatório
+## Gerando um número aleatório
 
 Agora podemos gerar um número entre 1 e 100.
 
-## Exemplo
+### Exemplo
 
 ```python
 numero_secreto = random.randint(1, 100)
@@ -118,11 +118,11 @@ numero_secreto = random.randint(1, 100)
 
 ---
 
-# O que é randint?
+## O que é randint?
 
 A função `randint()` gera um número inteiro aleatório dentro de um intervalo.
 
-## Estrutura
+### Estrutura
 
 ```python
 random.randint(inicio, fim)
@@ -130,11 +130,11 @@ random.randint(inicio, fim)
 
 ---
 
-# Recebendo entrada do usuário
+## Recebendo entrada do usuário
 
 Agora precisamos permitir que o jogador faça tentativas.
 
-## Exemplo
+### Exemplo
 
 ```python
 tentativa = input('Digite um número: ')
@@ -142,13 +142,13 @@ tentativa = input('Digite um número: ')
 
 ---
 
-# Convertendo valores
+## Convertendo valores
 
 A função `input()` retorna texto.
 
 Por isso, precisamos converter para inteiro.
 
-## Exemplo
+### Exemplo
 
 ```python
 tentativa = int(input('Digite um número: '))
@@ -156,11 +156,11 @@ tentativa = int(input('Digite um número: '))
 
 ---
 
-# Estruturas condicionais
+## Estruturas condicionais
 
 Agora precisamos comparar a tentativa com o número secreto.
 
-## Exemplo
+### Exemplo
 
 ```python
 if tentativa == numero_secreto:
@@ -169,11 +169,11 @@ if tentativa == numero_secreto:
 
 ---
 
-# Comparando valores
+## Comparando valores
 
 Também podemos informar se o número é maior ou menor.
 
-## Exemplo
+### Exemplo
 
 ```python
 if tentativa > numero_secreto:
@@ -184,7 +184,7 @@ else:
 
 ---
 
-# Fluxo de comparação
+## Fluxo de comparação
 
 ```mermaid
 flowchart TD
@@ -200,13 +200,13 @@ flowchart TD
 
 ---
 
-# Loops
+## Loops
 
 Precisamos repetir as tentativas até o jogador acertar.
 
 Para isso utilizamos loops.
 
-## Exemplo com while
+### Exemplo com while
 
 ```python
 while tentativa != numero_secreto:
@@ -215,7 +215,7 @@ while tentativa != numero_secreto:
 
 ---
 
-# Estrutura completa do loop
+## Estrutura completa do loop
 
 ```python
 while tentativa != numero_secreto:
@@ -224,9 +224,9 @@ while tentativa != numero_secreto:
 
 ---
 
-# Código completo
+## Código completo
 
-## Exemplo funcional
+### Exemplo funcional
 
 ```python
 import random
@@ -248,9 +248,9 @@ while tentativa != numero_secreto:
 
 ---
 
-# Executando o jogo
+## Executando o jogo
 
-## Comando
+### Comando
 
 ```bash
 python jogo.py
@@ -258,11 +258,11 @@ python jogo.py
 
 ---
 
-# Melhorando o jogo
+## Melhorando o jogo
 
 Depois da versão inicial, podemos adicionar novas funcionalidades.
 
-## Exemplos
+### Exemplos
 
 * níveis de dificuldade;
 * limite de tentativas;
@@ -273,9 +273,9 @@ Depois da versão inicial, podemos adicionar novas funcionalidades.
 
 ---
 
-# Adicionando dificuldade
+## Adicionando dificuldade
 
-## Exemplo
+### Exemplo
 
 ```python
 nivel = input('Escolha: fácil, médio ou difícil: ')
@@ -283,7 +283,7 @@ nivel = input('Escolha: fácil, médio ou difícil: ')
 
 ---
 
-# Limitando tentativas
+## Limitando tentativas
 
 ```python
 for i in range(5):
@@ -292,11 +292,11 @@ for i in range(5):
 
 ---
 
-# Trabalhando com funções
+## Trabalhando com funções
 
 Uma boa prática é separar responsabilidades utilizando funções.
 
-## Exemplo
+### Exemplo
 
 ```python
 def jogar():
@@ -305,7 +305,7 @@ def jogar():
 
 ---
 
-# Organização do código
+## Organização do código
 
 ```mermaid
 flowchart LR
@@ -321,11 +321,11 @@ flowchart LR
 
 ---
 
-# Tratando erros
+## Tratando erros
 
 Usuários podem digitar valores inválidos.
 
-## Exemplo
+### Exemplo
 
 ```python
 try:
@@ -336,7 +336,7 @@ except:
 
 ---
 
-# Conceitos importantes aprendidos
+## Conceitos importantes aprendidos
 
 Mesmo um projeto simples ajuda bastante no aprendizado de:
 
@@ -349,7 +349,7 @@ Mesmo um projeto simples ajuda bastante no aprendizado de:
 
 ---
 
-# Jogos simples e aprendizado
+## Jogos simples e aprendizado
 
 Projetos pequenos são extremamente importantes para iniciantes.
 
@@ -364,11 +364,11 @@ Além disso, jogos tornam o aprendizado mais divertido e interativo.
 
 ---
 
-# Possíveis evoluções
+## Possíveis evoluções
 
 Depois da versão inicial, várias melhorias podem ser adicionadas.
 
-## Algumas ideias
+### Algumas ideias
 
 * interface gráfica com Tkinter;
 * ranking de jogadores;
@@ -378,7 +378,7 @@ Depois da versão inicial, várias melhorias podem ser adicionadas.
 
 ---
 
-# Conclusão
+## Conclusão
 
 Criar um jogo da adivinhação é uma ótima forma de começar a aprender programação.
 
@@ -396,7 +396,7 @@ Com o tempo, projetos simples como esse podem evoluir para aplicações muito ma
 
 ---
 
-# Referências
+## Referências
 
 * [https://docs.python.org/3/library/random.html](https://docs.python.org/3/library/random.html)
 * [https://docs.python.org/3/tutorial/](https://docs.python.org/3/tutorial/)

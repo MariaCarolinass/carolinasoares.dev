@@ -8,7 +8,7 @@ description: "Aprenda conceitos fundamentais de desenvolvimento web criando uma 
 type: "post"
 ------------
 
-# Criando um mini Twitter com Flask: introdução ao desenvolvimento web
+## Criando um mini Twitter com Flask: introdução ao desenvolvimento web
 
 Criar pequenas redes sociais é uma ótima forma de aprender desenvolvimento web.
 
@@ -33,7 +33,7 @@ O tutorial utiliza como referência prática o projeto:
 
 ---
 
-# O que é Flask?
+## O que é Flask?
 
 Flask é um microframework web para Python.
 
@@ -49,11 +49,11 @@ Uma das principais vantagens do Flask é sua simplicidade.
 
 ---
 
-# Arquitetura básica de aplicações web
+## Arquitetura básica de aplicações web
 
 Aplicações web normalmente funcionam através da comunicação entre cliente e servidor.
 
-## Fluxo simplificado
+### Fluxo simplificado
 
 ```mermaid
 flowchart LR
@@ -69,11 +69,11 @@ flowchart LR
 
 ---
 
-# Instalando o Flask
+## Instalando o Flask
 
 Primeiro, instale o Flask utilizando o pip.
 
-## Comando
+### Comando
 
 ```bash
 pip install flask
@@ -81,7 +81,7 @@ pip install flask
 
 ---
 
-# Criando a estrutura do projeto
+## Criando a estrutura do projeto
 
 Uma organização simples para aplicações Flask pode ser:
 
@@ -98,11 +98,11 @@ project/
 
 ---
 
-# Criando a aplicação Flask
+## Criando a aplicação Flask
 
 Agora vamos criar o arquivo principal.
 
-## app.py
+### app.py
 
 ```python
 from flask import Flask
@@ -119,9 +119,9 @@ if __name__ == '__main__':
 
 ---
 
-# Executando a aplicação
+## Executando a aplicação
 
-## Comando
+### Comando
 
 ```bash
 python app.py
@@ -135,11 +135,11 @@ http://127.0.0.1:5000
 
 ---
 
-# O que são rotas?
+## O que são rotas?
 
 Rotas definem quais funções serão executadas quando determinadas URLs forem acessadas.
 
-## Exemplo
+### Exemplo
 
 ```python
 @app.route('/perfil')
@@ -149,7 +149,7 @@ def perfil():
 
 ---
 
-# Fluxo de rotas
+## Fluxo de rotas
 
 ```mermaid
 flowchart LR
@@ -165,7 +165,7 @@ flowchart LR
 
 ---
 
-# Templates HTML
+## Templates HTML
 
 O Flask utiliza o mecanismo Jinja2 para renderização de páginas HTML.
 
@@ -177,9 +177,9 @@ templates/
 
 ---
 
-# Criando um template
+## Criando um template
 
-## templates/index.html
+### templates/index.html
 
 ```html
 <!DOCTYPE html>
@@ -195,7 +195,7 @@ templates/
 
 ---
 
-# Renderizando templates
+## Renderizando templates
 
 ```python
 from flask import render_template
@@ -207,7 +207,7 @@ def home():
 
 ---
 
-# Banco de dados
+## Banco de dados
 
 Aplicações sociais normalmente precisam armazenar:
 
@@ -220,7 +220,7 @@ Uma abordagem comum em Flask é utilizar SQLAlchemy.
 
 ---
 
-# Instalando SQLAlchemy
+## Instalando SQLAlchemy
 
 ```bash
 pip install flask-sqlalchemy
@@ -228,11 +228,11 @@ pip install flask-sqlalchemy
 
 ---
 
-# Criando modelos
+## Criando modelos
 
 Modelos representam tabelas do banco de dados.
 
-## Exemplo
+### Exemplo
 
 ```python
 from flask_sqlalchemy import SQLAlchemy
@@ -246,11 +246,11 @@ class User(_db.Model):
 
 ---
 
-# Relacionamento entre entidades
+## Relacionamento entre entidades
 
 Em redes sociais, entidades normalmente possuem relacionamentos.
 
-## Exemplo simplificado
+### Exemplo simplificado
 
 ```mermaid
 flowchart LR
@@ -264,7 +264,7 @@ flowchart LR
 
 ---
 
-# CRUD
+## CRUD
 
 Grande parte das aplicações web utiliza operações CRUD.
 
@@ -277,11 +277,11 @@ Grande parte das aplicações web utiliza operações CRUD.
 
 ---
 
-# Criando postagens
+## Criando postagens
 
 Uma funcionalidade básica é permitir publicação de posts.
 
-## Exemplo de rota
+### Exemplo de rota
 
 ```python
 @app.route('/postar')
@@ -291,11 +291,11 @@ def postar():
 
 ---
 
-# Formulários
+## Formulários
 
 Aplicações web normalmente utilizam formulários HTML.
 
-## Exemplo
+### Exemplo
 
 ```html
 <form method="POST">
@@ -306,7 +306,7 @@ Aplicações web normalmente utilizam formulários HTML.
 
 ---
 
-# Recebendo dados no Flask
+## Recebendo dados no Flask
 
 ```python
 from flask import request
@@ -318,11 +318,11 @@ def postar():
 
 ---
 
-# Autenticação de usuários
+## Autenticação de usuários
 
 Uma rede social normalmente precisa controlar login.
 
-## Fluxo simplificado
+### Fluxo simplificado
 
 ```mermaid
 flowchart LR
@@ -338,11 +338,11 @@ flowchart LR
 
 ---
 
-# Sessões
+## Sessões
 
 Sessões permitem manter usuários autenticados.
 
-## Exemplo
+### Exemplo
 
 ```python
 from flask import session
@@ -352,7 +352,7 @@ session['usuario'] = 'maria'
 
 ---
 
-# Arquivos estáticos
+## Arquivos estáticos
 
 Arquivos CSS e imagens normalmente ficam dentro de:
 
@@ -362,9 +362,9 @@ static/
 
 ---
 
-# CSS básico
+## CSS básico
 
-## static/style.css
+### static/style.css
 
 ```css
 body {
@@ -374,13 +374,13 @@ body {
 
 ---
 
-# Melhorando organização
+## Melhorando organização
 
 Projetos Flask crescem rapidamente.
 
 Por isso, separar responsabilidades é importante.
 
-## Estrutura modular
+### Estrutura modular
 
 ```text
 project/
@@ -394,11 +394,11 @@ project/
 
 ---
 
-# Blueprint no Flask
+## Blueprint no Flask
 
 Blueprints ajudam a modularizar aplicações.
 
-## Exemplo
+### Exemplo
 
 ```python
 from flask import Blueprint
@@ -408,7 +408,7 @@ usuarios = Blueprint('usuarios', __name__)
 
 ---
 
-# Fluxo modular
+## Fluxo modular
 
 ```mermaid
 flowchart TD
@@ -426,11 +426,11 @@ flowchart TD
 
 ---
 
-# Segurança básica
+## Segurança básica
 
 Mesmo aplicações simples precisam de cuidados.
 
-## Alguns pontos importantes
+### Alguns pontos importantes
 
 * hash de senha;
 * validação de formulários;
@@ -440,11 +440,11 @@ Mesmo aplicações simples precisam de cuidados.
 
 ---
 
-# Deploy
+## Deploy
 
 Depois da aplicação pronta, podemos realizar deploy.
 
-## Opções comuns
+### Opções comuns
 
 * Render;
 * Railway;
@@ -453,11 +453,11 @@ Depois da aplicação pronta, podemos realizar deploy.
 
 ---
 
-# Possíveis melhorias
+## Possíveis melhorias
 
 Depois da versão inicial, várias funcionalidades podem ser adicionadas.
 
-## Exemplos
+### Exemplos
 
 * curtidas;
 * seguidores;
@@ -468,7 +468,7 @@ Depois da versão inicial, várias funcionalidades podem ser adicionadas.
 
 ---
 
-# O que aprendemos?
+## O que aprendemos?
 
 Projetos de redes sociais ajudam bastante no aprendizado de:
 
@@ -483,7 +483,7 @@ Além disso, são ótimos projetos para praticar organização de aplicações r
 
 ---
 
-# Conclusão
+## Conclusão
 
 Criar um mini Twitter é uma ótima forma de estudar desenvolvimento web.
 
@@ -501,7 +501,7 @@ Com o crescimento do desenvolvimento web moderno, compreender como aplicações 
 
 ---
 
-# Referências
+## Referências
 
 * [https://flask.palletsprojects.com/](https://flask.palletsprojects.com/)
 * [https://jinja.palletsprojects.com/](https://jinja.palletsprojects.com/)

@@ -8,7 +8,7 @@ title: "Como foi organizar o Open Data Day em Natal - RN"
 type: "post"
 ---
 
-# O Open Data Day é um evento global que acontece todos os anos para celebrar o Dia dos Dados Abertos
+## O Open Data Day é um evento global que acontece todos os anos para celebrar o Dia dos Dados Abertos
 
 *[Dados Abertos](https://ok.org.br/dados-abertos/) são dados que podem ser livremente usados, reutilizados e redistribuídos por qualquer pessoa, promovendo o acesso ao conhecimento e fortalecendo a sociedade.*
 
@@ -18,7 +18,7 @@ Após quatro anos, **Natal volta a celebrar o Dia Dos Dados Abertos**, reunindo 
 
 ![Foto do Evento](https://live.staticflickr.com/65535/54402180937_2bc22e991b_z.jpg)
 
-## Em Natal, o ODD harmonizou o debate dos dados abertos entre as áreas da tecnologia, ciência, bioinformática e jurídica 
+### Em Natal, o ODD harmonizou o debate dos dados abertos entre as áreas da tecnologia, ciência, bioinformática e jurídica 
 
 A primeira palestra tratou de alguns formatos de dados, suas qualificações e lugares para encontrar dados abertos. A segunda e a terceira palestra trouxeram áreas do conhecimento em que é possível integrar os dados abertos, a ciência e a bioinformática — áreas que chamaram atenção das pessoas participantes. A quarta, que falou sobre dados abertos e cidadania no âmbito digital e civil, foi a que teve mais participação do público presente. Foram muitas as dúvidas em relação aos dados abertos, como direito civil, leis de acesso e órgãos regulatórios.
 
@@ -26,7 +26,7 @@ A maioria do público era da área de tecnologia, que sugeriu envolver parlament
 
 Além disso, o evento contou com o apoio da **OKBR** e patrocínio do [Jusbrasil](https://www.jusbrasil.com.br/), [ASK - Associated Researchers](https://ask-ar.xyz/) e [Vena Consultoria em Gestão Pública](https://www.venaconsultoria.com.br/). 
 
-## O evento só é possível com a colaboração de toda a comunidade
+### O evento só é possível com a colaboração de toda a comunidade
 
 O último ODD em Natal aconteceu um pouco antes da pandemia se iniciar e, após momentos difíceis, a comunidade de dados abertos na cidade ficou desamparada, projetos ficaram inativos e alguns membros saíram da comunidade. Em 2025, juntamos forças novamente para reativar o movimento na capital potiguar.
 
@@ -44,7 +44,7 @@ Espero que os dados abertos se tornem um assunto mais recorrente entre diferente
 
 - [Veja como foi o ODD 2025 no Brasil](https://ok.org.br/noticia/relatos-odd-2025-brasil/)
 
-## Programação
+### Programação
 
 - **O Panorama dos Dados na Internet:** o objetivo é apresentar diferentes fontes de dados online, com foco em dados não estruturados como imagens, vídeos, áudios e textos - [Mateus de Assis](https://github.com/mtxslv)
 

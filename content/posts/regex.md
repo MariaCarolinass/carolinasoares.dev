@@ -25,7 +25,7 @@ Neste artigo vamos entender como utilizar RegEx no Python utilizando o módulo `
 
 ---
 
-# O que é uma expressão regular?
+## O que é uma expressão regular?
 
 Uma expressão regular é um padrão criado para identificar combinações específicas de caracteres dentro de um texto.
 
@@ -36,7 +36,7 @@ Esses padrões permitem:
 * substituir trechos;
 * extrair informações.
 
-## Exemplos de uso
+### Exemplos de uso
 
 | Situação         | Exemplo             |
 | ---------------- | ------------------- |
@@ -47,11 +47,11 @@ Esses padrões permitem:
 
 ---
 
-# Importando o módulo `re`
+## Importando o módulo `re`
 
 No Python, expressões regulares são utilizadas através do módulo `re`.
 
-## Importação
+### Importação
 
 ```python
 import re
@@ -66,11 +66,11 @@ Esse módulo fornece funções para:
 
 ---
 
-# Escrevendo uma expressão regular
+## Escrevendo uma expressão regular
 
 No Python, normalmente utilizamos a letra `r` antes da string da expressão regular.
 
-## Exemplo
+### Exemplo
 
 ```python
 padrao = r"expressao"
@@ -84,13 +84,13 @@ Embora não seja obrigatório, o uso de `r` é altamente recomendado.
 
 ---
 
-# Metacaracteres
+## Metacaracteres
 
 As expressões regulares utilizam símbolos especiais chamados de **metacaracteres**.
 
 Esses símbolos possuem significados específicos e definem como o padrão será interpretado.
 
-## Principais metacaracteres
+### Principais metacaracteres
 
 | Metacaractere | Significado              |             |
 | ------------- | ------------------------ | ----------- |
@@ -107,13 +107,13 @@ Esses símbolos possuem significados específicos e definem como o padrão será
 
 ---
 
-# Visualizando os metacaracteres
+## Visualizando os metacaracteres
 
 ![image](https://github.com/user-attachments/assets/c6a548b2-7cca-438e-8e58-157d663f028a)
 
 ---
 
-# Como o RegEx funciona
+## Como o RegEx funciona
 
 ```mermaid
 flowchart LR
@@ -131,17 +131,17 @@ A expressão regular é comparada com o texto até encontrar padrões compatíve
 
 ---
 
-# Principais funções do módulo `re`
+## Principais funções do módulo `re`
 
 O módulo `re` possui diversas funções importantes.
 
 ---
 
-## `re.match()`
+### `re.match()`
 
 A função `re.match()` procura o padrão apenas no início da string.
 
-## Exemplo
+### Exemplo
 
 ```python
 import re
@@ -154,7 +154,7 @@ resultado = re.match(padrao, texto)
 print(resultado)
 ```
 
-### Fluxo do `match`
+#### Fluxo do `match`
 
 ```mermaid
 flowchart LR
@@ -168,11 +168,11 @@ flowchart LR
 
 ---
 
-## `re.search()`
+### `re.search()`
 
 A função `re.search()` procura o padrão em qualquer parte do texto.
 
-## Exemplo
+### Exemplo
 
 ```python
 import re
@@ -187,11 +187,11 @@ print(resultado)
 
 ---
 
-## `re.findall()`
+### `re.findall()`
 
 A função `re.findall()` retorna todas as ocorrências encontradas.
 
-## Exemplo
+### Exemplo
 
 ```python
 import re
@@ -204,7 +204,7 @@ resultado = re.findall(padrao, texto)
 print(resultado)
 ```
 
-### Saída
+#### Saída
 
 ```python
 ['Python', 'Python']
@@ -212,11 +212,11 @@ print(resultado)
 
 ---
 
-## `re.sub()`
+### `re.sub()`
 
 A função `re.sub()` substitui padrões encontrados no texto.
 
-## Exemplo
+### Exemplo
 
 ```python
 import re
@@ -229,7 +229,7 @@ resultado = re.sub(padrao, "poderoso", texto)
 print(resultado)
 ```
 
-### Saída
+#### Saída
 
 ```python
 Python é poderoso
@@ -237,9 +237,9 @@ Python é poderoso
 
 ---
 
-# Exemplos práticos de RegEx
+## Exemplos práticos de RegEx
 
-## Encontrando números
+### Encontrando números
 
 ```python
 import re
@@ -252,7 +252,7 @@ resultado = re.findall(padrao, texto)
 print(resultado)
 ```
 
-### Saída
+#### Saída
 
 ```python
 ['12345']
@@ -260,7 +260,7 @@ print(resultado)
 
 ---
 
-## Validando e-mail
+### Validando e-mail
 
 ```python
 import re
@@ -273,7 +273,7 @@ resultado = re.match(padrao, email)
 print(resultado)
 ```
 
-### Saída
+#### Saída
 
 ```python
 <re.Match object; span=(0, 17), match='usuario@email.com'>
@@ -281,7 +281,7 @@ print(resultado)
 
 ---
 
-## Encontrando palavras
+### Encontrando palavras
 
 ```python
 import re
@@ -294,7 +294,7 @@ resultado = re.findall(padrao, texto)
 print(resultado)
 ```
 
-### Saída
+#### Saída
 
 ```python
 ['Python', 'Java']
@@ -302,7 +302,7 @@ print(resultado)
 
 ---
 
-# Quantificadores
+## Quantificadores
 
 Os quantificadores definem quantas vezes um padrão pode aparecer.
 
@@ -316,7 +316,7 @@ Os quantificadores definem quantas vezes um padrão pode aparecer.
 
 ---
 
-# Classes especiais
+## Classes especiais
 
 Algumas sequências possuem significados especiais.
 
@@ -330,11 +330,11 @@ Algumas sequências possuem significados especiais.
 
 ---
 
-# Vantagens do RegEx
+## Vantagens do RegEx
 
 Expressões regulares podem simplificar bastante manipulações textuais.
 
-## Benefícios
+### Benefícios
 
 | Vantagem       | Descrição                          |
 | -------------- | ---------------------------------- |
@@ -346,11 +346,11 @@ Expressões regulares podem simplificar bastante manipulações textuais.
 
 ---
 
-# Cuidados ao utilizar RegEx
+## Cuidados ao utilizar RegEx
 
 Apesar de poderosas, expressões regulares podem se tornar difíceis de entender se forem muito complexas.
 
-## Problemas comuns
+### Problemas comuns
 
 * padrões difíceis de manter;
 * expressões muito grandes;
@@ -361,7 +361,7 @@ Por isso, é importante escrever expressões claras e documentadas.
 
 ---
 
-# Quando utilizar RegEx?
+## Quando utilizar RegEx?
 
 RegEx é muito útil quando precisamos:
 
@@ -377,7 +377,7 @@ Em alguns casos, métodos simples de string podem ser mais legíveis.
 
 ---
 
-# Conclusão
+## Conclusão
 
 Expressões regulares são ferramentas extremamente poderosas para manipulação e análise de textos.
 
@@ -389,13 +389,13 @@ Dominar expressões regulares é uma habilidade bastante útil para desenvolvime
 
 ---
 
-# Exercícios
+## Exercícios
 
 * [https://github.com/MariaCarolinass/expressoes-regulares/tree/main/exercicios](https://github.com/MariaCarolinass/expressoes-regulares/tree/main/exercicios)
 
 ---
 
-# Referências
+## Referências
 
 * [https://docs.python.org/3/library/re.html](https://docs.python.org/3/library/re.html)
 * [https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Regular_expressions](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Regular_expressions)

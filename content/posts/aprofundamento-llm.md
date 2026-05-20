@@ -8,7 +8,7 @@ description: "Como funcionam prompts, tokens, structured outputs e integração 
 type: "post"
 ------------
 
-# Entendendo LLMs: engenharia de prompt, tokens e integração via API
+## Entendendo LLMs: engenharia de prompt, tokens e integração via API
 
 Os modelos de linguagem (LLMs — *Large Language Models*) passaram a fazer parte do desenvolvimento moderno de software.
 
@@ -37,13 +37,13 @@ Neste artigo vamos explorar os principais conceitos envolvidos no uso moderno de
 
 ---
 
-# O que é engenharia de prompt?
+## O que é engenharia de prompt?
 
 Engenharia de prompt é o processo de estruturar instruções para que modelos de IA produzam respostas melhores, mais consistentes e mais úteis.
 
 Embora pareça algo simples, pequenas mudanças na forma de escrever um prompt podem alterar significativamente o comportamento do modelo.
 
-## Fluxo básico
+### Fluxo básico
 
 ```mermaid
 flowchart LR
@@ -59,7 +59,7 @@ flowchart LR
 
 ---
 
-# Como escrever prompts melhores
+## Como escrever prompts melhores
 
 Uma das principais boas práticas é evitar prompts vagos.
 
@@ -73,11 +73,11 @@ Modelos respondem melhor quando recebem:
 
 ---
 
-# Estrutura recomendada
+## Estrutura recomendada
 
 Uma abordagem eficiente é separar o prompt em blocos.
 
-## Estrutura comum
+### Estrutura comum
 
 | Bloco    | Objetivo                         |
 | -------- | -------------------------------- |
@@ -88,7 +88,7 @@ Uma abordagem eficiente é separar o prompt em blocos.
 
 ---
 
-# Exemplo de prompt estruturado
+## Exemplo de prompt estruturado
 
 ```text
 Você é um especialista em marketing digital para SaaS.
@@ -110,9 +110,9 @@ Responda no formato:
 
 ---
 
-# Boas práticas para prompts
+## Boas práticas para prompts
 
-## Seja específico
+### Seja específico
 
 Prompts muito genéricos normalmente geram respostas genéricas.
 
@@ -120,7 +120,7 @@ Quanto mais contexto relevante o modelo recebe, maior tende a ser a qualidade da
 
 ---
 
-## Use linguagem imperativa
+### Use linguagem imperativa
 
 Exemplos:
 
@@ -134,13 +134,13 @@ Explique em passos curtos.
 
 ---
 
-## Divida instruções em tópicos
+### Divida instruções em tópicos
 
 Estruturas organizadas funcionam melhor do que textos longos e confusos.
 
 ---
 
-## Reforce regras importantes
+### Reforce regras importantes
 
 Se determinada regra for crítica, vale repetir.
 
@@ -152,7 +152,7 @@ Não invente informações.
 
 ---
 
-## Diga o que não fazer
+### Diga o que não fazer
 
 Restrições negativas ajudam bastante.
 
@@ -164,13 +164,13 @@ Evite respostas muito teóricas.
 
 ---
 
-# Técnicas de engenharia de prompt
+## Técnicas de engenharia de prompt
 
 Existem diversas técnicas utilizadas para melhorar respostas.
 
 ---
 
-# Few-shot prompting
+## Few-shot prompting
 
 No *few-shot prompting*, fornecemos exemplos antes da tarefa principal.
 
@@ -180,7 +180,7 @@ Isso ajuda o modelo a entender:
 * estilo;
 * comportamento esperado.
 
-## Exemplo
+### Exemplo
 
 ```text
 Entrada: Produto simples
@@ -192,11 +192,11 @@ Saída: Explicação técnica
 
 ---
 
-# Chain-of-thought
+## Chain-of-thought
 
 A técnica *chain-of-thought* incentiva o modelo a resolver problemas passo a passo.
 
-## Exemplo
+### Exemplo
 
 ```text
 Explique o raciocínio em etapas.
@@ -204,11 +204,11 @@ Explique o raciocínio em etapas.
 
 ---
 
-# Prompt refinement
+## Prompt refinement
 
 Prompt refinement consiste em melhorar prompts progressivamente.
 
-## Fluxo
+### Fluxo
 
 ```mermaid
 flowchart LR
@@ -224,11 +224,11 @@ flowchart LR
 
 ---
 
-# Output format control
+## Output format control
 
 Outra técnica importante é controlar o formato da saída.
 
-## Exemplo
+### Exemplo
 
 ```text
 Responda no formato:
@@ -245,11 +245,11 @@ Isso facilita:
 
 ---
 
-# Context injection
+## Context injection
 
 Context injection consiste em fornecer contexto adicional relevante.
 
-## Exemplo
+### Exemplo
 
 ```text
 Considere que o sistema possui milhares de usuários simultâneos.
@@ -257,7 +257,7 @@ Considere que o sistema possui milhares de usuários simultâneos.
 
 ---
 
-# Como evitar respostas genéricas
+## Como evitar respostas genéricas
 
 Se a resposta estiver muito superficial:
 
@@ -268,13 +268,13 @@ Se a resposta estiver muito superficial:
 
 ---
 
-# Como reduzir alucinações
+## Como reduzir alucinações
 
 Modelos podem inventar informações.
 
 Algumas técnicas ajudam a reduzir esse problema.
 
-## Estratégias
+### Estratégias
 
 | Estratégia           | Objetivo                   |
 | -------------------- | -------------------------- |
@@ -285,7 +285,7 @@ Algumas técnicas ajudam a reduzir esse problema.
 
 ---
 
-# O que são tokens?
+## O que são tokens?
 
 Tokens são unidades de texto utilizadas pelos modelos para processar entrada e saída.
 
@@ -298,7 +298,7 @@ Eles podem representar:
 * espaços;
 * números.
 
-## Exemplo simplificado
+### Exemplo simplificado
 
 ```text
 "programação"
@@ -308,9 +308,9 @@ pode ser dividido em múltiplos tokens.
 
 ---
 
-# Tokens de entrada e saída
+## Tokens de entrada e saída
 
-## Input tokens
+### Input tokens
 
 Incluem:
 
@@ -321,13 +321,13 @@ Incluem:
 
 ---
 
-## Output tokens
+### Output tokens
 
 Representam a resposta gerada pelo modelo.
 
 ---
 
-# Fluxo de tokens
+## Fluxo de tokens
 
 ```mermaid
 flowchart LR
@@ -341,7 +341,7 @@ flowchart LR
 
 ---
 
-# Janela de contexto
+## Janela de contexto
 
 Cada modelo possui um limite máximo de tokens.
 
@@ -355,7 +355,7 @@ Ela representa quanto o modelo consegue “lembrar” durante a conversa.
 
 ---
 
-# Mais tokens nem sempre é melhor
+## Mais tokens nem sempre é melhor
 
 Mais contexto pode melhorar respostas, mas também aumenta:
 
@@ -363,7 +363,7 @@ Mais contexto pode melhorar respostas, mas também aumenta:
 * tempo de processamento;
 * latência.
 
-## Relação entre tokens
+### Relação entre tokens
 
 ```mermaid
 flowchart TD
@@ -381,15 +381,15 @@ flowchart TD
 
 ---
 
-# Como otimizar tokens
+## Como otimizar tokens
 
-## 1. Seja específico
+### 1. Seja específico
 
 Prompts enormes nem sempre melhoram respostas.
 
 ---
 
-## 2. Defina limite de resposta
+### 2. Defina limite de resposta
 
 Exemplo:
 
@@ -399,19 +399,19 @@ Responda em no máximo 5 tópicos.
 
 ---
 
-## 3. Use novos chats para novos contextos
+### 3. Use novos chats para novos contextos
 
 Conversas muito longas podem degradar qualidade.
 
 ---
 
-## 4. Escolha o modelo adequado
+### 4. Escolha o modelo adequado
 
 Nem toda tarefa exige modelos avançados.
 
 ---
 
-# Structured Outputs
+## Structured Outputs
 
 Structured Outputs forçam o modelo a responder em formatos estruturados.
 
@@ -425,9 +425,9 @@ Isso reduz ambiguidades e facilita integração entre sistemas.
 
 ---
 
-# Onde structured outputs são utilizados?
+## Onde structured outputs são utilizados?
 
-## Casos comuns
+### Casos comuns
 
 * APIs;
 * automação;
@@ -439,7 +439,7 @@ Isso reduz ambiguidades e facilita integração entre sistemas.
 
 ---
 
-# Exemplo JSON
+## Exemplo JSON
 
 ```json
 {
@@ -451,7 +451,7 @@ Isso reduz ambiguidades e facilita integração entre sistemas.
 
 ---
 
-# Fluxo de structured outputs
+## Fluxo de structured outputs
 
 ```mermaid
 flowchart LR
@@ -467,7 +467,7 @@ flowchart LR
 
 ---
 
-# Integração via API
+## Integração via API
 
 LLMs normalmente são utilizados através de APIs.
 
@@ -479,7 +479,7 @@ O fluxo básico funciona assim:
 
 ---
 
-# Fluxo de integração
+## Fluxo de integração
 
 ```mermaid
 flowchart LR
@@ -495,9 +495,9 @@ flowchart LR
 
 ---
 
-# Casos de uso comuns
+## Casos de uso comuns
 
-## Aplicações práticas
+### Aplicações práticas
 
 * geração de código;
 * automação de tarefas;
@@ -508,45 +508,45 @@ flowchart LR
 
 ---
 
-# Boas práticas para APIs
+## Boas práticas para APIs
 
-## Structured outputs
+### Structured outputs
 
 Utilize respostas estruturadas sempre que possível.
 
 ---
 
-## Validação no backend
+### Validação no backend
 
 Nunca confie totalmente na resposta do modelo.
 
 ---
 
-## Controle de tokens
+### Controle de tokens
 
 Limitar tokens ajuda a reduzir custos.
 
 ---
 
-## Tratamento de erros
+### Tratamento de erros
 
 Implemente retries e validações.
 
 ---
 
-## Escolha adequada do modelo
+### Escolha adequada do modelo
 
 Use modelos simples para tarefas simples.
 
 ---
 
-# Parâmetros importantes
+## Parâmetros importantes
 
-## Max tokens
+### Max tokens
 
 Limita o tamanho da resposta.
 
-### Exemplo
+#### Exemplo
 
 ```text
 max_output_tokens=250
@@ -554,11 +554,11 @@ max_output_tokens=250
 
 ---
 
-## Frequency penalty
+### Frequency penalty
 
 Reduz repetição de palavras.
 
-### Exemplo
+#### Exemplo
 
 ```text
 frequency_penalty=0.3
@@ -566,11 +566,11 @@ frequency_penalty=0.3
 
 ---
 
-## Presence penalty
+### Presence penalty
 
 Incentiva respostas mais variadas.
 
-### Exemplo
+#### Exemplo
 
 ```text
 presence_penalty=0.2
@@ -578,11 +578,11 @@ presence_penalty=0.2
 
 ---
 
-# Temperatura
+## Temperatura
 
 Temperatura controla criatividade e previsibilidade.
 
-## Temperatura baixa
+### Temperatura baixa
 
 ```text
 0.1 - 0.3
@@ -598,7 +598,7 @@ Indicada para:
 
 ---
 
-## Temperatura média
+### Temperatura média
 
 ```text
 0.5 - 0.7
@@ -608,7 +608,7 @@ Equilíbrio entre criatividade e coerência.
 
 ---
 
-## Temperatura alta
+### Temperatura alta
 
 ```text
 1.0+
@@ -625,7 +625,7 @@ Entretanto, aumenta risco de alucinações.
 
 ---
 
-# Diferenças entre modelos
+## Diferenças entre modelos
 
 Cada modelo possui características diferentes.
 
@@ -648,7 +648,7 @@ Por isso, mais importante do que decorar rankings é entender:
 
 ---
 
-# Overthinking em IA
+## Overthinking em IA
 
 Nem toda tarefa exige modelos extremamente avançados.
 
@@ -662,7 +662,7 @@ Escolher o modelo correto para cada tarefa é uma das práticas mais importantes
 
 ---
 
-# Conclusão
+## Conclusão
 
 LLMs se tornaram ferramentas extremamente importantes para desenvolvimento moderno de software.
 
@@ -682,29 +682,29 @@ Além disso, saber equilibrar contexto, custo e qualidade se tornou uma habilida
 
 ---
 
-# Referências
+## Referências
 
-## Engenharia de prompt
+### Engenharia de prompt
 
 * [https://www.promptingguide.ai/pt/introduction/examples](https://www.promptingguide.ai/pt/introduction/examples)
 * [https://medium.com/@habbema/engenharia-de-prompt-c422c12cbd21](https://medium.com/@habbema/engenharia-de-prompt-c422c12cbd21)
 
-## Tokens
+### Tokens
 
 * [https://ai.google.dev/gemini-api/docs/tokens?hl=pt-br&lang=python](https://ai.google.dev/gemini-api/docs/tokens?hl=pt-br&lang=python)
 * [https://help.openai.com/pt-br/articles/4936856-what-are-tokens-and-how-to-count-them](https://help.openai.com/pt-br/articles/4936856-what-are-tokens-and-how-to-count-them)
 
-## Structured outputs
+### Structured outputs
 
 * [https://developers.openai.com/api/docs/guides/structured-outputs](https://developers.openai.com/api/docs/guides/structured-outputs)
 * [https://platform.claude.com/docs/en/build-with-claude/structured-outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs)
 * [https://ai.google.dev/gemini-api/docs/structured-output](https://ai.google.dev/gemini-api/docs/structured-output)
 
-## APIs
+### APIs
 
 * [https://developers.openai.com/api/docs](https://developers.openai.com/api/docs)
 * [https://ai.google.dev/api?hl=pt-br](https://ai.google.dev/api?hl=pt-br)
 
-## Temperatura
+### Temperatura
 
 * [https://gpt.space/pt/blog/how-to-use-openai-model-temperature-for-better-ai-chat-responses](https://gpt.space/pt/blog/how-to-use-openai-model-temperature-for-better-ai-chat-responses)

@@ -8,7 +8,7 @@ description: "Aprenda como funciona a biblioteca random do Python e explore fun�
 type: "post"
 ------------
 
-# Trabalhando com números aleatórios em Python usando a biblioteca random
+## Trabalhando com números aleatórios em Python usando a biblioteca random
 
 A geração de números aleatórios é extremamente utilizada em programação.
 
@@ -33,7 +33,7 @@ Neste artigo vamos explorar:
 
 ---
 
-# O que é a biblioteca random?
+## O que é a biblioteca random?
 
 A biblioteca `random` é um módulo nativo do Python responsável por gerar valores pseudoaleatórios.
 
@@ -41,9 +41,9 @@ Ela já vem instalada por padrão.
 
 ---
 
-# Importando o módulo
+## Importando o módulo
 
-## Exemplo
+### Exemplo
 
 ```python
 import random
@@ -51,7 +51,7 @@ import random
 
 ---
 
-# O que são números pseudoaleatórios?
+## O que são números pseudoaleatórios?
 
 Computadores normalmente não geram números verdadeiramente aleatórios.
 
@@ -65,7 +65,7 @@ Pseudoaleatório
 
 ---
 
-# Fluxo simplificado
+## Fluxo simplificado
 
 ```mermaid
 flowchart LR
@@ -79,11 +79,11 @@ flowchart LR
 
 ---
 
-# Gerando números inteiros
+## Gerando números inteiros
 
 Uma das funções mais utilizadas é `randint()`.
 
-## Exemplo
+### Exemplo
 
 ```python
 import random
@@ -95,11 +95,11 @@ print(numero)
 
 ---
 
-# Como funciona randint?
+## Como funciona randint?
 
 A função gera um número inteiro dentro de um intervalo.
 
-## Estrutura
+### Estrutura
 
 ```python
 random.randint(inicio, fim)
@@ -107,7 +107,7 @@ random.randint(inicio, fim)
 
 ---
 
-# Exemplo prático
+## Exemplo prático
 
 ```python
 random.randint(1, 100)
@@ -123,11 +123,11 @@ Pode gerar:
 
 ---
 
-# Gerando números decimais
+## Gerando números decimais
 
 Também podemos gerar números de ponto flutuante.
 
-## Exemplo
+### Exemplo
 
 ```python
 random.random()
@@ -135,7 +135,7 @@ random.random()
 
 ---
 
-# Resultado esperado
+## Resultado esperado
 
 ```text
 0.73452
@@ -149,9 +149,9 @@ A função retorna um número entre:
 
 ---
 
-# Trabalhando com intervalos decimais
+## Trabalhando com intervalos decimais
 
-## Exemplo
+### Exemplo
 
 ```python
 random.uniform(1, 10)
@@ -159,11 +159,11 @@ random.uniform(1, 10)
 
 ---
 
-# Escolhendo elementos aleatórios
+## Escolhendo elementos aleatórios
 
 Outra funcionalidade muito útil é selecionar elementos de listas.
 
-## Exemplo
+### Exemplo
 
 ```python
 nomes = ['Ana', 'Carlos', 'Maria']
@@ -173,7 +173,7 @@ print(random.choice(nomes))
 
 ---
 
-# Fluxo de escolha aleatória
+## Fluxo de escolha aleatória
 
 ```mermaid
 flowchart LR
@@ -187,11 +187,11 @@ flowchart LR
 
 ---
 
-# Embaralhando listas
+## Embaralhando listas
 
 Também podemos embaralhar elementos.
 
-## Exemplo
+### Exemplo
 
 ```python
 cartas = [1,2,3,4,5]
@@ -201,7 +201,7 @@ random.shuffle(cartas)
 
 ---
 
-# Antes e depois
+## Antes e depois
 
 | Antes       | Depois      |
 | ----------- | ----------- |
@@ -209,9 +209,9 @@ random.shuffle(cartas)
 
 ---
 
-# Selecionando múltiplos valores
+## Selecionando múltiplos valores
 
-## Exemplo
+### Exemplo
 
 ```python
 numeros = [1,2,3,4,5]
@@ -221,7 +221,7 @@ random.sample(numeros, 2)
 
 ---
 
-# Resultado esperado
+## Resultado esperado
 
 ```text
 [2,5]
@@ -229,11 +229,11 @@ random.sample(numeros, 2)
 
 ---
 
-# Sorteios simples
+## Sorteios simples
 
 A biblioteca `random` é muito utilizada em sorteios.
 
-## Exemplo
+### Exemplo
 
 ```python
 participantes = ['Ana', 'Carlos', 'João']
@@ -245,11 +245,11 @@ print(vencedor)
 
 ---
 
-# Simulações
+## Simulações
 
 Números aleatórios também são utilizados em simulações.
 
-## Exemplo de dado
+### Exemplo de dado
 
 ```python
 dado = random.randint(1, 6)
@@ -257,7 +257,7 @@ dado = random.randint(1, 6)
 
 ---
 
-# Fluxo de simulação
+## Fluxo de simulação
 
 ```mermaid
 flowchart TD
@@ -271,11 +271,11 @@ flowchart TD
 
 ---
 
-# Jogos e aleatoriedade
+## Jogos e aleatoriedade
 
 Grande parte dos jogos depende de números aleatórios.
 
-## Exemplos
+### Exemplos
 
 * cartas;
 * inimigos;
@@ -286,11 +286,11 @@ Grande parte dos jogos depende de números aleatórios.
 
 ---
 
-# Exemplo: jogo da adivinhação
+## Exemplo: jogo da adivinhação
 
 Um uso clássico é em jogos da adivinhação.
 
-## Exemplo
+### Exemplo
 
 ```python
 numero_secreto = random.randint(1, 100)
@@ -300,11 +300,11 @@ Nesse caso, o jogador precisa descobrir o valor gerado.
 
 ---
 
-# Seeds
+## Seeds
 
 A função `seed()` permite controlar a geração pseudoaleatória.
 
-## Exemplo
+### Exemplo
 
 ```python
 random.seed(10)
@@ -312,7 +312,7 @@ random.seed(10)
 
 ---
 
-# Por que usar seed?
+## Por que usar seed?
 
 Seeds ajudam a reproduzir resultados.
 
@@ -325,7 +325,7 @@ Isso é útil em:
 
 ---
 
-# Exemplo reproduzível
+## Exemplo reproduzível
 
 ```python
 random.seed(1)
@@ -337,7 +337,7 @@ Executando novamente, o resultado será o mesmo.
 
 ---
 
-# Segurança e random
+## Segurança e random
 
 A biblioteca `random` não é recomendada para aplicações criptográficas.
 
@@ -349,7 +349,7 @@ secrets
 
 ---
 
-# random vs secrets
+## random vs secrets
 
 | Biblioteca | Objetivo                 |
 | ---------- | ------------------------ |
@@ -358,7 +358,7 @@ secrets
 
 ---
 
-# Exemplo com secrets
+## Exemplo com secrets
 
 ```python
 import secrets
@@ -368,7 +368,7 @@ numero = secrets.randbelow(10)
 
 ---
 
-# Aplicações práticas
+## Aplicações práticas
 
 A biblioteca `random` pode ser utilizada em:
 
@@ -381,7 +381,7 @@ A biblioteca `random` pode ser utilizada em:
 
 ---
 
-# Conceitos importantes aprendidos
+## Conceitos importantes aprendidos
 
 Mesmo uma biblioteca simples ajuda bastante no aprendizado de:
 
@@ -393,7 +393,7 @@ Mesmo uma biblioteca simples ajuda bastante no aprendizado de:
 
 ---
 
-# Conclusão
+## Conclusão
 
 A biblioteca `random` é uma das ferramentas mais simples e úteis do Python.
 
@@ -410,7 +410,7 @@ Com o tempo, conceitos simples como geração de números aleatórios podem evol
 
 ---
 
-# Referências
+## Referências
 
 * [https://docs.python.org/3/library/random.html](https://docs.python.org/3/library/random.html)
 * [https://docs.python.org/3/library/secrets.html](https://docs.python.org/3/library/secrets.html)

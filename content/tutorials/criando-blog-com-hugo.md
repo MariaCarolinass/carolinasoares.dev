@@ -10,7 +10,7 @@ type: "post"
 
 ![Banner Hugo](https://gohugo.io/images/hugo-logo-wide.svg)
 
-# Hugo Framework
+## Hugo Framework
 
 Hugo é um rápido framework de código aberto e gratuito para a contrução de sites estáticos.  É distribuído sob [Licença Apache 2.0](https://en.wikipedia.org/wiki/Apache_License), possuí uma comunidade grande e ativa, além de ser mantido constantemente com novos recursos adicionados regularmente. 
 
@@ -18,17 +18,17 @@ O código aberto do Hugo é escrito em [Go](https://go.dev/) e está disponível
 
 Acesse a [página oficial do Hugo](https://gohugo.io/) para saber mais.
 
-## O que é um site estático?
+### O que é um site estático?
 
 Um site estático é um site cujo o seu conteúdo é fixo para todos os usuários, ideal para o desenvolvimento de blogs e portfolios. A grande vantagem de um site estático com Hugo, é o desenvolvimento de sites rápidos e simples, com fácil manutenção no código e no gerenciamento do conteúdo. 
 
-## Instalando o Hugo
+### Instalando o Hugo
 
-### Mac OS
+#### Mac OS
 
     $ brew install hugo
 
-### Linux
+#### Linux
 
 **Via Snap:**
 
@@ -48,28 +48,28 @@ Para distribuições derivadas do Debian como o elementary OS, KDE neon, Linux L
 
     $ sudo apt install hugo
 
-### Windows
+#### Windows
 
     $ choco install hugo -confirm 
 
-### Outras formas de instalar na página oficial do Hugo
+#### Outras formas de instalar na página oficial do Hugo
 
 [Consulte o guia de instalação do Hugo](https://gohugo.io/installation/).
 
-### Outra opção é usar o GitHub Codespaces
+#### Outra opção é usar o GitHub Codespaces
 
 Uma opção é criar o blog no [GitHub Codespaces](https://docs.github.com/pt/codespaces/about-codespaces/what-are-codespaces), caso não queira instalar o projeto localmente. O codespace é um ambiente de desenvolvimento na nuvem. 
 
-## Criando o site
+### Criando o site
 
 Crie um site com Hugo em minutos.
 
-### Pré-requisitos
+#### Pré-requisitos
 
 - [Instalação do Hugo](#instalação-do-hugo)
 - [Instalação do Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
-### Tema do site
+#### Tema do site
 
 O Hugo possuí diversos temas bonitos e prontos para serem usados que foram criados previamente por outros desenvolvedores. [Confira todos os temas disponíveis para o Hugo](https://themes.gohugo.io/).
 
@@ -103,11 +103,11 @@ Para visualizar o site digite o seguinte comando:
 
 E acesse o endereço [http://localhost:1313/](http://localhost:1313/).
 
-### Erro na versão do Hugo ao instalar tema
+#### Erro na versão do Hugo ao instalar tema
 
 Caso esbarre em possíveis erros de versão do Hugo para carregar alguma tema, [confira uma possível soluação](https://github.com/MariaCarolinass/minicurso-hugo/blob/main/README.md#erro-na-vers%C3%A3o-do-hugo).
 
-### Estrutura do site 
+#### Estrutura do site 
 
 A estrutura do site deve ser parecida com essa:
 
@@ -123,7 +123,7 @@ A estrutura do site deve ser parecida com essa:
     │   └── devise
     └── config.toml         <-- configuração do site
 
-#### Diretórios
+##### Diretórios
 
 - **archetypes:** modelos para a criação de novos conteúdos.
 
@@ -141,7 +141,7 @@ A estrutura do site deve ser parecida com essa:
 
 Saiba mais sobre a [estrutura de diretórios do Hugo](https://gohugo.io/getting-started/directory-structure/).
 
-### Configurações do site
+#### Configurações do site
 
 Todos os recursos de configurações do tema que podem ser adicionados no arquivo `config.toml`: 
 
@@ -208,7 +208,7 @@ Cada tema possuí as suas configurações que podem ser encontradas na sua docum
 
 Caso ainda tenha dúvidas de como configurar o seu site, geralmente na pasta de `themes` que foi criada para guardar os temas do site, dentro dela e dentro da pasta com o nome do tema, existe uma pasta chamada `exampleSite`, essa pasta possuí arquivos de exemplo de como o seu site deve ficar com os recursos disponíveis pelo tema escolhido.
 
-## Publicando uma postagem no site
+### Publicando uma postagem no site
 
 Uma postagem pode ser criada com o seguinte comando:
 
@@ -258,7 +258,7 @@ Após o cabeçalho, tudo o que estiver abaixo será o conteúdo da publicação 
 
     O tema usado no site foi o [devise](https://themes.gohugo.io/themes/devise/).
 
-#### Sintaxe básica do formato Markdown
+##### Sintaxe básica do formato Markdown
 
 **Títulos**
 
@@ -349,11 +349,11 @@ Bloco de código (basta indentar uma vez todas as linhas):
 
 [Sintaxe completa para Markdown](https://www.markdownguide.org/basic-syntax/).
 
-## Configurando páginas extras do tema
+### Configurando páginas extras do tema
 
 Criando a **página sobre** no site e adicionando **categorias nas postagens**.
 
-### Página sobre
+#### Página sobre
 
 Para criar uma página sobre no site, basta criar o arquivo `about.md` dentro da pasta `content`.
 
@@ -369,7 +369,7 @@ Exemplo do arquivo `about.md`:
 
     Written in Go, Hugo is an open source static site generator available under the [Apache Licence 2.0.](https://github.com/gohugoio/hugo/blob/master/LICENSE) Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.
 
-### Postagens por categorias
+#### Postagens por categorias
 
 Para indexar as postagens por categorias, basta adicionar a seguinte linha no cabeçalho das postagens:
 
@@ -377,7 +377,7 @@ Para indexar as postagens por categorias, basta adicionar a seguinte linha no ca
 
 Essa linha vai vai organizar as postagens por categorias na página `categories`, por exemplo, se a postagem se tratar sobre *"como escrever no formato Markdown"*, umas das categorias a ser indexada será a palavra `Markdown` e assim sempre que tiver uma postagem sobre esse mesmo tema, todas as postagens com essa mesma categoria relacionada, estarão organizadas dentro dessa palavra.
 
-## Hospedando o código no GitHub e fazendo o deploy com o GitHub Pages
+### Hospedando o código no GitHub e fazendo o deploy com o GitHub Pages
 
 1. Primeiro crie uma conta no [GitHub](https://github.com/), caso ainda não tenha.
 
@@ -410,4 +410,4 @@ Essa linha vai vai organizar as postagens por categorias na página `categories`
 
 Saiba mais sobre o [GitHub Pages](https://pages.github.com/).
 
-#### Repositório do [minicurso](https://github.com/MariaCarolinass/minicurso-hugo).
+##### Repositório do [minicurso](https://github.com/MariaCarolinass/minicurso-hugo).

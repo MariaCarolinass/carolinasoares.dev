@@ -23,7 +23,7 @@ Neste artigo vamos explorar os principais conceitos do Docker utilizando exemplo
 
 ---
 
-# O que é Docker?
+## O que é Docker?
 
 Docker é uma plataforma de virtualização baseada em containers.
 
@@ -31,7 +31,7 @@ Os containers permitem executar aplicações em ambientes isolados, compartilhan
 
 Isso torna os containers muito mais leves do que máquinas virtuais tradicionais.
 
-## Docker e containers
+### Docker e containers
 
 ```mermaid
 flowchart LR
@@ -49,9 +49,9 @@ flowchart LR
 
 ---
 
-# Instalação do Docker
+## Instalação do Docker
 
-## Debian/Ubuntu
+### Debian/Ubuntu
 
 ```bash
 su
@@ -66,7 +66,7 @@ Documentação oficial:
 
 ---
 
-# Testando a instalação
+## Testando a instalação
 
 Após instalar o Docker, podemos executar um container de teste.
 
@@ -78,7 +78,7 @@ Se tudo estiver correto, o Docker exibirá uma mensagem confirmando que o ambien
 
 ---
 
-# Conferindo a versão do Docker
+## Conferindo a versão do Docker
 
 ```bash
 docker version
@@ -86,7 +86,7 @@ docker version
 
 ---
 
-# Containers
+## Containers
 
 Containers são ambientes isolados utilizados para execução de aplicações.
 
@@ -97,13 +97,13 @@ Eles agrupam:
 * aplicações;
 * arquivos de configuração.
 
-## Executando um container CentOS
+### Executando um container CentOS
 
 ```bash
 docker container run -ti centos
 ```
 
-### Explicando os parâmetros
+#### Explicando os parâmetros
 
 | Parâmetro | Função                       |
 | --------- | ---------------------------- |
@@ -113,9 +113,9 @@ docker container run -ti centos
 
 ---
 
-# Acessando containers
+## Acessando containers
 
-## Attach
+### Attach
 
 ```bash
 docker container attach id-container
@@ -125,7 +125,7 @@ O comando `attach` permite acessar um container já em execução.
 
 ---
 
-## Exec
+### Exec
 
 ```bash
 docker container exec -ti id-container ls /
@@ -135,9 +135,9 @@ O comando `exec` executa comandos dentro de um container já em execução.
 
 ---
 
-# Containers em segundo plano
+## Containers em segundo plano
 
-## Executando Nginx
+### Executando Nginx
 
 ```bash
 docker container run -d nginx
@@ -147,7 +147,7 @@ O parâmetro `-d` executa o container em modo daemon (*background*).
 
 ---
 
-# Fluxo básico do Docker
+## Fluxo básico do Docker
 
 ```mermaid
 flowchart LR
@@ -161,9 +161,9 @@ flowchart LR
 
 ---
 
-# Listando containers
+## Listando containers
 
-## Containers ativos
+### Containers ativos
 
 ```bash
 docker container ls
@@ -171,7 +171,7 @@ docker container ls
 
 ---
 
-## Todos os containers
+### Todos os containers
 
 ```bash
 docker container ls -a
@@ -179,7 +179,7 @@ docker container ls -a
 
 ---
 
-# Inspecionando containers
+## Inspecionando containers
 
 ```bash
 docker container inspect id-container
@@ -187,7 +187,7 @@ docker container inspect id-container
 
 ---
 
-# Estatísticas do container
+## Estatísticas do container
 
 ```bash
 docker container stats id-container
@@ -195,7 +195,7 @@ docker container stats id-container
 
 ---
 
-# Processos em execução
+## Processos em execução
 
 ```bash
 docker container top id-container
@@ -203,9 +203,9 @@ docker container top id-container
 
 ---
 
-# Pause e unpause
+## Pause e unpause
 
-## Pausando container
+### Pausando container
 
 ```bash
 docker container pause id-container
@@ -213,7 +213,7 @@ docker container pause id-container
 
 ---
 
-## Retornando execução
+### Retornando execução
 
 ```bash
 docker container unpause id-container
@@ -221,9 +221,9 @@ docker container unpause id-container
 
 ---
 
-# Start, stop e restart
+## Start, stop e restart
 
-## Parando container
+### Parando container
 
 ```bash
 docker container stop id-container
@@ -231,7 +231,7 @@ docker container stop id-container
 
 ---
 
-## Iniciando container
+### Iniciando container
 
 ```bash
 docker container start id-container
@@ -239,7 +239,7 @@ docker container start id-container
 
 ---
 
-## Reiniciando container
+### Reiniciando container
 
 ```bash
 docker container restart id-container
@@ -247,9 +247,9 @@ docker container restart id-container
 
 ---
 
-# Removendo containers
+## Removendo containers
 
-## Remoção simples
+### Remoção simples
 
 ```bash
 docker container rm id-container
@@ -257,7 +257,7 @@ docker container rm id-container
 
 ---
 
-## Remoção forçada
+### Remoção forçada
 
 ```bash
 docker container rm -f id-container
@@ -265,9 +265,9 @@ docker container rm -f id-container
 
 ---
 
-# Limitação de recursos
+## Limitação de recursos
 
-## Memória
+### Memória
 
 ```bash
 docker container run -d -m 128M nginx
@@ -275,7 +275,7 @@ docker container run -d -m 128M nginx
 
 ---
 
-## CPU
+### CPU
 
 ```bash
 docker container run -d -m 128M --cpus 0.5 nginx
@@ -283,7 +283,7 @@ docker container run -d -m 128M --cpus 0.5 nginx
 
 ---
 
-## Atualizando memória
+### Atualizando memória
 
 ```bash
 docker container update --memory 64M id-container
@@ -291,7 +291,7 @@ docker container update --memory 64M id-container
 
 ---
 
-## Atualizando CPU
+### Atualizando CPU
 
 ```bash
 docker container update --cpus 0.2 id-container
@@ -299,7 +299,7 @@ docker container update --cpus 0.2 id-container
 
 ---
 
-# Volumes
+## Volumes
 
 Volumes permitem persistir dados mesmo após remoção de containers.
 
@@ -307,7 +307,7 @@ Sem volumes, dados armazenados no container são perdidos.
 
 ---
 
-# Criando volumes
+## Criando volumes
 
 ```bash
 docker volume create nome_volume
@@ -315,7 +315,7 @@ docker volume create nome_volume
 
 ---
 
-# Listando volumes
+## Listando volumes
 
 ```bash
 docker volume ls
@@ -323,7 +323,7 @@ docker volume ls
 
 ---
 
-# Inspecionando volumes
+## Inspecionando volumes
 
 ```bash
 docker volume inspect nome_volume
@@ -331,7 +331,7 @@ docker volume inspect nome_volume
 
 ---
 
-# Bind mount
+## Bind mount
 
 ```bash
 docker container run -ti \
@@ -340,7 +340,7 @@ docker container run -ti \
 
 ---
 
-# Volume mount
+## Volume mount
 
 ```bash
 docker container run -ti \
@@ -349,7 +349,7 @@ docker container run -ti \
 
 ---
 
-# Persistência de dados
+## Persistência de dados
 
 ```mermaid
 flowchart LR
@@ -363,7 +363,7 @@ flowchart LR
 
 ---
 
-# Imagens Docker
+## Imagens Docker
 
 Imagens funcionam como modelos para criação de containers.
 
@@ -376,7 +376,7 @@ Uma imagem pode conter:
 
 ---
 
-# Criando projeto Docker
+## Criando projeto Docker
 
 ```bash
 mkdir projeto-docker
@@ -386,7 +386,7 @@ nano Dockerfile
 
 ---
 
-# Exemplo de Dockerfile
+## Exemplo de Dockerfile
 
 ```Dockerfile
 FROM debian
@@ -403,7 +403,7 @@ CMD stress --cpu 1 --vm-bytes 64M --vm 1
 
 ---
 
-# Build da imagem
+## Build da imagem
 
 ```bash
 docker image build -t nome_imagem:1.0 .
@@ -411,7 +411,7 @@ docker image build -t nome_imagem:1.0 .
 
 ---
 
-# Listando imagens
+## Listando imagens
 
 ```bash
 docker image ls
@@ -419,7 +419,7 @@ docker image ls
 
 ---
 
-# Inspecionando imagens
+## Inspecionando imagens
 
 ```bash
 docker image inspect id_image
@@ -427,9 +427,9 @@ docker image inspect id_image
 
 ---
 
-# Removendo imagens
+## Removendo imagens
 
-## Remoção simples
+### Remoção simples
 
 ```bash
 docker image rm id_image
@@ -437,7 +437,7 @@ docker image rm id_image
 
 ---
 
-## Remoção forçada
+### Remoção forçada
 
 ```bash
 docker image rm -f id_image
@@ -445,7 +445,7 @@ docker image rm -f id_image
 
 ---
 
-# Dockerfile Apache
+## Dockerfile Apache
 
 ```Dockerfile
 FROM debian
@@ -461,7 +461,7 @@ CMD ["apachectl", "-D", "FOREGROUND"]
 
 ---
 
-# Build da imagem Apache
+## Build da imagem Apache
 
 ```bash
 docker image build -t meu_apache:1.0.0 .
@@ -469,7 +469,7 @@ docker image build -t meu_apache:1.0.0 .
 
 ---
 
-# Executando Apache
+## Executando Apache
 
 ```bash
 docker container run -d -p 8080:80 meu_apache:1.0.0
@@ -477,7 +477,7 @@ docker container run -d -p 8080:80 meu_apache:1.0.0
 
 ---
 
-# Mapeamento de portas
+## Mapeamento de portas
 
 ```mermaid
 flowchart LR
@@ -493,7 +493,7 @@ flowchart LR
 
 ---
 
-# Testando Apache
+## Testando Apache
 
 ```bash
 curl localhost:8080
@@ -501,9 +501,9 @@ curl localhost:8080
 
 ---
 
-# PostgreSQL com Docker
+## PostgreSQL com Docker
 
-## Executando PostgreSQL
+### Executando PostgreSQL
 
 ```bash
 docker container run -d \
@@ -515,7 +515,7 @@ postgres
 
 ---
 
-## Acessando PostgreSQL
+### Acessando PostgreSQL
 
 ```bash
 docker container exec -ti postgres bash
@@ -523,7 +523,7 @@ docker container exec -ti postgres bash
 
 ---
 
-## Entrando no banco
+### Entrando no banco
 
 ```bash
 psql -U postgres
@@ -531,13 +531,13 @@ psql -U postgres
 
 ---
 
-# Docker Hub
+## Docker Hub
 
 Docker Hub é um repositório online de imagens.
 
 ---
 
-# Login Docker Hub
+## Login Docker Hub
 
 ```bash
 docker login
@@ -545,7 +545,7 @@ docker login
 
 ---
 
-# Tag da imagem
+## Tag da imagem
 
 ```bash
 docker image tag id_image usuario/meu_apache:1.0.0
@@ -553,7 +553,7 @@ docker image tag id_image usuario/meu_apache:1.0.0
 
 ---
 
-# Enviando imagem
+## Enviando imagem
 
 ```bash
 docker push usuario/meu_apache:1.0.0
@@ -561,9 +561,9 @@ docker push usuario/meu_apache:1.0.0
 
 ---
 
-# Registry local
+## Registry local
 
-## Executando registry
+### Executando registry
 
 ```bash
 docker container run -d \
@@ -575,7 +575,7 @@ registry:2
 
 ---
 
-# Criando tag local
+## Criando tag local
 
 ```bash
 docker image tag imagem localhost:5000/minha_imagem
@@ -583,7 +583,7 @@ docker image tag imagem localhost:5000/minha_imagem
 
 ---
 
-# Enviando imagem local
+## Enviando imagem local
 
 ```bash
 docker push localhost:5000/minha_imagem
@@ -591,9 +591,9 @@ docker push localhost:5000/minha_imagem
 
 ---
 
-# Backup de volumes
+## Backup de volumes
 
-## Criando diretório
+### Criando diretório
 
 ```bash
 mkdir /opt/backup
@@ -601,7 +601,7 @@ mkdir /opt/backup
 
 ---
 
-## Criando backup
+### Criando backup
 
 ```bash
 docker container run -ti \
@@ -612,9 +612,9 @@ debian tar -cvf /backup/bkp-banco.tar /data
 
 ---
 
-# Removendo recursos não utilizados
+## Removendo recursos não utilizados
 
-## Containers parados
+### Containers parados
 
 ```bash
 docker container prune
@@ -622,7 +622,7 @@ docker container prune
 
 ---
 
-## Imagens não utilizadas
+### Imagens não utilizadas
 
 ```bash
 docker image prune
@@ -630,7 +630,7 @@ docker image prune
 
 ---
 
-## Volumes não utilizados
+### Volumes não utilizados
 
 ```bash
 docker volume prune
@@ -638,7 +638,7 @@ docker volume prune
 
 ---
 
-## Limpeza geral
+### Limpeza geral
 
 ```bash
 docker system prune
@@ -646,7 +646,7 @@ docker system prune
 
 ---
 
-# Vantagens do Docker
+## Vantagens do Docker
 
 Docker trouxe diversas vantagens para desenvolvimento moderno.
 
@@ -661,7 +661,7 @@ Docker trouxe diversas vantagens para desenvolvimento moderno.
 
 ---
 
-# Docker vs máquinas virtuais
+## Docker vs máquinas virtuais
 
 | Docker                | Máquina Virtual              |
 | --------------------- | ---------------------------- |
@@ -673,7 +673,7 @@ Docker trouxe diversas vantagens para desenvolvimento moderno.
 
 ---
 
-# Quando utilizar Docker?
+## Quando utilizar Docker?
 
 Docker é muito utilizado para:
 
@@ -686,7 +686,7 @@ Docker é muito utilizado para:
 
 ---
 
-# Conclusão
+## Conclusão
 
 Docker se tornou uma das ferramentas mais importantes da computação moderna.
 
@@ -698,7 +698,7 @@ Compreender conceitos como containers, imagens, volumes e Dockerfiles é essenci
 
 ---
 
-# Referências
+## Referências
 
 * [https://docs.docker.com/](https://docs.docker.com/)
 * [https://hub.docker.com/](https://hub.docker.com/)

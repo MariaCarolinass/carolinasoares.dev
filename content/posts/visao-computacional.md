@@ -9,7 +9,7 @@ description: "Entenda como funciona visão computacional, detecção de objetos 
 type: "post"
 ------------
 
-# Visão computacional com YOLO: detecção de objetos em tempo real
+## Visão computacional com YOLO: detecção de objetos em tempo real
 
 A visão computacional é uma área da inteligência artificial focada em permitir que computadores interpretem imagens e vídeos.
 
@@ -36,7 +36,7 @@ Neste artigo vamos entender:
 
 ---
 
-# O que é visão computacional?
+## O que é visão computacional?
 
 Visão computacional é o campo responsável por permitir que sistemas interpretem informações visuais.
 
@@ -51,13 +51,13 @@ Esses sistemas podem:
 
 ---
 
-# Como computadores enxergam imagens?
+## Como computadores enxergam imagens?
 
 Imagens digitais são compostas por matrizes de pixels.
 
 Cada pixel armazena informações de cor.
 
-## Representação simplificada
+### Representação simplificada
 
 ```mermaid
 flowchart LR
@@ -73,7 +73,7 @@ flowchart LR
 
 ---
 
-# O que é detecção de objetos?
+## O que é detecção de objetos?
 
 Detecção de objetos é a tarefa de localizar e identificar elementos dentro de imagens ou vídeos.
 
@@ -85,7 +85,7 @@ O modelo precisa:
 
 ---
 
-# Diferença entre classificação e detecção
+## Diferença entre classificação e detecção
 
 | Técnica       | Objetivo                           |
 | ------------- | ---------------------------------- |
@@ -95,7 +95,7 @@ O modelo precisa:
 
 ---
 
-# Como funciona a detecção?
+## Como funciona a detecção?
 
 Modelos de detecção normalmente retornam:
 
@@ -103,7 +103,7 @@ Modelos de detecção normalmente retornam:
 * confiança;
 * coordenadas.
 
-## Exemplo
+### Exemplo
 
 ```text
 Objeto: carro
@@ -117,7 +117,7 @@ Essas caixas são chamadas de *bounding boxes*.
 
 ---
 
-# O que é YOLO?
+## O que é YOLO?
 
 YOLO (*You Only Look Once*) é uma família de modelos de detecção de objetos em tempo real.
 
@@ -125,7 +125,7 @@ A principal proposta do YOLO é realizar detecção utilizando apenas uma passag
 
 Isso torna o modelo extremamente rápido em comparação com abordagens mais antigas.
 
-## Pipeline simplificado do YOLO
+### Pipeline simplificado do YOLO
 
 ```mermaid
 flowchart LR
@@ -141,11 +141,11 @@ flowchart LR
 
 ---
 
-# Bounding boxes
+## Bounding boxes
 
 Bounding boxes são caixas utilizadas para marcar objetos detectados.
 
-## Exemplo conceitual
+### Exemplo conceitual
 
 ```text
 +-------------------+
@@ -157,7 +157,7 @@ O modelo retorna coordenadas indicando onde o objeto está localizado.
 
 ---
 
-# Por que YOLO ficou popular?
+## Por que YOLO ficou popular?
 
 YOLO ganhou destaque principalmente por:
 
@@ -177,7 +177,7 @@ Isso permitiu aplicações em:
 
 ---
 
-# Evolução das versões do YOLO
+## Evolução das versões do YOLO
 
 A arquitetura YOLO passou por várias evoluções.
 
@@ -190,7 +190,7 @@ A arquitetura YOLO passou por várias evoluções.
 
 ---
 
-# Visão computacional em monitoramento urbano
+## Visão computacional em monitoramento urbano
 
 Uma aplicação interessante para YOLO é o monitoramento urbano.
 
@@ -217,7 +217,7 @@ que explora conceitos relacionados a monitoramento urbano, processamento de dado
 
 ---
 
-# Exemplo visual de monitoramento
+## Exemplo visual de monitoramento
 
 A imagem abaixo faz parte do projeto **Urban Disaster Monitor** e representa um cenário de monitoramento urbano.
 
@@ -232,7 +232,7 @@ Nesse tipo de aplicação, modelos de visão computacional podem ser utilizados 
 
 ---
 
-# Pipeline de visão computacional
+## Pipeline de visão computacional
 
 Sistemas de visão computacional normalmente possuem múltiplas etapas.
 
@@ -252,7 +252,7 @@ flowchart TD
 
 ---
 
-# OpenCV e Python
+## OpenCV e Python
 
 OpenCV é uma das bibliotecas mais utilizadas em visão computacional.
 
@@ -266,7 +266,7 @@ Ela permite:
 
 ---
 
-# Exemplo simples com OpenCV
+## Exemplo simples com OpenCV
 
 ```python
 import cv2
@@ -279,11 +279,11 @@ cv2.waitKey(0)
 
 ---
 
-# Pré-processamento de imagens
+## Pré-processamento de imagens
 
 Antes da inferência, normalmente é necessário tratar as imagens.
 
-## Etapas comuns
+### Etapas comuns
 
 * redimensionamento;
 * normalização;
@@ -292,7 +292,7 @@ Antes da inferência, normalmente é necessário tratar as imagens.
 
 ---
 
-# Dataset e treinamento
+## Dataset e treinamento
 
 Modelos supervisionados precisam de datasets anotados.
 
@@ -304,7 +304,7 @@ As anotações geralmente incluem:
 
 ---
 
-# Fluxo de treinamento
+## Fluxo de treinamento
 
 ```mermaid
 flowchart LR
@@ -320,7 +320,7 @@ flowchart LR
 
 ---
 
-# Métricas importantes
+## Métricas importantes
 
 Em visão computacional, algumas métricas são bastante utilizadas.
 
@@ -333,7 +333,7 @@ Em visão computacional, algumas métricas são bastante utilizadas.
 
 ---
 
-# Tempo real e desempenho
+## Tempo real e desempenho
 
 Aplicações de monitoramento frequentemente precisam processar vídeo em tempo real.
 
@@ -346,7 +346,7 @@ Isso exige atenção para:
 
 ---
 
-# CPU vs GPU
+## CPU vs GPU
 
 | CPU                      | GPU                                 |
 | ------------------------ | ----------------------------------- |
@@ -356,7 +356,7 @@ Isso exige atenção para:
 
 ---
 
-# Desafios em visão computacional
+## Desafios em visão computacional
 
 Projetos de visão computacional possuem vários desafios.
 
@@ -370,11 +370,11 @@ Projetos de visão computacional possuem vários desafios.
 
 ---
 
-# Possíveis aplicações
+## Possíveis aplicações
 
 Visão computacional possui aplicações em diversas áreas.
 
-## Exemplos
+### Exemplos
 
 * monitoramento urbano;
 * trânsito inteligente;
@@ -386,7 +386,7 @@ Visão computacional possui aplicações em diversas áreas.
 
 ---
 
-# IA, cidades inteligentes e monitoramento
+## IA, cidades inteligentes e monitoramento
 
 Com o crescimento das chamadas *smart cities*, aplicações de visão computacional passaram a ter um papel importante na análise urbana.
 
@@ -401,7 +401,7 @@ Além disso, projetos experimentais ajudam bastante no aprendizado prático de i
 
 ---
 
-# Conclusão
+## Conclusão
 
 Visão computacional é uma das áreas mais interessantes da inteligência artificial moderna.
 
@@ -419,7 +419,7 @@ Com a evolução de GPUs, datasets e modelos de deep learning, aplicações base
 
 ---
 
-# Referências
+## Referências
 
 * [https://opencv.org/](https://opencv.org/)
 * [https://docs.ultralytics.com/](https://docs.ultralytics.com/)

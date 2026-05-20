@@ -4,7 +4,7 @@ type: page
 showTableOfContents: true
 ---
 
-# Características das Estruturas
+## Características das Estruturas
 
 | **Estrutura** | **Ordenado** | **Mutável** | **Construtor**    | **Exemplo**               |
 | ------------- | ------------ | ----------- | ----------------- | ------------------------- |
@@ -13,7 +13,7 @@ showTableOfContents: true
 | `set`         | Não          | Sim         | `set()`           | `{1, 2.5, 'Pedro', True}` |
 | `dict`        | Sim          | Sim         | `{}` ou `dict()`  | `{6: 'jun', 7: 'jul'}`    |
 
-# Listas
+## Listas
 
 As listas são coleções **ordenadas** e **mutáveis**, usadas para armazenar vários itens em uma única variável.
 
@@ -28,7 +28,7 @@ Saída:
 <class 'list'>
 ```
 
-### Criando lista com `range`
+#### Criando lista com `range`
 
 ```python
 list(range(10))
@@ -40,7 +40,7 @@ Saída:
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
 
-### Criando lista de strings
+#### Criando lista de strings
 
 ```python
 lista = ['uva', 'maçã', 'pêra', 'morango']
@@ -53,7 +53,7 @@ Saída:
 ['uva', 'maçã', 'pêra', 'morango']
 ```
 
-### Criando lista mista
+#### Criando lista mista
 
 ```python
 lista = ['abc', 0.5, True, 90]
@@ -66,7 +66,7 @@ Saída:
 ['abc', 0.5, True, 90]
 ```
 
-### Verificando tamanho
+#### Verificando tamanho
 
 ```python
 lista = ['abc', 0.5, True, 90]
@@ -79,7 +79,7 @@ Saída:
 4
 ```
 
-### Acessando itens
+#### Acessando itens
 
 ```python
 lista = ['uva', 'maçã', 'pêra', 'morango']
@@ -96,7 +96,7 @@ pêra
 morango
 ```
 
-### Lista dentro de lista
+#### Lista dentro de lista
 
 ```python
 usuarios = [
@@ -107,7 +107,7 @@ usuarios = [
 ]
 ```
 
-### Acessando subitens
+#### Acessando subitens
 
 ```python
 lista = [[2, 3, 5], [1, 2], [9, 6, 9]]
@@ -120,7 +120,7 @@ Saída:
 1
 ```
 
-### Fatiamento
+#### Fatiamento
 
 ```python
 lista = [2, 4, 12, 20, 34, 1, 9]
@@ -147,7 +147,7 @@ Saída:
 [2, 12, 34]
 ```
 
-### Percorrendo listas
+#### Percorrendo listas
 
 ```python
 lista = ["uva", "maçã", "pêra", "morango"]
@@ -164,7 +164,7 @@ pêra
 morango
 ```
 
-### Verificando existência
+#### Verificando existência
 
 ```python
 lista = ["uva", "maçã", "pêra", "morango"]
@@ -187,7 +187,7 @@ Saída:
 Saída: Pêra existe na lista!
 ```
 
-### Métodos importantes das listas
+#### Métodos importantes das listas
 
 - `lista.append(x)` – adiciona item
 - `lista.clear()` – limpa a lista
@@ -201,7 +201,7 @@ Saída: Pêra existe na lista!
 - `lista.reverse()` – inverte ordem
 - `lista.sort()` – ordena
 
-# Tuplas
+## Tuplas
 
 Tuplas funcionam como listas, porém são **imutáveis**.
 
@@ -216,7 +216,7 @@ Saída:
 <class 'tuple'>
 ```
 
-### Criando tuplas
+#### Criando tuplas
 
 ```python
 pontoXY = (-2, 5)
@@ -225,7 +225,7 @@ usuarioId = ("143535", "Maria")
 produto = ("Camisa", "P", 56.00, True)
 ```
 
-### Acessando itens
+#### Acessando itens
 
 ```python
 tupla = (2, 5, 3)
@@ -238,12 +238,12 @@ Saída:
 5
 ```
 
-### Métodos das tuplas
+#### Métodos das tuplas
 
 - `tupla.count(x)` – conta ocorrências
 - `tupla.index(x)` – retorna índice do item
 
-# Sets (Conjuntos)
+## Sets (Conjuntos)
 
 Sets são coleções **não ordenadas**, **sem itens duplicados** e **não indexáveis**.
 
@@ -258,7 +258,7 @@ Saída:
 <class 'set'>
 ```
 
-### Operações com sets
+#### Operações com sets
 
 ```python
 x = {'a', 'f', 'c', 'j'}
@@ -282,7 +282,7 @@ Saída:
 {'a', 'c', 'f'}
 ```
 
-### Métodos dos sets
+#### Métodos dos sets
 
 - `conjunto.add(x)`
 - `conjunto.clear()`
@@ -301,7 +301,7 @@ Saída:
 - `conjunto.union(outro)`
 - `conjunto.update(outro)`
 
-# Dicionários
+## Dicionários
 
 Dicionários armazenam pares **chave: valor**.
 
@@ -309,7 +309,7 @@ Dicionários armazenam pares **chave: valor**.
 dicionario = {"chave": "valor"}
 ```
 
-### Criando dicionário
+#### Criando dicionário
 
 ```python
 dicionario = {
@@ -325,7 +325,7 @@ Saída:
 {'nome': 'maria', 'idade': 22, 'sexo': 'feminino'}
 ```
 
-### Acessando valores
+#### Acessando valores
 
 ```python
 print(dicionario["nome"])
@@ -336,7 +336,7 @@ Saída:
 'maria'
 ```
 
-### Tamanho do dicionário
+#### Tamanho do dicionário
 
 ```python
 len(dicionario)
@@ -348,7 +348,7 @@ Saída:
 3
 ```
 
-### Percorrendo dicionário
+#### Percorrendo dicionário
 
 ```python
 livros = {
@@ -369,7 +369,7 @@ Id: 2 | Livro: ['1984', 'George Orwell']
 Id: 3 | Livro: ['O Pequeno Príncipe', 'Antoine de Saint-Exupéry']
 ```
 
-### Métodos importantes
+#### Métodos importantes
 
 - `dicionario.clear()`
 - `dicionario.copy()`
@@ -383,7 +383,7 @@ Id: 3 | Livro: ['O Pequeno Príncipe', 'Antoine de Saint-Exupéry']
 - `dicionario.update({...})`
 - `dicionario.values()`
 
-### Dicionário com tupla como chave
+#### Dicionário com tupla como chave
 
 ```python
 livros = {
@@ -399,7 +399,7 @@ Saída:
 {('Dom Casmurro', 'Machado de Assis'): 1, ('1984', 'George Orwell'): 2, ('O Pequeno Príncipe', 'Antoine de Saint-Exupéry'): 3}
 ```
 
-### Dicionário com lista como valor
+#### Dicionário com lista como valor
 
 ```python
 livros = {
@@ -415,7 +415,7 @@ Saída:
 {1: ['Dom Casmurro', 'Machado de Assis'], 2: ['1984', 'George Orwell'], 3: ['O Pequeno Príncipe'], 4: ['Antoine de Saint-Exupéry']}
 ```
 
-# Exercícios
+## Exercícios
 
 1. Peça 3 notas ao usuário, armazene em uma lista, mostre a maior nota e a média.
 
@@ -427,7 +427,7 @@ Saída:
 
 5. Crie uma lista com 5 pessoas (nome, idade, estado civil). Mostre o mais velho, média das idades, quantidade de solteiros e casados.
 
-## Aulas
+### Aulas
 
 - [Aula 1 - Introdução à Linguagem de Programação Python](/tutorials/python/aula1)
 - [Aula 2 - Operadores e Expressões](/tutorials/python/aula2)

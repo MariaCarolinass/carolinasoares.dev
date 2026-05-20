@@ -33,7 +33,7 @@ O objetivo é compreender:
 
 ---
 
-# Por que Python é tão usado em dados?
+## Por que Python é tão usado em dados?
 
 Python possui um ecossistema extremamente forte para análise de dados.
 
@@ -47,7 +47,7 @@ Algumas das principais vantagens são:
 
 ---
 
-# Bibliotecas principais
+## Bibliotecas principais
 
 | Biblioteca   | Objetivo              |
 | ------------ | --------------------- |
@@ -59,9 +59,9 @@ Algumas das principais vantagens são:
 
 ---
 
-# Instalando as bibliotecas
+## Instalando as bibliotecas
 
-## Comando
+### Comando
 
 ```bash
 pip install pandas matplotlib seaborn numpy
@@ -69,7 +69,7 @@ pip install pandas matplotlib seaborn numpy
 
 ---
 
-# O que é um dataset?
+## O que é um dataset?
 
 Datasets representam conjuntos de dados organizados.
 
@@ -82,7 +82,7 @@ Eles podem estar em formatos como:
 
 ---
 
-# Fluxo básico da análise de dados
+## Fluxo básico da análise de dados
 
 ```mermaid
 flowchart LR
@@ -100,11 +100,11 @@ flowchart LR
 
 ---
 
-# Lendo arquivos CSV
+## Lendo arquivos CSV
 
 Uma das operações mais comuns é carregar arquivos CSV.
 
-## Exemplo
+### Exemplo
 
 ```python
 import pandas as pd
@@ -114,13 +114,13 @@ _df = pd.read_csv('dados.csv')
 
 ---
 
-# Estrutura do DataFrame
+## Estrutura do DataFrame
 
 O Pandas trabalha principalmente com DataFrames.
 
 Um DataFrame funciona como uma tabela.
 
-## Exemplo conceitual
+### Exemplo conceitual
 
 | Nome | Idade | Cidade |
 | ---- | ----- | ------ |
@@ -129,9 +129,9 @@ Um DataFrame funciona como uma tabela.
 
 ---
 
-# Visualizando dados
+## Visualizando dados
 
-## Primeiras linhas
+### Primeiras linhas
 
 ```python
 _df.head()
@@ -139,7 +139,7 @@ _df.head()
 
 ---
 
-## Últimas linhas
+### Últimas linhas
 
 ```python
 _df.tail()
@@ -147,7 +147,7 @@ _df.tail()
 
 ---
 
-# Informações gerais
+## Informações gerais
 
 ```python
 _df.info()
@@ -161,7 +161,7 @@ Essa função ajuda a identificar:
 
 ---
 
-# Estatísticas básicas
+## Estatísticas básicas
 
 ```python
 _df.describe()
@@ -169,9 +169,9 @@ _df.describe()
 
 ---
 
-# Selecionando colunas
+## Selecionando colunas
 
-## Exemplo
+### Exemplo
 
 ```python
 _df['idade']
@@ -179,11 +179,11 @@ _df['idade']
 
 ---
 
-# Filtrando dados
+## Filtrando dados
 
 Uma das operações mais importantes é filtrar informações.
 
-## Exemplo
+### Exemplo
 
 ```python
 _df[_df['idade'] > 18]
@@ -191,7 +191,7 @@ _df[_df['idade'] > 18]
 
 ---
 
-# Fluxo de filtragem
+## Fluxo de filtragem
 
 ```mermaid
 flowchart LR
@@ -205,11 +205,11 @@ flowchart LR
 
 ---
 
-# Valores nulos
+## Valores nulos
 
 Datasets reais frequentemente possuem dados ausentes.
 
-## Verificando valores nulos
+### Verificando valores nulos
 
 ```python
 _df.isnull().sum()
@@ -217,7 +217,7 @@ _df.isnull().sum()
 
 ---
 
-# Removendo valores nulos
+## Removendo valores nulos
 
 ```python
 _df.dropna()
@@ -225,7 +225,7 @@ _df.dropna()
 
 ---
 
-# Substituindo valores
+## Substituindo valores
 
 ```python
 _df.fillna(0)
@@ -233,11 +233,11 @@ _df.fillna(0)
 
 ---
 
-# Limpeza de dados
+## Limpeza de dados
 
 Grande parte da análise de dados envolve limpeza.
 
-## Problemas comuns
+### Problemas comuns
 
 | Problema         | Exemplo                 |
 | ---------------- | ----------------------- |
@@ -248,7 +248,7 @@ Grande parte da análise de dados envolve limpeza.
 
 ---
 
-# Removendo duplicatas
+## Removendo duplicatas
 
 ```python
 _df.drop_duplicates()
@@ -256,7 +256,7 @@ _df.drop_duplicates()
 
 ---
 
-# Conversão de tipos
+## Conversão de tipos
 
 ```python
 _df['idade'] = _df['idade'].astype(int)
@@ -264,11 +264,11 @@ _df['idade'] = _df['idade'].astype(int)
 
 ---
 
-# Agrupamento de dados
+## Agrupamento de dados
 
 Agrupamentos ajudam a gerar análises estatísticas.
 
-## Exemplo
+### Exemplo
 
 ```python
 _df.groupby('cidade').mean()
@@ -276,7 +276,7 @@ _df.groupby('cidade').mean()
 
 ---
 
-# Fluxo de agrupamento
+## Fluxo de agrupamento
 
 ```mermaid
 flowchart TD
@@ -290,7 +290,7 @@ flowchart TD
 
 ---
 
-# Ordenando dados
+## Ordenando dados
 
 ```python
 _df.sort_values(by='idade')
@@ -298,7 +298,7 @@ _df.sort_values(by='idade')
 
 ---
 
-# Visualização de dados
+## Visualização de dados
 
 Visualização é uma das partes mais importantes da análise.
 
@@ -310,9 +310,9 @@ Gráficos ajudam a identificar:
 
 ---
 
-# Criando gráficos
+## Criando gráficos
 
-## Exemplo com Matplotlib
+### Exemplo com Matplotlib
 
 ```python
 import matplotlib.pyplot as plt
@@ -323,7 +323,7 @@ plt.show()
 
 ---
 
-# Gráfico de barras
+## Gráfico de barras
 
 ```python
 _df['cidade'].value_counts().plot(kind='bar')
@@ -331,7 +331,7 @@ _df['cidade'].value_counts().plot(kind='bar')
 
 ---
 
-# Fluxo da visualização
+## Fluxo da visualização
 
 ```mermaid
 flowchart LR
@@ -347,7 +347,7 @@ flowchart LR
 
 ---
 
-# Análise exploratória de dados
+## Análise exploratória de dados
 
 EDA (*Exploratory Data Analysis*) é o processo de explorar dados antes da modelagem.
 
@@ -359,7 +359,7 @@ Ela ajuda a:
 
 ---
 
-# Pipeline de análise exploratória
+## Pipeline de análise exploratória
 
 ```mermaid
 flowchart TD
@@ -377,11 +377,11 @@ flowchart TD
 
 ---
 
-# Trabalhando com múltiplos arquivos
+## Trabalhando com múltiplos arquivos
 
 Em projetos reais, normalmente trabalhamos com vários datasets.
 
-## Exemplo
+### Exemplo
 
 ```python
 pd.concat([df1, df2])
@@ -389,11 +389,11 @@ pd.concat([df1, df2])
 
 ---
 
-# Salvando resultados
+## Salvando resultados
 
 Depois da análise, podemos exportar os dados.
 
-## Exemplo
+### Exemplo
 
 ```python
 _df.to_csv('resultado.csv')
@@ -401,7 +401,7 @@ _df.to_csv('resultado.csv')
 
 ---
 
-# Jupyter Notebook
+## Jupyter Notebook
 
 Jupyter Notebook é bastante utilizado em análise de dados.
 
@@ -413,7 +413,7 @@ Ele permite:
 
 ---
 
-# Instalando Jupyter
+## Instalando Jupyter
 
 ```bash
 pip install notebook
@@ -421,7 +421,7 @@ pip install notebook
 
 ---
 
-# Executando
+## Executando
 
 ```bash
 jupyter notebook
@@ -429,7 +429,7 @@ jupyter notebook
 
 ---
 
-# Possíveis aplicações
+## Possíveis aplicações
 
 Análise de dados possui aplicações em:
 
@@ -442,7 +442,7 @@ Análise de dados possui aplicações em:
 
 ---
 
-# Conceitos importantes aprendidos
+## Conceitos importantes aprendidos
 
 Projetos de análise de dados ajudam bastante no aprendizado de:
 
@@ -454,11 +454,11 @@ Projetos de análise de dados ajudam bastante no aprendizado de:
 
 ---
 
-# Possíveis evoluções
+## Possíveis evoluções
 
 Depois da análise básica, várias evoluções podem ser adicionadas.
 
-## Exemplos
+### Exemplos
 
 * dashboards;
 * machine learning;
@@ -469,7 +469,7 @@ Depois da análise básica, várias evoluções podem ser adicionadas.
 
 ---
 
-# Conclusão
+## Conclusão
 
 Análise de dados é uma das áreas mais importantes da tecnologia moderna.
 
@@ -486,7 +486,7 @@ Com o crescimento do volume de dados no mundo, compreender análise de dados se 
 
 ---
 
-# Referências
+## Referências
 
 * [https://pandas.pydata.org/](https://pandas.pydata.org/)
 * [https://numpy.org/](https://numpy.org/)

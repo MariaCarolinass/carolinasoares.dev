@@ -9,7 +9,7 @@ description: "Uma introdução aos principais métodos numéricos utilizados em 
 type: "post"
 ------------
 
-# Métodos numéricos com Python: fundamentos da computação científica
+## Métodos numéricos com Python: fundamentos da computação científica
 
 Grande parte dos problemas modernos da computação depende de aproximações matemáticas.
 
@@ -37,7 +37,7 @@ Neste artigo vamos explorar os principais conceitos e métodos utilizados em com
 
 ---
 
-# O que é computação numérica?
+## O que é computação numérica?
 
 Computação numérica é a área responsável por resolver problemas matemáticos utilizando algoritmos computacionais.
 
@@ -50,7 +50,7 @@ Em vez de trabalhar apenas com soluções exatas, métodos numéricos trabalham 
 
 ---
 
-# Fluxo da computação numérica
+## Fluxo da computação numérica
 
 ```mermaid
 flowchart LR
@@ -68,13 +68,13 @@ flowchart LR
 
 ---
 
-# Representação numérica em computadores
+## Representação numérica em computadores
 
 Computadores representam números utilizando bits.
 
 Por isso, nem todos os valores reais conseguem ser armazenados exatamente.
 
-## Exemplo clássico
+### Exemplo clássico
 
 ```python
 print(0.1 + 0.2)
@@ -88,11 +88,11 @@ Resultado:
 
 ---
 
-# Erros numéricos
+## Erros numéricos
 
 Métodos computacionais sempre possuem algum nível de erro.
 
-## Tipos comuns
+### Tipos comuns
 
 | Tipo                   | Descrição                |
 | ---------------------- | ------------------------ |
@@ -103,7 +103,7 @@ Métodos computacionais sempre possuem algum nível de erro.
 
 ---
 
-# Fluxo de erro numérico
+## Fluxo de erro numérico
 
 ```mermaid
 flowchart TD
@@ -119,11 +119,11 @@ flowchart TD
 
 ---
 
-# Python e computação científica
+## Python e computação científica
 
 Python possui um ecossistema extremamente forte para computação numérica.
 
-## Bibliotecas principais
+### Bibliotecas principais
 
 | Biblioteca | Objetivo             |
 | ---------- | -------------------- |
@@ -134,7 +134,7 @@ Python possui um ecossistema extremamente forte para computação numérica.
 
 ---
 
-# Instalando bibliotecas
+## Instalando bibliotecas
 
 ```bash
 pip install numpy scipy matplotlib sympy
@@ -142,11 +142,11 @@ pip install numpy scipy matplotlib sympy
 
 ---
 
-# Vetores e matrizes
+## Vetores e matrizes
 
 Grande parte da computação numérica depende de vetores e matrizes.
 
-## Exemplo com NumPy
+### Exemplo com NumPy
 
 ```python
 import numpy as np
@@ -156,7 +156,7 @@ vetor = np.array([1,2,3])
 
 ---
 
-# Matrizes
+## Matrizes
 
 ```python
 matriz = np.array([
@@ -167,7 +167,7 @@ matriz = np.array([
 
 ---
 
-# Álgebra linear
+## Álgebra linear
 
 Álgebra linear é fundamental em:
 
@@ -178,7 +178,7 @@ matriz = np.array([
 
 ---
 
-# Fluxo da álgebra linear
+## Fluxo da álgebra linear
 
 ```mermaid
 flowchart LR
@@ -194,11 +194,11 @@ flowchart LR
 
 ---
 
-# Sistemas lineares
+## Sistemas lineares
 
 Um dos problemas mais comuns da computação científica é resolver sistemas lineares.
 
-## Exemplo
+### Exemplo
 
 $$
 \begin{cases}
@@ -210,7 +210,7 @@ $$
 
 ---
 
-# Resolvendo sistemas com NumPy
+## Resolvendo sistemas com NumPy
 
 ```python
 A = np.array([
@@ -227,11 +227,11 @@ print(x)
 
 ---
 
-# Métodos iterativos
+## Métodos iterativos
 
 Métodos iterativos trabalham através de aproximações sucessivas.
 
-## Exemplos
+### Exemplos
 
 * Jacobi;
 * Gauss-Seidel;
@@ -239,11 +239,11 @@ Métodos iterativos trabalham através de aproximações sucessivas.
 
 ---
 
-# Método de Jacobi
+## Método de Jacobi
 
 O método de Jacobi utiliza aproximações sucessivas para resolver sistemas lineares.
 
-## Fluxo simplificado
+### Fluxo simplificado
 
 ```mermaid
 flowchart TD
@@ -260,11 +260,11 @@ flowchart TD
 
 ---
 
-# Método de Newton-Raphson
+## Método de Newton-Raphson
 
 O método de Newton é utilizado para encontrar raízes de funções.
 
-## Fórmula
+### Fórmula
 
 $$
 x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}
@@ -272,7 +272,7 @@ $$
 
 ---
 
-# Fluxo do método de Newton
+## Fluxo do método de Newton
 
 ```mermaid
 flowchart TD
@@ -288,7 +288,7 @@ flowchart TD
 
 ---
 
-# Exemplo em Python
+## Exemplo em Python
 
 ```python
 import math
@@ -303,11 +303,11 @@ print(x)
 
 ---
 
-# Interpolação
+## Interpolação
 
 Interpolação busca estimar valores intermediários.
 
-## Aplicações
+### Aplicações
 
 * gráficos;
 * simulações;
@@ -316,7 +316,7 @@ Interpolação busca estimar valores intermediários.
 
 ---
 
-# Interpolação linear
+## Interpolação linear
 
 A interpolação linear utiliza uma reta entre dois pontos.
 
@@ -326,13 +326,13 @@ $$
 
 ---
 
-# Integração numérica
+## Integração numérica
 
 Nem sempre integrais possuem solução analítica simples.
 
 Por isso, métodos numéricos são utilizados.
 
-## Métodos comuns
+### Métodos comuns
 
 | Método      | Característica      |
 | ----------- | ------------------- |
@@ -342,7 +342,7 @@ Por isso, métodos numéricos são utilizados.
 
 ---
 
-# Método dos trapézios
+## Método dos trapézios
 
 $$
 \int_a^b f(x)\,dx \approx \frac{h}{2}\bigl(f(a) + f(b)\bigr)
@@ -350,7 +350,7 @@ $$
 
 ---
 
-# Fluxo da integração numérica
+## Fluxo da integração numérica
 
 ```mermaid
 flowchart LR
@@ -366,11 +366,11 @@ flowchart LR
 
 ---
 
-# Derivação numérica
+## Derivação numérica
 
 Também podemos aproximar derivadas.
 
-## Aproximação simples
+### Aproximação simples
 
 $$
 f'(x) \approx \frac{f(x + h) - f(x)}{h}
@@ -378,7 +378,7 @@ $$
 
 ---
 
-# Equações diferenciais
+## Equações diferenciais
 
 Equações diferenciais aparecem em:
 
@@ -389,11 +389,11 @@ Equações diferenciais aparecem em:
 
 ---
 
-# Método de Euler
+## Método de Euler
 
 O método de Euler é utilizado para aproximar soluções de equações diferenciais.
 
-## Fórmula
+### Fórmula
 
 $$
 y_{n+1} = y_n + h\,f(x_n, y_n)
@@ -401,7 +401,7 @@ $$
 
 ---
 
-# Fluxo do método de Euler
+## Fluxo do método de Euler
 
 ```mermaid
 flowchart TD
@@ -417,11 +417,11 @@ flowchart TD
 
 ---
 
-# Visualização de resultados
+## Visualização de resultados
 
 Visualização é extremamente importante em computação científica.
 
-## Exemplo com Matplotlib
+### Exemplo com Matplotlib
 
 ```python
 import matplotlib.pyplot as plt
@@ -432,11 +432,11 @@ plt.show()
 
 ---
 
-# Simulações
+## Simulações
 
 Métodos numéricos são muito utilizados em simulações.
 
-## Áreas comuns
+### Áreas comuns
 
 * clima;
 * física;
@@ -446,7 +446,7 @@ Métodos numéricos são muito utilizados em simulações.
 
 ---
 
-# Pipeline científico
+## Pipeline científico
 
 ```mermaid
 flowchart LR
@@ -464,11 +464,11 @@ flowchart LR
 
 ---
 
-# Computação numérica e machine learning
+## Computação numérica e machine learning
 
 Grande parte do machine learning moderno depende diretamente de métodos numéricos.
 
-## Exemplos
+### Exemplos
 
 * gradiente descendente;
 * otimização;
@@ -478,7 +478,7 @@ Grande parte do machine learning moderno depende diretamente de métodos numéri
 
 ---
 
-# Conceitos importantes aprendidos
+## Conceitos importantes aprendidos
 
 Projetos de computação numérica ajudam bastante no aprendizado de:
 
@@ -490,11 +490,11 @@ Projetos de computação numérica ajudam bastante no aprendizado de:
 
 ---
 
-# Possíveis evoluções
+## Possíveis evoluções
 
 Depois dos conceitos básicos, várias áreas podem ser exploradas.
 
-## Exemplos
+### Exemplos
 
 * machine learning;
 * computação paralela;
@@ -504,7 +504,7 @@ Depois dos conceitos básicos, várias áreas podem ser exploradas.
 
 ---
 
-# Conclusão
+## Conclusão
 
 Métodos numéricos são fundamentais para a computação moderna.
 
@@ -521,7 +521,7 @@ Além disso, computação numérica cria uma excelente base para áreas como ci�
 
 ---
 
-# Referências
+## Referências
 
 * [https://cn.ect.ufrn.br/](https://cn.ect.ufrn.br/)
 * [https://numpy.org/](https://numpy.org/)

@@ -17,7 +17,7 @@ Além de disponibilizar ferramentas gratuitas e abertas, o software livre promov
 
 ---
 
-# O que é inclusão digital?
+## O que é inclusão digital?
 
 A inclusão digital envolve garantir que todas as pessoas consigam acessar, compreender e utilizar tecnologias digitais de maneira efetiva.
 
@@ -31,7 +31,7 @@ Isso inclui:
 
 Mais do que disponibilizar computadores ou conexão, inclusão digital significa permitir que indivíduos participem ativamente da sociedade digital.
 
-## Inclusão digital e cidadania
+### Inclusão digital e cidadania
 
 ```mermaid
 flowchart LR
@@ -51,7 +51,7 @@ A exclusão digital pode ampliar desigualdades sociais e limitar o acesso à edu
 
 ---
 
-# O que é software livre?
+## O que é software livre?
 
 O software livre é um modelo de desenvolvimento baseado em liberdade, colaboração e compartilhamento.
 
@@ -63,7 +63,7 @@ Segundo o Projeto GNU, um software é considerado livre quando usuários possuem
 * distribuir cópias;
 * compartilhar melhorias.
 
-## As quatro liberdades do software livre
+### As quatro liberdades do software livre
 
 ```mermaid
 mindmap
@@ -78,7 +78,7 @@ Esse modelo incentiva construção coletiva de conhecimento e desenvolvimento ab
 
 ---
 
-# Software livre e colaboração
+## Software livre e colaboração
 
 O movimento do software livre possui forte relação com colaboração comunitária.
 
@@ -91,7 +91,7 @@ Isso permite que:
 * funcionalidades sejam aprimoradas;
 * conhecimento técnico seja compartilhado.
 
-## Modelo colaborativo do software livre
+### Modelo colaborativo do software livre
 
 ```mermaid
 flowchart TD
@@ -110,13 +110,13 @@ Esse modelo ajudou no desenvolvimento de tecnologias amplamente utilizadas atual
 
 ---
 
-# Como o software livre contribui para inclusão digital
+## Como o software livre contribui para inclusão digital
 
 O software livre reduz barreiras econômicas e tecnológicas relacionadas ao acesso digital.
 
 Ferramentas abertas e gratuitas permitem que pessoas, escolas, universidades e organizações utilizem tecnologias sem depender de licenças proprietárias caras.
 
-## Benefícios do software livre
+### Benefícios do software livre
 
 | Benefício                 | Impacto                        |
 | ------------------------- | ------------------------------ |
@@ -130,7 +130,7 @@ Além disso, o software livre permite compreender melhor como sistemas funcionam
 
 ---
 
-# Transparência e autonomia digital
+## Transparência e autonomia digital
 
 Softwares proprietários normalmente possuem código fechado, limitando o entendimento sobre funcionamento interno, coleta de dados e privacidade.
 
@@ -144,7 +144,7 @@ Isso favorece:
 * privacidade;
 * independência tecnológica.
 
-## Relação entre software livre e autonomia
+### Relação entre software livre e autonomia
 
 ```mermaid
 flowchart LR
@@ -162,7 +162,7 @@ Esse aspecto é especialmente importante em projetos públicos de inclusão digi
 
 ---
 
-# Software livre e educação
+## Software livre e educação
 
 O software livre também possui forte impacto educacional.
 
@@ -184,7 +184,7 @@ Isso estimula:
 
 ---
 
-# O problema da dependência de softwares proprietários
+## O problema da dependência de softwares proprietários
 
 Projetos de inclusão digital frequentemente utilizam softwares proprietários com:
 
@@ -204,7 +204,7 @@ Por isso, muitas iniciativas defendem adoção de soluções abertas em:
 
 ---
 
-# GNU/Linux e cultura de software livre
+## GNU/Linux e cultura de software livre
 
 O GNU/Linux é um dos maiores exemplos de software livre.
 
@@ -216,7 +216,7 @@ Distribuições Linux são utilizadas em:
 * supercomputadores;
 * ambientes acadêmicos.
 
-## Distribuições populares
+### Distribuições populares
 
 * Debian
 * Ubuntu
@@ -228,7 +228,7 @@ O uso dessas tecnologias fortalece a cultura de compartilhamento e desenvolvimen
 
 ---
 
-# Ferramentas livres e alternativas abertas
+## Ferramentas livres e alternativas abertas
 
 Atualmente existem alternativas livres para diversas ferramentas proprietárias.
 
@@ -246,7 +246,7 @@ Plataformas como [AlternativeTo](https://alternativeto.net/) ajudam usuários a 
 
 ---
 
-# Inclusão digital como construção coletiva
+## Inclusão digital como construção coletiva
 
 A inclusão digital não depende apenas de infraestrutura tecnológica.
 
@@ -257,7 +257,7 @@ Ela também envolve:
 * educação digital;
 * participação coletiva.
 
-## Relação entre software livre e democratização da internet
+### Relação entre software livre e democratização da internet
 
 ```mermaid
 flowchart TD
@@ -275,7 +275,7 @@ O movimento do software livre contribui para construção de tecnologias mais ab
 
 ---
 
-# Conclusão
+## Conclusão
 
 O software livre desempenha papel importante na construção de uma internet mais inclusiva e democrática.
 
@@ -287,7 +287,7 @@ Fortalecer a inclusão digital passa não apenas por ampliar acesso à internet,
 
 ---
 
-# Referências
+## Referências
 
 * [https://www.gnu.org/philosophy/free-sw.pt-br.html](https://www.gnu.org/philosophy/free-sw.pt-br.html)
 * [https://www.gnu.org/](https://www.gnu.org/)

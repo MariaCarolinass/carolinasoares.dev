@@ -17,7 +17,7 @@ Construir uma internet mais acessível não é apenas uma questão técnica, mas
 
 ---
 
-# O que é acessibilidade na web?
+## O que é acessibilidade na web?
 
 A acessibilidade na web consiste em desenvolver sites, sistemas e conteúdos digitais que possam ser utilizados pelo maior número possível de pessoas, independentemente de suas limitações físicas, cognitivas ou tecnológicas.
 
@@ -35,7 +35,7 @@ O objetivo é garantir que todas as pessoas consigam navegar, compreender e inte
 
 ---
 
-# A web como um espaço coletivo
+## A web como um espaço coletivo
 
 A governança da internet é construída coletivamente.
 
@@ -43,7 +43,7 @@ Isso significa que a web deve ser um ambiente aberto, democrático e acessível 
 
 O acesso à informação é considerado um direito universal e, portanto, barreiras digitais representam também formas de exclusão social.
 
-## Relação entre acessibilidade e inclusão digital
+### Relação entre acessibilidade e inclusão digital
 
 ```mermaid
 flowchart LR
@@ -61,7 +61,7 @@ Quando um site não é acessível, parte da população fica impedida de acessar
 
 ---
 
-# O papel da W3C
+## O papel da W3C
 
 A [W3C](https://www.w3.org/) (World Wide Web Consortium) é uma organização internacional responsável pela criação de padrões para a web.
 
@@ -69,7 +69,7 @@ Entre suas iniciativas mais importantes estão as diretrizes de acessibilidade c
 
 Essas diretrizes ajudam desenvolvedores a criarem sites mais acessíveis e compatíveis com diferentes tecnologias assistivas.
 
-## Alguns princípios das WCAG
+### Alguns princípios das WCAG
 
 ```mermaid
 mindmap
@@ -80,7 +80,7 @@ mindmap
     Robusto
 ```
 
-### Exemplos práticos
+#### Exemplos práticos
 
 * utilização correta de HTML semântico;
 * contraste adequado entre texto e fundo;
@@ -91,13 +91,13 @@ mindmap
 
 ---
 
-# Acessibilidade digital no Brasil
+## Acessibilidade digital no Brasil
 
 No Brasil, a acessibilidade digital é respaldada pela Lei Brasileira de Inclusão (LBI).
 
 A legislação determina que sites públicos e privados devem garantir acessibilidade para pessoas com deficiência.
 
-## Lei Brasileira de Inclusão
+### Lei Brasileira de Inclusão
 
 A LBI estabelece que:
 
@@ -109,7 +109,7 @@ Mesmo com avanços legislativos, a aplicação prática ainda enfrenta muitos de
 
 ---
 
-# O cenário atual da acessibilidade na web
+## O cenário atual da acessibilidade na web
 
 Diversos estudos mostram que grande parte dos sites brasileiros ainda não atende requisitos básicos de acessibilidade.
 
@@ -129,7 +129,7 @@ Além disso, muitos portais governamentais apresentam:
 * falhas estruturais;
 * dificuldades de navegação.
 
-## Impactos da falta de acessibilidade
+### Impactos da falta de acessibilidade
 
 ```mermaid
 flowchart TD
@@ -147,13 +147,13 @@ A ausência de acessibilidade limita o acesso à educação, serviços públicos
 
 ---
 
-# HTML semântico e acessibilidade
+## HTML semântico e acessibilidade
 
 Grande parte da acessibilidade começa na estrutura correta do HTML.
 
 O HTML semântico ajuda navegadores e tecnologias assistivas a interpretarem corretamente o conteúdo de uma página.
 
-## Exemplos de elementos semânticos
+### Exemplos de elementos semânticos
 
 | Elemento    | Função                |
 | ----------- | --------------------- |
@@ -173,7 +173,7 @@ Uma estrutura semântica melhora:
 
 ---
 
-# Tecnologias assistivas
+## Tecnologias assistivas
 
 As tecnologias assistivas permitem que pessoas com deficiência consigam utilizar dispositivos digitais.
 
@@ -189,7 +189,7 @@ Por isso, acessibilidade não deve ser tratada como um recurso opcional, mas com
 
 ---
 
-# O papel dos desenvolvedores
+## O papel dos desenvolvedores
 
 Desenvolvedores possuem responsabilidade importante na construção de uma web mais inclusiva.
 
@@ -201,7 +201,7 @@ Criar interfaces acessíveis exige:
 * preocupação com experiência do usuário;
 * validações constantes.
 
-## Fluxo de desenvolvimento acessível
+### Fluxo de desenvolvimento acessível
 
 ```mermaid
 flowchart LR
@@ -219,7 +219,7 @@ A acessibilidade deve estar presente desde o planejamento do projeto.
 
 ---
 
-# Conclusão
+## Conclusão
 
 Construir uma internet mais acessível é um desafio coletivo que envolve tecnologia, legislação, educação digital e responsabilidade social.
 
@@ -231,7 +231,7 @@ Criar aplicações acessíveis é contribuir para uma internet mais democrática
 
 ---
 
-# Referências
+## Referências
 
 * [https://www.w3.org/](https://www.w3.org/)
 * [https://www.w3.org/WAI/standards-guidelines/wcag/](https://www.w3.org/WAI/standards-guidelines/wcag/)

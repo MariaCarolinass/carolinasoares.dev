@@ -8,7 +8,7 @@ description: "Como documentação de regras de negócio, IA generativa e padroni
 type: "post"
 ------------
 
-# Documentação técnica, IA e padronização de APIs
+## Documentação técnica, IA e padronização de APIs
 
 Aplicações maiores normalmente acumulam uma grande quantidade de regras de negócio, validações, fluxos internos e comportamentos específicos.
 
@@ -36,7 +36,7 @@ Neste artigo vamos discutir:
 
 ---
 
-# O problema da documentação em aplicações reais
+## O problema da documentação em aplicações reais
 
 Muitos sistemas possuem regras importantes implementadas diretamente na lógica da aplicação, mas sem documentação centralizada.
 
@@ -62,13 +62,13 @@ Sem uma documentação clara, entender o comportamento real do sistema pode exig
 
 ---
 
-# Documentação de regras de negócio
+## Documentação de regras de negócio
 
 Uma alternativa interessante é criar uma documentação voltada especificamente para desenvolvedores.
 
 O objetivo não é substituir documentação de usuário, mas centralizar regras importantes do sistema.
 
-## Exemplo de regra
+### Exemplo de regra
 
 > Um cupom de desconto só pode ser utilizado em compras acima de R$100. Caso o cupom seja do tipo frete grátis, ele não pode ser combinado com outros descontos.
 
@@ -83,7 +83,7 @@ Sem documentação centralizada, esse tipo de comportamento pode passar desperce
 
 ---
 
-# Rastreabilidade entre documentação e código
+## Rastreabilidade entre documentação e código
 
 Uma prática útil é criar rastreabilidade entre:
 
@@ -97,7 +97,7 @@ Isso facilita localizar:
 * serviços;
 * regras críticas.
 
-## Estrutura proposta
+### Estrutura proposta
 
 ```mermaid
 flowchart LR
@@ -113,7 +113,7 @@ flowchart LR
 
 ---
 
-# Estrutura sugerida para documentação
+## Estrutura sugerida para documentação
 
 Uma possibilidade é:
 
@@ -125,7 +125,7 @@ Uma possibilidade é:
 
 ---
 
-# Modelo de documentação
+## Modelo de documentação
 
 | Campo          | Objetivo              |
 | -------------- | --------------------- |
@@ -137,7 +137,7 @@ Uma possibilidade é:
 
 ---
 
-# Exemplo prático
+## Exemplo prático
 
 ```markdown
 ## Uso de cupom promocional
@@ -156,11 +156,11 @@ Cupons de frete grátis não podem ser combinados com outros descontos.
 
 ---
 
-# Benefícios da documentação técnica
+## Benefícios da documentação técnica
 
 Documentação de regras de negócio pode trazer diversos benefícios.
 
-## Principais vantagens
+### Principais vantagens
 
 | Benefício    | Impacto                                |
 | ------------ | -------------------------------------- |
@@ -172,7 +172,7 @@ Documentação de regras de negócio pode trazer diversos benefícios.
 
 ---
 
-# IA generativa aplicada à documentação
+## IA generativa aplicada à documentação
 
 Ferramentas de IA generativa podem ajudar bastante no processo de documentação técnica.
 
@@ -188,13 +188,13 @@ A IA pode auxiliar em:
 
 ---
 
-# Exemplos de uso de IA
+## Exemplos de uso de IA
 
-## Docstrings automáticas
+### Docstrings automáticas
 
 Uma possibilidade é pedir para IA documentar módulos importantes.
 
-### Exemplo
+#### Exemplo
 
 ```text
 Documenta a API pública de services/payment_service.py
@@ -202,11 +202,11 @@ Documenta a API pública de services/payment_service.py
 
 ---
 
-## Diagramas e fluxos
+### Diagramas e fluxos
 
 A IA também pode auxiliar na criação de diagramas Mermaid.
 
-### Exemplo
+#### Exemplo
 
 ```text
 Descreva o fluxo de finalização de compra em Mermaid.
@@ -214,7 +214,7 @@ Descreva o fluxo de finalização de compra em Mermaid.
 
 ---
 
-## Atualização de documentação durante refatoração
+### Atualização de documentação durante refatoração
 
 Outro uso interessante:
 
@@ -224,11 +224,11 @@ Refatora o módulo de pagamentos e atualiza README e docs/regras-de-negocio.md c
 
 ---
 
-# Revisão automática de documentação
+## Revisão automática de documentação
 
 Também é possível utilizar IA para comparar documentação com código.
 
-## Exemplo
+### Exemplo
 
 ```text
 Compare docs/regras-de-negocio.md com services/ e validators/ e informe possíveis inconsistências.
@@ -236,7 +236,7 @@ Compare docs/regras-de-negocio.md com services/ e validators/ e informe possíve
 
 ---
 
-# Fluxo de documentação com IA
+## Fluxo de documentação com IA
 
 ```mermaid
 flowchart TD
@@ -252,7 +252,7 @@ flowchart TD
 
 ---
 
-# AGENTS.md e instruções para IA
+## AGENTS.md e instruções para IA
 
 Alguns projetos utilizam arquivos como `AGENTS.md` para orientar ferramentas de IA sobre:
 
@@ -275,7 +275,7 @@ Por isso, a recomendação é manter regras:
 
 ---
 
-# ADRs e documentação arquitetural
+## ADRs e documentação arquitetural
 
 ADRs (*Architecture Decision Records*) ajudam a registrar decisões técnicas importantes.
 
@@ -287,7 +287,7 @@ Eles documentam:
 * consequências;
 * alternativas consideradas.
 
-## Estrutura de um ADR
+### Estrutura de um ADR
 
 ```mermaid
 flowchart LR
@@ -303,7 +303,7 @@ flowchart LR
 
 ---
 
-# IA e Design Docs
+## IA e Design Docs
 
 Design Docs também podem ser fortalecidos com IA.
 
@@ -323,7 +323,7 @@ Isso ajuda bastante em:
 
 ---
 
-# Padronização de APIs
+## Padronização de APIs
 
 Outro ponto importante é a padronização das APIs.
 
@@ -339,9 +339,9 @@ Boas práticas comuns incluem:
 
 ---
 
-# Exemplo de modularização de rotas
+## Exemplo de modularização de rotas
 
-## Antes
+### Antes
 
 ```mermaid
 flowchart TD
@@ -355,7 +355,7 @@ flowchart TD
 
 ---
 
-## Depois
+### Depois
 
 ```mermaid
 flowchart TD
@@ -382,7 +382,7 @@ Entretanto, alterações em APIs precisam ser realizadas com cautela, principalm
 
 ---
 
-# Relação entre documentação e APIs
+## Relação entre documentação e APIs
 
 Documentação e padronização caminham juntas.
 
@@ -394,7 +394,7 @@ APIs inconsistentes dificultam:
 * geração de documentação;
 * integração entre sistemas.
 
-## Fluxo ideal
+### Fluxo ideal
 
 ```mermaid
 flowchart LR
@@ -410,7 +410,7 @@ flowchart LR
 
 ---
 
-# Conclusão
+## Conclusão
 
 Documentação técnica não deve ser vista apenas como complemento do projeto.
 
@@ -424,7 +424,7 @@ Por fim, documentação, padronização de APIs e organização arquitetural for
 
 ---
 
-# Links
+## Links
 
 * [https://medium.com/@jhonywalkeer/guia-completo-sobre-architecture-decision-records-adr-defini%C3%A7%C3%A3o-e-melhores-pr%C3%A1ticas-f63e66d33e6](https://medium.com/@jhonywalkeer/guia-completo-sobre-architecture-decision-records-adr-defini%C3%A7%C3%A3o-e-melhores-pr%C3%A1ticas-f63e66d33e6)
 * [https://medium.com/@zarantonello/padroniza%C3%A7%C3%A3o-de-api-18164ff980a7](https://medium.com/@zarantonello/padroniza%C3%A7%C3%A3o-de-api-18164ff980a7)

@@ -9,7 +9,7 @@ description: "Aprenda conceitos fundamentais de computação gráfica criando um
 type: "post"
 ------------
 
-# Criando um escultor 3D em C++: introdução à computação gráfica
+## Criando um escultor 3D em C++: introdução à computação gráfica
 
 Computação gráfica é uma área fascinante da computação responsável pela criação e manipulação de imagens digitais.
 
@@ -33,7 +33,7 @@ O objetivo é entender:
 
 ---
 
-# O que é um escultor 3D?
+## O que é um escultor 3D?
 
 Um escultor 3D é uma aplicação capaz de criar objetos tridimensionais a partir da manipulação de pequenos blocos chamados voxels.
 
@@ -41,13 +41,13 @@ Esses sistemas funcionam de forma semelhante a programas de modelagem volumétri
 
 ---
 
-# O que são voxels?
+## O que são voxels?
 
 Voxels (*volumetric pixels*) representam unidades cúbicas em um espaço tridimensional.
 
 Enquanto imagens 2D utilizam pixels, ambientes 3D podem utilizar voxels.
 
-## Comparação
+### Comparação
 
 | Estrutura | Dimensão |
 | --------- | -------- |
@@ -56,7 +56,7 @@ Enquanto imagens 2D utilizam pixels, ambientes 3D podem utilizar voxels.
 
 ---
 
-# Representação espacial
+## Representação espacial
 
 ```mermaid
 flowchart LR
@@ -70,11 +70,11 @@ flowchart LR
 
 ---
 
-# Estrutura do projeto
+## Estrutura do projeto
 
 Uma abordagem comum é criar uma matriz tridimensional de voxels.
 
-## Exemplo conceitual
+### Exemplo conceitual
 
 ```cpp
 Voxel ***v;
@@ -84,11 +84,11 @@ Cada posição da matriz representa um pequeno bloco no espaço.
 
 ---
 
-# Criando a estrutura Voxel
+## Criando a estrutura Voxel
 
 Primeiro criamos uma estrutura responsável por armazenar informações do voxel.
 
-## Exemplo
+### Exemplo
 
 ```cpp
 struct Voxel {
@@ -100,7 +100,7 @@ struct Voxel {
 
 ---
 
-# Explicando os atributos
+## Explicando os atributos
 
 | Atributo | Objetivo                     |
 | -------- | ---------------------------- |
@@ -112,11 +112,11 @@ struct Voxel {
 
 ---
 
-# Criando a classe Sculptor
+## Criando a classe Sculptor
 
 A classe principal será responsável por controlar o espaço tridimensional.
 
-## Estrutura inicial
+### Estrutura inicial
 
 ```cpp
 class Sculptor {
@@ -132,11 +132,11 @@ public:
 
 ---
 
-# Entendendo a matriz 3D
+## Entendendo a matriz 3D
 
 A matriz tridimensional representa o volume da escultura.
 
-## Fluxo simplificado
+### Fluxo simplificado
 
 ```mermaid
 flowchart TD
@@ -152,11 +152,11 @@ flowchart TD
 
 ---
 
-# Criando o construtor
+## Criando o construtor
 
 O construtor será responsável por alocar dinamicamente os voxels.
 
-## Exemplo
+### Exemplo
 
 ```cpp
 Sculptor::Sculptor(int nx, int ny, int nz){
@@ -168,11 +168,11 @@ Sculptor::Sculptor(int nx, int ny, int nz){
 
 ---
 
-# Alocação dinâmica
+## Alocação dinâmica
 
 Como estamos trabalhando com uma estrutura tridimensional, normalmente utilizamos alocação dinâmica de memória.
 
-## Exemplo simplificado
+### Exemplo simplificado
 
 ```cpp
 v = new Voxel**[nx];
@@ -180,11 +180,11 @@ v = new Voxel**[nx];
 
 ---
 
-# Destrutor
+## Destrutor
 
 O destrutor é importante para liberar memória.
 
-## Exemplo
+### Exemplo
 
 ```cpp
 Sculptor::~Sculptor(){
@@ -194,11 +194,11 @@ Sculptor::~Sculptor(){
 
 ---
 
-# Ativando voxels
+## Ativando voxels
 
 Agora precisamos criar funções capazes de ativar voxels.
 
-## Exemplo
+### Exemplo
 
 ```cpp
 void putVoxel(int x, int y, int z);
@@ -206,7 +206,7 @@ void putVoxel(int x, int y, int z);
 
 ---
 
-# Implementando putVoxel
+## Implementando putVoxel
 
 ```cpp
 void Sculptor::putVoxel(int x, int y, int z){
@@ -216,11 +216,11 @@ void Sculptor::putVoxel(int x, int y, int z){
 
 ---
 
-# Desativando voxels
+## Desativando voxels
 
 Também podemos remover voxels.
 
-## Exemplo
+### Exemplo
 
 ```cpp
 void cutVoxel(int x, int y, int z){
@@ -230,11 +230,11 @@ void cutVoxel(int x, int y, int z){
 
 ---
 
-# Trabalhando com cores
+## Trabalhando com cores
 
 Uma função útil é permitir alteração das cores atuais.
 
-## Exemplo
+### Exemplo
 
 ```cpp
 void setColor(float r, float g, float b, float alpha);
@@ -242,7 +242,7 @@ void setColor(float r, float g, float b, float alpha);
 
 ---
 
-# Implementação simplificada
+## Implementação simplificada
 
 ```cpp
 void Sculptor::setColor(float r, float g, float b, float alpha){
@@ -255,11 +255,11 @@ void Sculptor::setColor(float r, float g, float b, float alpha){
 
 ---
 
-# Criando formas geométricas
+## Criando formas geométricas
 
 Depois de manipular voxels individuais, podemos criar formas maiores.
 
-## Exemplos
+### Exemplos
 
 * caixas;
 * esferas;
@@ -267,9 +267,9 @@ Depois de manipular voxels individuais, podemos criar formas maiores.
 
 ---
 
-# Criando caixas
+## Criando caixas
 
-## Assinatura
+### Assinatura
 
 ```cpp
 void putBox(int x0, int x1, int y0, int y1, int z0, int z1);
@@ -277,7 +277,7 @@ void putBox(int x0, int x1, int y0, int y1, int z0, int z1);
 
 ---
 
-# Fluxo da criação de caixas
+## Fluxo da criação de caixas
 
 ```mermaid
 flowchart LR
@@ -291,7 +291,7 @@ flowchart LR
 
 ---
 
-# Exemplo simplificado
+## Exemplo simplificado
 
 ```cpp
 for(int i=x0; i<x1; i++){
@@ -305,11 +305,11 @@ for(int i=x0; i<x1; i++){
 
 ---
 
-# Criando esferas
+## Criando esferas
 
 Também podemos gerar esferas utilizando equações matemáticas.
 
-## Assinatura
+### Assinatura
 
 ```cpp
 void putSphere(int xcenter, int ycenter, int zcenter, int radius);
@@ -317,7 +317,7 @@ void putSphere(int xcenter, int ycenter, int zcenter, int radius);
 
 ---
 
-# Equação da esfera
+## Equação da esfera
 
 A esfera pode ser definida pela equação:
 
@@ -327,7 +327,7 @@ $$
 
 ---
 
-# Fluxo de geração da esfera
+## Fluxo de geração da esfera
 
 ```mermaid
 flowchart TD
@@ -343,7 +343,7 @@ flowchart TD
 
 ---
 
-# Exportando modelos 3D
+## Exportando modelos 3D
 
 Depois da modelagem, precisamos exportar o objeto.
 
@@ -351,7 +351,7 @@ Um formato bastante utilizado em projetos acadêmicos é o OFF (*Object File For
 
 ---
 
-# Estrutura do arquivo OFF
+## Estrutura do arquivo OFF
 
 ```text
 OFF
@@ -360,7 +360,7 @@ numero_vertices numero_faces numero_arestas
 
 ---
 
-# Fluxo de exportação
+## Fluxo de exportação
 
 ```mermaid
 flowchart LR
@@ -374,11 +374,11 @@ flowchart LR
 
 ---
 
-# Visualização dos modelos
+## Visualização dos modelos
 
 Após exportar o arquivo OFF, podemos abrir o modelo em visualizadores 3D.
 
-## Exemplos
+### Exemplos
 
 * MeshLab;
 * Blender;
@@ -386,7 +386,7 @@ Após exportar o arquivo OFF, podemos abrir o modelo em visualizadores 3D.
 
 ---
 
-# Conceitos importantes aprendidos
+## Conceitos importantes aprendidos
 
 Projetos desse tipo ajudam bastante no aprendizado de:
 
@@ -399,11 +399,11 @@ Projetos desse tipo ajudam bastante no aprendizado de:
 
 ---
 
-# Possíveis melhorias
+## Possíveis melhorias
 
 Depois da implementação básica, várias melhorias podem ser adicionadas.
 
-## Exemplos
+### Exemplos
 
 * interface gráfica;
 * integração com OpenGL;
@@ -415,11 +415,11 @@ Depois da implementação básica, várias melhorias podem ser adicionadas.
 
 ---
 
-# OpenGL e renderização em tempo real
+## OpenGL e renderização em tempo real
 
 Uma evolução natural do projeto seria integrar OpenGL para renderizar os objetos em tempo real.
 
-## Pipeline gráfico simplificado
+### Pipeline gráfico simplificado
 
 ```mermaid
 flowchart LR
@@ -435,7 +435,7 @@ flowchart LR
 
 ---
 
-# Conclusão
+## Conclusão
 
 Criar um escultor 3D é uma ótima forma de estudar computação gráfica.
 
@@ -453,7 +453,7 @@ Com o avanço de GPUs e aplicações gráficas, computação gráfica continua s
 
 ---
 
-# Referências
+## Referências
 
 * [https://agostinhobritojr.github.io/curso/progav-dca3303/escultor.html](https://agostinhobritojr.github.io/curso/progav-dca3303/escultor.html)
 * [https://github.com/MariaCarolinass/escultor3D](https://github.com/MariaCarolinass/escultor3D)
