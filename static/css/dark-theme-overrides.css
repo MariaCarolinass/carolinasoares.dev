@@ -28,7 +28,7 @@ html.carol-dark-background .nav-links .nav-link a svg path,
 html.carol-dark-background .nav-hamburger-list .nav-item a svg,
 html.carol-dark-background .nav-hamburger-list .nav-item a svg path {
   stroke: currentColor;
-  fill: currentColor;
+  fill: none;
 }
 
 html.carol-dark-background a {
