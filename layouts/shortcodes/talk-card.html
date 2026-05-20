@@ -12,13 +12,13 @@
     {{ .Inner | markdownify }}
   </div>
 
-  <div class="talk-actions">
+  <p class="talk-actions">
     {{ with .Get "slide_url" }}
-      <a class="talk-button" href="{{ . }}" target="_blank" rel="noopener noreferrer">Ver slides</a>
+      <a class="talk-link" href="{{ . }}" target="_blank" rel="noopener noreferrer">Ver slides</a>
     {{ end }}
 
     {{ with .Get "video_url" }}
-      <a class="talk-button talk-button-secondary" href="{{ . }}" target="_blank" rel="noopener noreferrer">Assistir vídeo</a>
+      <a class="talk-link" href="{{ . }}" target="_blank" rel="noopener noreferrer">Assistir vídeo</a>
     {{ end }}
-  </div>
+  </p>
 </article>
