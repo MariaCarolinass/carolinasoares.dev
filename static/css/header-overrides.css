@@ -1,0 +1,11 @@
+.header-nav .avatar,
+.header-nav .avatar img {
+  border-radius: 0;
+}
+
+.header-nav .avatar img {
+  height: 24px;
+  margin-top: 13px;
+  object-fit: contain;
+  width: 24px;
+}
