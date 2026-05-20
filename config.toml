@@ -89,6 +89,7 @@ title = "Carolina Soares"
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
     <link rel="stylesheet" href="/css/dark-theme-overrides.css">
+    <link rel="stylesheet" href="/css/header-overrides.css">
     <link rel="stylesheet" href="/css/code-blocks.css">
     <link rel="stylesheet" href="/css/math-overrides.css">
     <script defer src="/js/code-copy.js"></script>
