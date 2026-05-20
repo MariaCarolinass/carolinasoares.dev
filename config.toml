@@ -4,7 +4,7 @@ enableRobotsTXT = true
 enableEmoji = true
 languageCode = "pt"
 theme = "gokarna"
-title = "Oi, sou a Carol"
+title = "Oi, sou a Carolina"
 
 [menu]
   [[menu.main]]
