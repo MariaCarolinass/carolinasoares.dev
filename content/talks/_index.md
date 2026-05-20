@@ -54,7 +54,7 @@ Abertura do evento Open Data Day, um movimento global que reúne desenvolvedores
 Descubra iniciativas ao redor do mundo, conheça outras pessoas apaixonadas por dados e entenda como você pode participar do movimento.
 {{< /talk-card >}}
 
-## Engenharia de Software
+## Outros temas
 
 {{< talk-card
 title="Controle de versão de código"
