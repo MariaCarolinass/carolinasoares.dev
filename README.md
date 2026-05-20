@@ -1,3 +1,8 @@
+<div style="text-align: center;">
+    <img src="static/favicon.ico" alt="favicon" 
+    style="width: 10%; max-width: 32px; border-radius: 10px;">
+</div>
+
 # carolinasoares.dev
 
 Blog e portfólio pessoal, construído com [Hugo](https://gohugo.io/) e o tema [Gokarna](https://github.com/gokarna-theme/gokarna-hugo).
