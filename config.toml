@@ -4,7 +4,7 @@ enableRobotsTXT = true
 enableEmoji = true
 languageCode = "pt"
 theme = "gokarna"
-title = "Oi, sou a Carolina"
+title = "Carolina Soares"
 
 [menu]
   [[menu.main]]
@@ -109,13 +109,13 @@ title = "Oi, sou a Carolina"
 
   dateFormat = "January 2, 2006"
   
-  description = "Backend, dados, automação e IA | Desenvolvedora de Software @Alura"
+  description = "Desenvolvedora de Software @Alura"
 
   footer = "Carolina Soares"
 
   metaKeywords = ["blog", "tecnologia", "portfólio", "Carolina Soares", "carolinasoares.dev", "desenvolvimento de software", "backend", "dados", "automação", "ia", "inteligência artificial", "python", "java", "docker", "dados abertos", "software livre", "apis", "programação", "Alura"]
 
-  numberPostsOnHomePage = 5
+  numberPostsOnHomePage = 10
 
   showBackToTopButton = true
 
