@@ -71,15 +71,16 @@
 }
 
 .talks-page .talk-link {
-  color: #9f1239;
-  font-weight: 600;
+  color: #64748b;
+  font-size: 0.9rem;
+  font-weight: 500;
   text-decoration: none;
   text-underline-offset: 0.15em;
   transition: color 0.15s ease, text-decoration-color 0.15s ease;
 }
 
 .talks-page .talk-link:hover {
-  color: #7f1d1d;
+  color: #9f1239;
   text-decoration: underline;
 }
 
@@ -100,11 +101,11 @@ html.carol-dark-background .talks-page .talk-tags span {
 }
 
 html.carol-dark-background .talks-page .talk-link {
-  color: #fca5a5;
+  color: #ffffff;
 }
 
 html.carol-dark-background .talks-page .talk-link:hover {
-  color: #fecaca;
+  color: #ff4d4d;
 }
 
 @media (max-width: 640px) {
