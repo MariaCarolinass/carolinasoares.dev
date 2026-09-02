@@ -130,7 +130,26 @@ function syncDarkBackground() {
   var isDarkMode = darkThemeLink && !darkThemeLink.disabled;
 
   document.documentElement.classList.toggle("carol-dark-background", isDarkMode);
+  syncFavicons(isDarkMode);
   return isDarkMode;
+}
+
+function syncFavicons(isDarkMode) {
+  var theme = isDarkMode ? "dark" : "light";
+  var icons = [
+    ["favicon-32", "/favicon-" + theme + "-32x32.png"],
+    ["favicon-16", "/favicon-" + theme + "-16x16.png"],
+    ["apple-touch-icon", "/apple-touch-icon-" + theme + ".png"]
+  ];
+
+  icons.forEach(function(iconData) {
+    var icon = document.getElementById(iconData[0]);
+    if (icon) {
+      var updatedIcon = icon.cloneNode();
+      updatedIcon.href = iconData[1] + "?theme=" + theme;
+      icon.parentNode.replaceChild(updatedIcon, icon);
+    }
+  });
 }
 
 var isDarkMode = syncDarkBackground();
