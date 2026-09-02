@@ -53,6 +53,18 @@
     <!-- SEO canonicals: helps Google understand your site better when using marketing campaign tagging etc -->
     <link rel="canonical" href="{{ .Permalink }}">
 
+    <link id="favicon-32" rel="icon" type="image/png" sizes="32x32" href="{{ "favicon-light-32x32.png" | relURL }}">
+    <link id="favicon-16" rel="icon" type="image/png" sizes="16x16" href="{{ "favicon-light-16x16.png" | relURL }}">
+    <link id="apple-touch-icon" rel="apple-touch-icon" href="{{ "apple-touch-icon-light.png" | relURL }}">
+    <script>
+        (function() {
+            var theme = document.documentElement.classList.contains("carol-dark-background") ? "dark" : "light";
+            document.getElementById("favicon-32").href = "{{ "favicon-" | relURL }}" + theme + "-32x32.png";
+            document.getElementById("favicon-16").href = "{{ "favicon-" | relURL }}" + theme + "-16x16.png";
+            document.getElementById("apple-touch-icon").href = "{{ "apple-touch-icon-" | relURL }}" + theme + ".png";
+        })();
+    </script>
+
     {{ $cssNormalize := resources.Get "css/normalize.min.css" }}
     <link rel="stylesheet" type="text/css" href="{{ $cssNormalize.RelPermalink }}" media="print">
 
