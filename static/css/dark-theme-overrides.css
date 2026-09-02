@@ -1,26 +1,26 @@
 html.carol-dark-background,
 html.carol-dark-background body {
-  background-color: #1f2937 !important;
+  background-color: #080808 !important;
 }
 
 html.carol-dark-background .header,
 html.carol-dark-background .nav-hamburger-list {
-  background-color: rgba(17, 24, 39, 0.98) !important;
+  background-color: rgba(12, 12, 12, 0.98) !important;
 }
 
 html.carol-dark-background .nav-hamburger-list {
-  border-bottom-color: #0f172a;
-  border-top-color: #0f172a;
+  border-bottom-color: #1a1a1a;
+  border-top-color: #1a1a1a;
 }
 
 html.carol-dark-background .nav-links .nav-link a,
 html.carol-dark-background .nav-hamburger-list .nav-item a {
-  color: #e5e7eb;
+  color: #ffffff;
 }
 
 html.carol-dark-background .nav-links .nav-link a:hover,
 html.carol-dark-background .nav-hamburger-list .nav-item a:hover {
-  color: #fca5a5;
+  color: #ff4d4d;
 }
 
 html.carol-dark-background .nav-links .nav-link a svg,
@@ -32,16 +32,16 @@ html.carol-dark-background .nav-hamburger-list .nav-item a svg path {
 }
 
 html.carol-dark-background a {
-  color: #fca5a5;
+  color: #ffffff;
 }
 
 html.carol-dark-background a:hover {
-  color: #fecaca;
+  color: #ff4d4d;
 }
 
 html.carol-dark-background .post-content a,
 html.carol-dark-background .home-content a {
-  color: inherit;
+  color: #ffffff;
 }
 
 html.carol-dark-background .post-tags .post-tag a,
@@ -49,7 +49,7 @@ html.carol-dark-background .tags-list .post-tags .post-tag a,
 html.carol-dark-background .prev-post a,
 html.carol-dark-background .next-post a,
 html.carol-dark-background #toc ul li a {
-  color: #d1d5db;
+  color: #ffffff;
 }
 
 html.carol-dark-background .post-tags .post-tag a:hover,
@@ -58,21 +58,21 @@ html.carol-dark-background .prev-post a:hover,
 html.carol-dark-background .next-post a:hover,
 html.carol-dark-background #toc ul li a:hover,
 html.carol-dark-background #toc ul li a.active {
-  color: #fecaca;
+  color: #ff4d4d;
 }
 
 html.carol-dark-background .gk-social-icons-list .gk-social-icon,
 html.carol-dark-background .gk-social-icons-list .gk-social-icon a,
 html.carol-dark-background .gk-social-icons-list .gk-social-icon a:visited {
-  color: #d1d5db;
-  fill: #d1d5db;
+  color: #ffffff;
+  fill: #ffffff;
 }
 
 html.carol-dark-background .gk-social-icons-list .gk-social-icon a:hover,
 html.carol-dark-background .gk-social-icons-list .gk-social-icon a:hover svg,
 html.carol-dark-background .gk-social-icons-list .gk-social-icon a:hover svg path {
-  color: #fca5a5;
-  fill: #fca5a5;
+  color: #ff4d4d;
+  fill: #ff4d4d;
 }
 
 html.carol-dark-background .nav-links .nav-icons-divider {

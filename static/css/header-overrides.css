@@ -9,3 +9,15 @@
   object-fit: contain;
   width: 24px;
 }
+
+.header-nav .avatar .site-favicon-dark {
+  display: none !important;
+}
+
+html.carol-dark-background .header-nav .avatar .site-favicon-light {
+  display: none !important;
+}
+
+html.carol-dark-background .header-nav .avatar .site-favicon-dark {
+  display: inline-block !important;
+}
