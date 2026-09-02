@@ -1,6 +1,6 @@
 <div style="text-align: center;">
     <img src="static/favicon.ico" alt="favicon" 
-    style="width: 10%; max-width: 32px; border-radius: 10px;">
+    style="width: 5%; max-width: 32px; border-radius: 10px;">
 </div>
 
 # carolinasoares.dev
