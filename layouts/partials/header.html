@@ -4,7 +4,8 @@
         {{ if isset .Site.Params "avatarurl" }}
         <div class="avatar">
             <a href="{{ "/" | relURL }}">
-                <img src='{{ relURL "favicon.ico" }}' alt="" aria-hidden="true">
+                <img class="site-favicon site-favicon-light" src='{{ relURL "favicon-light.ico" }}' alt="" aria-hidden="true">
+                <img class="site-favicon site-favicon-dark" src='{{ relURL "favicon-dark.ico" }}' alt="" aria-hidden="true">
             </a>
         </div>
         {{ end }}
