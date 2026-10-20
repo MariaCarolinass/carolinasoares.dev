@@ -12,13 +12,30 @@
     {{ .Inner | markdownify }}
   </div>
 
-  <p class="talk-actions">
-    {{ with .Get "slide_url" }}
-      <a class="talk-link" href="{{ . }}" target="_blank" rel="noopener noreferrer">Ver slides</a>
-    {{ end }}
+  {{ with .Get "video_url" }}
+    <p class="talk-actions">
+      <a class="talk-link talk-video-link" href="{{ . }}" target="_blank" rel="noopener noreferrer">Assistir vídeo</a>
+    </p>
+  {{ end }}
 
-    {{ with .Get "video_url" }}
-      <a class="talk-link" href="{{ . }}" target="_blank" rel="noopener noreferrer">Assistir vídeo</a>
-    {{ end }}
-  </p>
+  {{ $pdf := .Get "pdf_url" }}
+  {{ $slides := .Get "slide_url" }}
+  {{ if or $pdf $slides }}
+    <details class="talk-presentation">
+      <summary>Ver apresentação</summary>
+      <div class="talk-presentation-viewer">
+        {{ if $pdf }}
+          <iframe src="{{ $pdf | relURL }}" title="Apresentação em PDF: {{ .Get "title" }}" loading="lazy" allowfullscreen></iframe>
+        {{ else }}
+          {{ $preview := replaceRE "/edit.*$" "/preview" $slides }}
+          <iframe src="{{ $preview }}" title="Slides: {{ .Get "title" }}" loading="lazy" allowfullscreen></iframe>
+        {{ end }}
+      </div>
+      {{ if $pdf }}
+        <p class="talk-presentation-fallback">Se a apresentação não aparecer no seu navegador, <a href="{{ $pdf | relURL }}">acesse o PDF neste site</a>.</p>
+      {{ else }}
+        <p class="talk-presentation-fallback">Se os slides não aparecerem, <a href="{{ $slides }}" target="_blank" rel="noopener noreferrer">abra a apresentação no Google Slides</a>.</p>
+      {{ end }}
+    </details>
+  {{ end }}
 </article>

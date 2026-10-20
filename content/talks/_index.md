@@ -12,13 +12,13 @@ Apresentações sobre tecnologia, dados abertos e soluções com impacto social.
 ## IA e Visão Computacional
 
 {{< talk-card
-title="Inteligência Artificial para Salvar Vidas: Detecção Inteligente em Cenários de Desastre"
-tags="IA|Visão Computacional|YOLO|Aplicações Sociais"
-slide_url="https://docs.google.com/presentation/d/1NilwyrG1CgPY-Anv_7_E_FHx_DOZuGkdhBAbgRiSG1w/edit?usp=sharing"
+title="IA no Caos: Pipelines Multimodais em Desastres Urbanos"
+tags="Python Brasil 2026|IA|Visão Computacional|Resgate"
+pdf_url="/docs/palestra-ia-no-caos.pdf"
 >}}
-Como a inteligência artificial e visão computacional podem identificar pessoas, animais e socorristas em cenários de desastre. Abordamos desde o impacto emocional da tecnologia até a criação de sistemas de resgate inteligentes, discutindo desempenho, desafios éticos e aplicações futuras.
+Em enchentes e desabamentos, baixa visibilidade, reflexos e detritos dificultam o trabalho de modelos de visão computacional treinados com imagens genéricas. Esta palestra mostra como construir, em Python, uma pipeline de IA para detectar civis, socorristas e animais nesses cenários e apoiar equipes de resgate.
 
-Esta palestra combina teoria e prática, mostrando exemplos reais de como modelos de IA estão salvando vidas em situações críticas. Perfeita para quem quer entender como tecnologia pode fazer diferença onde mais importa.
+O percurso vai da curadoria de imagens no Roboflow e da organização do conjunto de dados no Kaggle à geração de imagens sintéticas com Gemini Flash para reforçar classes com poucos exemplos. Também aborda o treinamento e a avaliação de um detector de objetos com Ultralytics (YOLO) e a apresentação dos resultados em uma interface visual feita com Gradio.
 {{< /talk-card >}}
 
 ## Dados Abertos
