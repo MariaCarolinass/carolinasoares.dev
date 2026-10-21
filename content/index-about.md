@@ -1,7 +1,5 @@
 ## Sobre mim
 
-Sou desenvolvedora de software com foco em **backend, dados, automação e inteligência artificial**.
+Sou desenvolvedora de software e gosto de criar tecnologia para problemas concretos. Trabalho com **backend, dados e automação**, com interesse especial em cidades, projetos sociais e aplicações de inteligência artificial.
 
-Construo sistemas escaláveis visando impacto real, com foco em backend, automação, geoprocessamento, cidades inteligentes, dados abertos, software livre e aplicações com IA.
-
-Por aqui você encontra **[postagens](/posts/), [tutoriais](/tutorials/), [projetos](/projects/) e [palestras](/talks/)** sobre engenharia de software e tecnologia prática.
+Neste site compartilho o que aprendo e construo: [publicações](/posts/), [tutoriais](/tutorials/), [projetos](/projects/) e [palestras](/talks/).
